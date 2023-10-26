@@ -14,8 +14,8 @@ WORKDIR /backend
 
 COPY . .
 
-# RUN yarn install
+RUN yarn install
 
 EXPOSE 8000
 
-CMD ["/bin/bash", "-c", "whoami && pwd && ls -lah && yarn start"]
+CMD ["yarn", "start"]

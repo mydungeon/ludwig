@@ -26,8 +26,7 @@ spec:
         io.kompose.service: frontend
     spec:
       containers:
-        # - image: frontend
-        - image: j0nnyzer0/frontend:v1
+        - image: j0nnyzer0/frontend:latest
           imagePullPolicy: Always
           name: frontend
           ports:
@@ -35,12 +34,5 @@ spec:
               hostPort: 3000
               protocol: TCP
           resources: {}
-          volumeMounts:
-            - mountPath: /frontend
-              name: frontend-claim0
       restartPolicy: Always
-      volumes:
-        - name: frontend-claim0
-          persistentVolumeClaim:
-            claimName: frontend-claim0
 status: {}

@@ -26,7 +26,7 @@ spec:
         io.kompose.service: backend
     spec:
       containers:
-        - image: j0nnyzer0/backend:3
+        - image: j0nnyzer0/backend:latest
           imagePullPolicy: Always
           name: backend
           ports:
@@ -34,12 +34,5 @@ spec:
               hostPort: 8000
               protocol: TCP
           resources: {}
-          volumeMounts:
-            - mountPath: /backend
-              name: backend-claim0
       restartPolicy: Always
-      volumes:
-        - name: backend-claim0
-          persistentVolumeClaim:
-            claimName: backend-claim0
 status: {}

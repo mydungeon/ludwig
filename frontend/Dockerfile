@@ -5,11 +5,9 @@ ENV REACT_APP_SERVER_ENDPOINT http://localhost:8000
 
 WORKDIR /frontend
 
-COPY package.json /package.json
+COPY . .
 
 RUN yarn install
-
-COPY . .
 
 EXPOSE 3000
 
