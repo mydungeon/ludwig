@@ -26,7 +26,48 @@ spec:
         io.kompose.service: backend
     spec:
       containers:
-        - image: j0nnyzer0/backend:latest
+        - env:
+            - name: ACCESS_TOKEN_PRIVATE_KEY
+              valueFrom:
+                configMapKeyRef:
+                  key: ACCESS_TOKEN_PRIVATE_KEY
+                  name: jonnyortiz
+            - name: ACCESS_TOKEN_PUBLIC_KEY
+              valueFrom:
+                configMapKeyRef:
+                  key: ACCESS_TOKEN_PUBLIC_KEY
+                  name: jonnyortiz
+            - name: MONGODB_DATABASE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGODB_DATABASE_NAME
+                  name: jonnyortiz
+            - name: MONGODB_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGODB_PASSWORD
+                  name: jonnyortiz
+            - name: MONGODB_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGODB_USERNAME
+                  name: jonnyortiz
+            - name: NODE_ENV
+              valueFrom:
+                configMapKeyRef:
+                  key: NODE_ENV
+                  name: jonnyortiz
+            - name: REFRESH_TOKEN_PRIVATE_KEY
+              valueFrom:
+                configMapKeyRef:
+                  key: REFRESH_TOKEN_PRIVATE_KEY
+                  name: jonnyortiz
+            - name: REFRESH_TOKEN_PUBLIC_KEY
+              valueFrom:
+                configMapKeyRef:
+                  key: REFRESH_TOKEN_PUBLIC_KEY
+                  name: jonnyortiz
+          image: j0nnyzer0/backend:latest
           imagePullPolicy: Always
           name: backend
           ports:

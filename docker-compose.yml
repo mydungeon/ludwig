@@ -10,6 +10,17 @@ services:
   backend:
     build: ./backend
     container_name: backend
+    env_file:
+      - ./.env
+    environment:
+      ACCESS_TOKEN_PRIVATE_KEY: ${ACCESS_TOKEN_PRIVATE_KEY}
+      ACCESS_TOKEN_PUBLIC_KEY: ${ACCESS_TOKEN_PUBLIC_KEY}
+      MONGODB_DATABASE_NAME: ${MONGODB_DATABASE_NAME}
+      MONGODB_PASSWORD: ${MONGODB_PASSWORD}
+      MONGODB_USERNAME: ${MONGODB_USERNAME}
+      NODE_ENV: ${NODE_ENV}
+      REFRESH_TOKEN_PRIVATE_KEY: ${REFRESH_TOKEN_PRIVATE_KEY}
+      REFRESH_TOKEN_PUBLIC_KEY: ${REFRESH_TOKEN_PUBLIC_KEY}
     ports:
       - "8000:8000"
     volumes:
