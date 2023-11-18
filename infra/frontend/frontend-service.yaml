@@ -4,16 +4,15 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.31.2 (HEAD)
-  creationTimestamp: null
   labels:
     io.kompose.service: frontend
   name: frontend
 spec:
+  type: NodePort
   ports:
     - name: "3000"
-      port: 3001
+      port: 8080
       targetPort: 3000
+      nodePort: 30007
   selector:
     io.kompose.service: frontend
-status:
-  loadBalancer: {}
