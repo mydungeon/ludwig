@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.31.2 (HEAD)
-  creationTimestamp: null
   labels:
     io.kompose.service: frontend
   name: frontend
@@ -20,7 +19,6 @@ spec:
       annotations:
         kompose.cmd: kompose convert
         kompose.version: 1.31.2 (HEAD)
-      creationTimestamp: null
       labels:
         io.kompose.network/jwt-authentication-react-react-node-jwt-refresh-token-default: "true"
         io.kompose.service: frontend
