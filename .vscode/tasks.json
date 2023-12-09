@@ -1,0 +1,53 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo Hello"
+        },
+        {
+            "label": "addBaseDucks",
+            "type": "shell",
+            "command": "mkdir '${input:dirPath}/${input:dirName}' && touch '${input:dirPath}/${input:dirName}/index.ts' '${input:dirPath}/${input:dirName}/${input:dirName}.tsx' '${input:dirPath}/${input:dirName}/${input:dirName}.styles.scss' '${input:dirPath}/${input:dirName}/${input:dirName}.types.ts' '${input:dirPath}/${input:dirName}/${input:dirName}.test.tsx'",
+        },
+        {
+            "label": "removeAllDucks",
+            "type": "shell",
+            "command": "rm -rf '${input:rmDirPath}/${input:rmDirName}'",
+        },
+        {
+            "label": "addMoreDucks",
+            "type": "shell",
+            "command": "touch '${input:dirPath}/${input:dirName}/${input:dirName}.slice.ts' '${input:dirPath}/${input:dirName}/${input:dirName}.api.ts' '${input:dirPath}/${input:dirName}/${input:dirName}.actions.ts' '${input:dirPath}/${input:dirName}/${input:dirName}.reducers.ts' '${input:dirPath}/${input:dirName}/${input:dirName}.selectors.ts' '${input:dirPath}/${input:dirName}/${input:dirName}.utils.ts'",
+        }
+    ],
+    "inputs": [
+        {
+          "type": "promptString",
+          "id": "dirName",
+          "description": "What would you like to name your directory?",
+          "default": "tsx folder to create"
+        },
+        {
+            "type": "promptString",
+            "id": "dirPath",
+            "description": "What is the path leading up to your directory (excluding the last forward slash)?",
+            "default": "tsx path to follow"
+        },
+        {
+          "type": "promptString",
+          "id": "rmDirName",
+          "description": "What directory do you want to remove?",
+          "default": "Folder to remove"
+        },
+        {
+            "type": "promptString",
+            "id": "rmDirPath",
+            "description": "What is the path leading up to the removed directory (excluding the last forward slash)?",
+            "default": "path to follow"
+        }
+      ]
+}
