@@ -1,24 +1,22 @@
-import { createApi } from '@reduxjs/toolkit/query/react';
-import { LoginInput } from '../../pages/login.page';
-import { RegisterInput } from '../../pages/register.page';
-import customFetchBase from './customFetchBase';
-import { IUser } from './types';
-import { userApi } from './userApi';
+import { createApi } from "@reduxjs/toolkit/query/react";
+import { LoginInput } from "../../ui/pages/login.page";
+import { RegisterInput } from "../../ui/pages/register.page";
+import customFetchBase from "./customFetchBase";
+import { IUser } from "./types";
+import { userApi } from "./userApi";
 
 export const authApi = createApi({
-  reducerPath: 'authApi',
+  reducerPath: "authApi",
   baseQuery: customFetchBase,
   endpoints: (builder) => ({
     registerUser: builder.mutation<IUser, RegisterInput>({
       query(data) {
         return {
-          url: 'auth/register',
-          method: 'POST',
+          url: "auth/register",
+          method: "POST",
           body: data,
         };
       },
-      transformResponse: (result: { data: { user: IUser } }) =>
-        result.data.user,
     }),
     loginUser: builder.mutation<
       { access_token: string; status: string },
@@ -26,10 +24,10 @@ export const authApi = createApi({
     >({
       query(data) {
         return {
-          url: 'auth/login',
-          method: 'POST',
+          url: "auth/login",
+          method: "POST",
           body: data,
-          credentials: 'include',
+          credentials: "include",
         };
       },
       async onQueryStarted(args, { dispatch, queryFulfilled }) {
@@ -42,8 +40,8 @@ export const authApi = createApi({
     logoutUser: builder.mutation<void, void>({
       query() {
         return {
-          url: 'auth/logout',
-          credentials: 'include',
+          url: "auth/logout",
+          credentials: "include",
         };
       },
     }),

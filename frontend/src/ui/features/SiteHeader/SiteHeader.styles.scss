@@ -1,0 +1,8 @@
+@import "src/sass/themes/base.scss";
+.header.site {
+    align-items: center;
+    background-color: $lighterGrey;
+    display: flex;
+    justify-content: space-between;
+    padding: $smallPadding;
+}

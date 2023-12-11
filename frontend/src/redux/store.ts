@@ -1,8 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { authApi } from './api/authApi';
-import { userApi } from './api/userApi';
-import userReducer from './features/userSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { authApi } from "./api/authApi";
+import { userApi } from "./api/userApi";
+import userReducer from "./features/userSlice";
+import { alertLoggerMiddleware } from "../middleWare/AlertMiddleware";
 
 export const store = configureStore({
   reducer: {
@@ -10,9 +11,13 @@ export const store = configureStore({
     [userApi.reducerPath]: userApi.reducer,
     userState: userReducer,
   },
-  devTools: process.env.NODE_ENV === 'development',
+  devTools: process.env.NODE_ENV === "development",
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({}).concat([authApi.middleware, userApi.middleware]),
+    getDefaultMiddleware({}).concat([
+      authApi.middleware,
+      userApi.middleware,
+      alertLoggerMiddleware,
+    ]),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

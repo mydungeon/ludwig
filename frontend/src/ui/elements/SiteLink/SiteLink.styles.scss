@@ -1,0 +1,18 @@
+@import 'src/sass/themes/base.scss';
+
+a.siteLink {
+    text-decoration: none;
+}
+
+a.siteLink.button {
+    background-color: $black;
+    border-radius: $smallRadius;
+    color: $white;
+    display: inline-block;
+    margin-left: $smallMargin;
+    padding: $mediumPadding;
+}
+
+a.siteLink.button:hover {
+    background-color: $grey;
+}

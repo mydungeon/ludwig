@@ -1,0 +1,27 @@
+@import 'src/sass/themes/base.scss';
+
+.avatar {
+    align-items: center;
+    background-color: $darkGrey;
+    border: $thinBorder solid $black;
+    border-radius: $circularRadius;
+    color: $white;
+    display: flex;
+    flex: 1;
+    font-size: $largeFontSize;
+    font-weight: $boldFontWeight;
+    justify-content: center;
+    margin-left: $smallMargin;
+    text-decoration: none;
+    width: 50px;
+}
+
+a.avatar:hover {
+    background-color: $grey;
+}
+
+.avatar:before {
+    content: "";
+    display: inline-block;
+    padding-top: $fullPadding;
+}

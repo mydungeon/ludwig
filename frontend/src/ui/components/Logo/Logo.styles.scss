@@ -1,0 +1,27 @@
+@import 'src/sass/themes/base.scss';
+
+.logo {
+    color: $black;
+    display: flex;
+    font-family: $josefin;
+    text-decoration: none;
+}
+
+.logo > div {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: $smallestPadding;
+} 
+
+.logo > div > svg {
+    width: $smallWidth;
+}
+
+.logo.siteHeader {
+    font-size: $largeFontSize;
+}
+
+.logo.siteFooter {
+    font-size: $regularFontSize;
+}
