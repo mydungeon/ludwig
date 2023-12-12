@@ -1,14 +1,10 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import FormProps from "./Form.types";
+import { useRegisterUserMutation } from "../../../redux/api/authApi";
 import "./Form.styles.scss";
-
-type Inputs = {
-  name: string;
-  email: string;
-  password: string;
-  passwordConfirm: string;
-};
+import { Inputs, validationSchema } from "./Form.schema";
 
 export default function Form({ children }: FormProps) {
   const {
@@ -16,34 +12,26 @@ export default function Form({ children }: FormProps) {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
-
+  } = useForm<Inputs>({
+    resolver: yupResolver(validationSchema),
+  });
+  const [registerUser, { isLoading, isSuccess }] = useRegisterUserMutation();
+  const onSubmit: SubmitHandler<Inputs> = (data) => registerUser(data);
+  console.log("errors", errors);
   return (
     <form className="form" data-testid="form" onSubmit={handleSubmit(onSubmit)}>
-      {errors.name && <span>This field is required</span>}
+      {/* {errors.name && <span>This field is required</span>}
       {errors.email && <span>This field is required</span>}
       {errors.password && <span>This field is required</span>}
-      {errors.passwordConfirm && <span>This field is required</span>}
+      {errors.passwordConfirm && <span>This field is required</span>} */}
 
-      <input {...register("name", { required: true, maxLength: 20 })} />
-      <input {...register("email", { pattern: /^[A-Za-z]+$/i })} />
+      <input placeholder="name" {...register("name")} />
+      <input placeholder="email" {...register("email")} />
+      <input placeholder="password" type="password" {...register("password")} />
       <input
+        placeholder="confirm password"
         type="password"
-        {...register("password", { required: true, min: 8, max: 32 })}
-      />
-      <input
-        type="passwordConfirm"
-        {...register("passwordConfirm", {
-          required: true,
-          min: 8,
-          max: 32,
-          validate: (val: string) => {
-            if (watch("password") !== val) {
-              return "Your passwords do no match";
-            }
-          },
-        })}
+        {...register("passwordConfirm")}
       />
       <input type="submit" />
     </form>
