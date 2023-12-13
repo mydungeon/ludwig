@@ -15,6 +15,13 @@ export type Inputs = {
   passwordConfirm: string;
 };
 
+export const defaultValues = {
+  name: "",
+  email: "",
+  password: "",
+  passwordConfirm: "",
+};
+
 export function validate(values: any) {
   const { email, name, password, passwordConfirm } = values;
   const errors: any = {};

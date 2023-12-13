@@ -3,6 +3,6 @@ import "@testing-library/jest-dom";
 import Form from "./Form";
 
 test("loads and displays Form component", async () => {
-  render(<Form />);
+  render(<Form defaultValues={{}} onSubmit={() => console.log("test")} />);
   expect(screen.getByTestId("form")).toBeTruthy();
 });
