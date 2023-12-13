@@ -1,0 +1,11 @@
+@import 'src/sass/themes/base.scss';
+.form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.form > * {
+    margin: $smallestMargin;
+    width: 100%;
+}

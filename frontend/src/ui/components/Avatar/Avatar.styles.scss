@@ -4,7 +4,7 @@
     align-items: center;
     background-color: $darkGrey;
     border: $thinBorder solid $black;
-    border-radius: $circularRadius;
+    border-radius: $largePercentage;
     color: $white;
     display: flex;
     flex: 1;
@@ -23,5 +23,5 @@ a.avatar:hover {
 .avatar:before {
     content: "";
     display: inline-block;
-    padding-top: $fullPadding;
+    padding-top: $largestPercentage;
 }

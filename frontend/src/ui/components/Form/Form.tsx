@@ -2,6 +2,7 @@ import React, { Children, createElement } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import FormProps from "./Form.types";
+import "./Form.styles.scss";
 
 export default function Form({
   defaultValues,
@@ -13,7 +14,7 @@ export default function Form({
   const { handleSubmit } = methods;
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className="form" onSubmit={handleSubmit(onSubmit)}>
       {Children.map(children, (child) => {
         return child?.props.name
           ? createElement(child.type, {

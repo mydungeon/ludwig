@@ -41,7 +41,6 @@ $mediumPadding: 1rem;
 $largePadding: 2rem;
 $largerPadding: 4rem;
 $largestPadding: 8rem;
-$fullPadding: 100%;
 
 /***************************/
 //FONTS
@@ -85,13 +84,24 @@ $smallerRadius: .25rem;
 $smallRadius: .5rem;
 $mediumRadius: 1rem;
 $largeRadius: 2rem;
-$circularRadius: 50%;
 
 /***************************/
 //WIDTHS
 /***************************/
 
 $smallWidth: 1.5rem;
+
+/***************************/
+//PERCENTAGES
+/***************************/
+
+$smallestPercentage: 1%;
+$smallerPercentage: 5%;
+$smallPercentage: 10%;
+$mediumPercentage: 25%;
+$largePercentage: 50%;
+$largerPercentage: 75%;
+$largestPercentage: 100%;
 
 /***************************/
 //HEIGHTS
