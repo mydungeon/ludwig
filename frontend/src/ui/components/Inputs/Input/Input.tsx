@@ -1,5 +1,6 @@
 import React from "react";
 import "./Input.styles.scss";
+import ErrorMessage from "../../ErrorMessage";
 
 export default function Input({
   inputType,
@@ -17,12 +18,13 @@ export default function Input({
   return (
     <>
       <input
+        className="input"
         placeholder={name}
         type={inputType}
         {...register(name)}
         {...rest}
       />
-      <span>{formState?.errors[name]?.message}</span>
+      <ErrorMessage errorText={formState?.errors[name]?.message} />
     </>
   );
 }

@@ -1,0 +1,6 @@
+@import 'src/sass/themes/base.scss';
+.input {
+    padding: $smallerPadding;
+    border-radius: $smallerRadius;
+    border: $thinBorder solid $black;
+}

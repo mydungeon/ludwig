@@ -6,6 +6,7 @@ a.siteLink {
 
 a.siteLink.button {
     background-color: $black;
+    border: $thinBorder solid $black;
     border-radius: $smallRadius;
     color: $white;
     display: inline-block;
@@ -15,4 +16,6 @@ a.siteLink.button {
 
 a.siteLink.button:hover {
     background-color: $grey;
+    border: $thinBorder solid $black;
+    color: $black;
 }

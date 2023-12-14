@@ -2,6 +2,7 @@
 .header.site {
     align-items: center;
     background-color: $lighterGrey;
+    box-shadow: $mediumShadow;
     display: flex;
     justify-content: space-between;
     padding: $smallPadding;

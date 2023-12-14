@@ -5,3 +5,9 @@ body {
     font-weight: $semiBoldFontWeight;
     margin: $noMargin;
 }
+textarea,
+select,
+input,
+button {
+    outline: none;
+}

@@ -1,0 +1,19 @@
+@import 'src/sass/themes/base.scss';
+
+.backdrop .wrapper.preloader, 
+.page .wrapper {
+    background-color: $lighterGrey;
+    border-radius: $mediumRadius;
+    box-shadow: $mediumShadow;
+    display: inline-block;
+    padding: $largerPadding;
+    margin: $autoCenteredMargin;
+}
+
+.backdrop .wrapper.preloader {
+    padding: $largePadding;
+}
+
+.wrapper > h1 {
+    margin-top: $noMargin;
+}

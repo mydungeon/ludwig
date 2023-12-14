@@ -1,0 +1,12 @@
+@import 'src/sass/themes/base.scss';
+
+.backdrop {
+    align-items: center;
+    background: $darkerOpacity;
+    display: flex;
+    height: $fullViewHeight;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    width: $fullViewWidth;
+}

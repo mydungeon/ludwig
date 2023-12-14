@@ -1,3 +1,5 @@
-.submitButton {
-    
+@import 'src/sass/themes/base.scss';
+
+.wrapper > .form > .submit {
+    margin-top: $mediumMargin;
 }
