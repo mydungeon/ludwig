@@ -26,6 +26,7 @@ spec:
         io.kompose.service: backend
     spec:
       containers:
+<<<<<<< HEAD
         - env:
             - name: ACCESS_TOKEN_PRIVATE_KEY
               valueFrom:
@@ -68,6 +69,9 @@ spec:
                   key: REFRESH_TOKEN_PUBLIC_KEY
                   name: jonnyortiz
           image: j0nnyzer0/backend:latest
+=======
+        - image: j0nnyzer0/backend:latest
+>>>>>>> 19ba11f (Change folder name)
           imagePullPolicy: Always
           name: backend
           ports:
