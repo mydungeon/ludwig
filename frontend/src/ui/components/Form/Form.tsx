@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import FormProps from "./Form.types";
 import Wrapper from "src/ui/components/Wrapper";
 import "./Form.styles.scss";
-
+// This component was taken from: https://react-hook-form.com/advanced-usage#SmartFormComponent
 export default function Form({
   defaultValues,
   classNames,
