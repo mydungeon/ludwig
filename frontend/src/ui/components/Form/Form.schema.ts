@@ -15,6 +15,7 @@ export type Inputs = {
   passwordConfirm: string;
 };
 
+<<<<<<< HEAD
 export const defaultValues = {
   name: "",
   email: "",
@@ -22,6 +23,8 @@ export const defaultValues = {
   passwordConfirm: "",
 };
 
+=======
+>>>>>>> b91cc1a (register form in progress)
 export function validate(values: any) {
   const { email, name, password, passwordConfirm } = values;
   const errors: any = {};
