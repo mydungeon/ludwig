@@ -5,10 +5,14 @@
     background-color: $darkGrey;
     border: $thinBorder solid $black;
 <<<<<<< HEAD
+<<<<<<< HEAD
     border-radius: $largePercentage;
 =======
     border-radius: $circularRadius;
 >>>>>>> 6e7f044 (massive amount of  boilerplate)
+=======
+    border-radius: $largePercentage;
+>>>>>>> 40702ef (update form style, update scss)
     color: $white;
     display: flex;
     flex: 1;
@@ -28,8 +32,12 @@ a.avatar:hover {
     content: "";
     display: inline-block;
 <<<<<<< HEAD
+<<<<<<< HEAD
     padding-top: $largestPercentage;
 =======
     padding-top: $fullPadding;
 >>>>>>> 6e7f044 (massive amount of  boilerplate)
+=======
+    padding-top: $largestPercentage;
+>>>>>>> 40702ef (update form style, update scss)
 }

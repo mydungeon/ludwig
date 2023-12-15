@@ -1,5 +1,6 @@
 @import 'src/sass/themes/base.scss';
 .form {
+<<<<<<< HEAD
     align-items: stretch;
     display: flex;
     flex-direction: column;
@@ -11,4 +12,14 @@
 }
 .form > * {
     margin: $smallestMargin;
+=======
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.form > * {
+    margin: $smallestMargin;
+    width: 100%;
+>>>>>>> 40702ef (update form style, update scss)
 }
