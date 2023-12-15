@@ -42,6 +42,7 @@ spec:
                   key: ACCESS_TOKEN_PUBLIC_KEY
                   name: jonnyortiz
 <<<<<<< HEAD
+<<<<<<< HEAD
             - name: MONGO_INITDB_DATABASE
               valueFrom:
                 configMapKeyRef:
@@ -58,20 +59,27 @@ spec:
                   key: MONGO_INITDB_ROOT_USERNAME
 =======
             - name: MONGODB_DATABASE_NAME
+=======
+            - name: MONGO_INITDB_DATABASE
+>>>>>>> 5be7d75 (update env variables in manifest files for mongo)
               valueFrom:
                 configMapKeyRef:
-                  key: MONGODB_DATABASE_NAME
+                  key: MONGO_INITDB_DATABASE
                   name: jonnyortiz
-            - name: MONGODB_PASSWORD
+            - name: MONGO_INITDB_ROOT_PASSWORD
               valueFrom:
                 configMapKeyRef:
-                  key: MONGODB_PASSWORD
+                  key: MONGO_INITDB_ROOT_PASSWORD
                   name: jonnyortiz
-            - name: MONGODB_USERNAME
+            - name: MONGO_INITDB_ROOT_USERNAME
               valueFrom:
                 configMapKeyRef:
+<<<<<<< HEAD
                   key: MONGODB_USERNAME
 >>>>>>> b7624fa (change manifests, docker and env)
+=======
+                  key: MONGO_INITDB_ROOT_USERNAME
+>>>>>>> 5be7d75 (update env variables in manifest files for mongo)
                   name: jonnyortiz
             - name: NODE_ENV
               valueFrom:
