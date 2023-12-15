@@ -14,7 +14,10 @@ input[type="reset"] {
 
 button {
     background-color: $black;
+<<<<<<< HEAD
     border: $thinBorder solid $black;
+=======
+>>>>>>> 6e7f044 (massive amount of  boilerplate)
     border-radius: $smallRadius;
     color: $white;
     cursor: pointer;
@@ -24,6 +27,9 @@ button {
 
 button:hover {
     background-color: $grey;
+<<<<<<< HEAD
     border: $thinBorder solid $black;
     color: $black;
+=======
+>>>>>>> 6e7f044 (massive amount of  boilerplate)
 }

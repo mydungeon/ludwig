@@ -48,7 +48,11 @@ const FormInput: FC<IFormInputProps> = ({ name, label, ...otherProps }) => {
             {...otherProps}
           />
           <FormHelperText error={!!errors[name]}>
+<<<<<<< HEAD
             {/* {errors[name] ? errors[name].message : ""} */}
+=======
+            {errors[name] ? errors[name].message : ""}
+>>>>>>> 6e7f044 (massive amount of  boilerplate)
           </FormHelperText>
         </FormControl>
       )}

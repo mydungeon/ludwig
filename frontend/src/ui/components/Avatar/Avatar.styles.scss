@@ -4,7 +4,11 @@
     align-items: center;
     background-color: $darkGrey;
     border: $thinBorder solid $black;
+<<<<<<< HEAD
     border-radius: $largePercentage;
+=======
+    border-radius: $circularRadius;
+>>>>>>> 6e7f044 (massive amount of  boilerplate)
     color: $white;
     display: flex;
     flex: 1;
@@ -23,5 +27,9 @@ a.avatar:hover {
 .avatar:before {
     content: "";
     display: inline-block;
+<<<<<<< HEAD
     padding-top: $largestPercentage;
+=======
+    padding-top: $fullPadding;
+>>>>>>> 6e7f044 (massive amount of  boilerplate)
 }
