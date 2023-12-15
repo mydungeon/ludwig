@@ -27,6 +27,9 @@ spec:
     spec:
       containers:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b7624fa (change manifests, docker and env)
         - env:
             - name: ACCESS_TOKEN_PRIVATE_KEY
               valueFrom:
@@ -38,6 +41,7 @@ spec:
                 configMapKeyRef:
                   key: ACCESS_TOKEN_PUBLIC_KEY
                   name: jonnyortiz
+<<<<<<< HEAD
             - name: MONGO_INITDB_DATABASE
               valueFrom:
                 configMapKeyRef:
@@ -52,6 +56,22 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   key: MONGO_INITDB_ROOT_USERNAME
+=======
+            - name: MONGODB_DATABASE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGODB_DATABASE_NAME
+                  name: jonnyortiz
+            - name: MONGODB_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGODB_PASSWORD
+                  name: jonnyortiz
+            - name: MONGODB_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  key: MONGODB_USERNAME
+>>>>>>> b7624fa (change manifests, docker and env)
                   name: jonnyortiz
             - name: NODE_ENV
               valueFrom:
@@ -69,9 +89,12 @@ spec:
                   key: REFRESH_TOKEN_PUBLIC_KEY
                   name: jonnyortiz
           image: j0nnyzer0/backend:latest
+<<<<<<< HEAD
 =======
         - image: j0nnyzer0/backend:latest
 >>>>>>> 19ba11f (Change folder name)
+=======
+>>>>>>> b7624fa (change manifests, docker and env)
           imagePullPolicy: Always
           name: backend
           ports:
