@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect } from "react";
 import { useRegisterUserMutation } from "src/redux/api/authApi";
 import Form from "src/ui/components/Form";
@@ -23,6 +24,21 @@ export default function RegisterForm() {
       classNames="register"
       defaultValues={defaultValues}
       formName={FORM_NAMES.REGISTER}
+=======
+import React from "react";
+import { useRegisterUserMutation } from "src/redux/api/authApi";
+import Form from "src/ui/components/Form";
+import Input from "src/ui/components/Inputs/Input";
+import SubmitButton from "../../Inputs/SubmitButton/SubmitButton";
+import { defaultValues, validationSchema } from "./Register.schema";
+export default function RegisterForm() {
+  const [registerUser, { isLoading, isSuccess }] = useRegisterUserMutation();
+  const onSubmit = (data: any) => registerUser(data);
+
+  return (
+    <Form
+      defaultValues={defaultValues}
+>>>>>>> c068606 (react hook form boilerplate completed - first pass)
       onSubmit={onSubmit}
       validation={validationSchema}
     >

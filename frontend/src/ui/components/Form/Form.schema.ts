@@ -16,6 +16,9 @@ export type Inputs = {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c068606 (react hook form boilerplate completed - first pass)
 export const defaultValues = {
   name: "",
   email: "",
@@ -23,8 +26,11 @@ export const defaultValues = {
   passwordConfirm: "",
 };
 
+<<<<<<< HEAD
 =======
 >>>>>>> b91cc1a (register form in progress)
+=======
+>>>>>>> c068606 (react hook form boilerplate completed - first pass)
 export function validate(values: any) {
   const { email, name, password, passwordConfirm } = values;
   const errors: any = {};

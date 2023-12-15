@@ -7,7 +7,11 @@ export default function SubmitButton({
   classNames,
 }: SubmitButtonProps) {
   return (
+<<<<<<< HEAD
     <button className={`submit ${classNames}`} data-testid="submitButton">
+=======
+    <button className={`submitButton ${classNames}`} data-testid="submitButton">
+>>>>>>> c068606 (react hook form boilerplate completed - first pass)
       {buttonText}
     </button>
   );
