@@ -9,10 +9,12 @@ import { defaultValues, validationSchema } from "./Register.schema";
 
 export default function RegisterForm() {
   const [registerUser, { isLoading, isSuccess }] = useRegisterUserMutation();
+  const isPreloaderSuccess = isLoading && !isSuccess;
+  const isRedirectSuccess = !isLoading && isSuccess;
   const onSubmit = (data: any) => registerUser(data);
 
-  usePreloader(isLoading);
-  useRedirect(isSuccess, Redirect.LOGIN);
+  usePreloader(isPreloaderSuccess);
+  useRedirect(isRedirectSuccess, Redirect.LOGIN);
 
   return (
     <Form

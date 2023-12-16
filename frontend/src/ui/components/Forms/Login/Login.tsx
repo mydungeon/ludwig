@@ -9,10 +9,12 @@ import { defaultValues, validationSchema } from "./Login.schema";
 
 export default function LoginForm() {
   const [loginUser, { isLoading, isSuccess }] = useLoginUserMutation();
+  const isPreloaderSuccess = isLoading && !isSuccess;
+  const isRedirectSuccess = !isLoading && isSuccess;
   const onSubmit = (data: any) => loginUser(data);
 
-  usePreloader(isLoading);
-  useRedirect(isSuccess, Redirect.PROFILE);
+  usePreloader(isPreloaderSuccess);
+  useRedirect(isRedirectSuccess, Redirect.PROFILE);
 
   return (
     <Form

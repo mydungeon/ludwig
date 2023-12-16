@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { ToastContainer } from "react-toastify";
 // import useToggle from "src/hooks/useToggleValue";
 import { AppContext } from "./context/App";
@@ -10,12 +10,20 @@ import "./App.scss";
 function App() {
   const [context, setContext] = useState(false);
 
-  function handleSetContext(isLoading: boolean) {
+  const handleSetContext = useCallback((isLoading: boolean) => {
     setContext(isLoading);
-  }
+  }, []);
+
+  const contextValue = useMemo(
+    () => ({
+      context,
+      handleSetContext,
+    }),
+    [context, handleSetContext]
+  );
 
   return (
-    <AppContext.Provider value={{ context, handleSetContext }}>
+    <AppContext.Provider value={contextValue}>
       <ToastContainer />
       <PreLoader show={context} />
       <SiteRoutes />

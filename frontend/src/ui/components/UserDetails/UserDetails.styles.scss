@@ -1,0 +1,13 @@
+@import 'src/sass/themes/base.scss';
+
+.userDetails {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin: $autoPosition;
+    width: $mediumWidth;
+}
+
+.userDetails > div {
+    padding: $smallerPadding;
+}

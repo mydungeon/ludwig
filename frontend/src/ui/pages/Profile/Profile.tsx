@@ -1,28 +1,16 @@
 import React from "react";
-import { useAppSelector } from "src/redux/store";
-import ProfilePageProps from "./Profile.types";
+import Page from "src/ui/components/Page/Page";
+import UserDetails from "../../components/UserDetails";
 import "./Profile.styles.scss";
 
-export default function ProfilePage({ children, pageTitle }: ProfilePageProps) {
-  const user = useAppSelector((state) => state.userState.user);
-
+export default function ProfilePage() {
   return (
-    <div className="profile" data-testid="profilePage">
-      <div>{pageTitle}</div>
-      <div className="user">
-        <div>
-          <div>{user?._id}</div>
-        </div>
-        <div>
-          <div>{user?.name}</div>
-        </div>
-        <div>
-          <div>{user?.email}</div>
-        </div>
-        <div>
-          <div>{user?.role}</div>
-        </div>
-      </div>
-    </div>
+    <Page
+      classNames="profile"
+      data-testid="profilePage"
+      pageTitleText="Profile"
+    >
+      <UserDetails />
+    </Page>
   );
 }

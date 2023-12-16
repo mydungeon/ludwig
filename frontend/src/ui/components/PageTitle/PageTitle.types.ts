@@ -1,5 +1,4 @@
-export default interface PageProps {
+export default interface PageTitleProps {
   children?: JSX.Element[] | JSX.Element;
-  classNames?: string;
   pageTitleText?: string;
 }

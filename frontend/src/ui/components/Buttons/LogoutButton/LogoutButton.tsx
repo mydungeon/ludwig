@@ -6,9 +6,11 @@ import "./LogoutButton.styles.scss";
 
 export default function LogoutButton() {
   const [logoutUser, { isLoading, isSuccess }] = useLogoutUserMutation();
+  const isPreloaderSuccess = isLoading && !isSuccess;
+  const isRedirectSuccess = !isLoading && isSuccess;
 
-  usePreloader(isLoading && !isSuccess);
-  useRedirect(isSuccess, Redirect.LOGIN);
+  usePreloader(isPreloaderSuccess);
+  useRedirect(isRedirectSuccess, Redirect.LOGIN);
 
   return (
     <Button
