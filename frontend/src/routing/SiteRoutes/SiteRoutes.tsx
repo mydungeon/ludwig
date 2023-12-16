@@ -4,15 +4,7 @@ import Layout from "src/ui/features/Layout";
 import ProfilePage from "src/ui/pages/profile.page";
 import HomePage from "src/ui/pages/home.page";
 import LoginPage from "src/ui/pages/login.page";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import RegisterPage from "src/ui/pages/Register";
-=======
-import RegisterPage from "src/ui/pages/RegisterPage";
->>>>>>> 6e7f044 (massive amount of  boilerplate)
-=======
-import RegisterPage from "src/ui/pages/Register";
->>>>>>> 8e50453 (style inputs, add preloader in progress)
 // import RegisterPage from "src/ui/pages/register.page";
 import UnauthorizePage from "src/ui/pages/unauthorize.page";
 import RequireUser from "src/ui/components/requireUser";

@@ -48,15 +48,7 @@ const FormInput: FC<IFormInputProps> = ({ name, label, ...otherProps }) => {
             {...otherProps}
           />
           <FormHelperText error={!!errors[name]}>
-<<<<<<< HEAD
-<<<<<<< HEAD
             {/* {errors[name] ? errors[name].message : ""} */}
-=======
-            {errors[name] ? errors[name].message : ""}
->>>>>>> 6e7f044 (massive amount of  boilerplate)
-=======
-            {/* {errors[name] ? errors[name].message : ""} */}
->>>>>>> c068606 (react hook form boilerplate completed - first pass)
           </FormHelperText>
         </FormControl>
       )}
