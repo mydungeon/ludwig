@@ -6,7 +6,6 @@
     justify-content: center;
     margin: auto;
     min-width: $largePixelWidth;
-    width: $largePercentage;
     max-width: $largerPixelWidth;
 }
 .form > * {
@@ -21,6 +20,5 @@
     max-width: $largerPixelWidth;
 }
 .form > * {
-    margin: $smallestMargin;
-    width: 100%;
+    margin-top: $smallestMargin;
 }

@@ -1,23 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import { AppContextType, AppContext } from "src/context/App";
 import { useRegisterUserMutation } from "src/redux/api/authApi";
 import Form from "src/ui/components/Form";
 import Input from "src/ui/components/Inputs/Input";
 import SubmitButton from "src/ui/components/Inputs/SubmitButton";
 import { defaultValues, validationSchema } from "./Register.schema";
 import { FORM_NAMES } from "src/ui/components/Form/Form.constants";
-import useToggle from "src/hooks/useToggleValue";
 
 export default function RegisterForm() {
   const [registerUser, { isLoading, isSuccess }] = useRegisterUserMutation();
-  // const [value, toggleValue] = useToggle(false);
+  const { handleSetContext } = useContext<AppContextType>(AppContext);
   const onSubmit = (data: any) => registerUser(data);
-  // useEffect(() => {
-  //   if (!isLoading) {
-  //     toggleValue(false);
-  //   } else {
-  //     toggleValue(true);
-  //   }
-  // });
+  useEffect(() => {
+    if (isLoading) {
+      handleSetContext(true);
+    } else {
+      handleSetContext(false);
+    }
+  }, [isLoading, handleSetContext]);
   return (
     <Form
       classNames="register"

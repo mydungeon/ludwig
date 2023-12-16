@@ -1,5 +1,6 @@
 @import 'src/sass/themes/base.scss';
 
 .wrapper > .form > .submit {
-    margin-top: $mediumMargin;    
+    margin-top: $largeMargin;
+    width: $largestPercentage;
 }

@@ -7,7 +7,7 @@ export default function SubmitButton({
   classNames,
 }: SubmitButtonProps) {
   return (
-    <button className={`submitButton ${classNames}`} data-testid="submitButton">
+    <button className={`submit ${classNames}`} data-testid="submitButton">
       {buttonText}
     </button>
   );

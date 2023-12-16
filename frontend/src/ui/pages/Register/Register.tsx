@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Page from "src/ui/components/Page";
 import RegisterForm from "../../components/Forms/Register";
 import "./Register.styles.scss";
