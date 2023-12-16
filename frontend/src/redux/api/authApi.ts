@@ -1,6 +1,6 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
-import { LoginInput } from "../../ui/pages/login.page";
-import { RegisterInput } from "../../ui/pages/register.page";
+import { LoginPayloadType } from "src/ui/components/Forms/Login/Login.schema";
+import { RegisterPayloadType } from "src/ui/components/Forms/Register/Register.schema";
 import customFetchBase from "./customFetchBase";
 import { IUser } from "./types";
 import { userApi } from "./userApi";
@@ -9,7 +9,7 @@ export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: customFetchBase,
   endpoints: (builder) => ({
-    registerUser: builder.mutation<IUser, RegisterInput>({
+    registerUser: builder.mutation<IUser, RegisterPayloadType>({
       query(data) {
         return {
           url: "auth/register",
@@ -20,7 +20,7 @@ export const authApi = createApi({
     }),
     loginUser: builder.mutation<
       { access_token: string; status: string },
-      LoginInput
+      LoginPayloadType
     >({
       query(data) {
         return {

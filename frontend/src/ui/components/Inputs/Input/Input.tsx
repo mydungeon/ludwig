@@ -14,7 +14,6 @@ export default function Input({
   register?: any;
   formState?: any;
 }) {
-  console.log(formState?.errors[name]?.message);
   return (
     <>
       <input

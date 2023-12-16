@@ -1,7 +1,7 @@
 import { useCookies } from "react-cookie";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { userApi } from "../../redux/api/userApi";
-import FullScreenLoader from "./FullScreenLoader";
+import usePreloader from "src/hooks/usePreloader";
 
 const RequireUser = ({ allowedRoles }: { allowedRoles: string[] }) => {
   const [cookies] = useCookies(["logged_in"]);
@@ -12,15 +12,13 @@ const RequireUser = ({ allowedRoles }: { allowedRoles: string[] }) => {
     refetchOnMountOrArgChange: true,
   });
 
-  const loading = isLoading || isFetching;
+  // const loading = isLoading || isFetching;
 
   const user = userApi.endpoints.getMe.useQueryState(null, {
     selectFromResult: ({ data }) => data,
   });
 
-  if (loading) {
-    return <FullScreenLoader />;
-  }
+  // usePreloader(loading);
 
   return (cookies.logged_in || user) &&
     allowedRoles.includes(user?.role as string) ? (

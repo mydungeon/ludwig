@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import RegisterPage from "./Register";
+import Register from "./Register";
 
 test("loads and displays RegisterPage component", async () => {
-  render(<RegisterPage />);
+  render(<Register />);
   expect(screen.getByTestId("registerPage")).toBeTruthy();
 });

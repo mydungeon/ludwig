@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import Page from "src/ui/components/Page";
-import RegisterForm from "../../components/Forms/Register";
+import RegisterForm from "src/ui/components/Forms/Register";
 import "./Register.styles.scss";
 
 export default function RegisterPage() {
   return (
-    <Page classNames="register" data-testid="registerpage">
+    <Page classNames="register" data-testid="registerPage">
       <RegisterForm />
     </Page>
   );

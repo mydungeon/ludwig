@@ -1,28 +1,30 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "src/ui/features/Layout";
-import ProfilePage from "src/ui/pages/profile.page";
-import HomePage from "src/ui/pages/home.page";
-import LoginPage from "src/ui/pages/login.page";
+import AdminPage from "src/ui/pages/Admin";
+import HomePage from "src/ui/pages/Home";
+import LoginPage from "src/ui/pages/Login";
+import ProfilePage from "src/ui/pages/Profile";
 import RegisterPage from "src/ui/pages/Register";
-// import RegisterPage from "src/ui/pages/register.page";
-import UnauthorizePage from "src/ui/pages/unauthorize.page";
 import RequireUser from "src/ui/components/requireUser";
-import AdminPage from "src/ui/pages/admin.page";
+import UnauthorizePage from "src/ui/pages/Unauthorized";
 
 export default function SiteRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
+        <Route index element={<HomePage pageTitle="Home" />} />
         {/* Private Route */}
         <Route element={<RequireUser allowedRoles={["user", "admin"]} />}>
-          <Route path="profile" element={<ProfilePage />} />
+          <Route path="profile" element={<ProfilePage pageTitle="Profile" />} />
         </Route>
         <Route element={<RequireUser allowedRoles={["admin"]} />}>
-          <Route path="admin" element={<AdminPage />} />
+          <Route path="admin" element={<AdminPage pageTitle="Admin" />} />
         </Route>
-        <Route path="unauthorized" element={<UnauthorizePage />} />
+        <Route
+          path="unauthorized"
+          element={<UnauthorizePage pageTitle="Unauthorized" />}
+        />
       </Route>
       <Route path="login" element={<LoginPage />} />
       <Route path="register" element={<RegisterPage />} />

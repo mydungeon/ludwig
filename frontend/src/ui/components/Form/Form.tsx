@@ -1,4 +1,4 @@
-import React, { Children, createElement } from "react";
+import React, { Children, createElement, useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import FormProps from "./Form.types";
@@ -14,7 +14,17 @@ export default function Form({
   validation,
 }: FormProps) {
   const methods = useForm({ defaultValues, resolver: yupResolver(validation) });
-  const { handleSubmit } = methods;
+  const {
+    handleSubmit,
+    formState: { isSubmitSuccessful },
+    reset,
+  } = methods;
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful, reset]);
 
   return (
     <Wrapper headerText={formName}>

@@ -1,12 +1,14 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-export default function useRedirect(isSuccess: boolean, location: string) {
+export default function useRedirect(isSuccess: boolean, to: string) {
   const navigate = useNavigate();
+  const location = useLocation();
+  to = ((location.state as any)?.from.pathname as string) || to;
 
   useEffect(() => {
     if (isSuccess) {
-      navigate(location);
+      navigate(to);
     }
-  });
+  }, [isSuccess, navigate, to]);
 }

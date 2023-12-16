@@ -1,5 +1,5 @@
 import React from "react";
-import { usePreloader, useRedirect } from "src/hooks";
+import { Redirect, usePreloader, useRedirect } from "src/hooks";
 import { useRegisterUserMutation } from "src/redux/api/authApi";
 import Form from "src/ui/components/Form";
 import Input from "src/ui/components/Inputs/Input";
@@ -12,11 +12,12 @@ export default function RegisterForm() {
   const onSubmit = (data: any) => registerUser(data);
 
   usePreloader(isLoading);
-  useRedirect(isSuccess, "/login");
+  useRedirect(isSuccess, Redirect.LOGIN);
 
   return (
     <Form
       classNames="register"
+      data-testid="registerForm"
       defaultValues={defaultValues}
       formName={FORM_NAMES.REGISTER}
       onSubmit={onSubmit}
