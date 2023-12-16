@@ -1,7 +1,5 @@
 @import 'src/sass/themes/base.scss';
 .form {
-<<<<<<< HEAD
-<<<<<<< HEAD
     align-items: stretch;
     display: flex;
     flex-direction: column;
@@ -13,11 +11,7 @@
 }
 .form > * {
     margin: $smallestMargin;
-=======
-    align-items: center;
-=======
     align-items: stretch;
->>>>>>> 8e50453 (style inputs, add preloader in progress)
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,9 +22,5 @@
 }
 .form > * {
     margin: $smallestMargin;
-<<<<<<< HEAD
     width: 100%;
->>>>>>> 40702ef (update form style, update scss)
-=======
->>>>>>> 8e50453 (style inputs, add preloader in progress)
 }
