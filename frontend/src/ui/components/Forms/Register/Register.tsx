@@ -1,23 +1,19 @@
-import React, { useContext, useEffect } from "react";
-import { AppContextType, AppContext } from "src/context/App";
+import React from "react";
+import { usePreloader, useRedirect } from "src/hooks";
 import { useRegisterUserMutation } from "src/redux/api/authApi";
 import Form from "src/ui/components/Form";
 import Input from "src/ui/components/Inputs/Input";
 import SubmitButton from "src/ui/components/Inputs/SubmitButton";
-import { defaultValues, validationSchema } from "./Register.schema";
 import { FORM_NAMES } from "src/ui/components/Form/Form.constants";
+import { defaultValues, validationSchema } from "./Register.schema";
 
 export default function RegisterForm() {
   const [registerUser, { isLoading, isSuccess }] = useRegisterUserMutation();
-  const { handleSetContext } = useContext<AppContextType>(AppContext);
   const onSubmit = (data: any) => registerUser(data);
-  useEffect(() => {
-    if (isLoading) {
-      handleSetContext(true);
-    } else {
-      handleSetContext(false);
-    }
-  }, [isLoading, handleSetContext]);
+
+  usePreloader(isLoading);
+  useRedirect(isSuccess, "/login");
+
   return (
     <Form
       classNames="register"
