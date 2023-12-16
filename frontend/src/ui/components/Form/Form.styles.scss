@@ -8,17 +8,15 @@
     min-width: $largePixelWidth;
     max-width: $largerPixelWidth;
 }
-.form > * {
+.form > input {
     margin: $smallestMargin;
     align-items: stretch;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: auto;
+    margin-top: $largeMargin;
     min-width: $largePixelWidth;
     width: $largePercentage;
     max-width: $largerPixelWidth;
-}
-.form > * {
-    margin-top: $smallestMargin;
 }

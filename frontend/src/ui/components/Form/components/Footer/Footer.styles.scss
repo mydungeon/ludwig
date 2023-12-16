@@ -1,0 +1,14 @@
+@import 'src/sass/themes/base.scss';
+
+.footer.form {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: $largeMargin;
+    width: $largestPercentage;
+}
+
+.footer.form button.submit.login {
+    padding: $mediumPadding $largePadding;
+}

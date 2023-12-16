@@ -19,3 +19,12 @@ a.siteLink.button:hover {
     border: $thinBorder solid $black;
     color: $black;
 }
+
+a.siteLink.link {
+    align-items: center;
+    color: $black;
+    font-weight: $mediumFontWeight;
+    justify-content: center;
+    padding: $mediumPadding $largePadding;
+    text-decoration: underline;
+}

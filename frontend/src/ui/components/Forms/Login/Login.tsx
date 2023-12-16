@@ -2,6 +2,8 @@ import React from "react";
 import { Redirect, usePreloader, useRedirect } from "src/hooks";
 import { useLoginUserMutation } from "src/redux/api/authApi";
 import Form from "src/ui/components/Form";
+import FormFooter from "src/ui/components/Form/components/Footer";
+import SiteLink from "src/ui/elements/SiteLink";
 import Input from "src/ui/components/Inputs/Input";
 import SubmitButton from "src/ui/components/Inputs/SubmitButton";
 import { FORM_NAMES } from "src/ui/components/Form/Form.constants";
@@ -26,7 +28,18 @@ export default function LoginForm() {
     >
       <Input name="email" inputType="email" />
       <Input name="password" inputType="password" />
-      <SubmitButton buttonText="Login" />
+      <FormFooter classNames="form">
+        <div>
+          <SiteLink
+            classNames="link"
+            linkText="Register"
+            destination="/register"
+          />
+        </div>
+        <div>
+          <SubmitButton buttonText="Login" classNames="login" />
+        </div>
+      </FormFooter>
     </Form>
   );
 }
