@@ -13,12 +13,12 @@ const RequireUser = ({ allowedRoles }: { allowedRoles: string[] }) => {
   });
 
   const loading = isLoading || isFetching;
-  usePreloader(loading);
 
-  console.log("usePreloader", loading);
   const user = userApi.endpoints.getMe.useQueryState(null, {
     selectFromResult: ({ data }) => data,
   });
+
+  usePreloader(loading && !!user);
 
   return (cookies.logged_in || user) &&
     allowedRoles.includes(user?.role as string) ? (

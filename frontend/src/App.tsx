@@ -6,6 +6,7 @@ import PreLoader from "src/ui/components/PreLoader";
 import SiteRoutes from "src/routing/SiteRoutes";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.scss";
+import AuthMiddleware from "./middleWare/AuthMiddleware";
 
 function App() {
   const [context, setContext] = useState(false);
@@ -26,7 +27,9 @@ function App() {
     <AppContext.Provider value={contextValue}>
       <ToastContainer />
       <PreLoader show={context} />
-      <SiteRoutes />
+      <AuthMiddleware>
+        <SiteRoutes />
+      </AuthMiddleware>
     </AppContext.Provider>
   );
 }
