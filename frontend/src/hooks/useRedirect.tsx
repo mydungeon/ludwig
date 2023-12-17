@@ -8,5 +8,5 @@ export default function useRedirect(isSuccess: boolean, to: string) {
     if (isSuccess) {
       navigate(to);
     }
-  }, [isSuccess, navigate, to]);
+  }, [isSuccess, to, navigate]);
 }

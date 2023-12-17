@@ -1,7 +1,7 @@
 import React from "react";
 import { useCookies } from "react-cookie";
 import { userApi } from "../redux/api/userApi";
-import usePreloader from "../hooks/usePreloader";
+import usePreloader from "src/hooks/usePreloader";
 
 type IAuthMiddleware = {
   children: React.ReactElement;
@@ -9,7 +9,6 @@ type IAuthMiddleware = {
 
 const AuthMiddleware: React.FC<IAuthMiddleware> = ({ children }) => {
   const [cookies] = useCookies(["logged_in"]);
-
   const { isLoading } = userApi.endpoints.getMe.useQuery(null, {
     skip: !cookies.logged_in,
   });
