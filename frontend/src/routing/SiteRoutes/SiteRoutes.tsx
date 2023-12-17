@@ -8,23 +8,25 @@ import ProfilePage from "src/ui/pages/Profile";
 import RegisterPage from "src/ui/pages/Register";
 import RequireUser from "src/ui/components/requireUser";
 import UnauthorizePage from "src/ui/pages/Unauthorized";
+import { UserRoles } from "src/ui/features/User/User.types";
 
 export default function SiteRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage pageTitle="Home" />} />
+        <Route index element={<HomePage />} />
         {/* Private Route */}
-        <Route element={<RequireUser allowedRoles={["user", "admin"]} />}>
-          <Route path="profile" element={<ProfilePage pageTitle="Profile" />} />
-        </Route>
-        <Route element={<RequireUser allowedRoles={["admin"]} />}>
-          <Route path="admin" element={<AdminPage pageTitle="Admin" />} />
-        </Route>
         <Route
-          path="unauthorized"
-          element={<UnauthorizePage pageTitle="Unauthorized" />}
-        />
+          element={
+            <RequireUser allowedRoles={[UserRoles.USER, UserRoles.ADMIN]} />
+          }
+        >
+          <Route path="profile" element={<ProfilePage />} />
+        </Route>
+        <Route element={<RequireUser allowedRoles={[UserRoles.ADMIN]} />}>
+          <Route path="admin" element={<AdminPage />} />
+        </Route>
+        <Route path="unauthorized" element={<UnauthorizePage />} />
       </Route>
       <Route path="login" element={<LoginPage />} />
       <Route path="register" element={<RegisterPage />} />
