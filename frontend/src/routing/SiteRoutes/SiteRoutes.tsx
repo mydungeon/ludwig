@@ -7,8 +7,60 @@ import LoginPage from "src/ui/pages/Login";
 import ProfilePage from "src/ui/pages/Profile";
 import RegisterPage from "src/ui/pages/Register";
 import RequireUser from "src/ui/components/requireUser";
-import UnauthorizePage from "src/ui/pages/Unauthorized";
+import UnauthorizedPage from "src/ui/pages/Unauthorized";
 import { UserRoles } from "src/ui/features/User/User.types";
+
+const routing = [
+  {
+    key: "home-parent",
+    path: "/",
+    element: Layout,
+    routes: [
+      {
+        key: "home",
+        index: true,
+        element: HomePage,
+      },
+      {
+        key: "profile-parent",
+        roles: [UserRoles.USER, UserRoles.ADMIN],
+        routes: [
+          {
+            key: "profile",
+            path: "profile",
+            element: ProfilePage,
+          },
+        ],
+      },
+      {
+        key: "admin-parent",
+        roles: [UserRoles.ADMIN],
+        routes: [
+          {
+            key: "admin",
+            path: "admin",
+            element: AdminPage,
+          },
+        ],
+      },
+      {
+        key: "unauthorized",
+        path: "unauthorized",
+        element: UnauthorizedPage,
+      },
+    ],
+  },
+  {
+    key: "login",
+    path: "login",
+    element: LoginPage,
+  },
+  {
+    key: "register",
+    path: "register",
+    element: RegisterPage,
+  },
+];
 
 export default function SiteRoutes() {
   return (
@@ -26,7 +78,7 @@ export default function SiteRoutes() {
         <Route element={<RequireUser allowedRoles={[UserRoles.ADMIN]} />}>
           <Route path="admin" element={<AdminPage />} />
         </Route>
-        <Route path="unauthorized" element={<UnauthorizePage />} />
+        <Route path="unauthorized" element={<UnauthorizedPage />} />
       </Route>
       <Route path="login" element={<LoginPage />} />
       <Route path="register" element={<RegisterPage />} />
