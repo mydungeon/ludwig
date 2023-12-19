@@ -1,87 +1,37 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Layout from "src/ui/features/Layout";
-import AdminPage from "src/ui/pages/Admin";
-import HomePage from "src/ui/pages/Home";
-import LoginPage from "src/ui/pages/Login";
-import ProfilePage from "src/ui/pages/Profile";
-import RegisterPage from "src/ui/pages/Register";
-import RequireUser from "src/ui/components/requireUser";
-import UnauthorizedPage from "src/ui/pages/Unauthorized";
-import { UserRoles } from "src/ui/features/User/User.types";
+import { ROUTING } from "./SiteRoutes.constants";
 
-const routing = [
-  {
-    key: "home-parent",
-    path: "/",
-    element: Layout,
-    routes: [
-      {
-        key: "home",
-        index: true,
-        element: HomePage,
-      },
-      {
-        key: "profile-parent",
-        roles: [UserRoles.USER, UserRoles.ADMIN],
-        routes: [
-          {
-            key: "profile",
-            path: "profile",
-            element: ProfilePage,
-          },
-        ],
-      },
-      {
-        key: "admin-parent",
-        roles: [UserRoles.ADMIN],
-        routes: [
-          {
-            key: "admin",
-            path: "admin",
-            element: AdminPage,
-          },
-        ],
-      },
-      {
-        key: "unauthorized",
-        path: "unauthorized",
-        element: UnauthorizedPage,
-      },
-    ],
-  },
-  {
-    key: "login",
-    path: "login",
-    element: LoginPage,
-  },
-  {
-    key: "register",
-    path: "register",
-    element: RegisterPage,
-  },
-];
+function buildRoute(route: any) {
+  const { key, index, path } = route;
+  if (!index) {
+    return <Route key={key} path={path} element={<route.element />} />;
+  } else {
+    return <Route key={key} index element={<route.element />} />;
+  }
+}
+
+function buildRoutes(routing: any) {
+  return routing.map((route: any) => {
+    const { key, path, roles, routes } = route;
+    if (routes && !roles) {
+      return (
+        <Route key={key} path={path} element={<route.element />}>
+          {buildRoutes(routes)}
+        </Route>
+      );
+    } else if (routes && roles) {
+      return (
+        <Route key={key} element={<route.requireUser allowedRoles={roles} />}>
+          {buildRoutes(routes)}
+        </Route>
+      );
+    } else {
+      return buildRoute(route);
+    }
+  });
+}
 
 export default function SiteRoutes() {
-  return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
-        {/* Private Route */}
-        <Route
-          element={
-            <RequireUser allowedRoles={[UserRoles.USER, UserRoles.ADMIN]} />
-          }
-        >
-          <Route path="profile" element={<ProfilePage />} />
-        </Route>
-        <Route element={<RequireUser allowedRoles={[UserRoles.ADMIN]} />}>
-          <Route path="admin" element={<AdminPage />} />
-        </Route>
-        <Route path="unauthorized" element={<UnauthorizedPage />} />
-      </Route>
-      <Route path="login" element={<LoginPage />} />
-      <Route path="register" element={<RegisterPage />} />
-    </Routes>
-  );
+  return <Routes>{buildRoutes(ROUTING)}</Routes>;
 }
