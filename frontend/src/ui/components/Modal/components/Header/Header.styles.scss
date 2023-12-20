@@ -1,0 +1,16 @@
+@import "src/sass/themes/base.scss";
+
+.modalHeader {
+    padding: $smallestPadding;
+}
+
+.modalHeader h3 {
+    margin-left: $smallMargin;
+}
+
+.modalHeader > .fa-xmark {
+    cursor: pointer;
+    position: absolute;
+    right: $absoluteRight;
+    top: $absoluteTop;
+}

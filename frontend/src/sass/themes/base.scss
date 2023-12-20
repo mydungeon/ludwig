@@ -133,8 +133,18 @@ $largeRadius: 2rem;
 /***************************/
 
 $smallWidth: 1.5rem;
-$mediumWidth: 50vw;
+$quarterViewWidth: 25vw;
+$halfViewWidth: 50vw;
 $fullViewWidth: 100vw;
+
+/***************************/
+//HEIGHTS
+/***************************/
+
+$smallHeight: 1.5rem;
+$quarterViewHeight: 25vw;
+$halfViewHeight: 50vw;
+$fullViewHeight: 100vw;
 
 /***************************/
 //PERCENTAGES
@@ -162,32 +172,6 @@ $largerPixelWidth: 500px;
 $largestPixelWidth: 750px;
 $extraLargePixelWidth: 950px;
 $fullViewWidth: 100vw;
-
-/***************************/
-//PERCENTAGES
-/***************************/
-
-$smallestPercentage: 1%;
-$smallerPercentage: 5%;
-$smallPercentage: 10%;
-$mediumPercentage: 25%;
-$largePercentage: 50%;
-$largerPercentage: 75%;
-$largestPercentage: 100%;
-
-/***************************/
-//PIXEL WIDTH
-/***************************/
-
-$extraSmallPixelWidth: 1px;
-$smallestPixelWidth: 5px;
-$smallerPixelWidth: 25px;
-$smallPixelWidth: 50px;
-$mediumPixelWidth: 100px;
-$largePixelWidth: 350px;
-$largerPixelWidth: 500px;
-$largestPixelWidth: 750px;
-$extraLargePixelWidth: 950px;
 
 /***************************/
 //HEIGHTS
@@ -196,6 +180,13 @@ $extraLargePixelWidth: 950px;
 $smallHeight: 1.5rem;
 $largetHeight: 15rem;
 $fullViewHeight: 100vh;
+
+/***************************/
+//ABSOLUTE_SPACING
+/***************************/
+
+$absoluteTop: 15px;
+$absoluteRight: 15px;
 
 /***************************/
 //SPINNER VALUES

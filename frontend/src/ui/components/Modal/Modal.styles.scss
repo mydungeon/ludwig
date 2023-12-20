@@ -1,0 +1,38 @@
+@import "src/sass/themes/base.scss";
+
+.modal {
+    background-color: $darkerOpacity;
+    display: block;
+    height: $fullViewHeight;
+    left: 0;
+    overflow: auto;
+    padding-top: $quarterViewHeight;
+    position: fixed;
+    top: 0;
+    width: $fullViewWidth;
+}
+
+.modalContent {
+    background-color: $white;
+    border-radius: $smallRadius;
+    box-shadow: $mediumShadow;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: auto;
+    position: relative;
+    padding: 0;
+    width: $largePixelWidth;
+}
+
+.modalHeader {
+    margin: $smallerMargin;
+}
+
+.modalBody {
+    margin: $largeMargin;
+}
+
+.modalFooter {
+    margin: $smallerMargin;
+}
