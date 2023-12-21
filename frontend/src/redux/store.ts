@@ -1,15 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { authApi } from "./api/authApi";
-import { userApi } from "./api/userApi";
-import userReducer from "./features/userSlice";
+import { authApi } from "./api/auth.api";
+import { userApi } from "./api/user.api";
+import userReducer from "./features/user.slice";
 import { alertLoggerMiddleware } from "../middleWare/AlertMiddleware";
+import uiSlice from "./features/ui.slice";
 
 export const store = configureStore({
   reducer: {
     [authApi.reducerPath]: authApi.reducer,
     [userApi.reducerPath]: userApi.reducer,
     userState: userReducer,
+    uiState: uiSlice,
   },
   devTools: process.env.NODE_ENV === "development",
   middleware: (getDefaultMiddleware) =>

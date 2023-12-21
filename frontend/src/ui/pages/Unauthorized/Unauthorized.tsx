@@ -3,11 +3,5 @@ import Page from "src/ui/components/Page/Page";
 import "./Unauthorized.styles.scss";
 
 export default function UnauthorizedPage() {
-  return (
-    <Page
-      classNames="unauthorized"
-      data-testid="unauthorizedPage"
-      pageTitleText="Unauthorized"
-    />
-  );
+  return <Page classNames="unauthorized" pageTitleText="Unauthorized" />;
 }

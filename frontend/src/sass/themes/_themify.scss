@@ -1,0 +1,15 @@
+@import 'themes';
+
+@mixin themify($property, $key, $themes: $themes) {
+
+    // Iterate over the themes
+    @each $theme, $colors in $themes {
+
+        // Create a selector
+        &.#{$theme}-theme,
+        .#{$theme}-theme & {
+            // Output the declaration
+            #{$property}: map-get($colors, $key);
+        }
+    }
+}

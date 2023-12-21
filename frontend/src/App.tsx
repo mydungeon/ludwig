@@ -8,7 +8,7 @@ import PreLoader from "src/ui/components/PreLoader";
 import AuthMiddleware from "src/middleWare/AuthMiddleware";
 import SiteRoutes from "src/routing/SiteRoutes";
 import "react-toastify/dist/ReactToastify.css";
-import "./App.scss";
+import "src/sass/index.scss";
 
 function App() {
   const [context, setContext] = useState(false);

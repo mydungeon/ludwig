@@ -14,7 +14,7 @@ export default function Button({
   return (
     <button
       className={`button ${classNames}`}
-      data-testid="button"
+      data-testid={`button`}
       onClick={onClickHandler}
     >
       {buttonText}

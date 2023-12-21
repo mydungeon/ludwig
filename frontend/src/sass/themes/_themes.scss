@@ -1,0 +1,10 @@
+@import "src/sass/themes/base.scss";
+
+$themes: (
+    light: (bg: $white,
+        fg: red,
+    ),
+    dark: (bg: $black,
+        fg: lime,
+    ),
+);

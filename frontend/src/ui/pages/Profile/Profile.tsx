@@ -5,11 +5,7 @@ import "./Profile.styles.scss";
 
 export default function ProfilePage() {
   return (
-    <Page
-      classNames="profile"
-      data-testid="profilePage"
-      pageTitleText="Profile"
-    >
+    <Page classNames="profile" pageTitleText="Profile">
       <UserDetails />
     </Page>
   );

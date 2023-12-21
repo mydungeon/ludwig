@@ -14,9 +14,11 @@ export default function Form({
   validation,
 }: FormProps) {
   const methods = useForm({ defaultValues, resolver: yupResolver(validation) });
+  const { formState } = methods;
   const {
     handleSubmit,
     formState: { isSubmitSuccessful },
+    register,
     reset,
   } = methods;
 
@@ -28,14 +30,18 @@ export default function Form({
 
   return (
     <Wrapper headerText={formName}>
-      <form className={`form ${classNames}`} onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className={`form ${classNames}`}
+        onSubmit={handleSubmit(onSubmit)}
+        data-testid="form"
+      >
         {Children.map(children, (child) => {
           return child?.props.name
             ? createElement(child.type, {
                 ...{
                   ...child.props,
-                  register: methods.register,
-                  formState: methods.formState,
+                  register,
+                  formState,
                   key: child.props.name,
                 },
               })

@@ -1,7 +1,7 @@
 import React from "react";
 import { useCookies } from "react-cookie";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { userApi } from "src/redux/api/userApi";
+import { userApi } from "src/redux/api/user.api";
 import usePreloader from "src/hooks/usePreloader";
 
 const RequireUser = ({ allowedRoles }: { allowedRoles: string[] }) => {

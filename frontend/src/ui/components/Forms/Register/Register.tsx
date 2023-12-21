@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect, usePreloader, useRedirect } from "src/hooks";
-import { useRegisterUserMutation } from "src/redux/api/authApi";
+import { useRegisterUserMutation } from "src/redux/api/auth.api";
 import Form from "src/ui/components/Form";
 import Input from "src/ui/components/Inputs/Input";
 import FormFooter from "src/ui/components/Form/components/Footer";

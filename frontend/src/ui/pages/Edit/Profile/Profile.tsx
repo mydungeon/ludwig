@@ -4,11 +4,7 @@ import "./Profile.styles.scss";
 
 export default function EditProfile() {
   return (
-    <Page
-      classNames="editProfile"
-      data-testid="editProfile"
-      pageTitleText="Edit Profile"
-    >
+    <Page classNames="editProfile" pageTitleText="Edit Profile">
       <div>test</div>
     </Page>
   );

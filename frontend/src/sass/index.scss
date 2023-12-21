@@ -1,0 +1,6 @@
+@import "app";
+@import "themes/themify";
+
+body {
+    @include themify('background', 'body-bg')
+}

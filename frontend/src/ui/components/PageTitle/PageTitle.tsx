@@ -6,7 +6,7 @@ export default function PageTitle({ children, ...props }: PageTitleProps) {
   const { pageTitleText } = props;
 
   return (
-    <div className="pagetitle" data-testid="pagetitle">
+    <div className="pageTitle" data-testid="pageTitle">
       <h1>{pageTitleText}</h1>
       {children}
     </div>

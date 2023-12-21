@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect, usePreloader, useRedirect } from "src/hooks";
-import { useLoginUserMutation } from "src/redux/api/authApi";
+import { useLoginUserMutation } from "src/redux/api/auth.api";
 import Form from "src/ui/components/Form";
 import FormFooter from "src/ui/components/Form/components/Footer";
 import SiteLink from "src/ui/elements/SiteLink";

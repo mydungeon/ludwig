@@ -5,7 +5,7 @@ import "./Register.styles.scss";
 
 export default function RegisterPage() {
   return (
-    <Page classNames="register" data-testid="registerPage">
+    <Page classNames="register">
       <RegisterForm />
     </Page>
   );

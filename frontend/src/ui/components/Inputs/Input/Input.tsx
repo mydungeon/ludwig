@@ -1,5 +1,5 @@
 import React from "react";
-import ErrorMessage from "../../ErrorMessage";
+import ErrorMessage from "src/ui/components/ErrorMessage";
 import "./Input.styles.scss";
 
 export default function Input({

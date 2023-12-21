@@ -3,7 +3,7 @@ import { LoginPayloadType } from "src/ui/components/Forms/Login/Login.schema";
 import { RegisterPayloadType } from "src/ui/components/Forms/Register/Register.schema";
 import customFetchBase from "./customFetchBase";
 import { IUser } from "./types";
-import { userApi } from "./userApi";
+import { userApi } from "./user.api";
 
 export const authApi = createApi({
   reducerPath: "authApi",

@@ -1,5 +1,5 @@
 import React from "react";
-import { useLogoutUserMutation } from "src/redux/api/authApi";
+import { useLogoutUserMutation } from "src/redux/api/auth.api";
 import { Redirect, usePreloader, useRedirect } from "src/hooks";
 import Button from "src/ui/elements/Button";
 import "./LogoutButton.styles.scss";
@@ -13,11 +13,6 @@ export default function LogoutButton() {
   useRedirect(isRedirectSuccess, Redirect.LOGIN);
 
   return (
-    <Button
-      buttonText="Logout"
-      classNames="logout"
-      data-testid="logoutButton"
-      onClick={logoutUser}
-    />
+    <Button buttonText="Logout" classNames="logout" onClick={logoutUser} />
   );
 }

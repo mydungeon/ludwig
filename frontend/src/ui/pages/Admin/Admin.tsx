@@ -3,7 +3,5 @@ import Page from "src/ui/components/Page/Page";
 import "./Admin.styles.scss";
 
 export default function AdminPage() {
-  return (
-    <Page classNames="admin" data-testid="adminPage" pageTitleText="Admin" />
-  );
+  return <Page classNames="admin" pageTitleText="Admin" />;
 }
