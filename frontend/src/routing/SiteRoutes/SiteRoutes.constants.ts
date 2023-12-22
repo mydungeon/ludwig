@@ -1,4 +1,4 @@
-import Layout from "src/ui/features/Layout";
+import { HeaderLayout, HeaderlessLayout } from "src/ui/features/Layouts";
 import RequireUser from "src/ui/components/requireUser";
 import AdminPage from "src/ui/pages/Admin";
 import HomePage from "src/ui/pages/Home";
@@ -13,7 +13,7 @@ export const ROUTING = [
   {
     key: "home-parent",
     path: "/",
-    element: Layout,
+    element: HeaderLayout,
     routes: [
       {
         key: "home",
@@ -57,13 +57,20 @@ export const ROUTING = [
     ],
   },
   {
-    key: "login",
-    path: "login",
-    element: LoginPage,
-  },
-  {
-    key: "register",
-    path: "register",
-    element: RegisterPage,
+    key: "home-parent",
+    path: "/",
+    element: HeaderlessLayout,
+    routes: [
+      {
+        key: "login",
+        path: "login",
+        element: LoginPage,
+      },
+      {
+        key: "register",
+        path: "register",
+        element: RegisterPage,
+      },
+    ],
   },
 ];

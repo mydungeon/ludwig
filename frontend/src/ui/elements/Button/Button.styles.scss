@@ -1,3 +1,4 @@
+@import "src/sass/themes/themify";
 @import 'src/sass/themes/base.scss';
 
 button,
@@ -13,10 +14,10 @@ input[type="reset"] {
 }
 
 button {
-    background-color: $black;
+    @include themify('background', 'buttonBg');
     border: $thinBorder solid $black;
     border-radius: $smallRadius;
-    color: $white;
+    @include themify('color', 'buttonColor');
     cursor: pointer;
     display: inline-block;
     padding: $mediumPadding;

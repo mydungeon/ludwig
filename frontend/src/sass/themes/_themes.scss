@@ -1,10 +1,20 @@
 @import "src/sass/themes/base.scss";
 
 $themes: (
-    light: (bg: $white,
-        fg: red,
-    ),
-    dark: (bg: $black,
-        fg: lime,
+    light: (
+        avatarBorderColor: $black,
+        avatarBg: $darkGrey,
+        avatarColor: $white,
+        buttonBg: $black,
+        buttonColor: $white,
+        headerBg: $white,
+        ),
+        dark: (
+        avatarBorderColor: $white,
+        avatarBg: $lightGrey,
+        avatarColor: $black,
+        buttonBg: $lightGrey,
+        buttonColor: $black,
+        headerBg: $darkGrey,
     ),
 );

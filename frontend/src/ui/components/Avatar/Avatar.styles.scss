@@ -1,11 +1,14 @@
+@import "src/sass/themes/themify";
 @import 'src/sass/themes/base.scss';
 
 .avatar {
     align-items: center;
-    background-color: $darkGrey;
-    border: $thinBorder solid $black;
+    @include themify('background-color', 'avatarBg');
+    border-style: solid;
+    @include themify('border-color', 'avatarBorderColor');
     border-radius: $largePercentage;
     color: $white;
+    @include themify('color', 'avatarColor');
     display: flex;
     flex: 1;
     font-size: $largeFontSize;

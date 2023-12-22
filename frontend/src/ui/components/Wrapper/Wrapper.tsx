@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "src/ui/elements/Header";
 import WrapperProps from "./Wrapper.types";
 import "./Wrapper.styles.scss";
 
