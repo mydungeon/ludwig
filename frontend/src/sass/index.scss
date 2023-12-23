@@ -1,6 +1,47 @@
 @import "app";
 @import "themes/themify";
 
+.avatar {
+    @include themify('background-color', 'avatarBg');
+    @include themify('border-color', 'avatarBorderColor');
+    @include themify('color', 'avatarColor');
+}
+
 body {
     @include themify('background', 'body-bg')
+}
+
+button {
+    @include themify('background', 'buttonBg');
+    @include themify('border-color', 'buttonBorderColor');
+    @include themify('color', 'buttonColor');
+}
+
+.header.site {
+    @include themify('background', 'headerBg');
+}
+
+.layout {
+    @include themify('background-color', 'layoutBg');
+}
+
+.page {
+    @include themify('color', 'pageColor');
+}
+
+a.siteLink.link {
+    @include themify('color', 'siteLinkLinkColor');
+}
+
+.siteToolbar {
+    @include themify('background', 'siteToolbarBg');
+}
+
+.siteToolbar > svg {
+    @include themify('color', 'siteToolbarSvgColor');
+}
+
+.backdrop .wrapper.preloader,
+.page .wrapper {
+    @include themify('background-color', 'wrapperBg');
 }

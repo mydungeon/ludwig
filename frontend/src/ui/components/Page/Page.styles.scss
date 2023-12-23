@@ -1,7 +1,6 @@
-@import "src/sass/themes/themify";
+@import "src/sass/themes/base.scss";
 
 .page {
-    @include themify('color', 'pageColor');
     padding: $mediumPadding;
     text-align: center;
 }

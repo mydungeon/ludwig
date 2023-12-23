@@ -1,4 +1,3 @@
-@import "src/sass/themes/themify";
 @import 'src/sass/themes/base.scss';
 
 a.siteLink {
@@ -23,7 +22,6 @@ a.siteLink.button:hover {
 
 a.siteLink.link {
     align-items: center;
-    @include themify('color', 'siteLinkLinkColor');
     font-weight: $mediumFontWeight;
     justify-content: center;
     padding: $mediumPadding $largePadding;

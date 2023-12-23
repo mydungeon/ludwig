@@ -1,7 +1,7 @@
-@import "src/sass/themes/themify";
+@import "src/sass/themes/base.scss";
+
 .header.site {
     align-items: center;
-    @include themify('background', 'headerBg');
     box-shadow: $mediumShadow;
     display: flex;
     justify-content: space-between;

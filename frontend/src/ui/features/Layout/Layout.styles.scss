@@ -1,8 +1,6 @@
-@import "src/sass/themes/themify";
 @import "src/sass/themes/base.scss";
 
 .layout {
-    @include themify('background-color', 'layoutBg');
     display: flex;
     flex-direction: column;
     min-height: $fullViewHeight;

@@ -1,7 +1,6 @@
-@import "src/sass/themes/themify";
 @import "src/sass/themes/base.scss";
+
 .siteToolbar {
-    @include themify('background', 'siteToolbarBg');
     box-shadow: $mediumShadow;
     display: flex;
     justify-content: right;
@@ -12,8 +11,4 @@
 
 .siteToolbar > svg {
     cursor: pointer;
-}
-
-.siteToolbar > svg.rotate {
-    @include themify('color', 'siteToolbarSvgColor');
 }
