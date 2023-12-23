@@ -13,7 +13,11 @@ export default function SiteToolbar({ children }: SiteToolbarProps) {
   }
   return (
     <div className="siteToolbar" data-testid="siteToolbar">
-      <Icon icon={faCircleHalfStroke} handleClick={handleToggleTheme} />
+      <Icon
+        classNames="rotate"
+        icon={faCircleHalfStroke}
+        handleClick={handleToggleTheme}
+      />
     </div>
   );
 }

@@ -1,11 +1,10 @@
 import React from "react";
 import Page from "src/ui/components/Page/Page";
 import UserDetails from "../../components/UserDetails";
-import "./Profile.styles.scss";
 
 export default function ProfilePage() {
   return (
-    <Page classNames="profile" pageTitleText="Profile">
+    <Page pageTitleText="Profile">
       <UserDetails />
     </Page>
   );

@@ -4,7 +4,7 @@ import type { MiddlewareAPI, Middleware } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
 const options: ToastOptions = {
-  position: "top-right",
+  position: "bottom-right",
   autoClose: 5000,
   hideProgressBar: false,
   closeOnClick: true,

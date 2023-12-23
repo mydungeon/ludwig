@@ -15,7 +15,8 @@ input[type="reset"] {
 
 button {
     @include themify('background', 'buttonBg');
-    border: $thinBorder solid $black;
+    border-style: solid;
+    @include themify('border-color', 'buttonBorderColor');
     border-radius: $smallRadius;
     @include themify('color', 'buttonColor');
     cursor: pointer;
@@ -25,6 +26,7 @@ button {
 
 button:hover {
     background-color: $grey;
-    border: $thinBorder solid $black;
+    border-style: solid;
+    border-color: black;
     color: $black;
 }

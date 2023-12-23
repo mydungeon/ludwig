@@ -1,10 +1,19 @@
+@import "src/sass/themes/themify";
 @import "src/sass/themes/base.scss";
 .siteToolbar {
+    @include themify('background', 'siteToolbarBg');
+    box-shadow: $mediumShadow;
     display: flex;
     justify-content: right;
     padding: $mediumPadding;
+    position: relative;
+    z-index: 1;
 }
 
 .siteToolbar > svg {
     cursor: pointer;
+}
+
+.siteToolbar > svg.rotate {
+    @include themify('color', 'siteToolbarSvgColor');
 }

@@ -1,8 +1,9 @@
+@import "src/sass/themes/themify";
 @import 'src/sass/themes/base.scss';
 
 .backdrop .wrapper.preloader, 
 .page .wrapper {
-    background-color: $lighterGrey;
+    @include themify('background-color', 'wrapperBg');
     border-radius: $mediumRadius;
     box-shadow: $mediumShadow;
     display: inline-block;
