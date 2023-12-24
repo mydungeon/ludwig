@@ -1,4 +1,8 @@
-import { HeaderLayout, HeaderlessLayout } from "src/ui/features/Layouts";
+import {
+  HeaderLayout,
+  HeaderSidebarLayout,
+  HeaderlessLayout,
+} from "src/ui/features/Layouts";
 import Authorize from "src/ui/components/Authorize";
 import AdminPage from "src/ui/pages/Admin";
 import HomePage from "src/ui/pages/Home";
@@ -11,7 +15,7 @@ import { UserRoles } from "src/ui/features/User/User.types";
 
 export const ROUTING = [
   {
-    key: "home-parent",
+    key: "headerLayout-parent",
     path: "/",
     element: HeaderLayout,
     routes: [
@@ -20,6 +24,13 @@ export const ROUTING = [
         index: true,
         element: HomePage,
       },
+    ],
+  },
+  {
+    key: "headerSidebarLayout-parent",
+    path: "/",
+    element: HeaderSidebarLayout,
+    routes: [
       {
         key: "profile-parent",
         authorize: Authorize,
@@ -57,7 +68,7 @@ export const ROUTING = [
     ],
   },
   {
-    key: "home-parent",
+    key: "headerlessLayout-parent",
     path: "/",
     element: HeaderlessLayout,
     routes: [

@@ -1,3 +1,4 @@
 import HeaderLayout from "./Header";
 import HeaderlessLayout from "./Headerless";
-export { HeaderLayout, HeaderlessLayout };
+import HeaderSidebarLayout from "./HeaderSidebar";
+export { HeaderLayout, HeaderSidebarLayout, HeaderlessLayout };

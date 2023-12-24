@@ -19,10 +19,3 @@ button {
     display: inline-block;
     padding: $mediumPadding;
 }
-
-button:hover {
-    background-color: $grey;
-    border-style: solid;
-    border-color: black;
-    color: $black;
-}

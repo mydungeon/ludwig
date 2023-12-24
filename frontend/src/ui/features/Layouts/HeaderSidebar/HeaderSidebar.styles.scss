@@ -1,0 +1,12 @@
+@import "src/sass/themes/base.scss";
+
+.headerSidebarLayout {
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    width: $fullViewWidth;
+}
+
+.headerSidebarLayout > .page {
+    flex: auto;
+}
