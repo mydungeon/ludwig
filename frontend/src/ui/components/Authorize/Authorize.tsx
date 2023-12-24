@@ -4,7 +4,11 @@ import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { userApi } from "src/redux/api/user.api";
 import usePreloader from "src/hooks/usePreloader";
 
-const RequireUser = ({ allowedRoles }: { allowedRoles: string[] }) => {
+export default function Authorize({
+  allowedRoles,
+}: {
+  allowedRoles: string[];
+}) {
   const location = useLocation();
   const [cookies] = useCookies(["logged_in"]);
   const { logged_in } = cookies;
@@ -31,6 +35,4 @@ const RequireUser = ({ allowedRoles }: { allowedRoles: string[] }) => {
   } else if (isLoggedOut) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   } else return null;
-};
-
-export default RequireUser;
+}

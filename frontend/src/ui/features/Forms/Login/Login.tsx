@@ -1,11 +1,11 @@
 import React from "react";
-import { Redirect, usePreloader, useRedirect } from "src/hooks";
+import { Redirect, useRedirect } from "src/hooks";
 import { useLoginUserMutation } from "src/redux/api/auth.api";
 import Form from "src/ui/components/Form";
 import FormFooter from "src/ui/components/Form/components/Footer";
 import SiteLink from "src/ui/elements/SiteLink";
-import Input from "src/ui/components/Inputs/Input";
-import SubmitButton from "src/ui/components/Inputs/SubmitButton";
+import Input from "src/ui/components/Input";
+import { SubmitButton } from "src/ui/features/Buttons";
 import { FORM_NAMES } from "src/ui/components/Form/Form.constants";
 import { defaultValues, validationSchema } from "./Login.schema";
 

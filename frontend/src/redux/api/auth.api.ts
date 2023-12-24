@@ -1,6 +1,6 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
-import { LoginPayloadType } from "src/ui/components/Forms/Login/Login.schema";
-import { RegisterPayloadType } from "src/ui/components/Forms/Register/Register.schema";
+import { LoginPayloadType } from "src/ui/features/Forms/Login/Login.schema";
+import { RegisterPayloadType } from "src/ui/features/Forms/Register/Register.schema";
 import customFetchBase from "./customFetchBase";
 import { IUser } from "./types";
 import { userApi } from "./user.api";

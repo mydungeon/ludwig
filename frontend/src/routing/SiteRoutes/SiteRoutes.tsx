@@ -22,7 +22,7 @@ function buildRoutes(routing: any) {
       );
     } else if (routes && roles) {
       return (
-        <Route key={key} element={<route.requireUser allowedRoles={roles} />}>
+        <Route key={key} element={<route.authorize allowedRoles={roles} />}>
           {buildRoutes(routes)}
         </Route>
       );

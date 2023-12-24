@@ -1,5 +1,5 @@
 import { HeaderLayout, HeaderlessLayout } from "src/ui/features/Layouts";
-import RequireUser from "src/ui/components/requireUser";
+import Authorize from "src/ui/components/Authorize";
 import AdminPage from "src/ui/pages/Admin";
 import HomePage from "src/ui/pages/Home";
 import LoginPage from "src/ui/pages/Login";
@@ -22,7 +22,7 @@ export const ROUTING = [
       },
       {
         key: "profile-parent",
-        requireUser: RequireUser,
+        authorize: Authorize,
         roles: [UserRoles.USER, UserRoles.ADMIN],
         routes: [
           {
@@ -34,7 +34,7 @@ export const ROUTING = [
       },
       {
         key: "admin-parent",
-        requireUser: RequireUser,
+        authorize: Authorize,
         roles: [UserRoles.ADMIN],
         routes: [
           {

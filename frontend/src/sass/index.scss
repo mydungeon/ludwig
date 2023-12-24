@@ -17,6 +17,10 @@ button {
     @include themify('color', 'buttonColor');
 }
 
+button:hover {
+    @include themify('background', 'buttonHoverBg');
+}
+
 .header.site {
     @include themify('background', 'headerBg');
 }
