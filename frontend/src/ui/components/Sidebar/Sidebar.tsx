@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Icon from "src/ui/components/Icon";
+import Tooltip from "src/ui/components/Tooltip";
 import SidebarProps from "./Sidebar.types";
 import "./Sidebar.styles.scss";
-import Tooltip from "../Tooltip";
 
 export default function Sidebar({ children }: SidebarProps) {
   const [show, setShow] = useState(true);
+  const arrow = show ? faArrowLeft : faArrowRight;
 
   function handleClick() {
     setShow(!show);
   }
-  const arrow = show ? faArrowLeft : faArrowRight;
+
   return (
     <div
       className={show ? "sidebar show" : "sidebar"}
