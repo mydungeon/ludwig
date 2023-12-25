@@ -1,0 +1,21 @@
+@import "src/sass/themes/base.scss";
+
+.sidebar {
+    box-shadow: $mediumShadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: $mediumPadding;
+}
+
+.sidebar.show {
+    justify-content: space-between;
+}
+
+.sidebar > div:last-child {
+    align-self: flex-end;
+}
+
+.sidebar > div > svg {
+    height: $smallerHeight;
+}

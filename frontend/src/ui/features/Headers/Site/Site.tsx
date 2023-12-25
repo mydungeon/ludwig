@@ -4,7 +4,7 @@ import Header from "src/ui/elements/Header";
 import Logo from "src/ui/components/Logo";
 import LoggedOutMenu from "src/ui/features/Menus/LoggedOut";
 import LoggedInMenu from "src/ui/features/Menus/LoggedIn/LoggedIn";
-import "./SiteHeader.styles.scss";
+import "./Site.styles.scss";
 
 export default function SiteHeader() {
   const user = useAppSelector((state) => state.userState.user);

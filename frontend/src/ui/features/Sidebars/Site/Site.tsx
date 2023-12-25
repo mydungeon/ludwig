@@ -1,11 +1,11 @@
 import React from "react";
+import Sidebar from "src/ui/components/Sidebar";
 import SiteSidebarProps from "./Site.types";
-import "./Site.styles.scss";
 
 export default function SiteSidebar({ children }: SiteSidebarProps) {
   return (
-    <div className="siteSidebar" data-testid="siteSidebar">
-      {children}
-    </div>
+    <Sidebar>
+      <div>Sidebar Header</div>
+    </Sidebar>
   );
 }
