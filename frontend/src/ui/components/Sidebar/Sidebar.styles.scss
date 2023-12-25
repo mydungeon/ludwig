@@ -8,6 +8,11 @@
     padding: $mediumPadding;
 }
 
+.sidebar:hover {
+    background-color: $lightestGrey;
+    cursor: pointer;
+}
+
 .sidebar.show {
     justify-content: space-between;
 }
