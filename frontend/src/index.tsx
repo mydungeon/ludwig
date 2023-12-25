@@ -5,6 +5,8 @@ import { createRoot } from "react-dom/client";
 import { store } from "./redux/store";
 import SiteRouter from "./routing/SiteRouter";
 import App from "./App";
+import "react-toastify/dist/ReactToastify.css";
+import "src/sass/index.scss";
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(

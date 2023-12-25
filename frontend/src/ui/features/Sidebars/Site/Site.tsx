@@ -5,7 +5,11 @@ import SiteSidebarProps from "./Site.types";
 export default function SiteSidebar({ children }: SiteSidebarProps) {
   return (
     <Sidebar>
-      <div>Sidebar Header</div>
+      <div>
+        <div>Sidebar Header</div>
+        <div>Item One</div>
+        <div>Item Two</div>
+      </div>
     </Sidebar>
   );
 }

@@ -3,9 +3,10 @@ import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Icon from "src/ui/components/Icon";
 import SidebarProps from "./Sidebar.types";
 import "./Sidebar.styles.scss";
+import Tooltip from "../Tooltip";
 
 export default function Sidebar({ children }: SidebarProps) {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
   function handleClick() {
     setShow(!show);
@@ -18,8 +19,10 @@ export default function Sidebar({ children }: SidebarProps) {
       onClick={handleClick}
     >
       {show ? children : null}
-      <div>
-        <Icon icon={arrow} handleClick={handleClick} size="2xl" />
+      <div className="sidebarToggle">
+        <Tooltip id="sidebarArrow" message={show ? `close` : `open`}>
+          <Icon icon={arrow} handleClick={handleClick} />
+        </Tooltip>
       </div>
     </div>
   );

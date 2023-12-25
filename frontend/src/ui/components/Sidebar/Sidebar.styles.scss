@@ -1,3 +1,4 @@
+@import "src/sass/themes/themes";
 @import "src/sass/themes/base.scss";
 
 .sidebar {
@@ -17,10 +18,20 @@
     justify-content: space-between;
 }
 
+.sidebar.show > div:first-child {
+    cursor: unset;
+    flex: auto;
+}
+
+.sidebar.show > div:hover {
+    cursor: auto;
+}
+
 .sidebar > div:last-child {
     align-self: flex-end;
 }
 
-.sidebar > div > svg {
+.sidebar > div.sidebarToggle,
+.sidebar > div.sidebarToggle > a > svg {
     height: $smallerHeight;
 }

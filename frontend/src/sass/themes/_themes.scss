@@ -12,9 +12,10 @@ $themes: (
         headerBg: $lightGrey,
         layoutBg: $lighterGrey,
         pageColor: $black,
+        sideBarBg: $lightGrey,
         siteLinkLinkColor: $black,
         siteToolbarBg: $lightestGrey,
-        siteToolbarSvgColor: $black,
+        svgColor: $black,
         wrapperBg: $lighterGrey,
     ),
     dark: (
@@ -28,9 +29,10 @@ $themes: (
         headerBg: $darkGrey,
         layoutBg: $darkestGrey,
         pageColor: $grey,
+        sideBarBg: $darkGrey,
         siteLinkLinkColor: $white,
         siteToolbarBg: $almostBlack,
-        siteToolbarSvgColor: $lightGrey,
+        svgColor: $lightGrey,
         wrapperBg: $almostBlack,
     ),
 );
