@@ -2,8 +2,8 @@ import React from "react";
 import { useAppSelector } from "src/redux/store";
 import Header from "src/ui/elements/Header";
 import Logo from "src/ui/components/Logo";
-import LoggedOutMenu from "./components/LoggedOutMenu";
-import LoggedInMenu from "./components/LoggedInMenu/LoggedInMenu";
+import LoggedOutMenu from "src/ui/features/Menus/LoggedOut";
+import LoggedInMenu from "src/ui/features/Menus/LoggedIn/LoggedIn";
 import "./SiteHeader.styles.scss";
 
 export default function SiteHeader() {

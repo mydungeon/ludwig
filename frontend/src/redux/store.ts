@@ -3,7 +3,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { authApi } from "./api/auth.api";
 import { userApi } from "./api/user.api";
 import userReducer from "./features/user.slice";
-import { alertLoggerMiddleware } from "../middleWare/AlertMiddleware";
+import { alertLoggerMiddleware } from "src/middleWare/AlertMiddleware";
 import uiSlice from "./features/ui.slice";
 
 export const store = configureStore({

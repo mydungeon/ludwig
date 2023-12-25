@@ -1,5 +1,5 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
-import { setUser } from "../features/user.slice";
+import { setUser } from "src/redux/features/user.slice";
 import customFetchBase from "./customFetchBase";
 import { IUser } from "./types";
 

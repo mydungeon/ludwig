@@ -1,5 +1,9 @@
 @import 'src/sass/themes/base.scss';
 
+html {
+    user-select: none;
+}
+
 body {
     font-family: $brevia;
     font-style: normal;

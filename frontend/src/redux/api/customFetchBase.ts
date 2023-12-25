@@ -5,7 +5,7 @@ import {
   FetchBaseQueryError,
 } from "@reduxjs/toolkit/query";
 import { Mutex } from "async-mutex";
-import { logout } from "../features/user.slice";
+import { logout } from "src/redux/features/user.slice";
 
 const baseUrl = `${process.env.REACT_APP_SERVER_ENDPOINT}/api/`;
 

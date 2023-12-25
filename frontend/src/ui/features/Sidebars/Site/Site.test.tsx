@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import SiteSidebar from "./SiteSidebar";
+import SiteSidebar from "./Site";
 
 test("loads and displays SiteSidebar component", async () => {
   render(<SiteSidebar />);

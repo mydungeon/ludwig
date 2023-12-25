@@ -1,10 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { faCircleHalfStroke } from "@fortawesome/free-solid-svg-icons";
-import SiteToolbarProps from "./SiteToolbar.types";
+import SiteToolbarProps from "./Site.types";
 import { toggleTheme } from "src/redux/features/ui.slice";
 import Icon from "src/ui/components/Icon";
-import "./SiteToolbar.styles.scss";
+import "./Site.styles.scss";
 
 export default function SiteToolbar({ children }: SiteToolbarProps) {
   const dispatch = useDispatch();

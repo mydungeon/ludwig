@@ -1,8 +1,8 @@
 import React from "react";
 import PreLoaderProps from "./PreLoader.types";
 import Wrapper from "src/ui/components/Wrapper";
+import Backdrop from "src/ui/components/Backdrop";
 import Spinner from "./components/Spinner";
-import Backdrop from "../Backdrop/Backdrop";
 
 export default function PreLoader({ show }: PreLoaderProps) {
   return (
