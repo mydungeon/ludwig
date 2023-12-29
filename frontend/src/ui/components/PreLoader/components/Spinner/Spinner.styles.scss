@@ -6,6 +6,7 @@
     position: relative;
     width: $spinnerSize;
     height: $spinnerSize;
+    z-index: 2;
 }
 
 .spinner div {

@@ -7,3 +7,17 @@
     justify-content: space-between;
     padding: $smallPadding;
 }
+
+.header.site > .right {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.menuIcon {
+    margin-left: $smallMargin;
+}
+
+.menuIcon:hover {
+    color: $grey;
+}

@@ -9,25 +9,25 @@ import AuthMiddleware from "src/middleWare/AuthMiddleware";
 import SiteRoutes from "src/routing/SiteRoutes";
 
 function App() {
-  const [context, setContext] = useState(false);
+  const [showPreloader, setContext] = useState(false);
 
-  const handleSetContext = useCallback((isLoading: boolean) => {
+  const handleShowPreloader = useCallback((isLoading: boolean) => {
     setContext(isLoading);
   }, []);
 
   const contextValue = useMemo(
     () => ({
-      context,
-      handleSetContext,
+      showPreloader,
+      handleShowPreloader,
     }),
-    [context, handleSetContext]
+    [showPreloader, handleShowPreloader]
   );
 
   return (
     <AppContext.Provider value={contextValue}>
       <AlertModal message="Test message" title="Test title" />
       <ToastContainer />
-      <PreLoader show={context} />
+      <PreLoader show={showPreloader} />
       <AuthMiddleware>
         <SiteRoutes />
       </AuthMiddleware>

@@ -1,9 +1,9 @@
 import { createContext } from "react";
 export type AppContextType = {
-  context: true | false;
-  handleSetContext: (isLoading: boolean) => void;
+  showPreloader: true | false;
+  handleShowPreloader: (isLoading: boolean) => void;
 };
 export const AppContext = createContext<AppContextType>({
-  context: false,
-  handleSetContext: (isLoading: boolean) => {},
+  showPreloader: false,
+  handleShowPreloader: (isLoading: boolean) => {},
 });
