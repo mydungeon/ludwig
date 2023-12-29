@@ -14,6 +14,7 @@ input[type="reset"] {
 
 button {
     border-style: solid;
+    border-width: $extraSmallPixelWidth;
     border-radius: $smallRadius;
     display: inline-block;
     padding: $mediumPadding;

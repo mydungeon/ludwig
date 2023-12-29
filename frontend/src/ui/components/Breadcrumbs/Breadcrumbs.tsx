@@ -1,11 +1,37 @@
 import React from "react";
-import BreadcrumbsProps from "./Breadcrumbs.types";
+import { Link, useLocation } from "react-router-dom";
 import "./Breadcrumbs.styles.scss";
 
-export default function Breadcrumbs({ children }: BreadcrumbsProps) {
+function BreadCrumb({
+  crumb,
+  currentLink,
+}: {
+  crumb: string;
+  currentLink: string;
+}) {
   return (
-    <div className="breadcrumbs" data-testid="breadcrumbs">
-      {children}
+    <div className="breadcrumb">
+      <Link to={currentLink}>{crumb}</Link>
+    </div>
+  );
+}
+
+export default function Breadcrumbs() {
+  const location = useLocation();
+  const breadCrumbs = location.pathname
+    .split("/")
+    .filter((crumb) => crumb !== "");
+
+  let currentLink = "";
+
+  return (
+    <div className="breadcrumbs" data-testid="breadcrumbs" key="breadcrumbs">
+      {breadCrumbs.map((crumb) => {
+        currentLink += `/${crumb}`;
+        return (
+          <BreadCrumb key={crumb} crumb={crumb} currentLink={currentLink} />
+        );
+      })}
     </div>
   );
 }

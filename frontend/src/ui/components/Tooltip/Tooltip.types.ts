@@ -1,8 +1,12 @@
-import { PlacesType } from "react-tooltip";
-
+export enum TooltipDirection {
+  TOP = "top",
+  BOTTOM = "bottom",
+  LEFT = "left",
+  RIGHT = "right",
+}
 export default interface TooltipProps {
   children?: JSX.Element[] | JSX.Element;
-  id: string;
-  message: string | JSX.Element | JSX.Element[];
-  place?: PlacesType;
+  delay?: number;
+  direction: TooltipDirection;
+  message: string;
 }

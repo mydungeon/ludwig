@@ -11,7 +11,7 @@ export default function SiteHeader() {
 
   return (
     <Header classNames="site" data-testid="siteHeader">
-      <Logo classNames="siteHeader" logoText="Hubarc" />
+      <Logo classNames="siteHeader" logoText="Mason" />
       {!user ? <LoggedOutMenu /> : <LoggedInMenu {...user} />}
     </Header>
   );

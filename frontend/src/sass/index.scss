@@ -1,4 +1,3 @@
-@import 'react-tooltip/dist/react-tooltip.css';
 @import "app";
 @import "themes/themify";
 
@@ -12,6 +11,11 @@ body {
     @include themify('background', 'body-bg')
 }
 
+.breadcrumb > a,
+.breadcrumb {
+    @include themify('color', 'breadCrumbColor')
+}
+
 button {
     @include themify('background', 'buttonBg');
     @include themify('border-color', 'buttonBorderColor');
@@ -23,11 +27,15 @@ button:hover {
 }
 
 .header.site {
-    @include themify('background', 'headerBg');
+    @include themify('background', 'siteHeaderBg');
 }
 
 .layout {
     @include themify('background-color', 'layoutBg');
+}
+
+.logo {
+    @include themify('color', 'siteHeaderLogoText');
 }
 
 .page {
@@ -38,6 +46,10 @@ button:hover {
     @include themify('background-color', 'sideBarBg');
 }
 
+.sidebar:hover {
+    @include themify('background-color', 'sideBarHoverBg');
+}
+
 a.siteLink.link {
     @include themify('color', 'siteLinkLinkColor');
 }
@@ -46,8 +58,8 @@ a.siteLink.link {
     @include themify('background', 'siteToolbarBg');
 }
 
-.sidebarToggle > a > svg,
-.siteToolbar > a > svg {
+.sidebarToggle > div > svg,
+.siteToolbar > div > svg {
     @include themify('color', 'svgColor');
 }
 

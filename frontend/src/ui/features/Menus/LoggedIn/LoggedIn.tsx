@@ -3,9 +3,9 @@ import { LogoutButton } from "src/ui/features/Buttons";
 import SiteLink from "src/ui/elements/SiteLink";
 import { UserRoles } from "src/ui/features/User/User.types";
 import Avatar from "src/ui/components/Avatar";
-import "./LoggedIn.styles.scss";
+import { TooltipDirection } from "src/ui/components/Tooltip/Tooltip.types";
 import Tooltip from "src/ui/components/Tooltip";
-import { ReactTooltipPlace } from "src/ui/components/Tooltip/Tooltip.constant";
+import "./LoggedIn.styles.scss";
 
 export default function LoggedInMenu({ ...user }) {
   return (
@@ -14,11 +14,7 @@ export default function LoggedInMenu({ ...user }) {
       {user?.role === UserRoles.ADMIN && (
         <SiteLink classNames="button" linkText="Admin" destination="/admin" />
       )}
-      <Tooltip
-        id="avatarName"
-        message={user?.name}
-        place={ReactTooltipPlace.BOTTOM}
-      >
+      <Tooltip message={user?.name} direction={TooltipDirection.BOTTOM}>
         <Avatar destination="/profile" userName={user?.name} />
       </Tooltip>
     </div>

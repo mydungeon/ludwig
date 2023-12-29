@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faAnglesLeft, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 import Icon from "src/ui/components/Icon";
 import Tooltip from "src/ui/components/Tooltip";
 import SidebarProps from "./Sidebar.types";
 import "./Sidebar.styles.scss";
+import { TooltipDirection } from "../Tooltip/Tooltip.types";
 
 export default function Sidebar({ children }: SidebarProps) {
   const [show, setShow] = useState(true);
-  const arrow = show ? faArrowLeft : faArrowRight;
+  const arrow = show ? faAnglesLeft : faAnglesRight;
 
   function handleClick() {
     setShow(!show);
@@ -21,7 +22,10 @@ export default function Sidebar({ children }: SidebarProps) {
     >
       {show ? children : null}
       <div className="sidebarToggle">
-        <Tooltip id="sidebarArrow" message={show ? `close` : `open`}>
+        <Tooltip
+          message={show ? `close` : `open`}
+          direction={TooltipDirection.TOP}
+        >
           <Icon icon={arrow} handleClick={handleClick} />
         </Tooltip>
       </div>

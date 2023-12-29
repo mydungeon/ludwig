@@ -3,7 +3,7 @@
 .siteToolbar {
     box-shadow: $mediumShadow;
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     padding: $mediumPadding;
     position: relative;
     z-index: 1;

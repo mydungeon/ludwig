@@ -1,26 +1,35 @@
-import React from "react";
-import { Tooltip as ReactTooltip } from "react-tooltip";
+import React, { useState } from "react";
 import TooltipProps from "./Tooltip.types";
 import "./Tooltip.styles.scss";
 
 export default function Tooltip({
   children,
-  id,
+  delay = 200,
+  direction,
   message,
-  place,
 }: TooltipProps) {
+  let timeout: any;
+  const [active, setActive] = useState(false);
+
+  const showTip = () => {
+    timeout = setTimeout(() => {
+      setActive(true);
+    }, delay);
+  };
+
+  const hideTip = () => {
+    clearInterval(timeout);
+    setActive(false);
+  };
   return (
-    <>
-      <a className="tooltip" data-testid="tooltip" id={id}>
-        {children}
-      </a>
-      <ReactTooltip
-        anchorSelect={`#${id}`}
-        className="siteTooltip"
-        place={place}
-      >
-        <div>{message}</div>
-      </ReactTooltip>
-    </>
+    <div
+      className="tooltip"
+      // When to show the tooltip
+      onMouseEnter={showTip}
+      onMouseLeave={hideTip}
+    >
+      {children}
+      {active && <div className={`tip ${direction || "top"}`}>{message}</div>}
+    </div>
   );
 }

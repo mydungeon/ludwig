@@ -8,6 +8,7 @@ import AdminPage from "src/ui/pages/Admin";
 import HomePage from "src/ui/pages/Home";
 import LoginPage from "src/ui/pages/Login";
 import ProfilePage from "src/ui/pages/Profile";
+import EditProfilePage from "src/ui/pages/Edit/Profile";
 import RegisterPage from "src/ui/pages/Register";
 import UnauthorizedPage from "src/ui/pages/Unauthorized";
 import NotFoundPage from "src/ui/pages/NotFound";
@@ -32,7 +33,7 @@ export const ROUTING = [
     element: HeaderSidebarLayout,
     routes: [
       {
-        key: "profile-parent",
+        key: "parent",
         authorize: Authorize,
         roles: [UserRoles.USER, UserRoles.ADMIN],
         routes: [
@@ -41,10 +42,15 @@ export const ROUTING = [
             path: "profile",
             element: ProfilePage,
           },
+          {
+            key: "profile/edit",
+            path: "profile/edit",
+            element: EditProfilePage,
+          },
         ],
       },
       {
-        key: "admin-parent",
+        key: "parent",
         authorize: Authorize,
         roles: [UserRoles.ADMIN],
         routes: [
@@ -68,7 +74,7 @@ export const ROUTING = [
     ],
   },
   {
-    key: "headerlessLayout-parent",
+    key: "parent",
     path: "/",
     element: HeaderlessLayout,
     routes: [

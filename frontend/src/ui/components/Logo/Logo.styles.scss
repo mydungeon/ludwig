@@ -1,7 +1,6 @@
 @import 'src/sass/themes/base.scss';
 
 .logo {
-    color: $black;
     display: flex;
     font-family: $josefin;
     text-decoration: none;
@@ -15,7 +14,7 @@
 } 
 
 .logo > div > svg {
-    width: $smallWidth;
+    width: $mediumWidth;
 }
 
 .logo.siteHeader {

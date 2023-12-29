@@ -28,7 +28,7 @@ export default function Authorize({
   const isLoggedOut = !logged_in;
   usePreloader(loading);
 
-  if (isAuthorized) {
+  if (isAuthorized && !isLoggedOut) {
     return <Outlet />;
   } else if (isUnauthorized) {
     return <Navigate to="/unauthorized" state={{ from: location }} replace />;
