@@ -1,0 +1,35 @@
+@import "src/sass/themes/variables";
+
+.siteMenu {
+    box-shadow: $mediumShadow;
+    display: none;
+}
+
+.siteMenu.show {
+    display: inline-block;
+    height: $fullViewHeight;
+    position: absolute;
+    right: 0;
+    z-index: 3;
+}
+
+.siteMenuHeader {
+    display: flex;
+    justify-content: right;
+    margin-top: $mediumPlusMargin;
+    margin-right: $mediumMargin;
+}
+
+.siteMenuBody {
+    margin: $mediumMargin;
+}
+
+.siteMenuItem {
+    border-bottom-style: solid;
+    border-bottom-width: $extraSmallPixelWidth;
+    padding: $smallPadding;
+}
+
+.siteMenuItem:last-child {
+    border-bottom: none;
+}

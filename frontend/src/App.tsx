@@ -9,18 +9,25 @@ import AuthMiddleware from "src/middleWare/AuthMiddleware";
 import SiteRoutes from "src/routing/SiteRoutes";
 
 function App() {
-  const [showPreloader, setContext] = useState(false);
+  const [showPreloader, setShowPreloader] = useState(false);
+  const [showSiteMenu, setShowSiteMenu] = useState(false);
 
   const handleShowPreloader = useCallback((isLoading: boolean) => {
-    setContext(isLoading);
+    setShowPreloader(isLoading);
+  }, []);
+
+  const handleShowSiteMenu = useCallback((show: boolean) => {
+    setShowSiteMenu(show);
   }, []);
 
   const contextValue = useMemo(
     () => ({
       showPreloader,
+      showSiteMenu,
       handleShowPreloader,
+      handleShowSiteMenu,
     }),
-    [showPreloader, handleShowPreloader]
+    [showPreloader, showSiteMenu, handleShowPreloader, handleShowSiteMenu]
   );
 
   return (

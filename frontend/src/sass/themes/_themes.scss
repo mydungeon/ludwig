@@ -1,4 +1,4 @@
-@import "src/sass/themes/base.scss";
+@import "src/sass/themes/variables";
 
 $themes: (
     light: (
@@ -16,7 +16,11 @@ $themes: (
         sideBarHoverBg: $lighterGrey,
         siteHeaderBg: $white,
         siteHeaderLogoText: $purple,
+        siteHeaderMenuIconColor: $black,
+        siteHeaderMenuIconHoverColor: $grey,
         siteLinkLinkColor: $black,
+        siteMenuBg: $lightGrey,
+        siteMenuColor: $black,
         siteToolbarBg: $lightestGrey,
         svgColor: $black,
         wrapperBg: $lighterGrey,
@@ -36,7 +40,11 @@ $themes: (
         sideBarHoverBg: $darkerGrey,
         siteHeaderBg: $black,
         siteHeaderLogoText: $mediumPurple,
+        siteHeaderMenuIconColor: $white,
+        siteHeaderMenuIconHoverColor: $grey,
         siteLinkLinkColor: $white,
+        siteMenuBg: $grey,
+        siteMenuColor: $black,
         siteToolbarBg: $almostBlack,
         svgColor: $white,
         wrapperBg: $almostBlack,

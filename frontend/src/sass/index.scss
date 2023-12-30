@@ -50,8 +50,25 @@ button:hover {
     @include themify('background-color', 'sideBarHoverBg');
 }
 
+.menuIcon {
+    @include themify('color', 'siteHeaderMenuIconColor');
+}
+
+.menuIcon:hover {
+    @include themify('color', 'siteHeaderMenuIconHoverColor');
+}
+
 a.siteLink.link {
     @include themify('color', 'siteLinkLinkColor');
+}
+
+.siteMenu.show {
+    @include themify('background-color', 'siteMenuBg');
+    @include themify('color', 'siteMenuColor');
+}
+
+.siteMenuItem {
+    @include themify('border-bottom-color', 'siteMenuColor');
 }
 
 .siteToolbar {
