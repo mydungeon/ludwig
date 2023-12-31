@@ -21,7 +21,6 @@ export const userApi = createApi({
       async onQueryStarted(args, { dispatch, queryFulfilled }) {
         try {
           const { data } = await queryFulfilled;
-          console.log("onQueryStarted getMe", data);
           dispatch(setUser(data));
         } catch (error) {}
       },
@@ -29,7 +28,6 @@ export const userApi = createApi({
     }),
     updateMe: builder.mutation<IUser, UpdatePayloadType>({
       query(data) {
-        console.log("data", data);
         return {
           credentials: "include",
           url: "users/me",
