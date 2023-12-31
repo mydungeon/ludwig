@@ -7,8 +7,9 @@ export default function Wrapper({
   classNames,
   headerText,
 }: WrapperProps) {
+  classNames = classNames ? `wrapper ${classNames}` : "wrapper";
   return (
-    <div className={`wrapper ${classNames}`} data-testid="wrapper">
+    <div className={classNames} data-testid="wrapper">
       {headerText && <h1>{headerText}</h1>}
       {children}
     </div>

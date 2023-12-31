@@ -5,6 +5,7 @@ import { trimUserName } from "./Avatar.utils";
 import "./Avatar.styles.scss";
 
 export default function Avatar({ destination, userName }: AvatarProps) {
+  if (!userName) return null;
   const userNameFirstInitial = trimUserName(userName);
   return (
     <Link className="avatar" data-testid="avatar" to={destination}>

@@ -8,6 +8,7 @@ import { userApi } from "./user.api";
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: customFetchBase,
+  tagTypes: ["User"],
   endpoints: (builder) => ({
     registerUser: builder.mutation<IUser, RegisterPayloadType>({
       query(data) {

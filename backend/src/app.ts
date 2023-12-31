@@ -1,5 +1,6 @@
 require("dotenv").config();
 import express, { NextFunction, Request, Response } from "express";
+import swaggerUi from "swagger-ui-express";
 import morgan from "morgan";
 import config from "config";
 import cors from "cors";
@@ -7,7 +8,6 @@ import cookieParser from "cookie-parser";
 import connectDB from "./utils/connectDB";
 import userRouter from "./routes/user.route";
 import authRouter from "./routes/auth.route";
-import testRouter from "./routes/test.route";
 
 const app = express();
 
@@ -33,7 +33,6 @@ app.use(
 // Routes
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
-app.use("/api/test", testRouter);
 
 // Testing
 app.get(
@@ -41,7 +40,7 @@ app.get(
   (req: Request, res: Response, next: NextFunction) => {
     res.status(200).json({
       status: "success",
-      message: "Welcome to CodevoWeb😂😂👈👈",
+      message: "I am alive",
     });
   }
 );
@@ -63,6 +62,16 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
     message: err.message,
   });
 });
+
+app.use(
+  "/docs",
+  swaggerUi.serve,
+  swaggerUi.setup(undefined, {
+    swaggerOptions: {
+      url: "/swagger.json",
+    },
+  })
+);
 
 const port = config.get<number>("port");
 app.listen(port, () => {

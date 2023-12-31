@@ -86,7 +86,6 @@ export const loginHandler = async (
 
     // Create the Access and refresh Tokens
     const { access_token, refresh_token } = await signToken(user);
-
     // Send Access Token in Cookie
     res.cookie("access_token", access_token, accessTokenCookieOptions);
     res.cookie("refresh_token", refresh_token, refreshTokenCookieOptions);
@@ -102,6 +101,10 @@ export const loginHandler = async (
       message: "You have successfully logged in",
     });
   } catch (err: any) {
+    if (true) {
+      console.log("test", err);
+      // res.cookie("refresh_token", "", { maxAge: 1 });
+    }
     next(err);
   }
 };
@@ -175,7 +178,7 @@ export const logoutHandler = async (
 ) => {
   try {
     const user = res.locals.user;
-    await redisClient.del(user._id);
+    await redisClient.del(user._id.toString());
     logout(res);
     res
       .status(200)

@@ -1,6 +1,7 @@
 import React from "react";
 import { Redirect, usePreloader, useRedirect } from "src/hooks";
 import { useRegisterUserMutation } from "src/redux/api/auth.api";
+import Wrapper from "src/ui/components/Wrapper";
 import Form from "src/ui/components/Form";
 import Input from "src/ui/components/Input";
 import FormFooter from "src/ui/components/Form/components/Footer";
@@ -19,26 +20,27 @@ export default function RegisterForm() {
   useRedirect(isRedirectSuccess, Redirect.LOGIN);
 
   return (
-    <Form
-      classNames="register"
-      data-testid="registerForm"
-      defaultValues={defaultValues}
-      formName={FORM_NAMES.REGISTER}
-      onSubmit={onSubmit}
-      validation={validationSchema}
-    >
-      <Input name="name" inputType="text" />
-      <Input name="email" inputType="email" />
-      <Input name="password" inputType="password" />
-      <Input name="passwordConfirm" inputType="password" />
-      <FormFooter classNames="form">
-        <div>
-          <SiteLink classNames="link" linkText="Login" destination="/login" />
-        </div>
-        <div>
-          <SubmitButton buttonText="Register" classNames="register" />
-        </div>
-      </FormFooter>
-    </Form>
+    <Wrapper classNames="register" headerText={FORM_NAMES.REGISTER}>
+      <Form
+        classNames="register"
+        data-testid="registerForm"
+        defaultValues={defaultValues}
+        onSubmit={onSubmit}
+        validation={validationSchema}
+      >
+        <Input name="name" inputType="text" />
+        <Input name="email" inputType="email" />
+        <Input name="password" inputType="password" />
+        <Input name="passwordConfirm" inputType="password" />
+        <FormFooter classNames="form">
+          <div>
+            <SiteLink classNames="link" linkText="Login" destination="/login" />
+          </div>
+          <div>
+            <SubmitButton buttonText="Register" classNames="register" />
+          </div>
+        </FormFooter>
+      </Form>
+    </Wrapper>
   );
 }

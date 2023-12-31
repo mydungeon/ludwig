@@ -1,6 +1,7 @@
 import React from "react";
 import { Redirect, useRedirect } from "src/hooks";
 import { useLoginUserMutation } from "src/redux/api/auth.api";
+import Wrapper from "src/ui/components/Wrapper";
 import Form from "src/ui/components/Form";
 import FormFooter from "src/ui/components/Form/components/Footer";
 import SiteLink from "src/ui/elements/SiteLink";
@@ -16,27 +17,28 @@ export default function LoginForm() {
   useRedirect(isSuccess, Redirect.PROFILE);
 
   return (
-    <Form
-      classNames="login"
-      defaultValues={defaultValues}
-      formName={FORM_NAMES.LOGIN}
-      onSubmit={onSubmit}
-      validation={validationSchema}
-    >
-      <Input name="email" inputType="email" />
-      <Input name="password" inputType="password" />
-      <FormFooter classNames="form">
-        <div>
-          <SiteLink
-            classNames="link"
-            linkText="Register"
-            destination="/register"
-          />
-        </div>
-        <div>
-          <SubmitButton buttonText="Login" classNames="login" />
-        </div>
-      </FormFooter>
-    </Form>
+    <Wrapper classNames="login" headerText={FORM_NAMES.LOGIN}>
+      <Form
+        classNames="login"
+        defaultValues={defaultValues}
+        onSubmit={onSubmit}
+        validation={validationSchema}
+      >
+        <Input name="email" inputType="email" />
+        <Input name="password" inputType="password" />
+        <FormFooter classNames="form">
+          <div>
+            <SiteLink
+              classNames="link"
+              linkText="Register"
+              destination="/register"
+            />
+          </div>
+          <div>
+            <SubmitButton buttonText="Login" classNames="login" />
+          </div>
+        </FormFooter>
+      </Form>
+    </Wrapper>
   );
 }

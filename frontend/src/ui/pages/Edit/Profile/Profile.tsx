@@ -1,11 +1,12 @@
 import React from "react";
 import Page from "src/ui/components/Page/Page";
+import EditProfileForm from "src/ui/features/Forms/Edit/Profile";
 import "./Profile.styles.scss";
 
 export default function EditProfile() {
   return (
-    <Page classNames="editProfile" pageTitleText="Edit Profile">
-      <div>test</div>
+    <Page classNames="editProfile">
+      <EditProfileForm />
     </Page>
   );
 }

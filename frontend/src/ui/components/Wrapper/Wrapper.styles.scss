@@ -1,12 +1,17 @@
 @import 'src/sass/themes/variables';
 
-.backdrop .wrapper.preloader, 
 .page .wrapper {
     border-radius: $mediumRadius;
-    box-shadow: $mediumShadow;
     display: inline-block;
     padding: $largerPadding;
     margin: $autoCenteredMargin;
+}
+
+.backdrop .wrapper.preloader, 
+.page .wrapper.login,
+.page .wrapper.register {
+    border-radius: $mediumRadius;
+    box-shadow: $mediumShadow;
 }
 
 .backdrop .wrapper.preloader {
