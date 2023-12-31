@@ -9,7 +9,6 @@ export const getMeHandler = (
 ) => {
   try {
     const user = res.locals.user;
-    console.log("get me", user);
     res.status(200).json({
       status: "success",
       data: {
