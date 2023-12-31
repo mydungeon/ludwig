@@ -10,6 +10,7 @@ import "./Site.styles.scss";
 import { TooltipDirection } from "src/ui/components/Tooltip/Tooltip.types";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { AppContextType, AppContext } from "src/context/App";
+import { SITE_NAME } from "./Site.constants";
 
 export default function SiteHeader() {
   const user = useAppSelector((state) => state.userState.user);
@@ -21,7 +22,7 @@ export default function SiteHeader() {
 
   return (
     <Header classNames="site" data-testid="siteHeader">
-      <Logo classNames="siteHeader" logoText="Mason" />
+      <Logo classNames="siteHeader" logoText={SITE_NAME} />
       <div className="right">
         {!user ? <LoggedOutMenu /> : <LoggedInMenu {...user} />}
         <Tooltip message="Open Menu" direction={TooltipDirection.LEFT}>
