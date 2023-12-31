@@ -3,11 +3,24 @@
 .userDetails {
     align-items: flex-start;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: $autoPosition;
     width: $halfViewWidth;
 }
 
 .userDetails > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.userDetails > div:nth-child(1) {
+    align-items: flex-end;
+}
+
+.userDetails > div:nth-child(2) {
+    align-items: flex-start;
+}
+
+.userDetails > div > div {
     padding: $smallerPadding;
 }

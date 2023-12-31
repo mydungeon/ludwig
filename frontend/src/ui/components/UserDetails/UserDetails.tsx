@@ -7,15 +7,13 @@ export default function UserDetails() {
   return (
     <div className="userDetails" data-testid="userDetails">
       <div>
-        <div>{user?._id}</div>
+        <div>Username:</div>
+        <div>Email:</div>
+        <div>Role:</div>
       </div>
       <div>
         <div>{user?.name}</div>
-      </div>
-      <div>
         <div>{user?.email}</div>
-      </div>
-      <div>
         <div>{user?.role}</div>
       </div>
     </div>
