@@ -31,7 +31,7 @@ export default function LoginForm() {
             <SiteLink
               classNames="link"
               linkText="Register"
-              destination="/register"
+              destination={Redirect.REGISTER}
             />
           </div>
           <div>

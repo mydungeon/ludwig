@@ -8,6 +8,7 @@
 .siteMenu.show {
     display: inline-block;
     height: $fullViewHeight;
+    min-width: $mediumPlusPixelWidth;
     position: absolute;
     right: 0;
     z-index: 3;
@@ -22,6 +23,7 @@
 
 .siteMenuBody {
     margin: $mediumMargin;
+    text-align: center;
 }
 
 .siteMenuItem {

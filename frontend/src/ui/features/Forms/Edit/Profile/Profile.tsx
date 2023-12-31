@@ -8,6 +8,7 @@ import { SubmitButton } from "src/ui/features/Buttons";
 import { validationSchema } from "./Profile.schema";
 import Wrapper from "src/ui/components/Wrapper";
 import { useAppSelector } from "src/redux/store";
+import SiteLink from "src/ui/elements/SiteLink";
 
 export default function EditProfileForm() {
   const defaultValues = useAppSelector((state) => state.userState.user);
@@ -30,7 +31,13 @@ export default function EditProfileForm() {
         <Input name="name" inputType="text" />
         <Input name="email" inputType="email" />
         <FormFooter classNames="form">
-          <div />
+          <div>
+            <SiteLink
+              classNames="link"
+              linkText="Cancel"
+              destination={Redirect.PROFILE}
+            />
+          </div>
           <div>
             <SubmitButton buttonText="Update" classNames="updateUser" />
           </div>

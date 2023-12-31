@@ -62,12 +62,14 @@ a.siteLink.link {
     @include themify('color', 'siteLinkLinkColor');
 }
 
-.siteMenu.show {
+.siteMenu.show,.siteMenuItem>a,
+.siteMenuItem>a:visited,
+.siteMenuItem>a:hover {
     @include themify('background-color', 'siteMenuBg');
     @include themify('color', 'siteMenuColor');
 }
 
-.siteMenuItem {
+.siteMenuItem  {
     @include themify('border-bottom-color', 'siteMenuColor');
 }
 
