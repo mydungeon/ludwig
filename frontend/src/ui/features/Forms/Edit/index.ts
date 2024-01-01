@@ -1,2 +1,4 @@
-import EditProfile from "./Profile";
-export { EditProfile };
+import EditProfileForm from "./Profile";
+import EditRoleForm from "./Role";
+
+export { EditProfileForm, EditRoleForm };
