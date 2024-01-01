@@ -3,7 +3,7 @@ import AlertModalProps from "./Alert.types";
 import Modal from "src/ui/components/Modal";
 
 export default function AlertModal({ message, title }: AlertModalProps) {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   function handleClick() {
     setShow(!show);

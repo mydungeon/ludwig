@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "module": "commonjs",
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "resolveJsonModule": true,
     "strict": true,
     "strictPropertyInitialization": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "target": "es2016",
   }
 }

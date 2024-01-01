@@ -1,0 +1,10 @@
+.swagger-ui .topbar {
+    background-color: grey;
+    content: url(/public/assets/logo.svg);
+    height: 100px;
+    width: 100vw;
+}
+
+.topbar-wrapper > a.link {
+    display: none;
+}

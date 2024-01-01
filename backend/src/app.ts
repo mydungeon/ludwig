@@ -1,6 +1,6 @@
 require("dotenv").config();
+import path from "path";
 import express, { NextFunction, Request, Response } from "express";
-import swaggerUi from "swagger-ui-express";
 import morgan from "morgan";
 import config from "config";
 import cors from "cors";
@@ -8,6 +8,8 @@ import cookieParser from "cookie-parser";
 import connectDB from "./utils/connectDB";
 import userRouter from "./routes/user.route";
 import authRouter from "./routes/auth.route";
+import healthRouter from "./routes/health.route";
+import swaggerDocs from "./utils/swagger";
 
 const app = express();
 
@@ -33,17 +35,9 @@ app.use(
 // Routes
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
-
-// Testing
-app.get(
-  "/api/healthChecker",
-  (req: Request, res: Response, next: NextFunction) => {
-    res.status(200).json({
-      status: "success",
-      message: "I am alive",
-    });
-  }
-);
+app.use("/api/health", healthRouter);
+app.use("/public", express.static(path.join(__dirname, "public")));
+swaggerDocs(app, 3000);
 
 // UnKnown Routes
 app.all("*", (req: Request, res: Response, next: NextFunction) => {
@@ -63,19 +57,9 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   });
 });
 
-app.use(
-  "/docs",
-  swaggerUi.serve,
-  swaggerUi.setup(undefined, {
-    swaggerOptions: {
-      url: "/swagger.json",
-    },
-  })
-);
-
 const port = config.get<number>("port");
-app.listen(port, () => {
+app.listen(port, async () => {
   console.log(`Server started on port: ${port}`);
   // 👇 call the connectDB function here
-  connectDB();
+  await connectDB();
 });

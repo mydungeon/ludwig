@@ -62,7 +62,6 @@ export const signToken = async (user: DocumentType<User>) => {
   const refresh_token = signJwt({ sub: user._id }, "refreshTokenPrivateKey", {
     expiresIn: `${config.get<number>("refreshTokenExpiresIn")}m`,
   });
-  console.log("user", user);
   // Create a Session
   redisClient.set(user._id.toString(), JSON.stringify(user), {
     EX: 60 * 60,
