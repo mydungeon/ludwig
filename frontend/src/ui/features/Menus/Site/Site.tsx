@@ -6,6 +6,7 @@ import { AppContext, AppContextType } from "src/context/App";
 import Icon from "src/ui/components/Icon";
 import { SITE_MENU_LINKS } from "./Site.constants";
 import "./Site.styles.scss";
+import Backdrop from "src/ui/components/Backdrop";
 
 function SiteMenuHeader({ handleClick }: { handleClick: () => void }) {
   return (
@@ -28,15 +29,18 @@ export default function SiteMenu() {
 
   const className = showSiteMenu ? "siteMenu show" : "siteMenu";
   return (
-    <div className={className} data-testid="siteMenu">
-      <SiteMenuHeader handleClick={handleHideMenu} />
-      <div className="siteMenuBody">
-        {SITE_MENU_LINKS.map(({ name, to }) => (
-          <div className="siteMenuItem" key={to}>
-            <Link to={to}>{name}</Link>
-          </div>
-        ))}
+    <>
+      <div className={className} data-testid="siteMenu">
+        <SiteMenuHeader handleClick={handleHideMenu} />
+        <div className="siteMenuBody">
+          {SITE_MENU_LINKS.map(({ name, to }) => (
+            <div className="siteMenuItem" key={to}>
+              <Link to={to}>{name}</Link>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+      <Backdrop show={showSiteMenu} handleClick={handleHideMenu} />
+    </>
   );
 }

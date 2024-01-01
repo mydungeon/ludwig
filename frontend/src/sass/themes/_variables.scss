@@ -136,11 +136,23 @@ $mediumRadius: 1rem;
 $largeRadius: 2rem;
 
 /***************************/
+//SPACE
+/***************************/
+
+$smallerSpace: 1rem;
+$smallSpace: 1.5rem;
+$mediumSpace: 2rem;
+$largeSpace: 3.5rem;
+
+/***************************/
 //WIDTHS
 /***************************/
 
+$smallestWidth: .5rem;
+$smallerWidth: 1rem;
 $smallWidth: 1.5rem;
-$mediumWidth: 3.5rem;
+$mediumWidth: 2rem;
+$largeWidth: 3.5rem;
 $quarterViewWidth: 25vw;
 $halfViewWidth: 50vw;
 $fullViewWidth: 100vw;
@@ -149,8 +161,10 @@ $fullViewWidth: 100vw;
 //HEIGHTS
 /***************************/
 
+$smallestHeight: .5rem;
 $smallerHeight: 1rem;
 $smallHeight: 1.5rem;
+$mediumHeight: 2rem;
 $quarterViewHeight: 25vw;
 $halfViewHeight: 50vw;
 $fullViewHeight: 100vw;
@@ -179,7 +193,7 @@ $mediumPixelWidth: 100px;
 $mediumPlusPixelWidth: 250px;
 $largePixelWidth: 350px;
 $largerPixelWidth: 500px;
-$largestPixelWidth: 750px;
+$largestPixelWidth: 800px;
 $extraLargePixelWidth: 950px;
 $fullViewWidth: 100vw;
 

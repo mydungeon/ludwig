@@ -1,0 +1,71 @@
+@import "src/sass/themes/variables";
+
+.carousel {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    max-width: $largestPixelWidth;
+    margin: auto;
+    position: relative;
+    width: 100%;
+}
+
+.slide {
+    border-radius: $smallRadius;
+    box-shadow: $mediumShadow;
+    height: $largestPercentage;
+    width: $largestPercentage;
+}
+
+.slide.hidden {
+    display: none;
+}
+
+.carousel .arrow {
+    color: $darkGrey;
+    height: $mediumHeight;
+    position: absolute;
+    width: $mediumWidth;
+}
+
+.carousel .arrow:hover {
+    color: $black;
+    cursor: pointer;
+}
+
+.carousel .arrow.left {
+    left: $smallerWidth;
+}
+
+.carousel .arrow.right {
+    right: $smallerWidth;
+}
+
+.carousel .indicators {
+    bottom: $smallerSpace;
+    display: flex;
+    position: absolute;
+}
+
+.carousel .indicator {
+    background-color: $darkGrey;
+    border: none;
+    border-radius: $largestPercentage;
+    box-shadow: $smallShadow;
+    cursor: pointer;
+    height: $smallestHeight;
+    margin: $smallerMargin;
+    padding: $smallerPadding;
+    outline: none;
+}
+
+.carousel .indicator:hover {
+    background-color: $black;
+    cursor: pointer;
+}
+
+.carousel .indicator.current {
+    background-color: $black;
+}

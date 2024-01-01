@@ -10,6 +10,7 @@
     position: fixed;
     top: 0;
     width: $fullViewWidth;
+    z-index: 2;
 }
 
 .modalContent {
