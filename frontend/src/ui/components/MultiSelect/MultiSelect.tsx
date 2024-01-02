@@ -29,6 +29,7 @@ export default function MultiSelectDropdown({
                 type="checkbox"
                 checked={isSelected}
                 className="checkbox"
+                onChange={() => {}} // added to avoid an error
               ></input>
               <span>{title}</span>
             </li>
