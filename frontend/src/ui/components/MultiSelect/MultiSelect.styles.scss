@@ -1,0 +1,54 @@
+@import "src/sass/themes/variables";
+
+.multiSelect {
+    cursor: pointer;
+    margin: $mediumPixelWidth auto;
+    position: relative;
+    width: $mediumX3PixelWidth;
+}
+.multiSelect:hover .options {
+
+    background-color: $white;
+    border: solid 1px $black;
+    border-radius: $smallRadius;
+    box-shadow: $smallShadow;
+    display: block;
+    margin-top: 0;
+}
+
+.multiSelect > .selected {
+    align-items: center;
+    background-color: $white;
+    border: solid $extraSmallPixelWidth $black;
+    border-radius: $smallRadius;
+    display: flex;
+    justify-content: space-between;
+    padding: $smallPadding;
+}
+
+.multiSelect > .options {
+    border: solid $extraSmallPixelWidth #eee;
+    box-sizing: border-box;
+    display: none;
+    left: 0;
+    list-style: none;
+    padding: $smallPadding 0;
+    padding-left: 0;
+    position: absolute;
+    width: $largestPercentage;
+}
+
+.multiSelect > .options > .option {
+    align-items: center;
+    display: flex;
+    padding: $smallPadding;
+    cursor: pointer;
+}
+
+.multiSelect > .options > .option:hover {
+    background-color: $lightestGrey;
+}
+
+.multiSelect > .options > .option > .checkbox {
+    margin-right: $smallMargin;
+}

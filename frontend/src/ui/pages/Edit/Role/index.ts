@@ -1,2 +1,2 @@
-import Role from "./Role";
-export default Role;
+import EditRolePage from "./Role";
+export default EditRolePage;

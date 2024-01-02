@@ -1,12 +1,12 @@
 import React from "react";
 import { Redirect, usePreloader, useRedirect } from "src/hooks";
 import { useUpdateMeMutation } from "src/redux/api/user.api";
+import Wrapper from "src/ui/components/Wrapper";
 import Form from "src/ui/components/Form";
 import Input from "src/ui/components/Input";
 import FormFooter from "src/ui/components/Form/components/Footer";
 import { SubmitButton } from "src/ui/features/Buttons";
 import { validationSchema } from "./Profile.schema";
-import Wrapper from "src/ui/components/Wrapper";
 import { useAppSelector } from "src/redux/store";
 import SiteLink from "src/ui/elements/SiteLink";
 
@@ -21,6 +21,7 @@ export default function EditProfileForm() {
   useRedirect(isRedirectSuccess, Redirect.PROFILE);
   return (
     <Wrapper>
+      <div>Edit Profile</div>
       <Form
         classNames="updateUser"
         data-testid="updateUserForm"

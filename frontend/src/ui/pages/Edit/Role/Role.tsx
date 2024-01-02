@@ -1,11 +1,12 @@
 import React from "react";
 import { EditRoleForm } from "src/ui/features/Forms/Edit";
 import "./Role.styles.scss";
+import Page from "src/ui/components/Page";
 
-export default function Role() {
+export default function EditRolePage() {
   return (
-    <div className="role" data-testid="role">
+    <Page>
       <EditRoleForm />
-    </div>
+    </Page>
   );
 }
