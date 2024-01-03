@@ -1,5 +1,9 @@
 import { NextFunction, Request, Response } from "express";
-import { findAllUsers, updateUser } from "../services/user.service";
+import {
+  findAllUsers,
+  updateUser,
+  updateUserRoles,
+} from "../services/user.service";
 import { UpdateUserInput } from "../schema/user.schema";
 
 export const getMeHandler = (
@@ -53,6 +57,32 @@ export const updateMeHandler = async (
         user,
       },
       message: "You have successfully updated user",
+    });
+  } catch (err: any) {
+    if (err.code === 11000) {
+      return res.status(409).json({
+        status: "fail",
+        message: "Update failed",
+      });
+    }
+    next(err);
+  }
+};
+
+export const updateMyRolesHandler = async (
+  req: Request<{}, {}, UpdateUserInput>,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const id = res.locals.user._id;
+    const roles = await updateUserRoles(id, req.body, next);
+    res.status(200).json({
+      status: "success",
+      data: {
+        roles,
+      },
+      message: "You have successfully updated your roles",
     });
   } catch (err: any) {
     if (err.code === 11000) {

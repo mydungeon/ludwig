@@ -2,9 +2,9 @@
 
 .multiSelect {
     cursor: pointer;
-    margin: $mediumPixelWidth auto;
+    margin: $smallerPixelWidth auto;
     position: relative;
-    width: $mediumX3PixelWidth;
+    min-width: $largePixelWidth;
 }
 
 .multiSelect:hover .options {

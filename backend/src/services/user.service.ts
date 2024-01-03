@@ -51,6 +51,24 @@ export const updateUser = async (
   }
 };
 
+// Update User Roles service
+export const updateUserRoles = async (
+  id: string,
+  input: Partial<User>,
+  next: NextFunction
+) => {
+  try {
+    const filter = { _id: id };
+    const update = input;
+    const updated = await userModel.findOneAndUpdate(filter, update, {
+      new: true,
+    });
+    return updated?.toJSON();
+  } catch (err: any) {
+    next(err);
+  }
+};
+
 // Sign Token
 export const signToken = async (user: DocumentType<User>) => {
   // Sign the access token

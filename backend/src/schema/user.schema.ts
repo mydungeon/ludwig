@@ -1,4 +1,4 @@
-import { object, string, TypeOf } from "zod";
+import { array, object, string, TypeOf } from "zod";
 
 export const createUserSchema = object({
   body: object({
@@ -22,6 +22,12 @@ export const updateUserSchema = object({
     email: string({ required_error: "Email is required" }).email(
       "Invalid email"
     ),
+  }),
+});
+
+export const updateUserRolesSchema = object({
+  body: object({
+    roles: array(string()).nonempty(),
   }),
 });
 

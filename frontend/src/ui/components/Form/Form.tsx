@@ -12,6 +12,7 @@ export default function Form({
   onSubmit,
   validation,
 }: FormProps) {
+  classNames = classNames ? `form ${classNames}` : "form";
   const methods = useForm({ defaultValues, resolver: yupResolver(validation) });
   const { formState } = methods;
   const {
@@ -29,7 +30,7 @@ export default function Form({
 
   return (
     <form
-      className={`form ${classNames}`}
+      className={classNames}
       onSubmit={handleSubmit(onSubmit)}
       data-testid="form"
     >

@@ -3,19 +3,30 @@ import {
   getAllUsersHandler,
   getMeHandler,
   updateMeHandler,
+  updateMyRolesHandler,
 } from "../controllers/user.controller";
 import { deserializeUser } from "../middleware/deserializeUser";
 import { requireUser } from "../middleware/requireUser";
 import { restrictTo } from "../middleware/restrictTo";
 import { validate } from "../middleware/validate";
-import { updateUserSchema } from "../schema/user.schema";
+import { updateUserRolesSchema, updateUserSchema } from "../schema/user.schema";
 
 const router = express.Router();
 
 router.use(deserializeUser, requireUser);
 
-// Admin Get Users route
-router.get("/", restrictTo("admin"), getAllUsersHandler);
+/**
+ * @openapi
+ * /api/users:
+ *   get:
+ *     tags:
+ *     - User Api
+ *     description: Get all users
+ *     responses:
+ *       200:
+ *         description: Returns a success status, users data and a success message
+ */
+router.get("/", /*restrictTo("admin"),*/ getAllUsersHandler);
 
 /**
  * @openapi
@@ -61,5 +72,36 @@ router.get("/me", getMeHandler);
  *        description: Server Error
  */
 router.put("/me", validate(updateUserSchema), updateMeHandler);
+
+/**
+ * @openapi
+ * '/api/users/me/roles':
+ *  put:
+ *     tags:
+ *     - User Api
+ *     summary: Update the current logged in user's roles
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *           schema:
+ *            type: object
+ *            properties:
+ *              roles:
+ *                type: array
+ *                items:
+ *                  type: string
+ *                  default: user
+ *     responses:
+ *      200:
+ *        description: Updated
+ *      409:
+ *        description: Conflict
+ *      404:
+ *        description: Not Found
+ *      500:
+ *        description: Server Error
+ */
+router.put("/me/roles", validate(updateUserRolesSchema), updateMyRolesHandler);
 
 export default router;
