@@ -6,8 +6,8 @@ import MultiSelect from "./MultiSelect";
 test("loads and displays MultiSelect component", async () => {
   render(
     <MultiSelect
-      options={[{ id: 0, title: "test option" }]}
-      selected={[0]}
+      options={[{ id: "" }]}
+      selected={[""]}
       toggleOption={() => {}}
     />
   );

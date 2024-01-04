@@ -1,14 +1,11 @@
 export const MULTI_SELECT_OPTIONS = [
   {
-    id: 0,
-    title: "admin",
+    id: "admin",
   },
   {
-    id: 1,
-    title: "user",
+    id: "user",
   },
   {
-    id: 2,
-    title: "engineer",
+    id: "engineer",
   },
 ];

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { useUpdateMyRolesMutation } from "src/redux/api/user.api";
 import MultiSelect from "src/ui/components/MultiSelect";
 import Wrapper from "src/ui/components/Wrapper";
 import FormFooter from "src/ui/components/Form/components/Footer";
@@ -10,31 +10,25 @@ import { toggleOption } from "src/ui/components/MultiSelect/MultiSelect.utils";
 import { MULTI_SELECT_OPTIONS } from "./Role.constants";
 import { useAppSelector } from "src/redux/store";
 
-enum Roles {
-  ADMIN = "admin",
-  USER = "user",
-  DEVELOPER = "developer",
-}
-
 export default function EditRoleForm() {
   const userRoles = useAppSelector((state) => state.userState.user?.roles);
-  const [selected, setSelected] = useState<number[]>([]);
+  const [updateMyRoles, { isLoading, isSuccess }] = useUpdateMyRolesMutation();
+  const [selected, setSelected] = useState<string[]>([]);
   const handleToggleOption = toggleOption({ callback: setSelected });
+
   useEffect(() => {
-    const mapped =
-      (userRoles &&
-        userRoles.map((role: string) =>
-          Object.keys(Roles).indexOf(role.toUpperCase())
-        )) ||
-      [];
-    setSelected(mapped);
+    userRoles && setSelected(userRoles);
   }, [userRoles]);
 
-  console.log(selected);
+  function handleSubmit(event: any) {
+    event.preventDefault();
+    updateMyRoles({ roles: selected });
+  }
+
   return (
     <Wrapper>
       <div>Edit Role</div>
-      <form className="role" data-testid="role">
+      <form className="role" data-testid="role" onSubmit={handleSubmit}>
         <MultiSelect
           options={MULTI_SELECT_OPTIONS}
           selected={selected}

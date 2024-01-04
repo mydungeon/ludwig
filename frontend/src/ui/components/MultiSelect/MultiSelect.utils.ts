@@ -1,7 +1,7 @@
 export const toggleOption =
   ({ callback }: { callback: any }) =>
-  ({ id }: { id: number }) => {
-    callback((prevSelected: number[]) => {
+  ({ id }: { id: string }) => {
+    callback((prevSelected: string[]) => {
       // if it's in, remove
       const newArray = [...prevSelected];
       if (newArray.includes(id)) {

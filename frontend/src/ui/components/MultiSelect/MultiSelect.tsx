@@ -17,7 +17,7 @@ export default function MultiSelectDropdown({
         <Icon icon={faChevronDown} />
       </div>
       <ul className="options">
-        {options.map(({ id, title }) => {
+        {options.map(({ id }) => {
           const isSelected = selected.includes(id);
           return (
             <li
@@ -31,7 +31,7 @@ export default function MultiSelectDropdown({
                 className="checkbox"
                 onChange={() => {}} // added to avoid an error
               ></input>
-              <span>{title}</span>
+              <span>{id}</span>
             </li>
           );
         })}
