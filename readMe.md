@@ -1,4 +1,4 @@
-<img src="/frontend/public/assets/logos/full-logo.svg" />
+<img align="center" width="450" src="/frontend/public/assets/logos/full-logo.svg" />
 
 # Search n' explore your data
 
