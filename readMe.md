@@ -28,7 +28,7 @@ Additional frontend and backend technologies to enhance the user's experience an
 - Update the Authentication Routes
 - Update app.ts
 
-## Some technical steps as you get to know Ludwig
+## Getting to know Ludwig
 
 ### Running Ludwig is simple
 
