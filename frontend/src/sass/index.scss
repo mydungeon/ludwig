@@ -75,6 +75,7 @@ a.siteLink.link {
 
 .siteToolbar {
     @include themify('background', 'siteToolbarBg');
+    @include themify('color', 'svgColor');
 }
 
 .sidebarToggle > div > svg,
