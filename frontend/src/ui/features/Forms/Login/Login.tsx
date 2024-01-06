@@ -17,7 +17,11 @@ export default function LoginForm() {
   useRedirect(isSuccess, Redirect.PROFILE);
 
   return (
-    <Wrapper classNames="login" headerText={FORM_NAMES.LOGIN}>
+    <Wrapper
+      classNames="login"
+      dataTestId="loginForm"
+      headerText={FORM_NAMES.LOGIN}
+    >
       <Form
         classNames="login"
         defaultValues={defaultValues}

@@ -1,2 +1,2 @@
-import SiteMenu from "./Site";
-export default SiteMenu;
+import SiteHeaderMenu from "./Site";
+export default SiteHeaderMenu;

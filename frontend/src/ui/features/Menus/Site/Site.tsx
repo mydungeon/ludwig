@@ -1,16 +1,15 @@
 import React, { useContext, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import SiteMenuProps from "./Site.types";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { AppContext, AppContextType } from "src/context/App";
 import Icon from "src/ui/components/Icon";
 import { SITE_MENU_LINKS } from "./Site.constants";
-import "./Site.styles.scss";
 import Backdrop from "src/ui/components/Backdrop";
+import "./Site.styles.scss";
 
-function SiteMenuHeader({ handleClick }: { handleClick: () => void }) {
+function SiteHeaderMenu({ handleClick }: { handleClick: () => void }) {
   return (
-    <div className="siteMenuHeader">
+    <div className="siteMenuHeader" data-testid="siteHeaderMenu">
       <Icon icon={faXmark} handleClick={handleClick} size="2xl" />
     </div>
   );
@@ -31,7 +30,7 @@ export default function SiteMenu() {
   return (
     <>
       <div className={className} data-testid="siteMenu">
-        <SiteMenuHeader handleClick={handleHideMenu} />
+        <SiteHeaderMenu handleClick={handleHideMenu} />
         <div className="siteMenuBody">
           {SITE_MENU_LINKS.map(({ name, to }) => (
             <div className="siteMenuItem" key={to}>

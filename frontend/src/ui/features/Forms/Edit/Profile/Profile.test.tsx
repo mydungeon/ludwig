@@ -1,9 +1,14 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "src/testing/Testing.utils";
 import "@testing-library/jest-dom";
 import Profile from "./Profile";
+import { MemoryRouter } from "react-router-dom";
 
-test("loads and displays Profile component", async () => {
-  render(<Profile />);
-  expect(screen.getByTestId("profile")).toBeTruthy();
+test("loads and displays EditProfileForm component", async () => {
+  render(
+    <MemoryRouter>
+      <Profile />
+    </MemoryRouter>
+  );
+  expect(screen.getByTestId("wrapper-editProfileForm")).toBeTruthy();
 });

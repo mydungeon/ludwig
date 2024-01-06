@@ -11,5 +11,5 @@ test("loads and displays MultiSelect component", async () => {
       toggleOption={() => {}}
     />
   );
-  expect(screen.getByTestId("multiselect")).toBeTruthy();
+  expect(screen.getByTestId("multiSelect")).toBeTruthy();
 });

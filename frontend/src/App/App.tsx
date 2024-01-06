@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import { AppContext } from "./context/App";
+import { AppContext } from "src/context/App";
 import AlertModal from "src/ui/features/Modals/Alert";
 import PreLoader from "src/ui/components/PreLoader";
 import AuthMiddleware from "src/middleWare/AuthMiddleware";

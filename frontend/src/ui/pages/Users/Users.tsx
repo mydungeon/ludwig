@@ -19,7 +19,7 @@ export default function UsersPage() {
   }, [getUsers, users, setUsers]);
 
   return (
-    <Page classNames="users" data-testid="users" pageTitleText="Users">
+    <Page classNames="users" pageTitleText="Users">
       <Table columns={USER_TABLE_COLUMNS} data={users} maxCellTextLength={8} />
     </Page>
   );

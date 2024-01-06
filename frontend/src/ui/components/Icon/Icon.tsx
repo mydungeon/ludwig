@@ -12,6 +12,7 @@ export default function Icon({
   return (
     <FontAwesomeIcon
       className={classNames}
+      data-testid="icon"
       icon={icon}
       onClick={handleClick}
       size={size}

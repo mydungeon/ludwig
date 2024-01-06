@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "src/testing/Testing.utils";
 import "@testing-library/jest-dom";
 import HeaderlessLayout from "./Headerless";
 

@@ -1,20 +1,16 @@
 import React from "react";
 import ErrorMessage from "src/ui/components/ErrorMessage";
+import { InputProps } from "./Input.types";
 import "./Input.styles.scss";
 
 export default function Input({
+  formState,
   inputType,
   name,
   register,
-  formState,
   ...rest
-}: {
-  inputType: string;
-  name: string;
-  register?: any;
-  formState?: any;
-}) {
-  return (
+}: InputProps) {
+  return register ? (
     <>
       <input
         className="input"
@@ -25,5 +21,5 @@ export default function Input({
       />
       <ErrorMessage errorText={formState?.errors[name]?.message} />
     </>
-  );
+  ) : null;
 }

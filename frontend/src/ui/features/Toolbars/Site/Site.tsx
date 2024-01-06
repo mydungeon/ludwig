@@ -9,13 +9,13 @@ import Tooltip from "src/ui/components/Tooltip";
 import { TooltipDirection } from "src/ui/components/Tooltip/Tooltip.types";
 import "./Site.styles.scss";
 
-export default function SiteToolbar({ children }: SiteToolbarProps) {
+export default function SiteToolbar() {
   const dispatch = useDispatch();
   function handleToggleTheme() {
     dispatch(toggleTheme());
   }
   return (
-    <div className="siteToolbar" data-testid="siteToolbar">
+    <div className="siteToolbar" data-testid="siteToolBar">
       <Breadcrumbs />
       <Tooltip message="Switch Theme" direction={TooltipDirection.LEFT}>
         <Icon icon={faCircleHalfStroke} handleClick={handleToggleTheme} />

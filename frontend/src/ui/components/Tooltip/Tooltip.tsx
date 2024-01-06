@@ -24,7 +24,7 @@ export default function Tooltip({
   return (
     <span
       className="tooltip"
-      // When to show the tooltip
+      data-testid="tooltip"
       onMouseEnter={showTip}
       onMouseLeave={hideTip}
     >

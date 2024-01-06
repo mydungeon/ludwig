@@ -1,9 +1,14 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "src/testing/Testing.utils";
 import "@testing-library/jest-dom";
-import Register from "./Register";
+import { MemoryRouter } from "react-router-dom";
+import RegisterForm from "./Register";
 
-test("loads and displays RegisterPage component", async () => {
-  render(<Register />);
-  expect(screen.getByTestId("registerPage")).toBeTruthy();
+test("loads and displays RegisterForm component", async () => {
+  render(
+    <MemoryRouter>
+      <RegisterForm />
+    </MemoryRouter>
+  );
+  expect(screen.getByTestId("wrapper-registerForm")).toBeTruthy();
 });

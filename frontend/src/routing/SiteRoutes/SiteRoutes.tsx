@@ -33,5 +33,9 @@ function buildRoutes(routing: any) {
 }
 
 export default function SiteRoutes() {
-  return <Routes>{buildRoutes(ROUTING)}</Routes>;
+  return (
+    <div data-testid="siteRoutes">
+      <Routes>{buildRoutes(ROUTING)}</Routes>
+    </div>
+  );
 }

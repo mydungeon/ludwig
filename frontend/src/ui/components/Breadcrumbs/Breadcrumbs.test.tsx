@@ -1,9 +1,14 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "src/testing/Testing.utils";
 import "@testing-library/jest-dom";
+import { MemoryRouter } from "react-router-dom";
 import Breadcrumbs from "./Breadcrumbs";
 
 test("loads and displays Breadcrumbs component", async () => {
-  render(<Breadcrumbs />);
+  render(
+    <MemoryRouter>
+      <Breadcrumbs />
+    </MemoryRouter>
+  );
   expect(screen.getByTestId("breadcrumbs")).toBeTruthy();
 });

@@ -21,7 +21,7 @@ export default function SiteHeader() {
   }
 
   return (
-    <Header classNames="site" data-testid="siteHeader">
+    <Header classNames="site" dataTestId="siteHeader">
       <Logo classNames="siteHeader" logoText={SITE_NAME} />
       <div className="right">
         {!user ? <LoggedOutMenu /> : <LoggedInMenu {...user} />}

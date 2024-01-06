@@ -12,7 +12,7 @@ import { useAppSelector } from "src/redux/store";
 
 export default function EditRoleForm() {
   const userRoles = useAppSelector((state) => state.userState.user?.roles);
-  const [updateMyRoles, { isLoading, isSuccess }] = useUpdateMyRolesMutation();
+  const [updateMyRoles] = useUpdateMyRolesMutation();
   const [selected, setSelected] = useState<string[]>([]);
   const handleToggleOption = toggleOption({ callback: setSelected });
 
@@ -26,7 +26,7 @@ export default function EditRoleForm() {
   }
 
   return (
-    <Wrapper>
+    <Wrapper dataTestId="editRoleForm">
       <div>Edit Role</div>
       <form className="role" data-testid="role" onSubmit={handleSubmit}>
         <MultiSelect

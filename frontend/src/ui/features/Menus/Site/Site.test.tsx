@@ -1,9 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import SiteMenu from "./Site";
+import { MemoryRouter } from "react-router-dom";
+import SiteHeaderMenu from "./Site";
 
-test("loads and displays Site component", async () => {
-  render(<SiteMenu />);
-  expect(screen.getByTestId("site")).toBeTruthy();
+test("loads and displays SiteHeaderMenu component", async () => {
+  render(<SiteHeaderMenu />, { wrapper: MemoryRouter });
+  expect(screen.getByTestId("siteHeaderMenu")).toBeTruthy();
 });

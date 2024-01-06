@@ -20,11 +20,10 @@ export default function EditProfileForm() {
   usePreloader(isPreloaderSuccess);
   useRedirect(isRedirectSuccess, Redirect.PROFILE);
   return (
-    <Wrapper>
+    <Wrapper dataTestId="editProfileForm">
       <div>Edit Profile</div>
       <Form
         classNames="updateUser"
-        data-testid="updateUserForm"
         defaultValues={defaultValues}
         onSubmit={onSubmit}
         validation={validationSchema}

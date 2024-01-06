@@ -20,7 +20,11 @@ export default function RegisterForm() {
   useRedirect(isRedirectSuccess, Redirect.LOGIN);
 
   return (
-    <Wrapper classNames="register" headerText={FORM_NAMES.REGISTER}>
+    <Wrapper
+      classNames="register"
+      dataTestId="registerForm"
+      headerText={FORM_NAMES.REGISTER}
+    >
       <Form
         classNames="register"
         data-testid="registerForm"

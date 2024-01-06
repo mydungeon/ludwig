@@ -11,7 +11,7 @@ export default function MultiSelectDropdown({
   toggleOption,
 }: MultiSelectProps) {
   return (
-    <div className="multiSelect">
+    <div className="multiSelect" data-testid="multiSelect">
       <div className="selected">
         <div>{selected.length} selected</div>
         <Icon icon={faChevronDown} />
