@@ -1,4 +1,4 @@
-<img src="https://github.com/mydungeon/voltron/blob/main/frontend/public/assets/logos/full-logo.svg" />
+<img src="/frontend/public/assets/logos/full-logo.svg" />
 
 # Node.js + TypeScript + MongoDB: JWT Refresh Token
 
