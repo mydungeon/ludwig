@@ -1,4 +1,4 @@
-![Ludwig Full Logo](https://github.com/mydungeon/voltron/blob/main/frontend/public/assets/logos/full-logo.svg)
+<image src="https://github.com/mydungeon/voltron/blob/main/frontend/public/assets/logos/full-logo.svg" />
 
 # Node.js + TypeScript + MongoDB: JWT Refresh Token
 
