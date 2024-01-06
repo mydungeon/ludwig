@@ -1,8 +1,8 @@
 <img src="/frontend/public/assets/logos/full-logo.svg" />
 
-# Node.js + TypeScript + MongoDB: JWT Refresh Token
+# Search and Explore Your Data
 
-In this article, you'll learn how to implement JWT Authentication with an Access and a Refresh token using Node.js, TypeScript, MongoDB, Redis, and Docker.
+<img align="left" src="/frontend/public/assets/logos/full-logo.svg" />Some technologies which create the magic inside of Ludwig are JWT Authentication with an Access and a Refresh token using Node.js, TypeScript, MongoDB, Redis, and Docker with Kubernetes for orchestration. Ludwig also uses OpenApi to deliver his documentation via Swagger.
 
 ## Topics Covered
 
