@@ -2,7 +2,7 @@
 
 # Search and Explore Your Data
 
-<img align="left" src="/frontend/public/assets/images/unicorn-in-a-box.svg" width="100" />Some technologies which create the magic inside of Ludwig are JWT Authentication with an Access and a Refresh token using Node.js, TypeScript, MongoDB, Redis, and Docker with Kubernetes for orchestration. Ludwig also uses OpenApi to deliver his documentation via Swagger.
+<img align="left" src="/frontend/public/assets/images/unicorn-in-a-box.svg" width="200" />Some technologies which create the magic inside of Ludwig are JWT Authentication with an Access and a Refresh token using Node.js, TypeScript, MongoDB, Redis, and Docker with Kubernetes for orchestration. Ludwig also uses OpenApi to deliver his documentation via Swagger.
 
 ## Topics Covered
 
