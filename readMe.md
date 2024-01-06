@@ -1,12 +1,14 @@
 <img src="/frontend/public/assets/logos/full-logo.svg" />
 
-# Search and Explore Your Data
+# Search n' Explore Your Data
 
 <img align="left" src="/frontend/public/assets/images/sans-shadows/unicorn-in-a-box.svg" width="200" />Some technologies which create the magic inside of Ludwig are JWT Authentication with an Access and a Refresh token using Node.js, TypeScript, MongoDB, Redis, and Docker with Kubernetes for orchestration. Ludwig also uses OpenApi to deliver his documentation via Swagger.
 
+Additional frontend and backend technologies to enhance the user's experience and each are located within the package.json file in the root of each project directory.
+
 <br><br>
 
-## Topics Covered
+## Some High Level Topics of Implementation
 
 - JWT Refresh Token with Node.js, TypeScript, and MongoDB Overview
 - JWT Refresh Token Implementation Flow
@@ -20,27 +22,13 @@
 - Update the Authentication Routes
 - Update app.ts
 
-Read the entire article here: [https://codevoweb.com/react-node-access-refresh-tokens-authentication/](https://codevoweb.com/react-node-access-refresh-tokens-authentication/)
+## Some Technical Steps as You Use Ludwig
 
-Articles in this series:
+### Running Ludwig is Simple
 
-### 1. Node.js + TypeScript + MongoDB: JWT Authentication
+` docker compose up`
 
-[Node.js + TypeScript + MongoDB: JWT Authentication](https://codevoweb.com/node-typescript-mongodb-jwt-authentication)
-
-### 2. Node.js + TypeScript + MongoDB: JWT Refresh Token
-
-[Node.js + TypeScript + MongoDB: JWT Refresh Token](https://codevoweb.com/react-node-access-refresh-tokens-authentication)
-
-### 3. Google OAuth Authentication with React.js and Node.js (No Passport)
-
-[Google OAuth Authentication with React.js and Node.js (No Passport)](https://codevoweb.com/react-node-access-refresh-tokens-authentication)
-
-### 4. GitHub OAuth Authentication React.js and Node.js(No Passport)
-
-[GitHub OAuth Authentication React.js and Node.js(No Passport)](https://codevoweb.com/github-oauth-authentication-react-and-node)
-
-### Exec Into the Mongo Container and Explore
+### Exec'ing Into Docker's Mongo Container and Exploring Ludwig's User Data
 
 ` docker container ls`
 ` docker exec -it <mongo_container_id> bash`
@@ -49,3 +37,7 @@ Articles in this series:
 ` db.auth(<username>, <password>)`
 ` use ludwigDb`
 ` db.users.find()`
+
+### Steps to Deploy and Manage Ludwig via K8s
+
+` Stay tuned`
