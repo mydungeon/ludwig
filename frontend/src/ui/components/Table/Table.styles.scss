@@ -1,12 +1,19 @@
 @import "src/sass/themes/variables";
 
+.tableWrapper {
+    border-radius: $smallRadius;
+    margin: auto;
+    overflow: scroll;
+    max-width: calc(90vw - $mediumPixelWidth);
+}
 .table {
     border-collapse: separate;
     border-spacing: 0;
+    margin: auto;
 }
 
 .table td, .table th {
-    border: $extraSmallPixelWidth solid $lightGrey;
+    border: $extraSmallPixelWidth solid $grey;
     border-style: none solid solid none;
     padding: $smallPadding;
 }
