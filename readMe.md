@@ -28,7 +28,7 @@ Additional frontend and backend technologies to enhance the user's experience an
 
 `docker compose up`
 
-### Exec'ing into Docker's Mongo Container and exploring Ludwig's user data
+### Exec'ing into Docker's Mongo container and exploring Ludwig's user data
 
 `docker container ls`
 `docker exec -it <mongo_container_id> bash`
