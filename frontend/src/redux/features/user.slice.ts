@@ -3,10 +3,12 @@ import { IUser } from "src/redux/api/types";
 
 interface IUserState {
   user: IUser | null;
+  users: IUser[] | [];
 }
 
 const initialState: IUserState = {
   user: null,
+  users: [],
 };
 
 export const userSlice = createSlice({
@@ -17,9 +19,12 @@ export const userSlice = createSlice({
     setUser: (state, action: PayloadAction<IUser>) => {
       state.user = action.payload;
     },
+    setUsers: (state, action: PayloadAction<IUser[]>) => {
+      state.users = action.payload;
+    },
   },
 });
 
 export default userSlice.reducer;
 
-export const { logout, setUser } = userSlice.actions;
+export const { logout, setUser, setUsers } = userSlice.actions;

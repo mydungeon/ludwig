@@ -1,5 +1,5 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
-import { setUser } from "src/redux/features/user.slice";
+import { setUser, setUsers } from "src/redux/features/user.slice";
 import customFetchBase from "./customFetchBase";
 import { IUser } from "./types";
 import { UpdatePayloadType } from "src/ui/features/Forms/Edit/Profile/Profile.schema";
@@ -51,6 +51,24 @@ export const userApi = createApi({
       },
       invalidatesTags: (result, error, { roles }) => [{ type: "User", roles }],
     }),
+    getUsers: builder.query<IUser[], void>({
+      query() {
+        return {
+          url: "users/",
+          method: "GET",
+          credentials: "include",
+        };
+      },
+      transformResponse: (result: { data: { users: IUser[] } }) =>
+        result.data.users,
+      async onQueryStarted(args, { dispatch, queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled;
+          dispatch(setUsers(data));
+        } catch (error) {}
+      },
+      providesTags: ["User"],
+    }),
   }),
 });
 
@@ -59,4 +77,6 @@ export const {
   useLazyGetMeQuery,
   useUpdateMeMutation,
   useUpdateMyRolesMutation,
+  useGetUsersQuery,
+  useLazyGetUsersQuery,
 } = userApi;

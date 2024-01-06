@@ -10,6 +10,7 @@ import LoginPage from "src/ui/pages/Login";
 import ProfilePage from "src/ui/pages/Profile";
 import EditProfilePage from "src/ui/pages/Edit/Profile";
 import EditRolePage from "src/ui/pages/Edit/Role";
+import UsersPage from "src/ui/pages/Users";
 import RegisterPage from "src/ui/pages/Register";
 import UnauthorizedPage from "src/ui/pages/Unauthorized";
 import NotFoundPage from "src/ui/pages/NotFound";
@@ -52,6 +53,11 @@ export const ROUTING = [
             key: "profile/role/edit",
             path: "profile/role/edit",
             element: EditRolePage,
+          },
+          {
+            key: "users",
+            path: "users",
+            element: UsersPage,
           },
         ],
       },

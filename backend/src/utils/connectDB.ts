@@ -3,7 +3,7 @@ import config from "config";
 
 const dbUrl = `mongodb://${config.get("dbUser")}:${config.get(
   "dbPass"
-)}@mongo:27017/jwtAuth?authSource=admin`;
+)}@mongo:27017/ludwigDb?authSource=admin`;
 
 const connectDB = async () => {
   try {

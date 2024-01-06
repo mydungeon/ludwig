@@ -20,7 +20,6 @@ In this article, you'll learn how to implement JWT Authentication with an Access
 
 Read the entire article here: [https://codevoweb.com/react-node-access-refresh-tokens-authentication/](https://codevoweb.com/react-node-access-refresh-tokens-authentication/)
 
-
 Articles in this series:
 
 ### 1. Node.js + TypeScript + MongoDB: JWT Authentication
@@ -38,3 +37,13 @@ Articles in this series:
 ### 4. GitHub OAuth Authentication React.js and Node.js(No Passport)
 
 [GitHub OAuth Authentication React.js and Node.js(No Passport)](https://codevoweb.com/github-oauth-authentication-react-and-node)
+
+### Exec Into the Mongo Container and Explore
+
+` docker container ls`
+` docker exec -it <mongo_container_id> bash`
+` mongosh`
+` use admin`
+` db.auth(<username>, <password>)`
+` use ludwigDb`
+` db.users.find()`

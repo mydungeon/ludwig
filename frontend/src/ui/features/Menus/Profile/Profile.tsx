@@ -9,6 +9,7 @@ export default function ProfileSideMenu() {
       <div className="sub">
         <Link to="profile/edit">Edit Profile</Link>
         <Link to="profile/role/edit">Edit Role</Link>
+        <Link to="users">Users</Link>
       </div>
     </div>
   );
