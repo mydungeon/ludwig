@@ -1,8 +1,8 @@
+![Ludwig Full Logo](https://github.com/mydungeon/voltron/blob/main/frontend/public/assets/logos/full-logo.svg)
+
 # Node.js + TypeScript + MongoDB: JWT Refresh Token
 
 In this article, you'll learn how to implement JWT Authentication with an Access and a Refresh token using Node.js, TypeScript, MongoDB, Redis, and Docker.
-
-![Node.js + TypeScript + MongoDB: JWT Refresh Token](https://codevoweb.com/wp-content/uploads/2022/04/Node.js-TypeScript-MongoDB-JWT-Refresh-Token.webp)
 
 ## Topics Covered
 
