@@ -4,6 +4,6 @@ import "@testing-library/jest-dom";
 import Table from "./Table";
 
 test("loads and displays Table component", async () => {
-  render(<Table data={{}} />);
+  render(<Table columns={[]} data={{}} />);
   expect(screen.getByTestId("table")).toBeTruthy();
 });

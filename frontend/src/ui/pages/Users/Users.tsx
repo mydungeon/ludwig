@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useGetUsersQuery, useLazyGetUsersQuery } from "src/redux/api/user.api";
+import { useLazyGetUsersQuery } from "src/redux/api/user.api";
 import "./Users.styles.scss";
 import { IUser } from "src/redux/api/types";
 import Table from "src/ui/components/Table";
+import { USER_TABLE_COLUMNS } from "src/ui/components/Table/Table.constants";
+import Page from "src/ui/components/Page";
 
 export default function UsersPage() {
   const [users, setUsers] = useState<IUser[] | undefined>([]);
-  const [getUsers, { isLoading, isSuccess }] = useLazyGetUsersQuery();
+  const [getUsers] = useLazyGetUsersQuery();
 
   useEffect(() => {
     async function getUserAsync() {
@@ -15,12 +17,12 @@ export default function UsersPage() {
     }
     getUserAsync();
   }, [getUsers, users, setUsers]);
-  console.log("users", users);
-  console.log("test");
+
   return (
     <div className="users" data-testid="users">
-      <h1>Users</h1>
-      <Table data={users} />
+      <Page pageTitleText="Users">
+        <Table columns={USER_TABLE_COLUMNS} data={users} />
+      </Page>
     </div>
   );
 }

@@ -1,34 +1,34 @@
 import React from "react";
 import TableProps from "./Table.types";
+import { filterKeys } from "./Table.utils";
+import Ellipse from "../Ellipse";
 import "./Table.styles.scss";
 
-export default function Table({ data }: TableProps) {
+export default function Table({ data, columns }: TableProps) {
   return (
-    <div className="table" data-testid="table">
-      {data?.map((datum: any, i: number) => {
-        let header = null;
-        if (i === 0) {
-          header = (
-            <tr key="header">
-              {Object.keys(datum).map((key, ii) => (
-                <th key={`${key}-${ii}`}>{key}</th>
+    <table className="table" data-testid="table">
+      {data[0] && (
+        <thead key="thead">
+          <tr key="header">
+            {filterKeys(data[0], columns).map((key: string, ii: number) => (
+              <th key={`${key}-${ii}`}>{key}</th>
+            ))}
+          </tr>
+        </thead>
+      )}
+      <tbody key="tbody">
+        {data?.map((datum: any, i: number) => {
+          return (
+            <tr key={i}>
+              {Object.values(datum).map((value: any, iii) => (
+                <td key={`${value}-${iii}`}>
+                  <Ellipse length={8} text={value} />
+                </td>
               ))}
             </tr>
           );
-        }
-        return (
-          <table>
-            <thead>{header}</thead>
-            <tbody>
-              <tr key={i}>
-                {Object.values(datum).map((value: any, iii) => (
-                  <td key={`${value}-${iii}`}>{value}</td>
-                ))}
-              </tr>
-            </tbody>
-          </table>
-        );
-      })}
-    </div>
+        })}
+      </tbody>
+    </table>
   );
 }

@@ -1,3 +1,42 @@
-.table {
+@import "src/sass/themes/variables";
 
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table td, .table th {
+    border: $extraSmallPixelWidth solid $lightGrey;
+    border-style: none solid solid none;
+    padding: $smallPadding;
+}
+
+.table th:first-child {
+    border-top-left-radius: $smallRadius;
+}
+
+.table th:last-child {
+    border-top-right-radius: $smallRadius;
+}
+
+.table tbody > tr:last-child td:last-child  {
+    border-bottom-right-radius: $smallRadius;
+}
+
+.table tbody > tr:last-child td:first-child {
+    border-bottom-left-radius: $smallRadius;
+}
+
+.table th {
+    background-color: $darkGrey;
+    color: $white;
+}
+
+.table tr:nth-child(even) {
+    background-color: $lighterGrey;
+}
+
+.table tr:hover {
+    background-color: $lightGrey;
+    cursor: pointer;
 }

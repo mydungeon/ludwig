@@ -22,7 +22,7 @@ export const findUserById = async (id: string) => {
 
 // Find All users
 export const findAllUsers = async () => {
-  return await userModel.find();
+  return await userModel.find().select("-__v");
 };
 
 // Find one user by any fields

@@ -7,6 +7,7 @@
     flex-direction: column;
     justify-content: flex-end;
     padding: $mediumPadding;
+    z-index: 2;
 }
 
 .sidebar:hover {
