@@ -22,7 +22,7 @@ export default function Tooltip({
     setActive(false);
   };
   return (
-    <div
+    <span
       className="tooltip"
       // When to show the tooltip
       onMouseEnter={showTip}
@@ -30,6 +30,6 @@ export default function Tooltip({
     >
       {children}
       {active && <div className={`tip ${direction || "top"}`}>{message}</div>}
-    </div>
+    </span>
   );
 }
