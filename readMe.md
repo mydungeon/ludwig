@@ -4,7 +4,11 @@
 
 Ludwig allows user's to interface with a query language to visually compose queries. Ludwig let's you visually explore the data which returns.
 
-<img align="left" src="/frontend/public/assets/images/sans-shadows/unicorn-in-a-box.svg" width="200" />Some technologies which create the magic inside of Ludwig are JWT Authentication with an Access and a Refresh token using Node.js, TypeScript, MongoDB, Redis, and Docker with Kubernetes for orchestration. Ludwig also uses OpenApi to deliver his documentation via Swagger.
+<img align="left" src="/frontend/public/assets/images/sans-shadows/unicorn-in-a-box.svg" width="200" />
+
+## What's inside the box
+
+Some technologies which create the magic inside of Ludwig are JWT Authentication with an Access and a Refresh token using Node.js, TypeScript, MongoDB, Redis, and Docker with Kubernetes for orchestration. Ludwig also uses OpenApi to deliver his documentation via Swagger.
 
 Additional frontend and backend technologies to enhance the user's experience and each are located within the package.json file in the root of each project directory.
 
