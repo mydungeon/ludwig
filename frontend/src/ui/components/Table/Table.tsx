@@ -37,7 +37,7 @@ export default function Table({
                   return maxCellTextLength &&
                     value.length > maxCellTextLength ? (
                     <td key={`${value}-${iii}`}>
-                      <Tooltip message={value} direction={direction}>
+                      <Tooltip message={value} delay={0} direction={direction}>
                         <Ellipse length={maxCellTextLength} text={value} />
                       </Tooltip>
                     </td>
