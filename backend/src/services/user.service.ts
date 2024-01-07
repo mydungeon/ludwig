@@ -1,7 +1,7 @@
 import { omit } from "lodash";
 import { FilterQuery, QueryOptions } from "mongoose";
 import config from "config";
-import userModel, { User } from "../models/user.model";
+import { userModel, User } from "../models/user.model";
 import { excludedFields } from "../controllers/auth.controller";
 import { signJwt } from "../utils/jwt";
 import redisClient from "../utils/connectRedis";
@@ -12,6 +12,13 @@ import { NextFunction } from "express";
 export const createUser = async (input: Partial<User>) => {
   const user = await userModel.create(input);
   return omit(user.toJSON(), excludedFields);
+};
+
+// CreateUser service
+export const createBulkUsers = async (input: any) => {
+  const operationMap = input;
+  const bulkUsers = await userModel.bulkWrite(operationMap, { ordered: false });
+  return bulkUsers;
 };
 
 // Find User by Id

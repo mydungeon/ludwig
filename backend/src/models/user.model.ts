@@ -22,6 +22,13 @@ import bcrypt from "bcryptjs";
     timestamps: true,
   },
 })
+
+// Export the User class to be used as TypeScript type
+export class Users {
+  @prop()
+  users: User[];
+}
+
 // Export the User class to be used as TypeScript type
 export class User {
   @prop()
@@ -44,4 +51,5 @@ export class User {
 
 // Create the user model from the User class
 const userModel = getModelForClass(User);
-export default userModel;
+const usersModel = getModelForClass(Users);
+export { userModel, usersModel };

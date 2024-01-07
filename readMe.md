@@ -1,12 +1,12 @@
 <p align="center">
-<img width="450" src="/frontend/public/assets/logos/full-logo.svg" />
+<img alt="Ludwig logo" width="450" src="./assets/ludwig/logo.svg" />
 </p>
 
 # Search n' explore your data
 
 Ludwig allows user's to interface with a query language to visually compose queries. Ludwig let's you visually explore the data which returns.
 
-<img align="left" src="/frontend/public/assets/images/sans-shadows/unicorn-in-a-box.svg" width="200" />
+<img alt="unicorn in the box" align="left" src="./assets/ludwig/images/unicorn-in-a-box.svg" width="200" />
 
 ## What's inside the box
 
@@ -49,3 +49,28 @@ Additional frontend and backend technologies to enhance the user's experience an
 ### Steps to deploy and manage Ludwig via K8s
 
 `Stay tuned`
+
+## Ludwig was born out of some great technology
+
+<img alt="VS Code" src="./assets/vendor-logos/vs-code.svg" width="75" />
+<img alt="Github" src="./assets/vendor-logos/github.svg" width="75" />
+<img alt="Yarn" src="./assets/vendor-logos/yarn.svg" width="75" />
+<img alt="Chrome" src="./assets/vendor-logos/chrome.svg" width="75" />
+<img alt="Typescript" src="./assets/vendor-logos/typescript.svg" width="75" />
+<img alt="Javascript" src="./assets/vendor-logos/javascript.svg" width="75" />
+<img alt="HTML5" src="./assets/vendor-logos/html5.svg" width="75" />
+<img alt="Sass" src="./assets/vendor-logos/sass.svg" width="75" />
+<img alt="K8s" src="./assets/vendor-logos/kubernetes.svg" width="75" />
+<img alt="Docker" src="./assets/vendor-logos/docker.svg" width="100" />
+<img alt="Mongo DB" src="./assets/vendor-logos/mongodb.svg" width="75" />
+<img alt="Redis" src="./assets/vendor-logos/redis.svg" width="75" />
+<img alt="Node JS" src="./assets/vendor-logos/node-js.svg" width="75" />
+<img alt="Express JS" src="./assets/vendor-logos/express-js.svg" width="75" />
+<img alt="Jest" src="./assets/vendor-logos/jest.svg" width="75" />
+<img alt="React JS" src="./assets/vendor-logos/react.svg" width="75" />
+<img alt="Redux" src="./assets/vendor-logos/redux.svg" width="75" />
+<img alt="Swagger" src="./assets/vendor-logos/swagger.svg" width="75" />
+<img alt="Faker JS" src="./assets/vendor-logos/fakerjs.svg" width="75" />
+<img alt="React Testing Library" src="./assets/vendor-logos/react-testing-library.png" width="75" />
+<img alt="Font Awesome" src="./assets/vendor-logos/fontawesome.svg" width="75" />
+<img alt="Icon Duck" src="./assets/vendor-logos/duck.svg" width="75" />
