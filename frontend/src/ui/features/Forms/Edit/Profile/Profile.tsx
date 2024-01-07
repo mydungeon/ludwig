@@ -19,7 +19,8 @@ export default function EditProfileForm() {
 
   usePreloader(isPreloaderSuccess);
   useRedirect(isRedirectSuccess, Redirect.PROFILE);
-  return (
+
+  return defaultValues ? (
     <Wrapper dataTestId="editProfileForm">
       <div>Edit Profile</div>
       <Form
@@ -44,5 +45,5 @@ export default function EditProfileForm() {
         </FormFooter>
       </Form>
     </Wrapper>
-  );
+  ) : null;
 }

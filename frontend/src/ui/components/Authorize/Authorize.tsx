@@ -4,11 +4,7 @@ import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { userApi } from "src/redux/api/user.api";
 import usePreloader from "src/hooks/usePreloader";
 
-export default function Authorize({
-  allowedRoles,
-}: {
-  allowedRoles: string[];
-}) {
+export default function Authorize({ allowedRoles }: { allowedRoles: string }) {
   const location = useLocation();
   const [cookies] = useCookies(["logged_in"]);
   const { logged_in } = cookies;
@@ -20,11 +16,11 @@ export default function Authorize({
   const user = userApi.endpoints.getMe.useQueryState(null, {
     selectFromResult: ({ data }) => data,
   });
-  const { role } = user || {};
+  const { roles } = user || {};
   const isLoggedInUser = logged_in && user;
-  const isAuthorized = isLoggedInUser && allowedRoles.includes(role as string);
-  const isUnauthorized =
-    isLoggedInUser && !allowedRoles.includes(role as string);
+  const isAllowed = roles && roles.includes(allowedRoles);
+  const isAuthorized = isLoggedInUser && isAllowed;
+  const isUnauthorized = isLoggedInUser && !isAllowed;
   const isLoggedOut = !logged_in;
   usePreloader(loading);
 

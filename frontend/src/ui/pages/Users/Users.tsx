@@ -28,7 +28,7 @@ export default function UsersPage() {
     getUserAsync();
   }, [getUsers, data, setData]);
 
-  return (
+  return data ? (
     <Page classNames="users" pageTitleText="Users">
       <div className="tableWithPager">
         <Table
@@ -45,5 +45,5 @@ export default function UsersPage() {
         />
       </div>
     </Page>
-  );
+  ) : null;
 }

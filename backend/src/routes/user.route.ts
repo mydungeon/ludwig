@@ -26,7 +26,7 @@ router.use(deserializeUser, requireUser);
  *       200:
  *         description: Returns a success status, users data and a success message
  */
-router.get("/", /*restrictTo("admin"),*/ getAllUsersHandler);
+router.get("/", restrictTo("admin"), getAllUsersHandler);
 
 /**
  * @openapi

@@ -9,12 +9,10 @@ export default function UserDetails() {
       <div>
         <div>Username:</div>
         <div>Email:</div>
-        <div>Role:</div>
       </div>
       <div>
         <div>{user?.name}</div>
         <div>{user?.email}</div>
-        <div>{user?.role}</div>
       </div>
     </div>
   );

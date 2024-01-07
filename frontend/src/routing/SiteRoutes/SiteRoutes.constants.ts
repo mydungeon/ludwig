@@ -37,7 +37,7 @@ export const ROUTING = [
       {
         key: "parent",
         authorize: Authorize,
-        roles: [UserRoles.USER, UserRoles.ADMIN],
+        roles: UserRoles.USER,
         routes: [
           {
             key: "profile",
@@ -54,22 +54,22 @@ export const ROUTING = [
             path: "profile/role/edit",
             element: EditRolePage,
           },
-          {
-            key: "users",
-            path: "users",
-            element: UsersPage,
-          },
         ],
       },
       {
         key: "parent",
         authorize: Authorize,
-        roles: [UserRoles.ADMIN],
+        roles: UserRoles.ADMIN,
         routes: [
           {
             key: "admin",
             path: "admin",
             element: AdminPage,
+          },
+          {
+            key: "users",
+            path: "users",
+            element: UsersPage,
           },
         ],
       },
