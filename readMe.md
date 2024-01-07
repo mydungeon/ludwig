@@ -50,7 +50,7 @@ Additional frontend and backend technologies to enhance the user's experience an
 
 `Stay tuned`
 
-## Ludwig was born out of some great technology
+## Ludwig was born from the following tech:
 
 [Most of these logos were found on https://iconduck.com/]: #
 
