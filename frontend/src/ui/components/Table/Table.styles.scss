@@ -1,6 +1,7 @@
 @import "src/sass/themes/variables";
 
 .tableWrapper {
+    border-left: $extraSmallPixelWidth solid $grey;
     border-radius: $smallRadius;
     margin: auto;
     overflow: scroll;
