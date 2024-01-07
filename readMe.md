@@ -84,6 +84,7 @@ Additional frontend and backend technologies to enhance the user's experience an
 <p align="left">
 <a href="https://fakerjs.dev/" target="_blank"><img alt="Faker JS" src="./assets/vendor-logos/fakerjs.svg" width="75" /></a>
 <a href="https://testing-library.com/" target="_blank"><img alt="React Testing Library" src="./assets/vendor-logos/react-testing-library.png" width="75" /></a>
+<a href="https://www.postman.com/" target="_blank"><img alt="Icon Duck" src="./assets/vendor-logos/duck.svg" width="75" /></a>
 <a href="https://fontawesome.com/" target="_blank"><img alt="Font Awesome" src="./assets/vendor-logos/fontawesome.svg" width="75" /></a>
 <a href="https://iconduck.com/" target="_blank"><img alt="Icon Duck" src="./assets/vendor-logos/duck.svg" width="75" /></a>
 </p>
