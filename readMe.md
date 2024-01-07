@@ -55,35 +55,35 @@ Additional frontend and backend technologies to enhance the user's experience an
 [Most of these logos were found on https://iconduck.com/]: #
 
 <p align="left">
-[<img alt="Github" src="./assets/vendor-logos/github.svg" width="75" />](http://google.com)
-[<img alt="Yarn" src="./assets/vendor-logos/yarn.svg" width="75" />](http://google.com)
-[<img alt="Chrome" src="./assets/vendor-logos/chrome.svg" width="75" />](http://google.com)
-[<img alt="Typescript" src="./assets/vendor-logos/typescript.svg" width="75" />](http://google.com)
-[<img alt="Javascript" src="./assets/vendor-logos/javascript.svg" width="75" />](http://google.com)
-[<img alt="Babel" src="./assets/vendor-logos/babel.svg" width="75" />](http://google.com)
+<a href="https://github.com/" target="_blank"><img alt="Github" src="./assets/vendor-logos/github.svg" width="75" /></a>
+<a href="https://yarnpkg.com/" target="_blank"><img alt="Yarn" src="./assets/vendor-logos/yarn.svg" width="75" /></a>
+<a href="https://www.google.com/chrome/" target="_blank"><img alt="Chrome" src="./assets/vendor-logos/chrome.svg" width="75" /></a>
+<a href="https://www.typescriptlang.org/" target="_blank"><img alt="Typescript" src="./assets/vendor-logos/typescript.svg" width="75" /></a>
+<a href="https://js.org/" target="_blank"><img alt="Javascript" src="./assets/vendor-logos/javascript.svg" width="75" /></a>
+<a href="https://babeljs.io/" target="_blank"><img alt="Babel" src="./assets/vendor-logos/babel.svg" width="75" /></a>
 </p>
 <br>
 <p align="left">
-[<img alt="HTML5" src="./assets/vendor-logos/html5.svg" width="75" />](http://google.com)
-[<img alt="Sass" src="./assets/vendor-logos/sass.svg" width="75" />](http://google.com)
-[<img alt="K8s" src="./assets/vendor-logos/kubernetes.svg" width="75" />](http://google.com)
-[<img alt="Docker" src="./assets/vendor-logos/docker.svg" width="100" />](http://google.com)
-[<img alt="Mongo DB" src="./assets/vendor-logos/mongodb.svg" width="75" />](http://google.com)
-[<img alt="Redis" src="./assets/vendor-logos/redis.svg" width="75" />](http://google.com)
+<a href="" target="_blank"><img alt="HTML5" src="./assets/vendor-logos/html5.svg" width="75" /></a>
+<a href="https://sass-lang.com/" target="_blank"><img alt="Sass" src="./assets/vendor-logos/sass.svg" width="75" /></a>
+<a href="https://kubernetes.io/" target="_blank"><img alt="K8s" src="./assets/vendor-logos/kubernetes.svg" width="75" /></a>
+<a href="https://www.docker.com/" target="_blank"><img alt="Docker" src="./assets/vendor-logos/docker.svg" width="100" /></a>
+<a href="https://www.mongodb.com/" target="_blank"><img alt="Mongo DB" src="./assets/vendor-logos/mongodb.svg" width="75" /></a>
+<a href="https://redis.com/" target="_blank"><img alt="Redis" src="./assets/vendor-logos/redis.svg" width="75" /></a>
 </p>
 <br>
 <p align="left">
-[<img alt="Node JS" src="./assets/vendor-logos/node-js.svg" width="75" />](http://google.com)
-[<img alt="Express JS" src="./assets/vendor-logos/express-js.svg" width="75" />](http://google.com)
-[<img alt="Jest" src="./assets/vendor-logos/jest.svg" width="75" />](http://google.com)
-[<img alt="React JS" src="./assets/vendor-logos/react.svg" width="75" />](http://google.com)
-[<img alt="Redux" src="./assets/vendor-logos/redux.svg" width="75" />](http://google.com)
-[<img alt="Swagger" src="./assets/vendor-logos/swagger.svg" width="75" />](http://google.com)
+<a href="https://nodejs.org/en" target="_blank"><img alt="Node JS" src="./assets/vendor-logos/node-js.svg" width="75" /></a>
+<a href="https://expressjs.com/" target="_blank"><img alt="Express JS" src="./assets/vendor-logos/express-js.svg" width="75" /></a>
+<a href="https://jestjs.io/" target="_blank"><img alt="Jest" src="./assets/vendor-logos/jest.svg" width="75" /></a>
+<a href="https://react.dev/" target="_blank"><img alt="React JS" src="./assets/vendor-logos/react.svg" width="75" /></a>
+<a href="https://redux-toolkit.js.org/" target="_blank"><img alt="Redux" src="./assets/vendor-logos/redux.svg" width="75" /></a>
+<a href="https://swagger.io/" target="_blank"><img alt="Swagger" src="./assets/vendor-logos/swagger.svg" width="75" /></a>
 </p>
 <br>
 <p align="left">
-[<img alt="Faker JS" src="./assets/vendor-logos/fakerjs.svg" width="75" />](http://google.com)
-[<img alt="React Testing Library" src="./assets/vendor-logos/react-testing-library.png" width="75" />](http://google.com)
-[<img alt="Font Awesome" src="./assets/vendor-logos/fontawesome.svg" width="75" />](http://google.com)
-[<img alt="Icon Duck" src="./assets/vendor-logos/duck.svg" width="75" />](http://google.com)
+<a href="https://fakerjs.dev/" target="_blank"><img alt="Faker JS" src="./assets/vendor-logos/fakerjs.svg" width="75" /></a>
+<a href="https://testing-library.com/" target="_blank"><img alt="React Testing Library" src="./assets/vendor-logos/react-testing-library.png" width="75" /></a>
+<a href="https://fontawesome.com/" target="_blank"><img alt="Font Awesome" src="./assets/vendor-logos/fontawesome.svg" width="75" /></a>
+<a href="https://iconduck.com/" target="_blank"><img alt="Icon Duck" src="./assets/vendor-logos/duck.svg" width="75" /></a>
 </p>
