@@ -9,6 +9,7 @@ import connectDB from "./utils/connectDB";
 import userRouter from "./routes/user.route";
 import authRouter from "./routes/auth.route";
 import healthRouter from "./routes/health.route";
+import seedRouter from "./routes/seed.route";
 import swaggerDocs from "./utils/swagger";
 
 const app = express();
@@ -36,6 +37,7 @@ app.use(
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/health", healthRouter);
+app.use("/api/seed", seedRouter);
 app.use("/public", express.static(path.join(__dirname, "public")));
 swaggerDocs(app, 3000);
 

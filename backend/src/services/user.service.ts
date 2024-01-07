@@ -14,13 +14,6 @@ export const createUser = async (input: Partial<User>) => {
   return omit(user.toJSON(), excludedFields);
 };
 
-// CreateUser service
-export const createBulkUsers = async (input: any) => {
-  const operationMap = input;
-  const bulkUsers = await userModel.bulkWrite(operationMap, { ordered: false });
-  return bulkUsers;
-};
-
 // Find User by Id
 export const findUserById = async (id: string) => {
   const user = await userModel.findById(id).lean();

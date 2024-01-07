@@ -43,6 +43,12 @@ export class User {
   @prop({ type: [String], default: ["user"] })
   roles: string[];
 
+  @prop({ type: [String] })
+  createdAt: string;
+
+  @prop({ type: [String] })
+  updatedAt: string;
+
   // Instance method to check if passwords match
   async comparePasswords(hashedPassword: string, candidatePassword: string) {
     return await bcrypt.compare(candidatePassword, hashedPassword);
