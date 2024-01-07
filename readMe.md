@@ -52,6 +52,8 @@ Additional frontend and backend technologies to enhance the user's experience an
 
 ## Ludwig was born out of some great technology
 
+[Most of these logos were found on https://iconduck.com/]: #
+
 <img alt="VS Code" src="./assets/vendor-logos/vs-code.svg" width="75" />
 <img alt="Github" src="./assets/vendor-logos/github.svg" width="75" />
 <img alt="Yarn" src="./assets/vendor-logos/yarn.svg" width="75" />
