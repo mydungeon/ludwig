@@ -54,28 +54,28 @@ Additional frontend and backend technologies to enhance the user's experience an
 
 [Most of these logos were found on https://iconduck.com/]: #
 
-<img alt="Github" src="./assets/vendor-logos/github.svg" width="75" />
-<img alt="Yarn" src="./assets/vendor-logos/yarn.svg" width="75" />
-<img alt="Chrome" src="./assets/vendor-logos/chrome.svg" width="75" />
-<img alt="Typescript" src="./assets/vendor-logos/typescript.svg" width="75" />
-<img alt="Javascript" src="./assets/vendor-logos/javascript.svg" width="75" />
+<img align="left" alt="Github" src="./assets/vendor-logos/github.svg" width="75" />
+<img align="left" alt="Yarn" src="./assets/vendor-logos/yarn.svg" width="75" />
+<img align="left" alt="Chrome" src="./assets/vendor-logos/chrome.svg" width="75" />
+<img align="left" alt="Typescript" src="./assets/vendor-logos/typescript.svg" width="75" />
+<img align="left" alt="Javascript" src="./assets/vendor-logos/javascript.svg" width="75" />
 <br>
-<img alt="HTML5" src="./assets/vendor-logos/html5.svg" width="75" />
-<img alt="Sass" src="./assets/vendor-logos/sass.svg" width="75" />
-<img alt="K8s" src="./assets/vendor-logos/kubernetes.svg" width="75" />
-<img alt="Docker" src="./assets/vendor-logos/docker.svg" width="100" />
-<img alt="Mongo DB" src="./assets/vendor-logos/mongodb.svg" width="75" />
+<img align="left" alt="HTML5" src="./assets/vendor-logos/html5.svg" width="75" />
+<img align="left" alt="Sass" src="./assets/vendor-logos/sass.svg" width="75" />
+<img align="left" alt="K8s" src="./assets/vendor-logos/kubernetes.svg" width="75" />
+<img align="left" alt="Docker" src="./assets/vendor-logos/docker.svg" width="100" />
+<img align="left" alt="Mongo DB" src="./assets/vendor-logos/mongodb.svg" width="75" />
 <br>
-<img alt="Redis" src="./assets/vendor-logos/redis.svg" width="75" />
-<img alt="Node JS" src="./assets/vendor-logos/node-js.svg" width="75" />
-<img alt="Express JS" src="./assets/vendor-logos/express-js.svg" width="75" />
-<img alt="Jest" src="./assets/vendor-logos/jest.svg" width="75" />
-<img alt="React JS" src="./assets/vendor-logos/react.svg" width="75" />
+<img align="left" alt="Redis" src="./assets/vendor-logos/redis.svg" width="75" />
+<img align="left" alt="Node JS" src="./assets/vendor-logos/node-js.svg" width="75" />
+<img align="left" alt="Express JS" src="./assets/vendor-logos/express-js.svg" width="75" />
+<img align="left" alt="Jest" src="./assets/vendor-logos/jest.svg" width="75" />
+<img align="left" alt="React JS" src="./assets/vendor-logos/react.svg" width="75" />
 <br>
-<img alt="Redux" src="./assets/vendor-logos/redux.svg" width="75" />
-<img alt="Swagger" src="./assets/vendor-logos/swagger.svg" width="75" />
-<img alt="Faker JS" src="./assets/vendor-logos/fakerjs.svg" width="75" />
-<img alt="React Testing Library" src="./assets/vendor-logos/react-testing-library.png" width="75" />
-<img alt="Font Awesome" src="./assets/vendor-logos/fontawesome.svg" width="75" />
+<img align="left" alt="Redux" src="./assets/vendor-logos/redux.svg" width="75" />
+<img align="left" alt="Swagger" src="./assets/vendor-logos/swagger.svg" width="75" />
+<img align="left" alt="Faker JS" src="./assets/vendor-logos/fakerjs.svg" width="75" />
+<img align="left" alt="React Testing Library" src="./assets/vendor-logos/react-testing-library.png" width="75" />
+<img align="left" alt="Font Awesome" src="./assets/vendor-logos/fontawesome.svg" width="75" />
 <br>
-<img alt="Icon Duck" src="./assets/vendor-logos/duck.svg" width="75" />
+<img align="left" alt="Icon Duck" src="./assets/vendor-logos/duck.svg" width="75" />
