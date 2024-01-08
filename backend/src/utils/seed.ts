@@ -6,7 +6,8 @@ export async function userSeed() {
     for (let i = 0; i < 200; i++) {
       const name = faker.string.alphanumeric({
         length: { min: 8, max: 15 },
-      }); // 'muaApG'
+      });
+
       const email = faker.internet.email({ firstName: name });
       const password = faker.internet.password(
         "$2a$12$l9BppooJFvIg1vlBQExKNOu7f"
