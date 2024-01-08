@@ -37,7 +37,8 @@ $red: #FF0000;
 /***************************/
 //OPACITIES
 /***************************/
-
+$extraLightOpacity: rgba(0, 0, 0, 0.04);
+$lightestOpacity: rgba(0, 0, 0, 0.08);
 $lighterOpacity: rgba(0, 0, 0, 0.1);
 $lightOpacity: rgba(0, 0, 0, 0.2);
 $mediumOpacity: rgba(0, 0, 0, 0.3);
@@ -232,3 +233,13 @@ $spinnerHeight: 18px;
 $spinnerBorderRadius: 20%;
 $largetHeight: 15rem;
 $spinnerBorderRadius: 20%;
+
+/***************************/
+//PAGER VALUES
+/***************************/
+
+$pagerHeight: 2.25rem;
+$pagerLetterSpacing: .25rem;
+$pagerWidth: 2.25rem;
+$pagerArrowWidth: 0.4rem;
+$pagerArrowHeight: 0.4rem;

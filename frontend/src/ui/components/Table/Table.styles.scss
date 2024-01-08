@@ -40,6 +40,10 @@
     color: $white;
 }
 
+.table tr:nth-child(odd) {
+    background-color: $lightestGrey;
+}
+
 .table tr:nth-child(even) {
     background-color: $lighterGrey;
 }
