@@ -1,5 +1,5 @@
 export default interface TableProps {
-  columns: string[];
+  columns: object[];
   data: any;
   maxCellTextLength?: number;
 }

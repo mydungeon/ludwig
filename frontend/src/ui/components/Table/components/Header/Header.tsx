@@ -1,15 +1,26 @@
 import React from "react";
-import { filterKeys } from "src/ui/components/Table/Table.utils";
-import TableHeaderProps from "./Header.types";
+import Icon from "src/ui/components/Icon";
+import { faSort } from "@fortawesome/free-solid-svg-icons";
+import "./Header.styles.scss";
 
-export default function TableHeader({ columns, data }: TableHeaderProps) {
-  return data ? (
-    <thead key="thead">
+export default function TableHeader({ ...props }) {
+  const { columns } = props;
+  return (
+    <thead className="tableHeader" key="thead">
       <tr key="header">
-        {filterKeys(data, columns).map((key: string, ii: number) => (
-          <th key={`${key}-${ii}`}>{key}</th>
-        ))}
+        {columns.map(
+          ({ name, sort }: { name: string; sort?: boolean }, index: number) => (
+            <th key={`${name}-${index}`}>
+              <span>{name}</span>
+              {sort && (
+                <span>
+                  <Icon classNames="sort" icon={faSort} />
+                </span>
+              )}
+            </th>
+          )
+        )}
       </tr>
     </thead>
-  ) : null;
+  );
 }

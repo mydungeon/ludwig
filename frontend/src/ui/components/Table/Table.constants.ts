@@ -1,8 +1,8 @@
 export const USER_TABLE_COLUMNS = [
-  "_id",
-  "name",
-  "email",
-  "roles",
-  "createdAt",
-  "updatedAt",
+  { name: "_id" },
+  { name: "name", sort: true, filter: true },
+  { name: "email", sort: true, filter: true },
+  { name: "roles" },
+  { name: "createdAt", sort: true, filter: true },
+  { name: "updatedAt", sort: true, filter: true },
 ];

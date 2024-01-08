@@ -1,0 +1,13 @@
+@import "src/sass/themes/variables";
+
+.tableHeader > tr > th {
+    text-wrap: nowrap;
+}
+
+.tableHeader>tr>th > span:first-child {
+    margin-right: $smallMargin;
+}
+
+.sort:hover {
+    color: $lightGrey;
+}
