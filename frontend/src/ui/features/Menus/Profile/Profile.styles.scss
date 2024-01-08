@@ -5,7 +5,16 @@
     flex-direction: column;
 }
 
-.menu.profile > .sub > a {
+.menu.profile > .sub > div {
     margin-top: $smallPadding;
     margin-left: $smallerPadding;   
+}
+
+.menu.profile>.sub>div:hover,
+.menu.profile>.sub>div:hover > a {
+    color: $darkGrey;
+}
+
+.menu.profile > .sub > div > a {
+    margin-left: $smallerMargin;
 }
