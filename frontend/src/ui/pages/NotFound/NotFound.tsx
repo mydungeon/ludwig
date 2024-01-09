@@ -4,7 +4,7 @@ import "./NotFound.styles.scss";
 
 export default function NotFoundPage() {
   return (
-    <Page classNames="notFound" pageTitleText="Not Found">
+    <Page classNames="notFound" pageTitle="Not Found">
       <img
         alt="Ludwig says nope"
         width="400"

@@ -4,6 +4,6 @@ import "@testing-library/jest-dom";
 import Page from "./Page";
 
 test("loads and displays Page component", async () => {
-  render(<Page pageTitleText="Test Title" />);
+  render(<Page pageTitle="Test Title" />);
   expect(screen.getByTestId("page")).toBeTruthy();
 });

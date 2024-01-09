@@ -5,15 +5,16 @@ import {
 } from "src/ui/features/Layouts";
 import Authorize from "src/ui/components/Authorize";
 import AdminPage from "src/ui/pages/Admin";
-import HomePage from "src/ui/pages/Home";
-import LoginPage from "src/ui/pages/Login";
-import ProfilePage from "src/ui/pages/Profile";
 import EditProfilePage from "src/ui/pages/Edit/Profile";
 import EditRolePage from "src/ui/pages/Edit/Role";
-import UsersPage from "src/ui/pages/Users";
+import HomePage from "src/ui/pages/Home";
+import LoginPage from "src/ui/pages/Login";
+import MetricsPage from "src/ui/pages/Metrics";
+import NotFoundPage from "src/ui/pages/NotFound";
+import ProfilePage from "src/ui/pages/Profile";
 import RegisterPage from "src/ui/pages/Register";
 import UnauthorizedPage from "src/ui/pages/Unauthorized";
-import NotFoundPage from "src/ui/pages/NotFound";
+import UsersPage from "src/ui/pages/Users";
 import { UserRoles } from "src/ui/features/User/User.types";
 
 export const ROUTING = [
@@ -70,6 +71,11 @@ export const ROUTING = [
             key: "users",
             path: "users",
             element: UsersPage,
+          },
+          {
+            key: "metrics",
+            path: "metrics",
+            element: MetricsPage,
           },
         ],
       },

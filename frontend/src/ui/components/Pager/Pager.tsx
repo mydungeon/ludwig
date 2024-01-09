@@ -1,13 +1,13 @@
 import React from "react";
 import classnames from "classnames";
-import { usePager, DOTS } from "src/hooks/usePager";
-import PagerProps from "./Pager.types";
-import "./Pager.styles.scss";
-import Icon from "../Icon";
+import { usePager, DOTS } from "src/hooks";
 import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import PagerProps from "./Pager.types";
+import Icon from "src/ui/components/Icon";
+import "./Pager.styles.scss";
 
 // This was taken from: https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/
 

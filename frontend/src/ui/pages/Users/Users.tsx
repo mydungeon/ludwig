@@ -29,7 +29,7 @@ export default function UsersPage() {
   }, [getUsers, data, setData]);
 
   return data ? (
-    <Page classNames="users" pageTitleText="Users">
+    <Page classNames="users" pageTitle="Users">
       <div className="tableWithPager">
         <Table
           columns={USER_TABLE_COLUMNS}

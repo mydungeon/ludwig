@@ -4,7 +4,7 @@ import UserDetails from "src/ui/components/UserDetails";
 
 export default function ProfilePage() {
   return (
-    <Page pageTitleText="Profile">
+    <Page pageTitle="Profile">
       <UserDetails />
     </Page>
   );

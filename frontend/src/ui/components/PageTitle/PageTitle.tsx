@@ -2,11 +2,11 @@ import React from "react";
 import PageTitleProps from "./PageTitle.types";
 
 export default function PageTitle({ children, ...props }: PageTitleProps) {
-  const { pageTitleText } = props;
+  const { pageTitle } = props;
 
-  return pageTitleText ? (
+  return pageTitle ? (
     <div className="pageTitle" data-testid="pageTitle">
-      <h1>{pageTitleText}</h1>
+      <h1>{pageTitle}</h1>
       {children}
     </div>
   ) : null;
