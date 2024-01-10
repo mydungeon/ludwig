@@ -1,10 +1,4 @@
-import React, {
-  LegacyRef,
-  MutableRefObject,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { LegacyRef } from "react";
 import Page from "src/ui/components/Page";
 import { LineChart } from "src/ui/charts";
 import { lineChartData } from "src/ui/charts/data/lineChart";
