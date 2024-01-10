@@ -7,7 +7,8 @@
 
 .menu.profile > .sub > div {
     margin-top: $smallPadding;
-    margin-left: $smallerPadding;   
+    margin-left: $smallerPadding;
+    white-space: nowrap;
 }
 
 .menu.profile>.sub>div:hover,

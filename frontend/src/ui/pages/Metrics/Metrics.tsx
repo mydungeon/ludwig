@@ -8,13 +8,13 @@ import React, {
 import Page from "src/ui/components/Page";
 import { LineChart } from "src/ui/charts";
 import { lineChartData } from "src/ui/charts/data/lineChart";
-import "./Metrics.styles.scss";
 import { useDimensions } from "src/hooks";
+import "./Metrics.styles.scss";
 
 export default function Metrics() {
   const [elementRef, height, width] = useDimensions();
   return (
-    <Page classNames="Metrics" pageTitle="Metrics">
+    <Page classNames="metrics" pageTitle="Metrics">
       <div ref={elementRef as LegacyRef<HTMLDivElement>}>
         <LineChart
           data={lineChartData}
