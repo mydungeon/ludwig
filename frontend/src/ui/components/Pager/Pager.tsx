@@ -9,7 +9,7 @@ import PagerProps from "./Pager.types";
 import Icon from "src/ui/components/Icon";
 import "./Pager.styles.scss";
 
-// This was taken from: https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/
+// Article: https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/
 
 export default function Pager({
   onPageChange,

@@ -4,13 +4,17 @@ import { faSort } from "@fortawesome/free-solid-svg-icons";
 import "./Header.styles.scss";
 
 export default function TableHeader({ ...props }) {
-  const { columns } = props;
+  const { columns, handleSetSortField } = props;
   return (
     <thead className="tableHeader" key="thead">
       <tr key="header">
         {columns.map(
           ({ name, sort }: { name: string; sort?: boolean }, index: number) => (
-            <th key={`${name}-${index}`}>
+            <th
+              className={sort ? "sort" : ""}
+              onClick={() => handleSetSortField(name)}
+              key={`${name}-${index}`}
+            >
               <span>{name}</span>
               {sort && (
                 <span>

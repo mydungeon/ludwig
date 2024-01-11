@@ -4,9 +4,8 @@ export async function userSeed() {
   let input = [];
   try {
     for (let i = 0; i < 200; i++) {
-      const name = faker.string.alphanumeric({
-        length: { min: 8, max: 15 },
-      });
+      const firstName = faker.person.fullName();
+      const name = faker.internet.userName({ firstName });
 
       const email = faker.internet.email({ firstName: name });
       const password = faker.internet.password(

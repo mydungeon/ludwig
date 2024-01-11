@@ -8,6 +8,10 @@
     margin-right: $smallMargin;
 }
 
+.tableHeader>tr>th:not(.sort) {
+    pointer-events: none;
+}
+
 .sort:hover {
     color: $lightGrey;
 }

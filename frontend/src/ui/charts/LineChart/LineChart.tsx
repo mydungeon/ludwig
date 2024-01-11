@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef } from "react";
 import { DataPoint, LineChartProps } from "./LineChart.types";
 import * as d3 from "d3";
 
-// Appropriated from https://www.react-graph-gallery.com/line-chart
+// Article: https://www.react-graph-gallery.com/line-chart
 
 const MARGIN = { top: 30, right: 30, bottom: 50, left: 50 };
 

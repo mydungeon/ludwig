@@ -4,7 +4,7 @@ import Icon from "src/ui/components/Icon";
 import MultiSelectProps from "./MultiSelect.types";
 import "./MultiSelect.styles.scss";
 
-// taken from https://javascript.plainenglish.io/learn-to-build-a-react-multi-select-dropdown-in-less-than-3-minutes-a8b69fe021bd
+// Article: https://javascript.plainenglish.io/learn-to-build-a-react-multi-select-dropdown-in-less-than-3-minutes-a8b69fe021bd
 export default function MultiSelectDropdown({
   options,
   selected,
