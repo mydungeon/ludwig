@@ -1,5 +1,5 @@
 import React from "react";
-import ErrorMessage from "src/ui/components/ErrorMessage";
+import { ErrorMessage } from "src/ui/components";
 import { InputProps } from "./Input.types";
 import "./Input.styles.scss";
 

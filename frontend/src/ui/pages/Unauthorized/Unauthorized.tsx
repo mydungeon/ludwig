@@ -1,5 +1,5 @@
 import React from "react";
-import Page from "src/ui/components/Page/Page";
+import { Page } from "src/ui/components";
 import "./Unauthorized.styles.scss";
 
 export default function UnauthorizedPage() {

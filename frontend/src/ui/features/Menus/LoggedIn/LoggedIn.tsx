@@ -1,8 +1,8 @@
 import React from "react";
 import { LogoutButton } from "src/ui/features/Buttons";
-import Avatar from "src/ui/components/Avatar";
+import { Avatar } from "src/ui/components";
 import { TooltipDirection } from "src/ui/components/Tooltip/Tooltip.types";
-import Tooltip from "src/ui/components/Tooltip";
+import { Tooltip } from "src/ui/components";
 import "./LoggedIn.styles.scss";
 
 export default function LoggedInMenu({ ...user }) {

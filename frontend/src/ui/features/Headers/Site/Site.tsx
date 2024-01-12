@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import { useAppSelector } from "src/redux/store";
 import Header from "src/ui/elements/Header";
-import Logo from "src/ui/components/Logo";
+import { Logo } from "src/ui/components";
 import LoggedOutMenu from "src/ui/features/Menus/LoggedOut";
 import LoggedInMenu from "src/ui/features/Menus/LoggedIn/LoggedIn";
-import Tooltip from "src/ui/components/Tooltip";
-import Icon from "src/ui/components/Icon";
-import "./Site.styles.scss";
+import { Tooltip } from "src/ui/components";
+import { Icon } from "src/ui/components";
 import { TooltipDirection } from "src/ui/components/Tooltip/Tooltip.types";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { AppContextType, AppContext } from "src/context/App";
 import { SITE_NAME } from "./Site.constants";
+import "./Site.styles.scss";
 
 export default function SiteHeader() {
   const user = useAppSelector((state) => state.userState.user);

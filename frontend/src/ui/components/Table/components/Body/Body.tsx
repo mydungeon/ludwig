@@ -1,6 +1,6 @@
 import React from "react";
-import Ellipse from "src/ui/components/Ellipse";
-import Tooltip from "src/ui/components/Tooltip";
+import { Ellipse } from "src/ui/components";
+import { Tooltip } from "src/ui/components";
 import { setTooltipDirection } from "src/ui/components/Table/Table.utils";
 
 export default function TableRow({ ...props }: any) {

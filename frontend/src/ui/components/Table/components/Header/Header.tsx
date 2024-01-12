@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "src/ui/components/Icon";
+import { Icon } from "src/ui/components";
 import { faSort } from "@fortawesome/free-solid-svg-icons";
 import "./Header.styles.scss";
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AlertModalProps from "./Alert.types";
-import Modal from "src/ui/components/Modal";
+import { Modal } from "src/ui/components";
 
 export default function AlertModal({ message, title }: AlertModalProps) {
   const [show, setShow] = useState(false);

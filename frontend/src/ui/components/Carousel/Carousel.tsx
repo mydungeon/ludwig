@@ -3,7 +3,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
-import Icon from "src/ui/components/Icon";
+import { Icon } from "src/ui/components";
 import { CarouselProps } from "./Carousel.types";
 import "./Carousel.styles.scss";
 

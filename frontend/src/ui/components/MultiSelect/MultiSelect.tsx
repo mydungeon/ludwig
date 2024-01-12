@@ -1,6 +1,6 @@
 import React from "react";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import Icon from "src/ui/components/Icon";
+import { Icon } from "src/ui/components";
 import MultiSelectProps from "./MultiSelect.types";
 import "./MultiSelect.styles.scss";
 
