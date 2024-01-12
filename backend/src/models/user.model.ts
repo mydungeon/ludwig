@@ -24,12 +24,6 @@ import bcrypt from "bcryptjs";
 })
 
 // Export the User class to be used as TypeScript type
-export class Users {
-  @prop()
-  users: User[];
-}
-
-// Export the User class to be used as TypeScript type
 export class User {
   @prop()
   name: string;
@@ -43,12 +37,6 @@ export class User {
   @prop({ type: [String], default: ["user"] })
   roles: string[];
 
-  @prop({ type: [String] })
-  createdAt: string;
-
-  @prop({ type: [String] })
-  updatedAt: string;
-
   // Instance method to check if passwords match
   async comparePasswords(hashedPassword: string, candidatePassword: string) {
     return await bcrypt.compare(candidatePassword, hashedPassword);
@@ -57,5 +45,4 @@ export class User {
 
 // Create the user model from the User class
 const userModel = getModelForClass(User);
-const usersModel = getModelForClass(Users);
-export { userModel, usersModel };
+export { userModel };
