@@ -4,17 +4,17 @@ import {
   HeaderlessLayout,
 } from "src/ui/features/Layouts";
 import { Authorize } from "src/ui/components";
-import AdminPage from "src/ui/pages/Admin";
-import EditProfilePage from "src/ui/pages/Edit/Profile";
-import EditRolePage from "src/ui/pages/Edit/Role";
-import HomePage from "src/ui/pages/Home";
-import LoginPage from "src/ui/pages/Login";
-import MetricsPage from "src/ui/pages/Metrics";
-import NotFoundPage from "src/ui/pages/NotFound";
-import ProfilePage from "src/ui/pages/Profile";
-import RegisterPage from "src/ui/pages/Register";
-import UnauthorizedPage from "src/ui/pages/Unauthorized";
-import UsersPage from "src/ui/pages/Users";
+import { AdminPage } from "src/ui/pages";
+import { EditProfilePage } from "src/ui/pages";
+import { EditRolePage } from "src/ui/pages";
+import { HomePage } from "src/ui/pages";
+import { LoginPage } from "src/ui/pages";
+import { MetricsPage } from "src/ui/pages";
+import { NotFoundPage } from "src/ui/pages";
+import { ProfilePage } from "src/ui/pages";
+import { RegisterPage } from "src/ui/pages";
+import { UnauthorizedPage } from "src/ui/pages";
+import { UsersPage } from "src/ui/pages";
 import { UserRoles } from "src/ui/features/User/User.types";
 
 export const ROUTING = [

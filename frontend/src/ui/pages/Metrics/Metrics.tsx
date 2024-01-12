@@ -5,7 +5,7 @@ import { Page } from "src/ui/components";
 import { LineChart } from "src/ui/charts";
 import "./Metrics.styles.scss";
 
-export default function Metrics() {
+export default function MetricsPage() {
   const [elementRef, height, width] = useDimensions();
   return (
     <Page classNames="metrics" pageTitle="Metrics">

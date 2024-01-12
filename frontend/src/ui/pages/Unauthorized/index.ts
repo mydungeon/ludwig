@@ -1,2 +1,2 @@
-import Unauthorized from "./Unauthorized";
-export default Unauthorized;
+import UnauthorizedPage from "./Unauthorized";
+export default UnauthorizedPage;

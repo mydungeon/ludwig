@@ -1,2 +1,2 @@
-import Metrics from "./Metrics";
-export default Metrics;
+import MetricsPage from "./Metrics";
+export default MetricsPage;

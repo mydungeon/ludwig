@@ -1,2 +1,2 @@
-import Profile from "./Profile";
-export default Profile;
+import EditProfilePage from "./Profile";
+export default EditProfilePage;
