@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useAppSelector } from "src/redux/store";
-import Header from "src/ui/elements/Header";
+import { Header } from "src/ui/components";
 import { Logo } from "src/ui/components";
 import LoggedOutMenu from "src/ui/features/Menus/LoggedOut";
 import LoggedInMenu from "src/ui/features/Menus/LoggedIn/LoggedIn";

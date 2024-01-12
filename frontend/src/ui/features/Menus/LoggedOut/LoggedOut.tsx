@@ -1,5 +1,5 @@
 import React from "react";
-import SiteLink from "src/ui/elements/SiteLink";
+import { SiteLink } from "src/ui/components";
 
 export default function LoggedOutMenu() {
   return (

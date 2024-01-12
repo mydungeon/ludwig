@@ -5,7 +5,7 @@ import { Redirect } from "src/hooks";
 import { MultiSelect } from "src/ui/components";
 import { Wrapper } from "src/ui/components";
 import FormFooter from "src/ui/components/Form/components/Footer";
-import SiteLink from "src/ui/elements/SiteLink";
+import { SiteLink } from "src/ui/components";
 import { SubmitButton } from "src/ui/features/Buttons";
 import { toggleOption } from "src/ui/components/MultiSelect/MultiSelect.utils";
 import { MULTI_SELECT_OPTIONS } from "./Role.constants";

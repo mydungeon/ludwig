@@ -6,9 +6,9 @@ import { Form } from "src/ui/components";
 import { Input } from "src/ui/components";
 import FormFooter from "src/ui/components/Form/components/Footer";
 import { SubmitButton } from "src/ui/features/Buttons";
-import { validationSchema } from "./Profile.schema";
 import { useAppSelector } from "src/redux/store";
-import SiteLink from "src/ui/elements/SiteLink";
+import { SiteLink } from "src/ui/components";
+import { validationSchema } from "./Profile.schema";
 
 export default function EditProfileForm() {
   const defaultValues = useAppSelector((state) => state.userState.user);
