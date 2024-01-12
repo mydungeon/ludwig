@@ -1,9 +1,9 @@
 import React from "react";
 import { Redirect, usePreloader, useRedirect } from "src/hooks";
 import { useUpdateMeMutation } from "src/redux/api/user.api";
-import Wrapper from "src/ui/components/Wrapper";
-import Form from "src/ui/components/Form";
-import Input from "src/ui/components/Input";
+import { Wrapper } from "src/ui/components";
+import { Form } from "src/ui/components";
+import { Input } from "src/ui/components";
 import FormFooter from "src/ui/components/Form/components/Footer";
 import { SubmitButton } from "src/ui/features/Buttons";
 import { validationSchema } from "./Profile.schema";

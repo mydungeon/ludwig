@@ -1,5 +1,5 @@
 import React from "react";
-import Page from "src/ui/components/Page/Page";
+import { Page } from "src/ui/components";
 import "./Home.styles.scss";
 import { HomeCarousel } from "src/ui/features/Carousels";
 

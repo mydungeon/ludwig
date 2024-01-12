@@ -6,7 +6,7 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import PagerProps from "./Pager.types";
-import Icon from "src/ui/components/Icon";
+import { Icon } from "src/ui/components";
 import "./Pager.styles.scss";
 
 // Article: https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/

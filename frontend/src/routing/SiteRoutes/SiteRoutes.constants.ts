@@ -3,7 +3,7 @@ import {
   HeaderSidebarLayout,
   HeaderlessLayout,
 } from "src/ui/features/Layouts";
-import Authorize from "src/ui/components/Authorize";
+import { Authorize } from "src/ui/components";
 import AdminPage from "src/ui/pages/Admin";
 import EditProfilePage from "src/ui/pages/Edit/Profile";
 import EditRolePage from "src/ui/pages/Edit/Role";

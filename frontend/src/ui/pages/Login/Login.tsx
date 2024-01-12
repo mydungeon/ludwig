@@ -1,5 +1,5 @@
 import React from "react";
-import Page from "src/ui/components/Page";
+import { Page } from "src/ui/components";
 import LoginForm from "src/ui/features/Forms/Login";
 import "./Login.styles.scss";
 

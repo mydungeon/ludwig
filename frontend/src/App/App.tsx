@@ -4,7 +4,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { AppContext } from "src/context/App";
 import AlertModal from "src/ui/features/Modals/Alert";
-import PreLoader from "src/ui/components/PreLoader";
+import { PreLoader } from "src/ui/components";
 import AuthMiddleware from "src/middleWare/AuthMiddleware";
 import SiteRoutes from "src/routing/SiteRoutes";
 

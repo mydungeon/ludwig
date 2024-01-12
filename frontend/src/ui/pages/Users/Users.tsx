@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useLazyGetUsersQuery } from "src/redux/api/user.api";
 import { IUser } from "src/redux/api/types";
-import Table from "src/ui/components/Table";
+import { Table } from "src/ui/components";
+import { Pager } from "src/ui/components";
+import { Page } from "src/ui/components";
 import { USER_TABLE_COLUMNS } from "src/ui/components/Table/Table.constants";
-import Pager from "src/ui/components/Pager";
-import Page from "src/ui/components/Page";
 import "./Users.styles.scss";
 
 const PageSize = 8;

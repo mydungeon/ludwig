@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { faAnglesLeft, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
-import Icon from "src/ui/components/Icon";
-import Tooltip from "src/ui/components/Tooltip";
+import { Icon } from "src/ui/components";
+import { Tooltip } from "src/ui/components";
 import SidebarProps from "./Sidebar.types";
-import "./Sidebar.styles.scss";
 import { TooltipDirection } from "../Tooltip/Tooltip.types";
+import "./Sidebar.styles.scss";
 
 export default function Sidebar({ children }: SidebarProps) {
   const [show, setShow] = useState(true);

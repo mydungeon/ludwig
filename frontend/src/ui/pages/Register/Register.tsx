@@ -1,5 +1,5 @@
 import React from "react";
-import Page from "src/ui/components/Page";
+import { Page } from "src/ui/components";
 import RegisterForm from "src/ui/features/Forms/Register";
 import "./Register.styles.scss";
 

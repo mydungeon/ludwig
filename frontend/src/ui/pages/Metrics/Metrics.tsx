@@ -1,8 +1,8 @@
 import React, { LegacyRef } from "react";
-import Page from "src/ui/components/Page";
-import { LineChart } from "src/ui/charts";
 import { lineChartData } from "src/ui/charts/data/lineChart";
 import { useDimensions } from "src/hooks";
+import { Page } from "src/ui/components";
+import { LineChart } from "src/ui/charts";
 import "./Metrics.styles.scss";
 
 export default function Metrics() {

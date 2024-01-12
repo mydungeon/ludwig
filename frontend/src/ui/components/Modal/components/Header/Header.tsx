@@ -1,7 +1,7 @@
 import React from "react";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import ModalHeaderProps from "./Header.types";
 import Icon from "src/ui/components/Icon";
+import ModalHeaderProps from "./Header.types";
 import "./Header.styles.scss";
 
 export default function ModalHeader({

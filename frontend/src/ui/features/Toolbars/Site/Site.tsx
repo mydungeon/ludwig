@@ -1,10 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { faCircleHalfStroke } from "@fortawesome/free-solid-svg-icons";
-import Breadcrumbs from "src/ui/components/Breadcrumbs";
 import { toggleTheme } from "src/redux/features/ui.slice";
-import Icon from "src/ui/components/Icon";
-import Tooltip from "src/ui/components/Tooltip";
+import { Breadcrumbs } from "src/ui/components";
+import { Icon } from "src/ui/components";
+import { Tooltip } from "src/ui/components";
 import { TooltipDirection } from "src/ui/components/Tooltip/Tooltip.types";
 import "./Site.styles.scss";
 

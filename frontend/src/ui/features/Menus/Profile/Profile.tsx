@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Profile.styles.scss";
-import Icon from "src/ui/components/Icon";
 import {
   faChartLine,
   faCircleUser,
   faShield,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
+import { Icon } from "src/ui/components";
+import "./Profile.styles.scss";
 
 export default function ProfileSideMenu() {
   return (

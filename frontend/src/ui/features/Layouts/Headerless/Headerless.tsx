@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Layout from "src/ui/components/Layout/Layout";
+import { Layout } from "src/ui/components";
 import "./Headerless.styles.scss";
 
 export default function HeaderlessLayout() {

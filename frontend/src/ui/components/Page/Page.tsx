@@ -1,6 +1,6 @@
 import React from "react";
 import PageProps from "./Page.types";
-import PageTitle from "src/ui/components/PageTitle";
+import { PageTitle } from "src/ui/components";
 import "./Page.styles.scss";
 
 export default function Page({ children, classNames, ...props }: PageProps) {
