@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  faChartLine,
   faCircleUser,
+  faPen,
   faShield,
   faUsers,
+  faChartLine,
 } from "@fortawesome/free-solid-svg-icons";
 import { Icon } from "src/ui/components";
 import "./Profile.styles.scss";
@@ -16,6 +17,10 @@ export default function ProfileSideMenu() {
       <div className="sub">
         <div>
           <Icon icon={faCircleUser} />
+          <Link to="profile">Profile</Link>
+        </div>
+        <div>
+          <Icon icon={faPen} />
           <Link to="profile/edit">Edit Profile</Link>
         </div>
         <div>

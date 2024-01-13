@@ -6,18 +6,18 @@
 }
 
 .pagerItem {
-    padding: 0 $smallPadding;
-    height: $pagerHeight;
-    text-align: center;
-    margin: auto $smallestMargin;
+    align-items: center;
+    border-radius: $smallRadius;
+    box-sizing: border-box;
     color: $darkestGrey;
     display: flex;
-    box-sizing: border-box;
-    align-items: center;
-    letter-spacing: $pagerLetterSpacing;
-    border-radius: $smallRadius;
     font-size: $smallFontSize;
+    height: $pagerHeight;
+    letter-spacing: $pagerLetterSpacing;
+    margin: auto $smallestMargin;
     min-width: $pagerWidth;
+    padding: 0 $smallPadding;
+    text-align: center;
 
     &.dots:hover {
         background-color: transparent;
@@ -25,12 +25,7 @@
     }
 
     &:hover {
-        background-color: $extraLightOpacity;
         cursor: pointer;
-    }
-
-    &.selected {
-        background-color: $lightestOpacity;
     }
 
     &.disabled {

@@ -58,6 +58,18 @@ button:hover {
     @include themify('color', 'siteHeaderMenuIconHoverColor');
 }
 
+.pagerItem {
+    @include themify('color', 'pagerColor');
+}
+
+.pagerItem:hover {
+    @include themify('background-color', 'pagerHover');
+}
+
+.pagerItem.selected {
+    @include themify('background-color', 'pagerSelected');
+}
+
 a.siteLink.link {
     @include themify('color', 'siteLinkLinkColor');
 }
@@ -81,6 +93,34 @@ a.siteLink.link {
 .sidebarToggle > div > svg,
 .siteToolbar > div > svg {
     @include themify('color', 'svgColor');
+}
+
+.tableWrapper {
+    @include themify('border-left-color', 'tableBorderColor');
+}
+
+.table td,
+.table th {
+    @include themify('border-color', 'tableBorderColor');
+}
+.table td {
+    @include themify('color', 'tableTdColor');
+}
+.table th {
+    @include themify('background-color', 'tableThBg');
+    @include themify('color', 'tableThColor');
+}
+
+.table tr:nth-child(odd) {
+    @include themify('background-color', 'tableTrNthChildOddBg');
+}
+
+.table tr:nth-child(even) {
+    @include themify('background-color', 'tableTrNthChildEvenBg');
+}
+
+.table tr:hover {
+    @include themify('background-color', 'tableTrHoverBg');
 }
 
 .backdrop .wrapper.preloader,

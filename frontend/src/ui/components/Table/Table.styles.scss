@@ -1,11 +1,13 @@
 @import "src/sass/themes/variables";
 
 .tableWrapper {
-    border-left: $extraSmallPixelWidth solid $grey;
+    border-left-color: $grey;
+    border-left-style: solid;
+    border-left-width: $extraSmallPixelWidth;
     border-radius: $smallRadius;
     margin: auto;
-    overflow: scroll;
     max-width: calc(90vw - $mediumPixelWidth);
+    overflow: scroll;
 }
 .table {
     border-collapse: separate;
@@ -14,7 +16,8 @@
 }
 
 .table td, .table th {
-    border: $extraSmallPixelWidth solid $grey;
+    border-style: solid;
+    border-width: $extraSmallPixelWidth;
     border-style: none solid solid none;
     padding: $smallPadding;
 }
@@ -35,20 +38,6 @@
     border-bottom-left-radius: $smallRadius;
 }
 
-.table th {
-    background-color: $darkGrey;
-    color: $white;
-}
-
-.table tr:nth-child(odd) {
-    background-color: $lightestGrey;
-}
-
-.table tr:nth-child(even) {
-    background-color: $lighterGrey;
-}
-
 .table tr:hover {
-    background-color: $lightGrey;
     cursor: pointer;
 }
