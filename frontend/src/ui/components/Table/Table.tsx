@@ -1,6 +1,7 @@
 import React from "react";
 import TableProps from "./Table.types";
 import { TableBody, TableHeader } from "./components";
+import { Wrapper } from "src/ui/components";
 import "./Table.styles.scss";
 
 export default function Table({
@@ -19,5 +20,9 @@ export default function Table({
         <TableBody data={data} maxCellTextLength={maxCellTextLength} />
       </table>
     </div>
-  ) : null;
+  ) : (
+    <Wrapper classNames="tableResults">
+      <h2>0 Results</h2>
+    </Wrapper>
+  );
 }

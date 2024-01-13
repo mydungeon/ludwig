@@ -1,3 +1,7 @@
+export const PAGE_SIZE = 8;
+
+export const MAX_CELL_TEXT_LENGTH = 8;
+
 export const USER_TABLE_COLUMNS = [
   { name: "_id" },
   { name: "name", sort: true, filter: true },

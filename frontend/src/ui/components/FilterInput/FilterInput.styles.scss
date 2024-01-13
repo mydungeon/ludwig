@@ -1,0 +1,12 @@
+@import "src/sass/themes/variables";
+.filterInput {
+    align-items: flex-end;
+    display: flex;
+    margin: $smallMargin;
+    justify-content: flex-end;
+}
+
+.input.filter {
+    border-color: $grey;
+    margin-top: 0;
+}

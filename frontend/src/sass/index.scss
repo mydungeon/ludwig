@@ -107,10 +107,6 @@ a.siteLink.link {
     @include themify('color', 'svgColor');
 }
 
-.tableWrapper {
-    @include themify('border-left-color', 'tableBorderColor');
-}
-
 .table td,
 .table th {
     @include themify('border-color', 'tableBorderColor');

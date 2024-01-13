@@ -12,12 +12,12 @@ import "./Pager.styles.scss";
 // Article: https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/
 
 export default function Pager({
+  className,
+  currentPage,
   onPageChange,
+  pageSize,
   totalCount = 0,
   siblingCount = 1,
-  currentPage,
-  pageSize,
-  className,
 }: PagerProps) {
   const pagerRange = usePager({
     currentPage,

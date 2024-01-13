@@ -22,3 +22,9 @@
 .wrapper > h1 {
     margin-top: $noMargin;
 }
+
+.wrapper.tableResults {
+    display: flex;
+    justify-content: center;
+    max-width: calc($sidebarWidth - $mediumPixelWidth);
+}

@@ -8,11 +8,10 @@ export default function Authorize({ allowedRoles }: { allowedRoles: string }) {
   const location = useLocation();
   const [cookies] = useCookies(["logged_in"]);
   const { logged_in } = cookies;
-  const { isLoading, isFetching } = userApi.endpoints.getMe.useQuery(null, {
+  const { isLoading } = userApi.endpoints.getMe.useQuery(null, {
     skip: false,
     refetchOnMountOrArgChange: true,
   });
-  const loading = isLoading || isFetching;
   const user = userApi.endpoints.getMe.useQueryState(null, {
     selectFromResult: ({ data }) => data,
   });
@@ -22,7 +21,7 @@ export default function Authorize({ allowedRoles }: { allowedRoles: string }) {
   const isAuthorized = isLoggedInUser && isAllowed;
   const isUnauthorized = isLoggedInUser && !isAllowed;
   const isLoggedOut = !logged_in;
-  usePreloader(loading);
+  usePreloader(isLoading);
 
   if (isAuthorized && !isLoggedOut) {
     return <Outlet />;

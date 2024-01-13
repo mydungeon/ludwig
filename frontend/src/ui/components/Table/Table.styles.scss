@@ -1,12 +1,9 @@
 @import "src/sass/themes/variables";
 
 .tableWrapper {
-    border-left-color: $grey;
-    border-left-style: solid;
-    border-left-width: $extraSmallPixelWidth;
     border-radius: $smallRadius;
     margin: auto;
-    max-width: calc(90vw - $mediumPixelWidth);
+    max-width: calc($sidebarWidth - $mediumPixelWidth);
     overflow: scroll;
 }
 .table {
