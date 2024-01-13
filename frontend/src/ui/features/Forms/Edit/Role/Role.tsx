@@ -4,7 +4,7 @@ import { useAppSelector } from "src/redux/store";
 import { Redirect } from "src/hooks";
 import { MultiSelect } from "src/ui/components";
 import { Wrapper } from "src/ui/components";
-import FormFooter from "src/ui/components/Form/components/Footer";
+import { FormFooter } from "src/ui/components/Form/components";
 import { SiteLink } from "src/ui/components";
 import { SubmitButton } from "src/ui/features/Buttons";
 import { toggleOption } from "src/ui/components/MultiSelect/MultiSelect.utils";
