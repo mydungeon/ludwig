@@ -1,0 +1,63 @@
+@import "src/sass/themes/variables";
+
+.filterWrapper {
+    // align-items: flex-end;
+    // display: inline-flex;
+    // flex-direction: column;
+    // justify-content: flex-end;
+    // display: inline-block;
+    margin-bottom: $smallerMargin;
+}
+
+.filterCritera {
+    font-size: $smallFontSize;
+    font-style: italic;
+    font-weight: normal;
+    text-align: right;
+}
+
+.filterWithDropdown {
+    position: relative;
+}
+
+.filterInput {
+    position: relative;
+}
+
+.filterDropdown {
+    margin: $smallMargin;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.filterDropdown > ul {
+    background: $white;
+    border-color: $grey;
+    border-style: solid;
+    border-radius: $smallerRadius;
+    border-width: $extraSmallPixelWidth;
+    box-shadow: $smallShadow;
+    padding: 0;
+    position: absolute;
+    right: -10px;
+    text-align: left;
+    top: 16px;
+    z-index: 2;
+}
+
+.filterDropdown > ul > li {
+    border-bottom-color: $grey;
+    border-bottom-style: solid;
+    border-bottom-width: $extraSmallPixelWidth;
+    cursor: pointer;
+    font-size: $regularFontSize;
+    font-weight: normal;
+    margin: 0;
+    padding: $smallerPadding $smallPadding;
+    list-style-type: none;
+}
+
+.filterDropdown > ul > li:last-child {
+    border: none;
+}

@@ -15,20 +15,24 @@ export default function UsersPage() {
 
   useEffect(() => {
     async function sortDataAsync() {
+      console.log("get users");
       const { data } = await getUsers();
       setData(data!);
     }
+
     sortDataAsync();
   }, [data, getUsers, setData]);
 
   return (
-    <Page classNames="users" pageTitle="Users">
-      <SortableTable
-        columns={USER_TABLE_COLUMNS}
-        data={data}
-        maxCellTextLength={MAX_CELL_TEXT_LENGTH}
-        pageSize={PAGE_SIZE}
-      />
-    </Page>
+    data && (
+      <Page classNames="users" pageTitle="Users">
+        <SortableTable
+          columns={USER_TABLE_COLUMNS}
+          data={data}
+          maxCellTextLength={MAX_CELL_TEXT_LENGTH}
+          pageSize={PAGE_SIZE}
+        />
+      </Page>
+    )
   );
 }
