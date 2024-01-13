@@ -42,14 +42,6 @@ button:hover {
     @include themify('color', 'pageColor');
 }
 
-.sidebar {
-    @include themify('background-color', 'sideBarBg');
-}
-
-.sidebar:hover {
-    @include themify('background-color', 'sideBarHoverBg');
-}
-
 .menuIcon {
     @include themify('color', 'siteHeaderMenuIconColor');
 }
@@ -68,6 +60,27 @@ button:hover {
 
 .pagerItem.selected {
     @include themify('background-color', 'pagerSelected');
+}
+
+.sidebar {
+    @include themify('background-color', 'sideBarBg');
+}
+
+.sidebar h2,
+.sidebarToggle > span > svg,
+.sidebar > .menu.profile > .sub > div,
+.sidebar > .menu.profile > .sub > div > a {
+    @include themify('color', 'sideBarColor');
+}
+
+.sidebarToggle>span>svg:hover,
+.sidebar>.menu.profile>.sub>div:hover,
+.sidebar>.menu.profile>.sub>div>a:hover {
+    @include themify('color', 'sideBarHoverColor');
+}
+
+.sidebar:hover {
+    @include themify('background-color', 'sideBarHoverBg');
 }
 
 a.siteLink.link {
@@ -90,7 +103,6 @@ a.siteLink.link {
     @include themify('color', 'svgColor');
 }
 
-.sidebarToggle > div > svg,
 .siteToolbar > div > svg {
     @include themify('color', 'svgColor');
 }
