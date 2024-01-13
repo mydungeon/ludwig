@@ -1,9 +1,8 @@
 import React, { useMemo, useState } from "react";
 import SortableTableProps from "./Sortable.types";
-import { Pager, Table } from "src/ui/components";
+import { Pager, Table, TableToolbar } from "src/ui/components";
 import { IUser } from "src/redux/api/types";
 import "./Sortable.styles.scss";
-import { FilterWithDropdown } from "../../Filters";
 
 export default function SortableTable({
   columns,
@@ -12,6 +11,7 @@ export default function SortableTable({
   pageSize,
 }: SortableTableProps) {
   const [currentPage, setCurrentPage] = useState(1);
+  const [filteredDataCount, setFilteredDataCount] = useState(0);
   const [filterKey, setFilterKey] = useState("");
   const [filterTerm, setFilterTerm] = useState("");
   const [sortField, setSortField] = useState<string>("");
@@ -34,8 +34,9 @@ export default function SortableTable({
         }
       });
     }
-
-    return filterData(data)?.slice(firstPageIndex, lastPageIndex);
+    const filtered = filterData(data);
+    setFilteredDataCount(filtered.length);
+    return filtered.slice(firstPageIndex, lastPageIndex);
   }, [currentPage, data, filterKey, filterTerm, pageSize]);
 
   const sortedData = useMemo(() => {
@@ -79,29 +80,38 @@ export default function SortableTable({
     setToggleFilterDropdown(!toggleFilterDropdown);
   }
 
+  function handleClearFilter() {
+    setFilterKey("");
+    setFilterTerm("");
+  }
+
+  const tableData = filterTerm ? filteredData : sortedData;
+  const resultCount = filterTerm ? filteredDataCount : data.length;
+
   return (
     data && (
       <div className="sortable" data-testid="sortable">
-        <div className="filterCritera">
-          {filterKey ? `Filter by: ${filterKey}` : `Add filter criteria`}
-        </div>
-        <FilterWithDropdown
+        <TableToolbar
           columns={columns}
+          filterKey={filterKey}
+          filterTerm={filterTerm}
+          handleClearFilter={handleClearFilter}
           handleToggle={handleSetToggleFilterDropdown}
           onChange={handleFiltering}
           onClick={handleSetFilterKey}
+          resultCount={resultCount}
           toggle={toggleFilterDropdown}
         />
         <Table
           columns={columns}
-          data={filterTerm ? filteredData : sortedData}
+          data={tableData}
           maxCellTextLength={maxCellTextLength}
           handleSetSortField={handleSorting}
         />
         <Pager
           className="pagerBar"
           currentPage={currentPage}
-          totalCount={data.length}
+          totalCount={filterKey ? filteredDataCount : data.length}
           pageSize={pageSize}
           onPageChange={pagerCallback}
         />

@@ -1,6 +1,6 @@
 @import 'src/sass/themes/variables';
 
-.footer.form {
+.formFooter.form {
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -9,6 +9,6 @@
     width: $largestPercentage;
 }
 
-.footer.form button.submit.login {
+.formFooter.form button.submit.login {
     padding: $mediumPadding $largePadding;
 }

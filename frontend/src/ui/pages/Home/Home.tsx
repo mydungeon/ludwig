@@ -1,12 +1,12 @@
 import React from "react";
-import { Page } from "src/ui/components";
-import "./Home.styles.scss";
 import { HomeCarousel } from "src/ui/features/Carousels";
+import { PageWithFooter } from "src/ui/features/Pages";
+import "./Home.styles.scss";
 
 export default function HomePage() {
   return (
-    <Page classNames="home">
+    <PageWithFooter classNames="home">
       <HomeCarousel />
-    </Page>
+    </PageWithFooter>
   );
 }

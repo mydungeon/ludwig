@@ -6,6 +6,7 @@ import "./FilterWithDropdown.styles.scss";
 
 export default function FilterWithDropdown({
   columns,
+  filterTerm,
   handleToggle,
   onChange,
   onClick,
@@ -14,7 +15,7 @@ export default function FilterWithDropdown({
   return (
     <div className="filterWrapper">
       <div className="filterWithDropdown" data-testid="filterwithdropdown">
-        <FilterInput onChange={onChange} />
+        <FilterInput filterTerm={filterTerm} onChange={onChange} />
         <FilterDropdown
           columns={columns}
           handleToggle={handleToggle}

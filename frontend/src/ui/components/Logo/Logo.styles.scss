@@ -24,3 +24,7 @@
 .logo.siteFooter {
     font-size: $regularFontSize;
 }
+
+.logo.small > div > svg {
+    width: $mediumWidth;
+}

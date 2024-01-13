@@ -4,7 +4,7 @@ import "./Footer.styles.scss";
 
 export default function FormFooter({ children, classNames }: FormFooterProps) {
   return (
-    <div className={`footer ${classNames}`} data-testid="formFooter">
+    <div className={`formFooter ${classNames}`} data-testid="formFooter">
       {children}
     </div>
   );

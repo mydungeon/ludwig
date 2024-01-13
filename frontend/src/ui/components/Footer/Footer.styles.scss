@@ -1,0 +1,11 @@
+@import "src/sass/themes/variables";
+
+.footer {
+    align-items: center;
+    box-shadow: $mediumShadow;
+    display: flex;
+    justify-content: space-between;
+    padding: $smallerPadding;
+    position: relative;
+    z-index: 3;
+}

@@ -26,6 +26,11 @@ button:hover {
     @include themify('background', 'buttonHoverBg');
 }
 
+.footer {
+    @include themify('background-color', 'siteFooterBg');
+    @include themify('color', 'siteFooterColor');
+}
+
 .header.site {
     @include themify('background', 'siteHeaderBg');
 }

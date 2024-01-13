@@ -1,11 +1,11 @@
 import React from "react";
-import { Page } from "src/ui/components";
 import { UserDetails } from "src/ui/components";
+import { PageWithFooter } from "src/ui/features/Pages";
 
 export default function ProfilePage() {
   return (
-    <Page pageTitle="Profile">
+    <PageWithFooter pageTitle="Profile">
       <UserDetails />
-    </Page>
+    </PageWithFooter>
   );
 }

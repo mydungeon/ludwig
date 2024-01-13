@@ -6,6 +6,7 @@ import Button from "./Button";
 import Carousel from "./Carousel";
 import Ellipse from "./Ellipse";
 import ErrorMessage from "./ErrorMessage";
+import Footer from "./Footer";
 import Form from "./Form";
 import Header from "./Header";
 import Icon from "./Icon";
@@ -21,6 +22,7 @@ import PreLoader from "./PreLoader";
 import Sidebar from "./Sidebar";
 import SiteLink from "./SiteLink";
 import Table from "./Table";
+import TableToolbar from "./TableToolbar";
 import Tooltip from "./Tooltip";
 import UserDetails from "./UserDetails";
 import Wrapper from "./Wrapper";
@@ -34,6 +36,7 @@ export {
   Carousel,
   Ellipse,
   ErrorMessage,
+  Footer,
   Form,
   Header,
   Icon,
@@ -49,6 +52,7 @@ export {
   Sidebar,
   SiteLink,
   Table,
+  TableToolbar,
   Tooltip,
   UserDetails,
   Wrapper,
