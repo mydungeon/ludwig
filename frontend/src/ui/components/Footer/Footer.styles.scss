@@ -7,5 +7,19 @@
     justify-content: space-between;
     padding: $smallerPadding;
     position: relative;
+    text-align: center;
     z-index: 3;
+}
+
+.footer > div {
+    flex: 1;
+}
+
+.footer > div:first-child {
+    margin-left: $smallMargin;
+}
+
+.footer > div:last-child {
+    margin-right: $smallMargin;
+    text-align: right;
 }

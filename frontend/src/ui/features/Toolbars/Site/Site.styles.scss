@@ -1,10 +1,11 @@
 @import "src/sass/themes/variables";
 
 .siteToolbar {
+    align-items: center;
     box-shadow: $mediumShadow;
     display: flex;
     justify-content: space-between;
-    padding: $mediumPadding;
+    padding: $smallerPadding;
     position: relative;
     z-index: 3;
 }
