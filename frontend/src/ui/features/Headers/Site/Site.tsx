@@ -25,14 +25,16 @@ export default function SiteHeader() {
       <Logo classNames="siteHeader" logoText={SITE_NAME} />
       <div className="right">
         {!user ? <LoggedOutMenu /> : <LoggedInMenu {...user} />}
-        <Tooltip message="Open Menu" direction={TooltipDirection.LEFT}>
-          <Icon
-            classNames="menuIcon"
-            icon={faBars}
-            handleClick={handleShowMenu}
-            size="2x"
-          />
-        </Tooltip>
+        {user && (
+          <Tooltip message="Open Menu" direction={TooltipDirection.LEFT}>
+            <Icon
+              classNames="menuIcon"
+              icon={faBars}
+              handleClick={handleShowMenu}
+              size="2x"
+            />
+          </Tooltip>
+        )}
       </div>
     </Header>
   );
