@@ -60,7 +60,7 @@ button:hover {
 }
 
 .pagerItem {
-    @include themify('color', 'darkestAndLightestGrey');
+    @include themify('color', 'blackAndWhite');
 }
 
 .pagerItem:hover {
