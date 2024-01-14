@@ -1,6 +1,7 @@
 import AdminPage from "./Admin";
 import { EditProfilePage } from "./Edit";
 import { EditRolePage } from "./Edit";
+import FeedbackPage from "./Feedback";
 import HomePage from "./Home";
 import LoginPage from "./Login";
 import MetricsPage from "./Metrics";
@@ -14,6 +15,7 @@ export {
   AdminPage,
   EditProfilePage,
   EditRolePage,
+  FeedbackPage,
   HomePage,
   LoginPage,
   MetricsPage,

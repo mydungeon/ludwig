@@ -21,6 +21,7 @@ import PageTitle from "./PageTitle";
 import PreLoader from "./PreLoader";
 import Sidebar from "./Sidebar";
 import SiteLink from "./SiteLink";
+import SliderInput from "./SliderInput";
 import Table from "./Table";
 import TableToolbar from "./TableToolbar";
 import Tooltip from "./Tooltip";
@@ -51,6 +52,7 @@ export {
   PreLoader,
   Sidebar,
   SiteLink,
+  SliderInput,
   Table,
   TableToolbar,
   Tooltip,
