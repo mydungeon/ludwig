@@ -30,8 +30,3 @@
 .sidebar > div:last-child {
     align-self: flex-end;
 }
-
-.sidebar > div.sidebarToggle,
-.sidebar > div.sidebarToggle > a > svg {
-    height: $rem1;
-}

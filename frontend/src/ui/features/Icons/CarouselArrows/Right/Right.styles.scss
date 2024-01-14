@@ -1,0 +1,17 @@
+@import "src/sass/themes/variables";
+
+.carousel .arrow {
+    color: $darkGrey;
+    height: $rem2;
+    position: absolute;
+    width: $rem2;
+}
+
+.carousel .arrow:hover {
+    color: $black;
+    cursor: pointer;
+}
+
+.carousel .arrow.right {
+    right: $rem1;
+}

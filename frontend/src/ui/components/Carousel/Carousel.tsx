@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { Icon } from "src/ui/components";
 import { CarouselProps } from "./Carousel.types";
 import "./Carousel.styles.scss";
+import {
+  LeftCarouselArrowIcon,
+  RightCarouselArrowIcon,
+} from "src/ui/features/Icons";
 
 export default function Carousel({ slides, timeout = true }: CarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -13,10 +12,12 @@ export default function Carousel({ slides, timeout = true }: CarouselProps) {
   const nextSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
   const previousSlide =
     currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+
   function handleSetPreviousSlide() {
     setAutoPlay(false);
     setCurrentSlide(previousSlide);
   }
+
   function handleSetNextSlide() {
     setAutoPlay(false);
     setCurrentSlide(nextSlide);
@@ -32,11 +33,7 @@ export default function Carousel({ slides, timeout = true }: CarouselProps) {
 
   return (
     <div className="carousel" data-testid="carousel">
-      <Icon
-        classNames="arrow left"
-        icon={faChevronLeft}
-        handleClick={handleSetPreviousSlide}
-      />
+      <LeftCarouselArrowIcon callback={handleSetPreviousSlide} />
       {slides.map(({ alt, src }, index) => {
         return (
           <img
@@ -47,11 +44,7 @@ export default function Carousel({ slides, timeout = true }: CarouselProps) {
           />
         );
       })}
-      <Icon
-        classNames="arrow right"
-        icon={faChevronRight}
-        handleClick={handleSetNextSlide}
-      />
+      <RightCarouselArrowIcon callback={handleSetNextSlide} />
       <span className="indicators">
         {slides.map((_, index: number) => (
           <button

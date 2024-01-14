@@ -23,26 +23,6 @@
     display: none;
 }
 
-.carousel .arrow {
-    color: $darkGrey;
-    height: $rem2;
-    position: absolute;
-    width: $rem2;
-}
-
-.carousel .arrow:hover {
-    color: $black;
-    cursor: pointer;
-}
-
-.carousel .arrow.left {
-    left: $rem1;
-}
-
-.carousel .arrow.right {
-    right: $rem1;
-}
-
 .carousel .indicators {
     bottom: $rem1;
     display: flex;

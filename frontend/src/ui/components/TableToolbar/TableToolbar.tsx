@@ -1,8 +1,7 @@
 import React from "react";
-import { faClose } from "@fortawesome/free-solid-svg-icons";
 import TableToolbarProps from "./TableToolbar.types";
-import { Icon } from "src/ui/components";
 import { FilterWithDropdown } from "src/ui/features/Filters";
+import { FilterInputClearIcon } from "src/ui/features/Icons";
 import "./TableToolbar.styles.scss";
 
 export default function TableToolbar({
@@ -24,14 +23,7 @@ export default function TableToolbar({
       <div className="filterWrapper">
         <div className="filterCritera">
           {filterKey ? `Filter by: ${filterKey}` : `Add filter criteria`}
-          {filterKey && (
-            <Icon
-              classNames="clearFilter"
-              icon={faClose}
-              handleClick={handleClearFilter}
-              size="xs"
-            />
-          )}
+          {filterKey && <FilterInputClearIcon callback={handleClearFilter} />}
         </div>
         <FilterWithDropdown
           columns={columns}

@@ -1,12 +1,8 @@
 import React from "react";
 import classnames from "classnames";
 import { usePager, DOTS } from "src/hooks";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
 import PagerProps from "./Pager.types";
-import { Icon } from "src/ui/components";
+import { PagerLeftArrowIcon, PagerRightArrowIcon } from "src/ui/features/Icons";
 import "./Pager.styles.scss";
 
 // ARTICLE: https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/
@@ -48,7 +44,7 @@ export default function Pager({
         key="pagerBackButton"
         onClick={onPrevious}
       >
-        <Icon icon={faChevronLeft} />
+        <PagerLeftArrowIcon />
       </li>
       {pagerRange!.map((pageNumber) => {
         if (pageNumber === DOTS) {
@@ -77,7 +73,7 @@ export default function Pager({
         })}
         onClick={onNext}
       >
-        <Icon icon={faChevronRight} />
+        <PagerRightArrowIcon />
       </li>
     </ul>
   );

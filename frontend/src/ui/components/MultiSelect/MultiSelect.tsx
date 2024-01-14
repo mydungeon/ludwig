@@ -1,6 +1,5 @@
 import React from "react";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { Icon } from "src/ui/components";
+import { MultiSelectDownArrowIcon } from "src/ui/features/Icons";
 import MultiSelectProps from "./MultiSelect.types";
 import "./MultiSelect.styles.scss";
 
@@ -14,7 +13,7 @@ export default function MultiSelectDropdown({
     <div className="multiSelect" data-testid="multiSelect">
       <div className="selected">
         <div>{selected.length} selected</div>
-        <Icon icon={faChevronDown} />
+        <MultiSelectDownArrowIcon />
       </div>
       <ul className="options">
         {options.map(({ id }) => {

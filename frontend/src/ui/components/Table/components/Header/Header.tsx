@@ -1,6 +1,5 @@
 import React from "react";
-import { Icon } from "src/ui/components";
-import { faSort } from "@fortawesome/free-solid-svg-icons";
+import { TableHeaderSortIcon } from "src/ui/features/Icons";
 import "./Header.styles.scss";
 
 export default function TableHeader({ ...props }) {
@@ -18,7 +17,7 @@ export default function TableHeader({ ...props }) {
               <span>{name}</span>
               {sort && (
                 <span>
-                  <Icon classNames="sort" icon={faSort} />
+                  <TableHeaderSortIcon />
                 </span>
               )}
             </th>

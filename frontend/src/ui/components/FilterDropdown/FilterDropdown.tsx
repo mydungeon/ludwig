@@ -1,6 +1,5 @@
 import React from "react";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { Icon } from "src/ui/components";
+import { FilterInputDropdownArrowIcon } from "src/ui/features/Icons";
 import FilterDropdownProps from "./FilterDropdown.types";
 import "./FilterDropdown.styles.scss";
 
@@ -12,7 +11,7 @@ export default function FilterDropdown({
 }: FilterDropdownProps) {
   return (
     <div className="filterDropdown" data-testid="filterDropdown">
-      <Icon icon={faChevronDown} handleClick={handleToggle} />
+      <FilterInputDropdownArrowIcon callback={handleToggle} />
       {toggle && (
         <ul>
           {columns.map(

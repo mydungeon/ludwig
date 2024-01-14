@@ -4,10 +4,7 @@ import { Header } from "src/ui/components";
 import { Logo } from "src/ui/components";
 import LoggedOutMenu from "src/ui/features/Menus/LoggedOut";
 import LoggedInMenu from "src/ui/features/Menus/LoggedIn/LoggedIn";
-import { Tooltip } from "src/ui/components";
-import { Icon } from "src/ui/components";
-import { TooltipDirection } from "src/ui/components/Tooltip/Tooltip.types";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { MenuIcon } from "src/ui/features/Icons";
 import { AppContextType, AppContext } from "src/context/App";
 import { SITE_NAME } from "./Site.constants";
 import "./Site.styles.scss";
@@ -25,16 +22,7 @@ export default function SiteHeader() {
       <Logo classNames="siteHeader" logoText={SITE_NAME} />
       <div className="right">
         {!user ? <LoggedOutMenu /> : <LoggedInMenu {...user} />}
-        {user && (
-          <Tooltip message="Open Menu" direction={TooltipDirection.LEFT}>
-            <Icon
-              classNames="menuIcon"
-              icon={faBars}
-              handleClick={handleShowMenu}
-              size="2x"
-            />
-          </Tooltip>
-        )}
+        {user && <MenuIcon callback={handleShowMenu} />}
       </div>
     </Header>
   );

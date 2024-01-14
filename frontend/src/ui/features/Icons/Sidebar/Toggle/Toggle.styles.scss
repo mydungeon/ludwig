@@ -1,0 +1,6 @@
+@import "src/sass/themes/variables";
+
+.sidebar>div.sidebarToggle,
+.sidebar>div.sidebarToggle>a>svg {
+    height: $rem1;
+}

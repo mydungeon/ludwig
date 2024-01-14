@@ -1,0 +1,7 @@
+@import "src/sass/themes/variables";
+
+.modalHeader > .fa-xmark {
+    position: absolute;
+    right: $px15;
+    top: $px15;
+}
