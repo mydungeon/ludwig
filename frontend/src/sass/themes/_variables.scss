@@ -1,3 +1,4 @@
+
 /***************************/
 // COLORS
 /***************************/
@@ -6,7 +7,11 @@ $white: #FFFFFF;
 $black: #000000;
 $red: #FF0000;
 
-// Greys
+
+/***************************/
+// GREYS
+/***************************/
+
 $lightestGrey: #f8f8f8;
 $lighterGrey: #eaeaea;
 $lightGrey: #c8c8c8;
@@ -21,6 +26,7 @@ $darkGrey: #808080;
 $darkerGrey: #666666;
 $darkestGrey: #404040;
 $almostBlack: #1c1c1c;
+
 
 /***************************/
 // RGB COLORS
@@ -37,6 +43,7 @@ $rgbOrange: rgb(255, 100, 0);
 $rgbOrangeRed: rgb(255, 50, 0);
 $rgbRed: rgb(255, 0, 0);
 
+
 /***************************/
 // LINEAR GRADIENTS
 /***************************/
@@ -51,6 +58,8 @@ $lgRgbLightOrange: linear-gradient($rgbLightOrange, $rgbLightOrange);
 $lgRgbOrange: linear-gradient($rgbOrange, $rgbOrange);
 $lgRgbOrangeRed: linear-gradient($rgbOrangeRed, $rgbOrangeRed);
 $lgRgbRed: linear-gradient($rgbRed, $rgbRed);
+
+
 /***************************/
 // OPACITIES
 /***************************/
@@ -75,11 +84,13 @@ $blackAlpha100pct: rgba(0, 0, 0, 1);
 $smallShadow: 2px 2px 2px 1px $blackAlpha20pct;
 $mediumShadow: 0px -1px 18px -8px $blackAlpha100pct;
 
+
 /***************************/
 // AUTO MARGINS
 /***************************/
 
 $zeroAuto: 0 auto;
+
 
 /***************************/
 //FONTS
@@ -87,6 +98,7 @@ $zeroAuto: 0 auto;
 
 $brevia: "brevia", sans-serif;
 $josefin: "josefin-sans", sans-serif;
+
 
 /***************************/
 //NUMBERS
@@ -96,6 +108,7 @@ $num400: 400;
 $num500: 500;
 $num600: 600;
 $num700: 700;
+
 
 /***************************/
 //PERCENTAGES
@@ -110,8 +123,9 @@ $pct50: 50%;
 $pct75: 75%;
 $pct100: 100%;
 
+
 /***************************/
-// PIXEL
+// PIXELS
 /***************************/
 
 $px1: 1px;
@@ -138,11 +152,13 @@ $px500: 500px;
 $px800: 800px;
 $px950: 950px;
 
+
 /***************************/
-// PIXEL SHORTHAND
+// PIXEL SHORTHANDS
 /***************************/
 
 $px0X3: 0px 0px 0px;
+
 
 /***************************/
 // VIEW DIMENSIONS
@@ -153,6 +169,7 @@ $vw50: 50vw;
 $vw85: 85vw;
 $vw100: 100vw;
 $vh100: 100vh;
+
 
 /***************************/
 // REM VALUES
@@ -173,7 +190,4 @@ $rem2pt25: 2.25rem;
 $rem3pt5: 3.5rem;
 $rem4: 4rem;
 $rem8: 8rem;
-
-
-
 
