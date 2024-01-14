@@ -9,7 +9,7 @@ import PagerProps from "./Pager.types";
 import { Icon } from "src/ui/components";
 import "./Pager.styles.scss";
 
-// Article: https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/
+// ARTICLE: https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/
 
 export default function Pager({
   className,

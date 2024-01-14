@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { getWrapperWidth } from "src/ui/charts/Charts.utils";
 import { USE_DIMENSIONS_TIMEOUT, debounce } from "src/utils";
 
-// Article: https://ironeko.com/posts/find-element-size-in-react-with-the-usedimensions-hook
+// ARTICLE: https://ironeko.com/posts/find-element-size-in-react-with-the-usedimensions-hook
 
 export default function useDimensions() {
   const [height, setHeight] = useState(400);

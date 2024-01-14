@@ -1,6 +1,6 @@
 export const USE_DIMENSIONS_TIMEOUT = 500;
 
-// Article: https://dev.to/jeetvora331/javascript-debounce-easiest-explanation--29hc
+// ARTICLE: https://dev.to/jeetvora331/javascript-debounce-easiest-explanation--29hc
 export function debounce(callback: Function, delay: number) {
   // Declare a variable called 'timer' to store the timer ID
   let timer: any;
