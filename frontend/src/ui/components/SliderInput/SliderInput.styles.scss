@@ -3,9 +3,9 @@
 input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
-    height: 7px;
+    height: $px7;
     background: $lightGrey;
-    border-radius: 5px;
+    border-radius: $px5;
     background-image: linear-gradient($almostBlack, $almostBlack);
     background-repeat: no-repeat;
     width: $pct100;
@@ -14,12 +14,12 @@ input[type="range"] {
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    height: 20px;
-    width: 20px;
+    height: $px20;
+    width: $px20;
     border-radius: $pct50;
     background: $almostBlack;
     cursor: pointer;
-    box-shadow: 0 0 2px 0 $lightGrey;
+    box-shadow: 0 0 $px2 0 $lightGrey;
     transition: background 0.3s ease-in-out;
 }
 
@@ -31,113 +31,113 @@ input[type="range"]::-webkit-slider-runnable-track {
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
-    box-shadow: $blackAlpha10pct $px0X3 8px;
+    box-shadow: $blackAlpha10pct $px0X3 $px8;
     cursor: pointer;
 }
 
 input[type="range"]::-webkit-slider-thumb:active {
-    box-shadow: $blackAlpha20pct $px0X3 11px;
+    box-shadow: $blackAlpha20pct $px0X3 $px11;
     transition: box-shadow 350ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
         left 350ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
         bottom 350ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
 .slider.slider-100 > input[type="range"]::-webkit-slider-thumb {
-    background: linear-gradient(rgb(0, 255, 0), rgb(0, 255, 0));
+    background: $lgRgbGreen;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-100 > input[type="range"] {
-    background-image: linear-gradient(rgb(0, 255, 0), rgb(0, 255, 0));
+    background-image: $lgRgbGreen;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-90 > input[type="range"]::-webkit-slider-thumb {
-    background: linear-gradient(rgb(100, 255, 0), rgb(100, 255, 0));
+    background-image: $lgRgbLightGreen;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-90 > input[type="range"] {
-    background-image: linear-gradient(rgb(100, 255, 0), rgb(100, 255, 0));
+    background-image: $lgRgbLightGreen;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-80 > input[type="range"]::-webkit-slider-thumb {
-    background: linear-gradient(rgb(150, 255, 0), rgb(150, 255, 0));
+    background-image: $lgRgbLighterGreen;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-80 > input[type="range"] {
-    background-image: linear-gradient(rgb(150, 255, 0), rgb(150, 255, 0));
+    background-image: $lgRgbLighterGreen;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-70 > input[type="range"]::-webkit-slider-thumb {
-    background: linear-gradient(rgb(200, 255, 0), rgb(200, 255, 0));
+    background-image: $lgRgbLightestGreen;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-70 > input[type="range"] {
-    background-image: linear-gradient(rgb(200, 255, 0), rgb(200, 255, 0));
+    background-image: $lgRgbLightestGreen;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-60 > input[type="range"]::-webkit-slider-thumb {
-    background: linear-gradient(rgb(255, 255, 0), rgb(255, 255, 0));
+    background-image: $lgRgbYellow;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-60 > input[type="range"] {
-    background-image: linear-gradient(rgb(255, 255, 0), rgb(255, 255, 0));
+    background-image: $lgRgbYellow;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-50 > input[type="range"]::-webkit-slider-thumb {
-    background: linear-gradient(rgb(255, 200, 0), rgb(255, 200, 0));
+    background-image: $lgRgbYellowOrange;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-50 > input[type="range"] {
-    background-image: linear-gradient(rgb(255, 200, 0), rgb(255, 200, 0));
+    background-image: $lgRgbYellowOrange;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-40 > input[type="range"]::-webkit-slider-thumb {
-    background: linear-gradient(rgb(255, 150, 0), rgb(255, 150, 0));
+    background-image: $lgRgbLightOrange;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-40 > input[type="range"] {
-    background-image: linear-gradient(rgb(255, 150, 0), rgb(255, 150, 0));
+    background-image: $lgRgbLightOrange;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-30 > input[type="range"]::-webkit-slider-thumb {
-    background: linear-gradient(rgb(255, 100, 0), rgb(255, 100, 0));
+    background-image: $lgRgbOrange;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-30 > input[type="range"] {
-    background-image: linear-gradient(rgb(255, 100, 0), rgb(255, 100, 0));
+    background-image: $lgRgbOrange;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-20 > input[type="range"]::-webkit-slider-thumb {
-    background: linear-gradient( rgb(255, 50, 0),  rgb(255, 50, 0));
+    background-image: $lgRgbOrangeRed;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-20 > input[type="range"] {
-    background-image: linear-gradient( rgb(255, 50, 0),  rgb(255, 50, 0));
+    background-image: $lgRgbOrangeRed;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-10 > input[type="range"]::-webkit-slider-thumb {
-    background: linear-gradient(rgb(255, 0, 0), rgb(255, 0, 0));
+    background-image: $lgRgbRed;
     border: $px1 solid $almostBlack;
 }
 
 .slider.slider-10 > input[type="range"] {
-    background-image: linear-gradient(rgb(255, 0, 0), rgb(255, 0, 0));
+    background-image: $lgRgbRed;
     border: $px1 solid $almostBlack;
 }
