@@ -2,9 +2,9 @@
 @import "themes/themify";
 
 .avatar {
-    @include themify('background-color', 'avatarBg');
-    @include themify('border-color', 'avatarBorderColor');
-    @include themify('color', 'avatarColor');
+    @include themify('background-color', 'darkAndLightGrey');
+    @include themify('border-color', 'blackAndWhite');
+    @include themify('color', 'whiteAndBlack');
 }
 
 body {
@@ -13,79 +13,79 @@ body {
 
 .breadcrumb > a,
 .breadcrumb {
-    @include themify('color', 'breadCrumbColor')
+    @include themify('color', 'blackAndWhite')
 }
 
 button {
-    @include themify('background', 'buttonBg');
-    @include themify('border-color', 'buttonBorderColor');
-    @include themify('color', 'buttonColor');
+    @include themify('background', 'blackAndLightGrey');
+    @include themify('border-color', 'blackAndWhite');
+    @include themify('color', 'whiteAndBlack');
 }
 
 button:hover {
-    @include themify('background', 'buttonHoverBg');
+    @include themify('background', 'grey');
 }
 
 .footer {
-    @include themify('background-color', 'siteFooterBg');
+    @include themify('background-color', 'whiteAndAlmostBlack');
 }
 
 .footer,
 .footer div .tooltip > a > svg {
-    @include themify('color', 'siteFooterColor');
+    @include themify('color', 'blackAndWhite');
 }
 
 .header.site {
-    @include themify('background', 'siteHeaderBg');
+    @include themify('background', 'whiteAndBlack');
 }
 
 .layout {
-    @include themify('background-color', 'layoutBg');
+    @include themify('background-color', 'lightestGreyAndBlack');
 }
 
 .logo {
-    @include themify('color', 'siteHeaderLogoText');
+    @include themify('color', 'blackAndWhite');
 }
 
 .page {
-    @include themify('color', 'pageColor');
+    @include themify('color', 'blackAndGrey');
 }
 
 .menuIcon {
-    @include themify('color', 'siteHeaderMenuIconColor');
+    @include themify('color', 'blackAndWhite');
 }
 
 .menuIcon:hover {
-    @include themify('color', 'siteHeaderMenuIconHoverColor');
+    @include themify('color', 'grey');
 }
 
 .pagerItem {
-    @include themify('color', 'pagerColor');
+    @include themify('color', 'darkestAndLightestGrey');
 }
 
 .pagerItem:hover {
-    @include themify('background-color', 'pagerHover');
+    @include themify('background-color', 'alphaBlack4AndWhite20');
 }
 
 .pagerItem.selected {
-    @include themify('background-color', 'pagerSelected');
+    @include themify('background-color', 'alphaBlack8AndWhite30');
 }
 
 .sidebar {
-    @include themify('background-color', 'sideBarBg');
+    @include themify('background-color', 'lightAndDarkestGrey');
 }
 
 .sidebar h2,
 .sidebarToggle > span > svg,
 .sidebar > .menu.profile > .sub > div,
 .sidebar > .menu.profile > .sub > div > a {
-    @include themify('color', 'sideBarColor');
+    @include themify('color', 'blackAndLightGrey');
 }
 
 .sidebarToggle>span>svg:hover,
 .sidebar>.menu.profile>.sub>div:hover,
 .sidebar>.menu.profile>.sub>div>a:hover {
-    @include themify('color', 'sideBarHoverColor');
+    @include themify('color', 'darkestAndLightestGrey');
 }
 
 .sidebar:hover {
@@ -93,75 +93,75 @@ button:hover {
 }
 
 a.siteLink.link {
-    @include themify('color', 'siteLinkLinkColor');
+    @include themify('color', 'blackAndWhite');
 }
 
 .siteMenu.show,.siteMenuItem>a,
 .siteMenuItem>a:visited,
 .siteMenuItem>a:hover {
-    @include themify('background-color', 'siteMenuBg');
-    @include themify('color', 'siteMenuColor');
+    @include themify('background-color', 'darkestGrey');
+    @include themify('color', 'whiteAndLightestGrey');
 }
 
 .siteMenuItem  {
-    @include themify('border-bottom-color', 'siteMenuColor');
+    @include themify('border-bottom-color', 'whiteAndLightestGrey');
 }
 
 .siteToolbar {
-    @include themify('background', 'siteToolbarBg');
-    @include themify('color', 'svgColor');
+    @include themify('background', 'lightestGreyAndAlmostBlack');
+    @include themify('color', 'blackAndWhite');
 }
 
 .siteToolbar > div > svg {
-    @include themify('color', 'svgColor');
+    @include themify('color', 'blackAndWhite');
 }
 
 .table td,
 .table th {
-    @include themify('border-color', 'tableBorderColor');
+    @include themify('border-color', 'greyAndDarkGrey');
 }
 .table td {
-    @include themify('color', 'tableTdColor');
+    @include themify('color', 'blackAndWhite');
 }
 .table th {
-    @include themify('background-color', 'tableThBg');
-    @include themify('color', 'tableThColor');
+    @include themify('background-color', 'darkGreyAndAlmostBlack');
+    @include themify('color', 'white');
 }
 
 .table tr:nth-child(odd) {
-    @include themify('background-color', 'tableTrNthChildOddBg');
+    @include themify('background-color', 'lightestAndDarkestGrey');
 }
 
 .table tr:nth-child(even) {
-    @include themify('background-color', 'tableTrNthChildEvenBg');
+    @include themify('background-color', 'lighterAndDarkerGrey');
 }
 
 .table tr:hover {
-    @include themify('background-color', 'tableTrHoverBg');
+    @include themify('background-color', 'lightGreyAndAlmostBlack');
 }
 
 .backdrop .wrapper.preloader,
 .page .wrapper {
-    @include themify('background-color', 'wrapperBg');
+    @include themify('background-color', 'lighterGreyAndAlmostBlack');
 }
 
 .tip {
-    @include themify('background', 'tooltipBg');
-    @include themify('color', 'tooltipColor');
+    @include themify('background', 'blackAndLightGrey');
+    @include themify('color', 'whiteAndBlack');
 }
 
 .tip.top {
-        @include themifyPseudo('before', 'border-top-color', 'tooltipBg');
+        @include themifyPseudo('before', 'border-top-color', 'blackAndLightGrey');
 }
 
 .tip.right {
-    @include themifyPseudo('before','border-right-color', 'tooltipBg');
+    @include themifyPseudo('before','border-right-color', 'blackAndLightGrey');
 }
 
 .tip.bottom {
-    @include themifyPseudo('before','border-bottom-color', 'tooltipBg');
+    @include themifyPseudo('before','border-bottom-color', 'blackAndLightGrey');
 }
 
 .tip.left {
-    @include themifyPseudo('before','border-left-color', 'tooltipBg');
+    @include themifyPseudo('before','border-left-color', 'blackAndLightGrey');
 }
