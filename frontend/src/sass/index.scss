@@ -28,6 +28,10 @@ button:hover {
 
 .footer {
     @include themify('background-color', 'siteFooterBg');
+}
+
+.footer,
+.footer div .tooltip > a > svg {
     @include themify('color', 'siteFooterColor');
 }
 
@@ -139,4 +143,25 @@ a.siteLink.link {
 .backdrop .wrapper.preloader,
 .page .wrapper {
     @include themify('background-color', 'wrapperBg');
+}
+
+.tip {
+    @include themify('background', 'tooltipBg');
+    @include themify('color', 'tooltipColor');
+}
+
+.tip.top {
+        @include themifyPseudo('before', 'border-top-color', 'tooltipBg');
+}
+
+.tip.right {
+    @include themifyPseudo('before','border-right-color', 'tooltipBg');
+}
+
+.tip.bottom {
+    @include themifyPseudo('before','border-bottom-color', 'tooltipBg');
+}
+
+.tip.left {
+    @include themifyPseudo('before','border-left-color', 'tooltipBg');
 }

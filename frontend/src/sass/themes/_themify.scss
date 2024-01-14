@@ -13,3 +13,16 @@
         }
     }
 }
+
+@mixin themifyPseudo($element, $property, $key, $themes: $themes) {
+
+    // Iterate over the themes
+    @each $theme, $colors in $themes {
+        // Create a selector
+        &.#{$theme}-theme,
+        .#{$theme}-theme &:#{$element}, &::#{$element} {
+            // Output the declaration
+            #{$property}: map-get($colors, $key);
+        }
+    }
+}
