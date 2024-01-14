@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { AppContext, AppContextType } from "src/context/App";
-import { Icon } from "src/ui/components";
+import { SiteMenuCloseIcon } from "../../Icons";
 import { Backdrop } from "src/ui/components";
 import { SITE_MENU_LINKS } from "./Site.constants";
 import "./Site.styles.scss";
@@ -10,7 +9,7 @@ import "./Site.styles.scss";
 function SiteHeaderMenu({ handleClick }: { handleClick: () => void }) {
   return (
     <div className="siteMenuHeader" data-testid="siteHeaderMenu">
-      <Icon icon={faXmark} handleClick={handleClick} size="2xl" />
+      <SiteMenuCloseIcon callback={handleClick} />
     </div>
   );
 }
