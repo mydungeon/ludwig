@@ -7,8 +7,8 @@
 
 .siteMenu.show {
     display: inline-block;
-    height: $fullViewHeight;
-    min-width: $mediumPlusPixelWidth;
+    height: $vh100;
+    min-width: $px250;
     position: absolute;
     right: 0;
     z-index: 5;
@@ -17,19 +17,19 @@
 .siteMenuHeader {
     display: flex;
     justify-content: right;
-    margin-top: $mediumPlusMargin;
-    margin-right: $mediumMargin;
+    margin-top: $rem1pt5;
+    margin-right: $rem1;
 }
 
 .siteMenuBody {
-    margin: $mediumMargin;
+    margin: $rem1;
     text-align: center;
 }
 
 .siteMenuItem {
     border-bottom-style: solid;
-    border-bottom-width: $extraSmallPixelWidth;
-    padding: $smallPadding;
+    border-bottom-width: $px1;
+    padding: $rem85pct;
 }
 
 .siteMenuItem:last-child {

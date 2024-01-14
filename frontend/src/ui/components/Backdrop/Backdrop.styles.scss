@@ -2,13 +2,13 @@
 
 .backdrop {
     align-items: center;
-    background: $darkerOpacity;
+    background: $blackAlpha70pct;
     display: flex;
-    height: $fullViewHeight;
+    height: $vh100;
     justify-content: center;
     position: absolute;
     top: 0;
-    width: $fullViewWidth;
+    width: $vw100;
     z-index: 4;
 }
 

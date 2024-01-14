@@ -7,16 +7,16 @@
 
 .pagerItem {
     align-items: center;
-    border-radius: $smallRadius;
+    border-radius: $rem50pct;
     box-sizing: border-box;
     color: $darkestGrey;
     display: flex;
-    font-size: $smallFontSize;
-    height: $pagerHeight;
-    letter-spacing: $pagerLetterSpacing;
-    margin: auto $smallestMargin;
-    min-width: $pagerWidth;
-    padding: 0 $smallPadding;
+    font-size: $rem75pct;
+    height: $rem2pt25;
+    letter-spacing: $rem25pct;
+    margin: auto $rem10pct;
+    min-width: $rem2pt25;
+    padding: 0 $rem85pct;
     text-align: center;
 
     &.dots:hover {

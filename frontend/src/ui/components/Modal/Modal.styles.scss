@@ -1,21 +1,21 @@
 @import "src/sass/themes/variables";
 
 .modal {
-    background-color: $darkerOpacity;
+    background-color: $blackAlpha70pct;
     display: block;
-    height: $fullViewHeight;
+    height: $vh100;
     left: 0;
     overflow: auto;
-    padding-top: $quarterViewHeight;
+    padding-top: $vw25;
     position: fixed;
     top: 0;
-    width: $fullViewWidth;
+    width: $vw100;
     z-index: 2;
 }
 
 .modalContent {
     background-color: $white;
-    border-radius: $smallRadius;
+    border-radius: $rem50pct;
     box-shadow: $mediumShadow;
     display: flex;
     flex-direction: column;
@@ -23,17 +23,17 @@
     margin: auto;
     position: relative;
     padding: 0;
-    width: $largePixelWidth;
+    width: $px350;
 }
 
 .modalHeader {
-    margin: $smallerMargin;
+    margin: $rem50pct;
 }
 
 .modalBody {
-    margin: $largeMargin;
+    margin: $rem2;
 }
 
 .modalFooter {
-    margin: $smallerMargin;
+    margin: $rem50pct;
 }

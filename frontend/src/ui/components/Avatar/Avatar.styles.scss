@@ -3,15 +3,15 @@
 .avatar {
     align-items: center;
     border-style: solid;
-    border-radius: $largePercentage;
-    border-width: $extraSmallPixelWidth;
+    border-radius: $pct50;
+    border-width: $px1;
     color: $white;
     display: flex;
     flex: 1;
-    font-size: $largeFontSize;
-    font-weight: $boldFontWeight;
+    font-size: $rem1pt25;
+    font-weight: $num700;
     justify-content: center;
-    margin-left: $smallMargin;
+    margin-left: $rem85pct;
     text-decoration: none;
     width: 50px;
 }
@@ -23,5 +23,5 @@ a.avatar:hover {
 .avatar:before {
     content: "";
     display: inline-block;
-    padding-top: $largestPercentage;
+    padding-top: $pct100;
 }

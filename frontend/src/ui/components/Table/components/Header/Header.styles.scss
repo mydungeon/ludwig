@@ -5,7 +5,7 @@
 }
 
 .tableHeader>tr>th > span:first-child {
-    margin-right: $smallMargin;
+    margin-right: $rem85pct;
 }
 
 .tableHeader>tr>th:not(.sort) {

@@ -1,30 +1,30 @@
 @import 'src/sass/themes/variables';
 
 .page .wrapper {
-    border-radius: $mediumRadius;
+    border-radius: $rem1;
     display: inline-block;
-    padding: $largerPadding;
-    margin: $autoCenteredMargin;
+    padding: $rem4;
+    margin: $zeroAuto;
 }
 
 .backdrop .wrapper.preloader, 
 .page .wrapper.login,
 .page .wrapper.register {
-    border-radius: $mediumRadius;
+    border-radius: $rem1;
     box-shadow: $mediumShadow;
 }
 
 .backdrop .wrapper.preloader {
     background-color: $lightGrey;
-    padding: $largePadding;
+    padding: $rem2;
 }
 
 .wrapper > h1 {
-    margin-top: $noMargin;
+    margin-top: $rem0;
 }
 
 .wrapper.tableResults {
     display: flex;
     justify-content: center;
-    max-width: calc($sidebarWidth - $mediumPixelWidth);
+    max-width: calc($vw85 - $px100);
 }

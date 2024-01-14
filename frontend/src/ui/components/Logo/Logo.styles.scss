@@ -10,21 +10,21 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    padding: $smallestPadding;
+    padding: $rem10pct;
 } 
 
 .logo > div > svg {
-    width: $largeWidth;
+    width: $rem3pt5;
 }
 
 .logo.siteHeader {
-    font-size: $largeFontSize;
+    font-size: $rem1pt25;
 }
 
 .logo.siteFooter {
-    font-size: $regularFontSize;
+    font-size: $rem85pct;
 }
 
 .logo.small > div > svg {
-    width: $mediumWidth;
+    width: $rem2;
 }

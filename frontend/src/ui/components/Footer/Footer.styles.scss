@@ -5,7 +5,7 @@
     box-shadow: $mediumShadow;
     display: flex;
     justify-content: space-between;
-    padding: $smallerPadding;
+    padding: $rem50pct;
     position: relative;
     text-align: center;
     z-index: 1;
@@ -16,10 +16,10 @@
 }
 
 .footer > div:first-child {
-    margin-left: $smallMargin;
+    margin-left: $rem85pct;
 }
 
 .footer > div:last-child {
-    margin-right: $smallMargin;
+    margin-right: $rem85pct;
     text-align: right;
 }

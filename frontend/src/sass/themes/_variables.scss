@@ -1,22 +1,12 @@
 /***************************/
-//COLORS
+// COLORS
 /***************************/
 
-// Purple
-
-$mediumPurple: #9668ff;
-$purple: #5002ff;
-
-// White
-
 $white: #FFFFFF;
-
-// Black
-
 $black: #000000;
+$red: #FF0000;
 
-// Grey
-
+// Greys
 $lightestGrey: #f8f8f8;
 $lighterGrey: #eaeaea;
 $lightGrey: #c8c8c8;
@@ -32,10 +22,7 @@ $darkerGrey: #666666;
 $darkestGrey: #404040;
 $almostBlack: #1c1c1c;
 
-// Red
-$red: #FF0000;
-
-// Feedback Color
+// RGB
 $rgbGreen: rgb(0, 255, 0);
 $rgbLightGreen: rgb(100, 255, 0);
 $rgbLighterGreen: rgb(150, 255, 0);
@@ -48,62 +35,34 @@ $rgbOrangeRed: rgb(255, 50, 0);
 $rgbRed: rgb(255, 0, 0);
 
 /***************************/
-//OPACITIES
+// OPACITIES
 /***************************/
-$extraLightWhiteOpacity: rgba(255, 255, 255, 0.2);
-$lightestWhiteOpacity: rgba(255, 255, 255, 0.3);
-$extraLightOpacity: rgba(0, 0, 0, 0.04);
-$lightestOpacity: rgba(0, 0, 0, 0.08);
-$lighterOpacity: rgba(0, 0, 0, 0.1);
-$lightOpacity: rgba(0, 0, 0, 0.2);
-$mediumOpacity: rgba(0, 0, 0, 0.3);
-$darkOpacity: rgba(0, 0, 0, 0.5);
-$darkerOpacity: rgba(0, 0, 0, 0.7);
-$darkestOpacity: rgba(0, 0, 0, 0.9);
-$noOpacity: rgba(0, 0, 0, 1);
+
+$whiteAlpha20pct: rgba(255, 255, 255, 0.2);
+$whiteAlpha30pct: rgba(255, 255, 255, 0.3);
+$blackAlpha4pct: rgba(0, 0, 0, 0.04);
+$blackAlpha8pct: rgba(0, 0, 0, 0.08);
+$blackAlpha10pct: rgba(0, 0, 0, 0.1);
+$blackAlpha20pct: rgba(0, 0, 0, 0.2);
+$blackAlpha30pct: rgba(0, 0, 0, 0.3);
+$blackAlpha50pct: rgba(0, 0, 0, 0.5);
+$blackAlpha70pct: rgba(0, 0, 0, 0.7);
+$blackAlpha90pct: rgba(0, 0, 0, 0.9);
+$blackAlpha100pct: rgba(0, 0, 0, 1);
 
 /***************************/
-//SHADOWS
+// SHADOWS
 /***************************/
 
 // These shadows were generated from: https: //www.cssmatic.com/box-shadow
-$smallShadow: 2px 2px 2px 1px $lightOpacity;
-$mediumShadow: 0px -1px 18px -8px $noOpacity;
+$smallShadow: 2px 2px 2px 1px $blackAlpha20pct;
+$mediumShadow: 0px -1px 18px -8px $blackAlpha100pct;
 
 /***************************/
-//POSITIONS
+// AUTO MARGINS
 /***************************/
 
-$autoPosition: auto;
-
-/***************************/
-//MARGINS
-/***************************/
-
-$autoCenteredMargin: 0 $autoPosition;
-$autoCenteredMargin: 0 $autoPosition;
-$noMargin: 0rem;
-$smallestMargin: .1rem;
-$smallerMargin: .5rem;
-$smallMargin: .85rem;
-$mediumMargin: 1rem;
-$mediumPlusMargin: 1.5rem;
-$largeMargin: 2rem;
-$largerMargin: 4rem;
-$largestMargin: 8rem;
-
-/***************************/
-//PADDING
-/***************************/
-
-$smallestPadding: .1rem;
-$smallerPadding: .5rem;
-$smallPadding: .85rem;
-$mediumPadding: 1rem;
-$largePadding: 2rem;
-$largerPadding: 4rem;
-$largestPadding: 8rem;
-$fullPadding: 100%;
+$zeroAuto: 0 auto;
 
 /***************************/
 //FONTS
@@ -113,154 +72,86 @@ $brevia: "brevia", sans-serif;
 $josefin: "josefin-sans", sans-serif;
 
 /***************************/
-//FONTWEIGHT
+//NUMBERS
 /***************************/
 
-$regularFontWeight: 400;
-$mediumFontWeight: 500;
-$semiBoldFontWeight: 600;
-$boldFontWeight: 700;
-
-/***************************/
-//FONTSIZES
-/***************************/
-
-$smallestFontSize: .25rem;
-$smallerFontSize: .5rem;
-$smallFontSize: .75rem;
-$regularFontSize: .85rem;
-$largeFontSize: 1.25rem;
-$largerFontSize: 1.5rem;
-$largestFontSize: 2.5rem;
-
-/***************************/
-//BORDERS
-/***************************/
-
-$thinBorder: 1px;
-$thickBorder: 2px;
-$thickerBorder: 3px;
-$thickestBorder: 4px;
-
-/***************************/
-//RADIUS
-/***************************/
-
-$smallerRadius: .25rem;
-$smallRadius: .5rem;
-$mediumRadius: 1rem;
-$largeRadius: 2rem;
-
-/***************************/
-//SPACE
-/***************************/
-
-$smallerSpace: 1rem;
-$smallSpace: 1.5rem;
-$mediumSpace: 2rem;
-$largeSpace: 3.5rem;
-
-/***************************/
-//WIDTHS
-/***************************/
-
-$smallestWidth: .5rem;
-$smallerWidth: 1rem;
-$smallWidth: 1.5rem;
-$mediumWidth: 2rem;
-$largeWidth: 3.5rem;
-$quarterViewWidth: 25vw;
-$halfViewWidth: 50vw;
-$fullViewWidth: 100vw;
-
-/***************************/
-//HEIGHTS
-/***************************/
-
-$smallestHeight: .5rem;
-$smallerHeight: 1rem;
-$smallHeight: 1.5rem;
-$mediumHeight: 2rem;
-$quarterViewHeight: 25vw;
-$halfViewHeight: 50vw;
-$fullViewHeight: 100vw;
+$num400: 400;
+$num500: 500;
+$num600: 600;
+$num700: 700;
 
 /***************************/
 //PERCENTAGES
 /***************************/
 
-$smallestPercentage: 1%;
-$smallerPercentage: 5%;
-$smallPercentage: 10%;
-$mediumPercentage: 25%;
-$largePercentage: 50%;
-$largerPercentage: 75%;
-$largestPercentage: 100%;
+$pct1: 1%;
+$pct5: 5%;
+$pct10: 10%;
+$pct20: 20%;
+$pct25: 25%;
+$pct50: 50%;
+$pct75: 75%;
+$pct100: 100%;
 
 /***************************/
-//PIXEL WIDTH
+// PIXEL
 /***************************/
 
-$extraSmallPixelWidth: 1px;
-$smallestPixelWidth: 5px;
-$smallerPixelWidth: 25px;
-$smallPixelWidth: 50px;
-$mediumPixelWidth: 100px;
-$mediumPlusPixelWidth: 250px;
-$largePixelWidth: 350px;
-$largerPixelWidth: 500px;
-$largestPixelWidth: 800px;
-$extraLargePixelWidth: 950px;
-$fullViewWidth: 100vw;
+$px1: 1px;
+$px2: 2px;
+$px3: 3px;
+$px4: 4px;
+$px5: 5px;
+$px6: 6px;
+$px15: 15px;
+$px18: 18px;
+$px25: 25px;
+$px37: 37px;
+$px40: 40px;
+$px50: 50px;
+$px80: 80px;
+$px100: 100px;
+$px250: 250px;
+$px350: 350px;
+$px500: 500px;
+$px800: 800px;
+$px950: 950px;
 
 /***************************/
-//HEIGHTS
+// PIXEL SHORTHAND
 /***************************/
 
-$smallHeight: 1.5rem;
-$largetHeight: 15rem;
-$fullViewHeight: 100vh;
+$px0X3: 0px 0px 0px;
 
 /***************************/
-//ABSOLUTE_SPACING
+// VIEW DIMENSIONS
 /***************************/
 
-$absoluteTop: 15px;
-$absoluteRight: 15px;
+$vw25: 25vw;
+$vw50: 50vw;
+$vw85: 85vw;
+$vw100: 100vw;
+$vh100: 100vh;
 
 /***************************/
-//ROTATIONS
+// REM VALUES
 /***************************/
 
-$rotateNothing: rotate(0);
-$rotateHalfway: rotate(180deg);
-
-/***************************/
-//SPINNER VALUES
-/***************************/
-
-$spinnerSize: 80px;
-$spinnerTransform: 40px;
-$spinnerTop: 3px;
-$spinnerLeft: 37px;
-$spinnerWidth: 6px;
-$spinnerHeight: 18px;
-$spinnerBorderRadius: 20%;
-$largetHeight: 15rem;
-$spinnerBorderRadius: 20%;
-
-/***************************/
-//PAGER VALUES
-/***************************/
-
-$pagerHeight: 2.25rem;
-$pagerLetterSpacing: .25rem;
-$pagerWidth: 2.25rem;
-$pagerArrowWidth: 0.4rem;
-$pagerArrowHeight: 0.4rem;
+$rem0: 0rem;
+$rem10pct: .1rem;
+$rem25pct: .25rem;
+$rem25pct: .25rem;
+$rem50pct: .5rem;
+$rem75pct: .75rem;
+$rem85pct: .85rem;
+$rem1: 1rem;
+$rem1pt25: 1.25rem;
+$rem1pt5: 1.5rem;
+$rem2: 2rem;
+$rem2pt25: 2.25rem;
+$rem3pt5: 3.5rem;
+$rem4: 4rem;
+$rem8: 8rem;
 
 
-/***************************/
-//ELEMENT WIDTHS
-/***************************/
-$sidebarWidth: 85vw;
+

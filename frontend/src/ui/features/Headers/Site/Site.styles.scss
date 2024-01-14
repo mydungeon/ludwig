@@ -5,7 +5,7 @@
     box-shadow: $mediumShadow;
     display: flex;
     justify-content: space-between;
-    padding: $smallPadding;
+    padding: $rem85pct;
 }
 
 .header.site > .right {
@@ -15,5 +15,5 @@
 }
 
 .menuIcon {
-    margin-left: $smallMargin;
+    margin-left: $rem85pct;
 }

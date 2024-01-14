@@ -1,15 +1,15 @@
 @import "src/sass/themes/variables";
 
 .modalHeader {
-    padding: $smallestPadding;
+    padding: $rem10pct;
 }
 
 .modalHeader h3 {
-    margin-left: $smallMargin;
+    margin-left: $rem85pct;
 }
 
 .modalHeader > .fa-xmark {
     position: absolute;
-    right: $absoluteRight;
-    top: $absoluteTop;
+    right: $px15;
+    top: $px15;
 }

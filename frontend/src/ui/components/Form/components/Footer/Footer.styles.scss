@@ -5,10 +5,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: $largeMargin;
-    width: $largestPercentage;
+    margin-top: $rem2;
+    width: $pct100;
 }
 
 .formFooter.form button.submit.login {
-    padding: $mediumPadding $largePadding;
+    padding: $rem1 $rem2;
 }

@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: $mediumPadding;
+    padding: $rem1;
     z-index: 2;
 }
 
@@ -33,5 +33,5 @@
 
 .sidebar > div.sidebarToggle,
 .sidebar > div.sidebarToggle > a > svg {
-    height: $smallerHeight;
+    height: $rem1;
 }

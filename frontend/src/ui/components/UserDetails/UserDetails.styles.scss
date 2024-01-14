@@ -4,8 +4,8 @@
     align-items: flex-start;
     display: flex;
     flex-direction: row;
-    margin: $autoPosition;
-    width: $halfViewWidth;
+    margin: auto;
+    width: $vw50;
 }
 
 .userDetails > div {
@@ -22,5 +22,5 @@
 }
 
 .userDetails > div > div {
-    padding: $smallerPadding;
+    padding: $rem50pct;
 }

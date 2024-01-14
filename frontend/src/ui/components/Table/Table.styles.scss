@@ -1,9 +1,9 @@
 @import "src/sass/themes/variables";
 
 .tableWrapper {
-    border-radius: $smallRadius;
+    border-radius: $rem50pct;
     margin: auto;
-    max-width: calc($sidebarWidth - $mediumPixelWidth);
+    max-width: calc($vw85 - $px100);
     overflow: scroll;
 }
 .table {
@@ -14,25 +14,25 @@
 
 .table td, .table th {
     border-style: solid;
-    border-width: $extraSmallPixelWidth;
+    border-width: $px1;
     border-style: none solid solid none;
-    padding: $smallPadding;
+    padding: $rem85pct;
 }
 
 .table th:first-child {
-    border-top-left-radius: $smallRadius;
+    border-top-left-radius: $rem50pct;
 }
 
 .table th:last-child {
-    border-top-right-radius: $smallRadius;
+    border-top-right-radius: $rem50pct;
 }
 
 .table tbody > tr:last-child td:last-child  {
-    border-bottom-right-radius: $smallRadius;
+    border-bottom-right-radius: $rem50pct;
 }
 
 .table tbody > tr:last-child td:first-child {
-    border-bottom-left-radius: $smallRadius;
+    border-bottom-left-radius: $rem50pct;
 }
 
 .table tr:hover {

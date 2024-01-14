@@ -5,18 +5,18 @@
     flex-direction: column;
     justify-content: center;
     margin: auto;
-    min-width: $largePixelWidth;
-    max-width: $largerPixelWidth;
+    min-width: $px350;
+    max-width: $px500;
 }
 .form > input {
-    margin: $smallestMargin;
+    margin: $rem10pct;
     align-items: stretch;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: auto;
-    margin-top: $largeMargin;
-    min-width: $largePixelWidth;
-    width: $largePercentage;
-    max-width: $largerPixelWidth;
+    margin-top: $rem2;
+    min-width: $px350;
+    width: $pct50;
+    max-width: $px500;
 }

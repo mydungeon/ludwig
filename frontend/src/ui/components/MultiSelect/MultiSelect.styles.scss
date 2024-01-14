@@ -2,15 +2,15 @@
 
 .multiSelect {
     cursor: pointer;
-    margin: $smallerPixelWidth auto;
+    margin: $px25 auto;
     position: relative;
-    min-width: $largePixelWidth;
+    min-width: $px350;
 }
 
 .multiSelect:hover .options {
     background-color: $white;
     border: solid 1px $black;
-    border-radius: $smallRadius;
+    border-radius: $rem50pct;
     box-shadow: $smallShadow;
     display: block;
     margin-top: 0;
@@ -19,29 +19,29 @@
 .multiSelect > .selected {
     align-items: center;
     background-color: $white;
-    border: solid $extraSmallPixelWidth $black;
-    border-radius: $smallRadius;
+    border: solid $px1 $black;
+    border-radius: $rem50pct;
     display: flex;
     justify-content: space-between;
-    padding: $smallPadding;
+    padding: $rem85pct;
 }
 
 .multiSelect > .options {
-    border: solid $extraSmallPixelWidth #eee;
+    border: solid $px1 #eee;
     box-sizing: border-box;
     display: none;
     left: 0;
     list-style: none;
-    padding: $smallPadding 0;
+    padding: $rem85pct 0;
     padding-left: 0;
     position: absolute;
-    width: $largestPercentage;
+    width: $pct100;
 }
 
 .multiSelect > .options > .option {
     align-items: center;
     display: flex;
-    padding: $smallPadding;
+    padding: $rem85pct;
     cursor: pointer;
 }
 
@@ -50,5 +50,5 @@
 }
 
 .multiSelect > .options > .option > .checkbox {
-    margin-right: $smallMargin;
+    margin-right: $rem85pct;
 }

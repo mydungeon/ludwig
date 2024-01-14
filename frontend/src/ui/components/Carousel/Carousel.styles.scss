@@ -6,17 +6,17 @@
     display: flex;
     height: auto;
     justify-content: center;
-    max-width: $largestPixelWidth;
+    max-width: $px800;
     margin: auto;
     position: relative;
     width: 100%;
 }
 
 .slide {
-    border-radius: $smallRadius;
+    border-radius: $rem50pct;
     box-shadow: $mediumShadow;
-    height: $largestPercentage;
-    width: $largestPercentage;
+    height: $pct100;
+    width: $pct100;
 }
 
 .slide.hidden {
@@ -25,9 +25,9 @@
 
 .carousel .arrow {
     color: $darkGrey;
-    height: $mediumHeight;
+    height: $rem2;
     position: absolute;
-    width: $mediumWidth;
+    width: $rem2;
 }
 
 .carousel .arrow:hover {
@@ -36,15 +36,15 @@
 }
 
 .carousel .arrow.left {
-    left: $smallerWidth;
+    left: $rem1;
 }
 
 .carousel .arrow.right {
-    right: $smallerWidth;
+    right: $rem1;
 }
 
 .carousel .indicators {
-    bottom: $smallerSpace;
+    bottom: $rem1;
     display: flex;
     position: absolute;
 }
@@ -52,12 +52,12 @@
 .carousel .indicator {
     background-color: $darkGrey;
     border: none;
-    border-radius: $largestPercentage;
+    border-radius: $pct100;
     box-shadow: $smallShadow;
     cursor: pointer;
-    height: $smallestHeight;
-    margin: $smallerMargin;
-    padding: $smallerPadding;
+    height: $rem50pct;
+    margin: $rem50pct;
+    padding: $rem50pct;
     outline: none;
 }
 

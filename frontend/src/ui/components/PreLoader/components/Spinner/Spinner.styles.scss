@@ -4,13 +4,13 @@
     color: official;
     display: inline-block;
     position: relative;
-    width: $spinnerSize;
-    height: $spinnerSize;
+    width: $px80;
+    height: $px80;
     z-index: 2;
 }
 
 .spinner div {
-    transform-origin: $spinnerTransform $spinnerTransform;
+    transform-origin: $px40 $px40;
     animation: spinner 1.2s linear infinite;
 }
 
@@ -18,11 +18,11 @@
     content: " ";
     display: block;
     position: absolute;
-    top: $spinnerTop;
-    left: $spinnerLeft;
-    width: $spinnerWidth;
-    height: $spinnerHeight;
-    border-radius: $spinnerBorderRadius;
+    top: $px3;
+    left: $px37;
+    width: $px6;
+    height: $px18;
+    border-radius: $pct20;
     background: $black;
 }
 

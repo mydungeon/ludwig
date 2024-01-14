@@ -1,19 +1,19 @@
 @import "src/sass/themes/variables";
 
 .filterWrapper {
-    margin-bottom: $smallerMargin;
+    margin-bottom: $rem50pct;
 }
 
 .filterCritera {
-    font-size: $smallFontSize;
+    font-size: $rem75pct;
     font-style: italic;
     font-weight: normal;
     text-align: right;
-    margin: $smallerMargin;
+    margin: $rem50pct;
 }
 
 .clearFilter {
-    margin-left: $smallerMargin;
+    margin-left: $rem50pct;
 }
 
 .filterWithDropdown {
@@ -25,7 +25,7 @@
 }
 
 .filterDropdown {
-    margin: $smallMargin;
+    margin: $rem85pct;
     position: absolute;
     right: 0;
     top: 0;
@@ -35,8 +35,8 @@
     background: $white;
     border-color: $grey;
     border-style: solid;
-    border-radius: $smallerRadius;
-    border-width: $extraSmallPixelWidth;
+    border-radius: $rem25pct;
+    border-width: $px1;
     box-shadow: $smallShadow;
     padding: 0;
     position: absolute;
@@ -49,12 +49,12 @@
 .filterDropdown > ul > li {
     border-bottom-color: $grey;
     border-bottom-style: solid;
-    border-bottom-width: $extraSmallPixelWidth;
+    border-bottom-width: $px1;
     cursor: pointer;
-    font-size: $regularFontSize;
+    font-size: $rem85pct;
     font-weight: normal;
     margin: 0;
-    padding: $smallerPadding $smallPadding;
+    padding: $rem50pct $rem85pct;
     list-style-type: none;
 }
 

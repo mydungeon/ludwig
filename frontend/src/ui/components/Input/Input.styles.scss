@@ -1,8 +1,8 @@
 @import 'src/sass/themes/variables';
 .input {
-    padding: $smallerPadding;
-    border-radius: $smallerRadius;
-    border: $thinBorder solid $black;
-    margin-top: $mediumMargin;
-    padding: $smallPadding;
+    padding: $rem50pct;
+    border-radius: $rem25pct;
+    border: $px1 solid $black;
+    margin-top: $rem1;
+    padding: $rem85pct;
 }

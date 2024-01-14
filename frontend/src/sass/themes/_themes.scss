@@ -38,8 +38,8 @@ $themes: (
         tableThColor: $white,
         siteFooterBg: $white,
         siteFooterColor: $black,
-        pagerHover: $extraLightOpacity,
-        pagerSelected: $lightestOpacity,
+        pagerHover: $blackAlpha4pct,
+        pagerSelected: $blackAlpha8pct,
     ),
     dark: (
         avatarBorderColor: $white,
@@ -79,7 +79,7 @@ $themes: (
         layoutBg: $black,
         siteHeaderBg: $black,
         siteFooterColor: $white,
-        pagerHover: $extraLightWhiteOpacity,
-        pagerSelected: $lightestWhiteOpacity,
+        pagerHover: $whiteAlpha20pct,
+        pagerSelected: $whiteAlpha30pct,
     ),
 );

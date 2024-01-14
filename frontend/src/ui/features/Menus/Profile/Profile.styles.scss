@@ -6,8 +6,8 @@
 }
 
 .menu.profile > .sub > div {
-    margin-top: $smallPadding;
-    margin-left: $smallerPadding;
+    margin-top: $rem85pct;
+    margin-left: $rem50pct;
     white-space: nowrap;
 }
 
@@ -17,5 +17,5 @@
 }
 
 .menu.profile > .sub > div > a {
-    margin-left: $smallerMargin;
+    margin-left: $rem50pct;
 }

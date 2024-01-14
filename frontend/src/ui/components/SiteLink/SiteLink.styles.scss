@@ -6,24 +6,24 @@ a.siteLink {
 
 a.siteLink.button {
     background-color: $black;
-    border: $thinBorder solid $black;
-    border-radius: $smallRadius;
+    border: $px1 solid $black;
+    border-radius: $rem50pct;
     color: $white;
     display: inline-block;
-    margin-left: $smallMargin;
-    padding: $mediumPadding;
+    margin-left: $rem85pct;
+    padding: $rem1;
 }
 
 a.siteLink.button:hover {
     background-color: $grey;
-    border: $thinBorder solid $black;
+    border: $px1 solid $black;
     color: $black;
 }
 
 a.siteLink.link {
     align-items: center;
-    font-weight: $mediumFontWeight;
+    font-weight: $num500;
     justify-content: center;
-    padding: $mediumPadding $largePadding;
+    padding: $rem1 $rem2;
     text-decoration: underline;
 }
