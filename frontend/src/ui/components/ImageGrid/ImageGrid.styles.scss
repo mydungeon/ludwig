@@ -1,0 +1,26 @@
+@import "src/sass/themes/variables";
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    padding: 0 $px4;
+}
+
+.column {
+    // flex: $pct20;
+    max-width: $pct20;
+    padding: 0 $px4;
+}
+
+.column > a {
+    display: inline-block;
+    margin: $px20;
+}
+
+.column img {
+    display: inline-block;
+    margin-top: $px8;
+    vertical-align: middle;
+    width: $pct100;
+}

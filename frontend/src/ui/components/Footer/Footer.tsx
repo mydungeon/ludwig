@@ -2,7 +2,7 @@ import React from "react";
 import FooterProps from "./Footer.types";
 import { Logo } from "src/ui/components";
 import { getCopyright } from "./Footer.utils";
-import { SourceCodeIcon } from "src/ui/features/Icons";
+import { FooterIcons } from "src/ui/features/Icons";
 import "./Footer.styles.scss";
 
 export default function Footer({ children }: FooterProps) {
@@ -12,7 +12,7 @@ export default function Footer({ children }: FooterProps) {
         <Logo classNames="small" />
       </div>
       <div>
-        <SourceCodeIcon />
+        <FooterIcons />
       </div>
       <div>
         <span>{getCopyright()}</span>

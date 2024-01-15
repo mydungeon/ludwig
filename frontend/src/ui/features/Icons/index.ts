@@ -2,6 +2,7 @@ import {
   FilterInputClearIcon,
   FilterInputDropdownArrowIcon,
 } from "./FilterInput";
+import FooterIcons from "./Footer";
 import { LeftCarouselArrowIcon } from "./CarouselArrows";
 import MenuIcon from "./Menu";
 import ModalCloseIcon from "./Modal";
@@ -11,13 +12,13 @@ import PagerRightArrowIcon from "./Pager";
 import { RightCarouselArrowIcon } from "./CarouselArrows";
 import SidebarToggleIcon from "./Sidebar";
 import SiteMenuCloseIcon from "./Site";
-import SourceCodeIcon from "./SourceCode";
 import TableHeaderSortIcon from "./Table";
 import ThemeToggleIcon from "./Theme";
 
 export {
   FilterInputClearIcon,
   FilterInputDropdownArrowIcon,
+  FooterIcons,
   LeftCarouselArrowIcon,
   MenuIcon,
   ModalCloseIcon,
@@ -27,7 +28,6 @@ export {
   RightCarouselArrowIcon,
   SidebarToggleIcon,
   SiteMenuCloseIcon,
-  SourceCodeIcon,
   TableHeaderSortIcon,
   ThemeToggleIcon,
 };

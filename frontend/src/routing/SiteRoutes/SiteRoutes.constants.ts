@@ -5,6 +5,7 @@ import {
 } from "src/ui/features/Layouts";
 import { Authorize } from "src/ui/components";
 import { AdminPage } from "src/ui/pages";
+import { CreditsPage } from "src/ui/pages";
 import { EditProfilePage } from "src/ui/pages";
 import { EditRolePage } from "src/ui/pages";
 import { FeedbackPage } from "src/ui/pages";
@@ -28,6 +29,11 @@ export const ROUTING = [
         key: "home",
         index: true,
         element: HomePage,
+      },
+      {
+        key: "credits",
+        path: "credits",
+        element: CreditsPage,
       },
     ],
   },
@@ -78,11 +84,6 @@ export const ROUTING = [
             path: "metrics",
             element: MetricsPage,
           },
-          {
-            key: "feedback",
-            path: "feedback",
-            element: FeedbackPage,
-          },
         ],
       },
       {
@@ -94,6 +95,25 @@ export const ROUTING = [
         key: "notFound",
         path: "*",
         element: NotFoundPage,
+      },
+    ],
+  },
+  {
+    key: "parent",
+    path: "/",
+    element: HeaderLayout,
+    routes: [
+      {
+        key: "parent",
+        authorize: Authorize,
+        roles: UserRoles.USER,
+        routes: [
+          {
+            key: "feedback",
+            path: "feedback",
+            element: FeedbackPage,
+          },
+        ],
       },
     ],
   },

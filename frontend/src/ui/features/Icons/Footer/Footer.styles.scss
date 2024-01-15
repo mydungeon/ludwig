@@ -1,0 +1,10 @@
+@import "src/sass/themes/variables";
+
+.footerIcons {
+    display: inline-flex;
+    width: $px80;
+}
+
+.footerIcons > div {
+    margin: $zeroAuto;
+}
