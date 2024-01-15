@@ -55,7 +55,7 @@ Additional frontend and backend technologies to enhance the user's experience an
 [Most of these logos were found on https://iconduck.com/]: #
 
 <p align="left">
-<a href="https://github.com/" target="_blank"><img alt="Github" src="./frontend/public/assets/vendor-logos/github.svg" width="75" /></a>
+<a href="https://openai.com/" target="_blank"><img alt="Open AI" src="./frontend/public/assets/vendor-logos/openai.svg" width="75" /></a>
 <a href="https://yarnpkg.com/" target="_blank"><img alt="Yarn" src="./frontend/public/assets/vendor-logos/yarn.svg" width="75" /></a>
 <a href="https://www.google.com/chrome/" target="_blank"><img alt="Chrome" src="./frontend/public/assets/vendor-logos/chrome.svg" width="75" /></a>
 <a href="https://www.typescriptlang.org/" target="_blank"><img alt="Typescript" src="./frontend/public/assets/vendor-logos/typescript.svg" width="75" /></a>
@@ -87,5 +87,5 @@ Additional frontend and backend technologies to enhance the user's experience an
 <a href="https://studio3t.com/" target="_blank"><img alt="Studio 3t" src="./frontend/public/assets/vendor-logos/studio-3t.png" width="75" /></a>
 <a href="https://www.postman.com/" target="_blank"><img alt="Postman" src="./frontend/public/assets/vendor-logos/postman.svg" width="75" /></a>
 <a href="https://fontawesome.com/" target="_blank"><img alt="Font Awesome" src="./frontend/public/assets/vendor-logos/fontawesome.svg" width="75" /></a>
-<a href="https://iconduck.com/" target="_blank"><img alt="Icon Duck" src="./frontend/public/assets/vendor-logos/duck.svg" width="75" /></a>
+<a href="https://github.com/" target="_blank"><img alt="Github" src="./frontend/public/assets/vendor-logos/github.svg" width="75" /></a>
 </p>
