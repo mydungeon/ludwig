@@ -1,11 +1,13 @@
 import {
+  ChatLayout,
   HeaderLayout,
-  HeaderSidebarLayout,
   HeaderlessLayout,
+  ProfileLayout,
 } from "src/ui/features/Layouts";
 import { Authorize } from "src/ui/components";
 import { AdminPage } from "src/ui/pages";
 import { CreditsPage } from "src/ui/pages";
+import { DroogAiPage } from "src/ui/pages";
 import { EditProfilePage } from "src/ui/pages";
 import { EditRolePage } from "src/ui/pages";
 import { FeedbackPage } from "src/ui/pages";
@@ -40,7 +42,7 @@ export const ROUTING = [
   {
     key: "headerSidebarLayout-parent",
     path: "/",
-    element: HeaderSidebarLayout,
+    element: ProfileLayout,
     routes: [
       {
         key: "parent",
@@ -112,6 +114,25 @@ export const ROUTING = [
             key: "feedback",
             path: "feedback",
             element: FeedbackPage,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    key: "parent",
+    path: "/",
+    element: ChatLayout,
+    routes: [
+      {
+        key: "parent",
+        authorize: Authorize,
+        roles: UserRoles.USER,
+        routes: [
+          {
+            key: "droogAi",
+            path: "droogAi",
+            element: DroogAiPage,
           },
         ],
       },

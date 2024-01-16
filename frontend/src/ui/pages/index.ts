@@ -1,5 +1,6 @@
 import AdminPage from "./Admin";
 import CreditsPage from "./Credits";
+import DroogAiPage from "./DroogAi";
 import { EditProfilePage } from "./Edit";
 import { EditRolePage } from "./Edit";
 import FeedbackPage from "./Feedback";
@@ -15,6 +16,7 @@ import UsersPage from "./Users";
 export {
   AdminPage,
   CreditsPage,
+  DroogAiPage,
   EditProfilePage,
   EditRolePage,
   FeedbackPage,

@@ -1,0 +1,6 @@
+@import "src/sass/themes/variables";
+
+.chatInput > input[type="text"] {   
+    margin-top: 0;
+    width: $vw50;
+}

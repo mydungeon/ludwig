@@ -5,10 +5,14 @@ export const SITE_MENU_LINKS = [
   },
   {
     name: "Profile",
-    to: "/profile",
+    to: "profile",
+  },
+  {
+    name: "DroogAI",
+    to: "droogAi",
   },
   {
     name: "Feedback",
-    to: "/feedback",
+    to: "feedback",
   },
 ];

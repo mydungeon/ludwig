@@ -1,16 +1,15 @@
 import React from "react";
-import LogoProps from "./Logo.types";
-import { ReactComponent as LogoSvg } from "src/assets/logo.svg";
-import "./Logo.styles.scss";
 import { Link } from "react-router-dom";
+import LogoProps from "./Logo.types";
+import "./Logo.styles.scss";
 
-export default function Logo({ classNames, logoText }: LogoProps) {
+export default function Logo({ children, ...props }: LogoProps) {
+  const { classNames, logoText } = props;
+  const className = classNames ? `logo ${classNames}` : "logo";
   return (
-    <Link className={`logo ${classNames}`} data-testid="logo" to="/">
-      <div>
-        <LogoSvg />
-      </div>
-      <div>{logoText}</div>
+    <Link className={className} data-testid="logo" to="/">
+      <div>{children}</div>
+      {logoText && <div className="brand">{logoText}</div>}
     </Link>
   );
 }

@@ -1,0 +1,12 @@
+@import "src/sass/themes/variables";
+
+.headerSidebarChatLayout {
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    width: $vw100;
+}
+
+.headerSidebarChatLayout > .page {
+    flex: auto;
+}

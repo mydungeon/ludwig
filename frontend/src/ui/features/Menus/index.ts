@@ -1,3 +1,5 @@
 import LoggedInMenu from "./LoggedIn";
 import LoggedOutMenu from "./LoggedOut";
-export { LoggedInMenu, LoggedOutMenu };
+import ProfileSideMenu from "./Profile";
+import SiteMenu from "./Site";
+export { LoggedInMenu, LoggedOutMenu, ProfileSideMenu, SiteMenu };

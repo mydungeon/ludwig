@@ -1,11 +1,11 @@
 import React from "react";
-import { PageWithFooter } from "src/ui/features/Pages";
+import { BrandedFooterPage } from "src/ui/features/Pages";
 import ImageGrid from "src/ui/components/ImageGrid";
 
 export default function CreditsPage() {
   return (
-    <PageWithFooter classNames="credits" pageTitle="I wuz made with luv">
+    <BrandedFooterPage classNames="credits" pageTitle="The Technology">
       <ImageGrid />
-    </PageWithFooter>
+    </BrandedFooterPage>
   );
 }

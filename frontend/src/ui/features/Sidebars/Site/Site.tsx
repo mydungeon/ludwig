@@ -1,11 +1,7 @@
 import React from "react";
 import { Sidebar } from "src/ui/components";
-import ProfileSideMenu from "src/ui/features/Menus/Profile";
+import SiteSidebarProps from "./Site.types";
 
-export default function SiteSidebar() {
-  return (
-    <Sidebar>
-      <ProfileSideMenu />
-    </Sidebar>
-  );
+export default function SiteSidebar({ children }: SiteSidebarProps) {
+  return <Sidebar>{children}</Sidebar>;
 }

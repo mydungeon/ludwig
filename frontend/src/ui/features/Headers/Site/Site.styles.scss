@@ -8,6 +8,10 @@
     padding: $rem85pct;
 }
 
+.header.site .brand {
+    font-size: $rem1pt5;
+}
+
 .header.site > .right {
     align-items: center;
     display: flex;

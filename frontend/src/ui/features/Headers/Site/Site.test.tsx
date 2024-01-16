@@ -7,8 +7,10 @@ import SiteHeader from "./Site";
 test("loads and displays SiteHeader component", async () => {
   render(
     <MemoryRouter>
-      <SiteHeader />
+      <SiteHeader>
+        <div>test</div>
+      </SiteHeader>
     </MemoryRouter>
   );
-  expect(screen.getByTestId("header-siteHeader")).toBeTruthy();
+  expect(screen.getByTestId("header-brandedHeader")).toBeTruthy();
 });

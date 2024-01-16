@@ -1,11 +1,11 @@
 import React from "react";
 import { UserDetails } from "src/ui/components";
-import { PageWithFooter } from "src/ui/features/Pages";
+import { BrandedFooterPage } from "src/ui/features/Pages";
 
 export default function ProfilePage() {
   return (
-    <PageWithFooter pageTitle="Profile">
+    <BrandedFooterPage pageTitle="Profile">
       <UserDetails />
-    </PageWithFooter>
+    </BrandedFooterPage>
   );
 }

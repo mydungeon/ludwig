@@ -10,7 +10,7 @@ export default function FooterIcons() {
     <div className="footerIcons">
       <div>
         <Tooltip direction={TooltipDirection.TOP} message="I wuz made with luv">
-          <Link to="credits">
+          <Link to="/credits">
             <Icon icon={faHeart} />
           </Link>
         </Tooltip>

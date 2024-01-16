@@ -1,4 +1,5 @@
+import ChatLayout from "./ChatLayout";
 import HeaderLayout from "./Header";
 import HeaderlessLayout from "./Headerless";
-import HeaderSidebarLayout from "./HeaderSidebar";
-export { HeaderLayout, HeaderSidebarLayout, HeaderlessLayout };
+import ProfileLayout from "./ProfileLayout";
+export { ChatLayout, HeaderLayout, HeaderlessLayout, ProfileLayout };
