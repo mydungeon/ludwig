@@ -1,0 +1,8 @@
+.footer.chat {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.footer.chat > div:last-child {
+    text-align: unset;
+}

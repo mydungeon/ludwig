@@ -1,5 +1,5 @@
 import React, { LegacyRef } from "react";
-import { lineChartData } from "src/ui/charts/data/lineChart";
+import { lineChartData } from "src/testing/data/charts/lineChart";
 import { useDimensions } from "src/hooks";
 import { Page } from "src/ui/components";
 import { LineChart } from "src/ui/charts";

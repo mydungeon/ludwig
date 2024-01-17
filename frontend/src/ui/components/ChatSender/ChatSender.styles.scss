@@ -1,0 +1,17 @@
+@import 'src/sass/themes/variables';
+
+.chat>.sender {
+    display: flex;
+}
+
+.chat>.sender>.who.droog::before {
+    content: url("../../../../src/assets/droogai.svg");
+}
+
+.chat>.sender>.who.you::before {
+
+}
+
+.chat > .sender > .who {
+    font-size: $rem85pct;
+}

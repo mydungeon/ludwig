@@ -7,7 +7,6 @@ html {
 body {
     font-family: $brevia;
     font-style: normal;
-    font-weight: $num600;
     margin: $rem0;
 }
 
@@ -16,6 +15,10 @@ select,
 input,
 button {
     outline: none;
+}
+
+p {
+    text-align: left;
 }
 
 a, a:visited, a:hover {

@@ -1,3 +1,16 @@
-.droogAi {
+@import "src/sass/themes/variables";
 
+.page.droogAi {
+    background-color: $whiteAlpha80pct;
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    justify-content: space-between;
+}
+
+.chatMessages {
+    overflow-y: scroll;
+    max-height: 70vh;
+    padding: 0 100px;
+    scrollbar-width: none;
 }

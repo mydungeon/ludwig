@@ -5,6 +5,7 @@ import Breadcrumbs from "./Breadcrumbs";
 import Button from "./Button";
 import Carousel from "./Carousel";
 import ChatInput from "./ChatInput";
+import ChatMessage from "./ChatMessage";
 import Ellipse from "./Ellipse";
 import ErrorMessage from "./ErrorMessage";
 import Footer from "./Footer";
@@ -37,6 +38,7 @@ export {
   Button,
   Carousel,
   ChatInput,
+  ChatMessage,
   Ellipse,
   ErrorMessage,
   Footer,

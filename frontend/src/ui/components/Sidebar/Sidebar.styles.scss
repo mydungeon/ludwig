@@ -16,6 +16,7 @@
 
 .sidebar.show {
     justify-content: space-between;
+    white-space: nowrap;
 }
 
 .sidebar.show > div:first-child {
