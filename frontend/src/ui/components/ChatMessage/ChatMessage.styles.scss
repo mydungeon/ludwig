@@ -1,11 +1,7 @@
 @import 'src/sass/themes/variables';
 
-.chat {
-
-}
-
 .chat > .message {
-    background-color: $whiteAlpha80pct;
     font-size: $rem85pct;
-    padding: $rem1;
+    margin-bottom: $rem1;
+    margin-top: $rem1;
 }

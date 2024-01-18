@@ -7,7 +7,7 @@ import Avatar from "./Avatar";
 test("loads and displays Avatar component", async () => {
   render(
     <SiteRouter>
-      <Avatar destination="/test" userName="Jon" />
+      <Avatar to="/test" userName="Jon" />
     </SiteRouter>
   );
   expect(screen.getByTestId("avatar")).toBeTruthy();

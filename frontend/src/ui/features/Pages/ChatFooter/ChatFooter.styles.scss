@@ -1,12 +1,11 @@
 @import "src/sass/themes/variables";
 
 .chatFooterPage {
-    background-image: url("../../../../../src/assets/droogai.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: $pct75;
+    // background-image: url("../../../../../src/assets/droogai.svg");
+    background-size: $pct10;
     display: flex;
     flex: auto;
     flex-direction: column;
     justify-content: space-between;
+    opacity: 1;
 }

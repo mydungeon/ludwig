@@ -25,3 +25,9 @@ a.avatar:hover {
     display: inline-block;
     padding-top: $pct100;
 }
+
+.avatar.chat {
+    width: $px35;
+    font-size: $px15;
+    margin-left: 0;
+}

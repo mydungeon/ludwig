@@ -10,7 +10,7 @@ export default function LoggedInMenu({ ...user }) {
     <div className="loggedInMenu" data-testid="loggedInMenu">
       <LogoutButton />
       <Tooltip message={user?.name} direction={TooltipDirection.BOTTOM}>
-        <Avatar destination="/profile" userName={user?.name} />
+        <Avatar to="/profile" userName={user?.name} />
       </Tooltip>
     </div>
   );

@@ -4,6 +4,6 @@ import "@testing-library/jest-dom";
 import ChatSender from "./ChatSender";
 
 test("loads and displays ChatSender component", async () => {
-  render(<ChatSender isUser={true} />);
+  render(<ChatSender isUser={true} userName="test" />);
   expect(screen.getByTestId("chatSender")).toBeTruthy();
 });
