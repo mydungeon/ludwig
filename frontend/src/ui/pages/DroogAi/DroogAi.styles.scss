@@ -7,15 +7,3 @@
     justify-content: flex-end;
     padding-bottom: 0;
 }
-
-.chatMessages {
-    overflow-y: scroll;
-    margin: 0 auto;
-    max-height: 70vh;
-    max-width: $pct60;
-    scrollbar-width: none;
-}
-
-.chatMessages::-webkit-scrollbar {
-    display: none;
-}

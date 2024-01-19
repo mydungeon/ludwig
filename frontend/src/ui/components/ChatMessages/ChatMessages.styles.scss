@@ -1,0 +1,16 @@
+@import "src/sass/themes/variables";
+
+.chatMessages {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+    margin: 0 auto;
+    max-height: 75vh;
+    max-width: $pct75;
+    padding-top: $px1;
+    scrollbar-width: none;
+}
+
+.chatMessages::-webkit-scrollbar {
+    display: none;
+}

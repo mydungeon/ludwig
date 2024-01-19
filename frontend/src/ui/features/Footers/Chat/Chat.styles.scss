@@ -1,8 +1,18 @@
 .footer.chat {
     align-items: center;
-    justify-content: center;
+    display: flex;
     text-align: center;
 }
-.footer.chat > div:last-child {
+
+.footer.chat > div {
+    flex: 1;
+}
+
+.footer.chat > div:nth-child(2) {
+    flex-grow: 6;
     text-align: unset;
+}
+
+.footer.chat > div:first-child {
+    margin-left: unset;
 }

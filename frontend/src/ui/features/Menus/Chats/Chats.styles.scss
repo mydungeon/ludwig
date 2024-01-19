@@ -1,0 +1,42 @@
+@import "src/sass/themes/variables";
+
+.chatsMenu > ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.chatsMenu > ul > li {
+    list-style-type: none;
+    padding: $px5;
+}
+
+.chatsMenu > ul > li > div {
+    align-items: center;
+    background-color: $grey;
+    border-radius: $px6;
+    color: $white;
+    cursor: pointer;
+    display: flex;
+    font-size: $rem75pct;
+    list-style-type: none;
+    padding: $px5;
+}
+
+.chatsMenu>ul>li>div:hover {
+    background-color: $darkGrey;
+}
+
+.chatsMenu > ul > li > div > div {
+    padding: 0 $px5;
+}
+
+.chatsMenu > ul > li > div > div:nth-child(1) {
+    display: block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}

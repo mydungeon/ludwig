@@ -48,6 +48,17 @@
     top: 100%;
 }
 
+.tip.topLeft {
+    top: calc(var(--tooltip-margin) * -1.85);
+    left: 160%;
+    transform: translateX(-38%);
+}
+
+.tip.topLeft::before {
+    top: 100%;
+    left: 20%;
+}
+
 /* Absolute positioning */
 .tip.right {
     left: calc(100% + var(--tooltip-margin));

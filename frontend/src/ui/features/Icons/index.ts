@@ -1,3 +1,5 @@
+import { ArchiveIcon } from "./Chat";
+import { FileUploadIcon } from "./Chat";
 import {
   FilterInputClearIcon,
   FilterInputDropdownArrowIcon,
@@ -6,6 +8,7 @@ import FooterIcons from "./Footer";
 import { LeftCarouselArrowIcon } from "./CarouselArrows";
 import MenuIcon from "./Menu";
 import ModalCloseIcon from "./Modal";
+import { MoreIcon } from "./Chat";
 import MultiSelectDownArrowIcon from "./MultiSelect";
 import PagerLeftArrowIcon from "./Pager";
 import PagerRightArrowIcon from "./Pager";
@@ -16,12 +19,15 @@ import TableHeaderSortIcon from "./Table";
 import ThemeToggleIcon from "./Theme";
 
 export {
+  ArchiveIcon,
+  FileUploadIcon,
   FilterInputClearIcon,
   FilterInputDropdownArrowIcon,
   FooterIcons,
   LeftCarouselArrowIcon,
   MenuIcon,
   ModalCloseIcon,
+  MoreIcon,
   MultiSelectDownArrowIcon,
   PagerLeftArrowIcon,
   PagerRightArrowIcon,

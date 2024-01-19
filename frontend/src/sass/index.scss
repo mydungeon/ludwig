@@ -150,6 +150,7 @@ a.siteLink.link {
     @include themify('color', 'whiteAndBlack');
 }
 
+.tip.topLeft,
 .tip.top {
         @include themifyPseudo('before', 'border-top-color', 'blackAndLightGrey');
 }

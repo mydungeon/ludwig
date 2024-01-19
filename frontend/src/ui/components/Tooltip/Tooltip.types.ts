@@ -1,4 +1,5 @@
 export enum TooltipDirection {
+  TOP_LEFT = "topLeft",
   TOP = "top",
   BOTTOM = "bottom",
   LEFT = "left",

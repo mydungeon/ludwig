@@ -5,7 +5,7 @@ import "./ChatInput.styles.scss";
 export default function ChatInput({ children }: ChatInputProps) {
   return (
     <div className="chatInput" data-testid="chatInput">
-      <input className="input" type="text" />
+      <input className="input" placeholder="Message Droog AI..." type="text" />
     </div>
   );
 }

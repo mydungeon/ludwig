@@ -2,11 +2,12 @@
 
 .chat>.sender {
     align-items: center;
+    pointer-events: none;
     display: flex;
     font-size: $rem1;
     font-weight: $num600;
 }
 
 .chat>.sender > div:last-child {
-    padding-left: $px10;
+    padding-left: $pct1;
 }
