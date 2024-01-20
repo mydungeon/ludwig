@@ -1,5 +1,3 @@
-@import "src/sass/themes/variables";
-
 .page.droogAi {
     display: flex;
     flex-direction: column;
@@ -7,3 +5,12 @@
     justify-content: flex-end;
     padding-bottom: 0;
 }
+
+.page.noMessages {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    justify-content: center;
+    padding-bottom: 0;
+}
+

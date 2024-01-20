@@ -1,0 +1,71 @@
+@import "src/sass/themes/variables";
+
+.wrapper.droogAi {
+    height: $pct50;
+    width: $pct50;
+}
+
+.droogSvg {
+    max-width: 300px;
+}
+
+.typewriter1 h2 {
+    animation:
+        typing1 .5s steps(10, end),
+        blink-caret .75s step-end forwards;
+    border-right: .15em solid orange;
+    letter-spacing: .15em;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100px;
+}
+
+.typewriter2 h2 {
+    animation:
+        typing2 2s steps(20, end) 2.5s forwards,
+        blink-caret .75s step-end 1.5s infinite;
+    // animation-delay: 3s;
+    border-right-style: solid;
+    border-right-width: .15em;
+    border-right-color: transparent;
+    letter-spacing: .15em;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+}
+
+/* The typing effect */
+@keyframes typing1 {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100px
+    }
+}
+
+@keyframes typing2 {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 210px
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: orange;
+    }
+}

@@ -7,6 +7,7 @@ import Carousel from "./Carousel";
 import ChatInput from "./ChatInput";
 import ChatMessage from "./ChatMessage";
 import ChatMessages from "./ChatMessages";
+import ChatPlaceholder from "./ChatPlaceholder";
 import Ellipse from "./Ellipse";
 import ErrorMessage from "./ErrorMessage";
 import Footer from "./Footer";
@@ -41,6 +42,7 @@ export {
   ChatInput,
   ChatMessage,
   ChatMessages,
+  ChatPlaceholder,
   Ellipse,
   ErrorMessage,
   Footer,
