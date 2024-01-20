@@ -8,6 +8,8 @@ import App from "./App";
 import "react-toastify/dist/ReactToastify.css";
 import "src/sass/index.scss";
 
+// ARTICLE: https://codevoweb.com/node-typescript-mongodb-jwt-authentication/
+
 const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>

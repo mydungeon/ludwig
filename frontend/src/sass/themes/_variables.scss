@@ -3,9 +3,12 @@
 // COLORS
 /***************************/
 
-$white: #FFFFFF;
-$black: #000000;
-$red: #FF0000;
+$white: rgba(255, 255, 255, 1);
+$black: rgba(0, 0, 0, 1);
+$red: rgba(255, 0, 0, 1);
+$orange: rgba(255, 165, 0, 1);
+$slime: rgba(152, 239, 0, 1);
+
 
 
 /***************************/
@@ -150,7 +153,11 @@ $px40: 40px;
 $px50: 50px;
 $px80: 80px;
 $px100: 100px;
+$px150: 150px;
+$px175: 175px;
+$px200: 200px;
 $px250: 250px;
+$px300: 300px;
 $px350: 350px;
 $px500: 500px;
 $px600: 600px;
@@ -182,6 +189,7 @@ $vh100: 100vh;
 
 $rem0: 0rem;
 $rem10pct: .1rem;
+$rem15pct: .15rem;
 $rem25pct: .25rem;
 $rem25pct: .25rem;
 $rem50pct: .5rem;

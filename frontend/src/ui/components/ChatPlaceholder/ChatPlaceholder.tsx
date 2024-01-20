@@ -1,22 +1,38 @@
 import React from "react";
-import "./ChatPlaceholder.styles.scss";
 import { Wrapper } from "src/ui/components";
+import { TypewriterTextEffect } from "src/ui/features/TextEffects";
+import { TYPEWRITER_ANIMATION } from "src/ui/features/TextEffects/Typewriter/Typewriter.constants";
+import "./ChatPlaceholder.styles.scss";
 
 export default function ChatPlaceholder() {
   return (
-    <Wrapper classNames="droogAi">
+    <Wrapper classNames="chatPlaceholder">
       <div className="droogMessage">
-        <div className="typewriter1">
-          <h2>Hello.</h2>
-        </div>
+        <TypewriterTextEffect>
+          <h2
+            style={{
+              animation: TYPEWRITER_ANIMATION.ANIMATION1,
+              width: "100px",
+            }}
+          >
+            Hello.
+          </h2>
+        </TypewriterTextEffect>
         <img
           alt="Droog AI"
           className="droogSvg"
           src="../../../assets/droogai.svg"
         />
-        <div className="typewriter2">
-          <h2>I'm Droog AI.</h2>
-        </div>
+        <TypewriterTextEffect>
+          <h2
+            style={{
+              animation: TYPEWRITER_ANIMATION.ANIMATION2,
+              width: "0",
+            }}
+          >
+            I'm Droog AI.
+          </h2>
+        </TypewriterTextEffect>
       </div>
     </Wrapper>
   );

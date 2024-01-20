@@ -1,0 +1,19 @@
+@import "src/sass/themes/variables";
+ 
+.userPfp {
+    align-items: center;
+    background-color: $slime;
+    border-color: $black;
+    border-radius: $pct50;
+    border-style: solid;
+    border-width: $px6;
+    display: flex;
+    height: $px175;
+    justify-content: center;
+    margin: 0 auto;
+    width: $px175;
+}
+
+.userPfp > img {
+    width: $px150;
+}

@@ -30,6 +30,8 @@ import Table from "./Table";
 import TableToolbar from "./TableToolbar";
 import Tooltip from "./Tooltip";
 import UserDetails from "./UserDetails";
+import UserPfp from "./UserPfp";
+import UserProfile from "./UserProfile";
 import Wrapper from "./Wrapper";
 
 export {
@@ -65,5 +67,7 @@ export {
   TableToolbar,
   Tooltip,
   UserDetails,
+  UserPfp,
+  UserProfile,
   Wrapper,
 };

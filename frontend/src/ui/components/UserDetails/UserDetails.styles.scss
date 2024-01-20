@@ -13,6 +13,10 @@
     flex-direction: column;
 }
 
+.userDetails > div:nth-child(1) > div {
+    font-weight: $num600;
+}
+
 .userDetails > div:nth-child(1) {
     align-items: flex-end;
 }

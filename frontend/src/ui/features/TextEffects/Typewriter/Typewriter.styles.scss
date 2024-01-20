@@ -1,0 +1,44 @@
+@import "src/sass/themes/variables";
+
+// ARTICLE: https: //css-tricks.com/snippets/css/typewriter-effect/
+
+.typewriter > * {
+    border-right: $rem15pct solid $orange;
+    letter-spacing: $rem15pct;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: $px100;
+    }
+}
+
+@keyframes typing2 {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 210px
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: orange;
+    }
+}
