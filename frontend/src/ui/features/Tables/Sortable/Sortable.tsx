@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import SortableTableProps from "./Sortable.types";
 import { Pager, Table, TableToolbar } from "src/ui/components";
 import { IUser } from "src/redux/api/types";
@@ -17,13 +17,23 @@ export default function SortableTable({
   const [filterWarning, setFilterWarning] = useState(false);
   const [sortField, setSortField] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
+  const [tableData, setTableData] = useState<IUser[]>(data);
+  const [resultCount, setResultCount] = useState(0);
   const [toggleFilterDropdown, setToggleFilterDropdown] = useState(false);
   const pagerCallback = (page: number) => setCurrentPage(page);
 
-  const filteredData = useMemo(() => {
-    const firstPageIndex = (currentPage - 1) * pageSize;
-    const lastPageIndex = firstPageIndex + pageSize;
+  const pagedData = useMemo(() => {
+    function pageData() {
+      const firstPageIndex = (currentPage - 1) * pageSize;
+      const lastPageIndex = firstPageIndex + pageSize;
+      return tableData?.slice(firstPageIndex, lastPageIndex);
+    }
 
+    const paged = pageData();
+    return paged;
+  }, [currentPage, pageSize, tableData]);
+
+  const filteredData = useMemo(() => {
     function filterData(data: IUser[]) {
       if (filterKey === "") {
         setFilterWarning(true);
@@ -41,13 +51,10 @@ export default function SortableTable({
     const filtered = filterData(data);
     setFilteredDataCount(filtered.length);
 
-    return filtered.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage, data, filterKey, filterTerm, pageSize]);
+    setTableData(filtered);
+  }, [data, filterKey, filterTerm]);
 
   const sortedData = useMemo(() => {
-    const firstPageIndex = (currentPage - 1) * pageSize;
-    const lastPageIndex = firstPageIndex + pageSize;
-
     function sortData(data: IUser[]) {
       return [...data].sort((a: any, b: any) => {
         if (sortOrder === "asc") {
@@ -61,8 +68,9 @@ export default function SortableTable({
       });
     }
 
-    return sortData(data)?.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage, data, pageSize, sortField, sortOrder]);
+    const sorted = sortData(data);
+    setTableData(sorted);
+  }, [data, sortField, sortOrder]);
 
   function handleFiltering(e: any) {
     if (currentPage > 1) {
@@ -93,8 +101,9 @@ export default function SortableTable({
     setFilterTerm("");
   }
 
-  const tableData = filterTerm ? filteredData : sortedData;
-  const resultCount = filterTerm ? filteredDataCount : data.length;
+  useEffect(() => {
+    setResultCount(tableData.length);
+  }, [data, filterTerm, filteredData, sortedData, tableData]);
 
   return (
     data && (
@@ -113,7 +122,7 @@ export default function SortableTable({
         />
         <Table
           columns={columns}
-          data={tableData}
+          data={pagedData}
           maxCellTextLength={maxCellTextLength}
           handleSetSortField={handleSorting}
         />
