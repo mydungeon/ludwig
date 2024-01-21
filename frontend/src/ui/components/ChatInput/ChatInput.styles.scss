@@ -1,7 +1,17 @@
 @import "src/sass/themes/variables";
 
-.chatInput > input[type="text"] {
+.chatInput {
+    position: relative;
+}
+
+.chatInput > textarea {
+    height: $px20;
+    line-height: $px20;
     margin-top: 0;
-    padding: $rem85pct 0 $rem85pct $rem85pct;
+    max-height: 220px;
+    overflow: scroll;
+    padding: $px10;
+    resize: none;
     width: $pct100;
 }
+

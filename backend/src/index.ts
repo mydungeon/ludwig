@@ -6,9 +6,10 @@ import config from "config";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import connectDB from "./utils/connectDB";
-import userRouter from "./routes/user.route";
 import authRouter from "./routes/auth.route";
+import gptRouter from "./routes/gpt.route";
 import healthRouter from "./routes/health.route";
+import userRouter from "./routes/user.route";
 import seedRouter from "./routes/seed.route";
 import swaggerDocs from "./utils/swagger";
 
@@ -34,10 +35,11 @@ app.use(
 );
 
 // Routes
-app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/gpt", gptRouter);
 app.use("/api/health", healthRouter);
 app.use("/api/seed", seedRouter);
+app.use("/api/users", userRouter);
 app.use("/public", express.static(path.join(__dirname, "public")));
 swaggerDocs(app, 3000);
 

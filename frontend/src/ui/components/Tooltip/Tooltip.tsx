@@ -4,6 +4,7 @@ import "./Tooltip.styles.scss";
 
 export default function Tooltip({
   children,
+  classNames,
   delay = 200,
   direction,
   message,
@@ -21,9 +22,12 @@ export default function Tooltip({
     clearInterval(timeout);
     setActive(false);
   };
+
+  classNames = classNames ? `tooltip ${classNames}` : "tooltip";
+
   return (
     <span
-      className="tooltip"
+      className={classNames}
       data-testid="tooltip"
       onMouseEnter={showTip}
       onMouseLeave={hideTip}

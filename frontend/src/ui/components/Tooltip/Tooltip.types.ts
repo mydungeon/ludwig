@@ -7,6 +7,7 @@ export enum TooltipDirection {
 }
 export default interface TooltipProps {
   children?: JSX.Element[] | JSX.Element;
+  classNames?: string;
   delay?: number;
   direction: TooltipDirection;
   message: string;

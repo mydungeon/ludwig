@@ -13,6 +13,7 @@ import MultiSelectDownArrowIcon from "./MultiSelect";
 import PagerLeftArrowIcon from "./Pager";
 import PagerRightArrowIcon from "./Pager";
 import { RightCarouselArrowIcon } from "./CarouselArrows";
+import { SendIcon } from "./Chat";
 import SidebarToggleIcon from "./Sidebar";
 import SiteMenuCloseIcon from "./Site";
 import TableHeaderSortIcon from "./Table";
@@ -32,6 +33,7 @@ export {
   PagerLeftArrowIcon,
   PagerRightArrowIcon,
   RightCarouselArrowIcon,
+  SendIcon,
   SidebarToggleIcon,
   SiteMenuCloseIcon,
   TableHeaderSortIcon,

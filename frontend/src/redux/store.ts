@@ -5,10 +5,12 @@ import { userApi } from "./api/user.api";
 import userReducer from "./features/user.slice";
 import { alertLoggerMiddleware } from "src/middleWare/AlertMiddleware";
 import uiSlice from "./features/ui.slice";
+import { gptApi } from "./api/gpt.api";
 
 export const store = configureStore({
   reducer: {
     [authApi.reducerPath]: authApi.reducer,
+    [gptApi.reducerPath]: gptApi.reducer,
     [userApi.reducerPath]: userApi.reducer,
     userState: userReducer,
     uiState: uiSlice,
