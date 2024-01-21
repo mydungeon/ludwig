@@ -61,3 +61,8 @@
 .filterDropdown > ul > li:last-child {
     border: none;
 }
+
+.filterWarning {
+    color: $red;
+    font-size: $rem75pct;
+}

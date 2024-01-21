@@ -4,17 +4,19 @@ import { FilterWithDropdown } from "src/ui/features/Filters";
 import { FilterInputClearIcon } from "src/ui/features/Icons";
 import "./TableToolbar.styles.scss";
 
-export default function TableToolbar({
-  columns,
-  filterKey,
-  filterTerm,
-  handleClearFilter,
-  handleToggle,
-  onChange,
-  onClick,
-  resultCount,
-  toggle,
-}: TableToolbarProps) {
+export default function TableToolbar({ ...props }: TableToolbarProps) {
+  const {
+    columns,
+    filterKey,
+    filterTerm,
+    filterWarning,
+    handleClearFilter,
+    handleToggle,
+    onChange,
+    onClick,
+    resultCount,
+    toggle,
+  } = props;
   return (
     <div className="tableToolbar" data-testid="tableToolbar">
       <div className="results">
@@ -33,6 +35,9 @@ export default function TableToolbar({
           onClick={onClick}
           toggle={toggle}
         />
+        {filterWarning && !filterKey && filterTerm !== "" && (
+          <div className="filterWarning">Please select a filter term</div>
+        )}
       </div>
     </div>
   );

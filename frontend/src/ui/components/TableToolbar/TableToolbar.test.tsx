@@ -8,6 +8,7 @@ test("loads and displays TableToolbar component", async () => {
     <TableToolbar
       columns={[]}
       filterKey=""
+      filterWarning={true}
       handleClearFilter={() => {}}
       handleToggle={() => {}}
       onChange={(e: any) => console.log(e.target.value)}

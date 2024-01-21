@@ -14,6 +14,7 @@ export default function SortableTable({
   const [filteredDataCount, setFilteredDataCount] = useState(0);
   const [filterKey, setFilterKey] = useState("");
   const [filterTerm, setFilterTerm] = useState("");
+  const [filterWarning, setFilterWarning] = useState(false);
   const [sortField, setSortField] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
   const [toggleFilterDropdown, setToggleFilterDropdown] = useState(false);
@@ -24,10 +25,13 @@ export default function SortableTable({
     const lastPageIndex = firstPageIndex + pageSize;
 
     function filterData(data: IUser[]) {
-      if (filterKey === "") return [...data];
+      if (filterKey === "") {
+        setFilterWarning(true);
+        return [...data];
+      }
       return [...data].filter((datum: any) => {
-        const value = datum[filterKey];
-        if (value.toLowerCase().includes(filterTerm)) {
+        const value = datum[filterKey.toLowerCase()];
+        if (value.toLowerCase().includes(filterTerm.toLowerCase())) {
           return datum;
         } else {
           return null;
@@ -95,6 +99,7 @@ export default function SortableTable({
           columns={columns}
           filterKey={filterKey}
           filterTerm={filterTerm}
+          filterWarning={filterWarning}
           handleClearFilter={handleClearFilter}
           handleToggle={handleSetToggleFilterDropdown}
           onChange={handleFiltering}

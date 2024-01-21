@@ -2,6 +2,7 @@ export default interface TableToolbarProps {
   columns: any;
   filterKey: string;
   filterTerm?: string;
+  filterWarning: boolean;
   handleClearFilter: () => void;
   handleToggle: () => void;
   onChange: (e: any) => void;
