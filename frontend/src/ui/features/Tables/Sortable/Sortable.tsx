@@ -40,6 +40,9 @@ export default function SortableTable({
     }
     const filtered = filterData(data);
     setFilteredDataCount(filtered.length);
+    // if (currentPage > 1) {
+    //   setCurrentPage(1);
+    // }
     return filtered.slice(firstPageIndex, lastPageIndex);
   }, [currentPage, data, filterKey, filterTerm, pageSize]);
 
@@ -64,6 +67,9 @@ export default function SortableTable({
   }, [currentPage, data, pageSize, sortField, sortOrder]);
 
   function handleFiltering(e: any) {
+    if (currentPage > 1) {
+      setCurrentPage(1);
+    }
     setFilterTerm(e.target.value);
   }
 
