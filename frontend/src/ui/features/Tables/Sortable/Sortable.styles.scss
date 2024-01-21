@@ -2,6 +2,8 @@
 
 .sortable {
     display: inline-block;
+    width: calc($pct100 - $rem3pt5);
+    max-width: calc($vw85 - $px250);
 }
 .pagerBar {
     padding: 0;

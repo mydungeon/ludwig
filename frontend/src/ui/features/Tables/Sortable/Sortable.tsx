@@ -40,9 +40,7 @@ export default function SortableTable({
     }
     const filtered = filterData(data);
     setFilteredDataCount(filtered.length);
-    // if (currentPage > 1) {
-    //   setCurrentPage(1);
-    // }
+
     return filtered.slice(firstPageIndex, lastPageIndex);
   }, [currentPage, data, filterKey, filterTerm, pageSize]);
 
