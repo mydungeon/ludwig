@@ -15,7 +15,6 @@ export default function UsersPage() {
 
   useEffect(() => {
     async function sortDataAsync() {
-      console.log("get users");
       const { data } = await getUsers();
       setData(data!);
     }
