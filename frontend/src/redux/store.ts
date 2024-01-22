@@ -6,6 +6,7 @@ import userReducer from "./features/user.slice";
 import { alertLoggerMiddleware } from "src/middleWare/AlertMiddleware";
 import uiSlice from "./features/ui.slice";
 import { gptApi } from "./api/gpt.api";
+import gptReducer from "./features/gpt.slice";
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     [userApi.reducerPath]: userApi.reducer,
     userState: userReducer,
     uiState: uiSlice,
+    gptState: gptReducer,
   },
   devTools: process.env.NODE_ENV === "development",
   middleware: (getDefaultMiddleware) =>

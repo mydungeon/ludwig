@@ -1,20 +1,19 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { createEntityAdapter } from "@reduxjs/toolkit";
 import customFetchBase from "./customFetchBase";
+import { IMessage } from "src/redux/api/types";
+import gptSlice from "../features/gpt.slice";
 
-interface Message {
-  content: string;
-}
-
-const messagesAdapter = createEntityAdapter<Message>();
+// const messagesAdapter = createEntityAdapter<IMessage>();
 
 export const gptApi = createApi({
   reducerPath: "gptApi",
   baseQuery: customFetchBase,
   tagTypes: ["Gpt"],
   endpoints: (builder) => ({
-    createCompletions: builder.mutation<Message, Message>({
+    createCompletions: builder.mutation<IMessage, IMessage>({
       query: (data) => {
+        console.log("query started");
         return {
           credentials: "include",
           url: "gpt/completions",
@@ -22,24 +21,27 @@ export const gptApi = createApi({
           body: data,
         };
       },
-      async onCacheEntryAdded(arg, { cacheDataLoaded, cacheEntryRemoved }) {
-        const ws = new WebSocket("ws://localhost:8080");
+      async onQueryStarted(args, { dispatch, queryFulfilled }) {
+        console.log("onQueryStarted");
+        console.log("args", args);
+        const ws = new WebSocket("ws://localhost:8000");
+        console.log("websocket initialized");
         try {
-          await cacheDataLoaded;
-
           const listener = (event: MessageEvent) => {
             const data = JSON.parse(event.data);
-            // if (!isMessage(data) || data.channel !== arg) return;
-
-            // updateCachedData((draft:any) => {
-            //   messagesAdapter.upsertOne(draft, data);
-            // });
+            console.log("listener data", data);
           };
-
+          console.log("listener initialized");
           ws.addEventListener("message", listener);
-        } catch {}
-        await cacheEntryRemoved;
+          console.log("listner added to the web socket");
+        } catch (error) {
+          console.log("error", error);
+        }
+
+        await queryFulfilled;
+        console.log("query fulfilled");
         ws.close();
+        console.log("web socket connection closed");
       },
     }),
   }),
