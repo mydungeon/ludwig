@@ -1,5 +1,5 @@
 import express from "express";
-import { createCompletions } from "../controllers/gpt.controller";
+import { createCompletions } from "../controllers/gpt.compl.controller";
 
 const router = express.Router();
 

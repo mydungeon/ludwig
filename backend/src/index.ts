@@ -7,7 +7,9 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import connectDB from "./utils/connectDB";
 import authRouter from "./routes/auth.route";
-import gptRouter from "./routes/gpt.route";
+import gptCompletionsRouter from "./routes/gpt.compl.route";
+import gptMessagesRouter from "./routes/gpt.msg.route";
+import gptThreadsRouter from "./routes/gpt.thrd.route";
 import healthRouter from "./routes/health.route";
 import userRouter from "./routes/user.route";
 import seedRouter from "./routes/seed.route";
@@ -36,7 +38,9 @@ app.use(
 
 // Routes
 app.use("/api/auth", authRouter);
-app.use("/api/gpt", gptRouter);
+app.use("/api/gpt/compl", gptCompletionsRouter);
+app.use("/api/gpt/thrd", gptThreadsRouter);
+app.use("/api/gpt/msg", gptMessagesRouter);
 app.use("/api/health", healthRouter);
 app.use("/api/seed", seedRouter);
 app.use("/api/users", userRouter);

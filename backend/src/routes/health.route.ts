@@ -9,6 +9,7 @@ const router = express.Router();
  *   get:
  *     tags:
  *     - Health check
+ *     summary: Ludwig's heartbeat;
  *     description: The heartbeat for Ludwig &#x1F493;
  *     responses:
  *       200:

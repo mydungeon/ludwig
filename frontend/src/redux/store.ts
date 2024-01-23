@@ -22,6 +22,7 @@ export const store = configureStore({
     getDefaultMiddleware({}).concat([
       authApi.middleware,
       userApi.middleware,
+      gptApi.middleware,
       alertLoggerMiddleware,
     ]),
 });

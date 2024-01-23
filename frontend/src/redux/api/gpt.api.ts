@@ -2,46 +2,39 @@ import { createApi } from "@reduxjs/toolkit/query/react";
 import { createEntityAdapter } from "@reduxjs/toolkit";
 import customFetchBase from "./customFetchBase";
 import { IMessage } from "src/redux/api/types";
-import gptSlice from "../features/gpt.slice";
-
-// const messagesAdapter = createEntityAdapter<IMessage>();
+import gptSlice, { setMessages } from "../features/gpt.slice";
 
 export const gptApi = createApi({
   reducerPath: "gptApi",
   baseQuery: customFetchBase,
   tagTypes: ["Gpt"],
   endpoints: (builder) => ({
-    createCompletions: builder.mutation<IMessage, IMessage>({
+    createCompletions: builder.mutation<string, any>({
       query: (data) => {
+        console.log("query started", data);
         console.log("query started");
         return {
           credentials: "include",
           url: "gpt/completions",
           method: "POST",
           body: data,
+          responseHandler: async (response) => {
+            return await response.text();
+          },
         };
       },
-      async onQueryStarted(args, { dispatch, queryFulfilled }) {
+      async onQueryStarted({ id, ...patch }, { dispatch, queryFulfilled }) {
         console.log("onQueryStarted");
-        console.log("args", args);
-        const ws = new WebSocket("ws://localhost:8000");
-        console.log("websocket initialized");
+        // const patchResult = dispatch(
+        //   gptApi.util.updateQueryData('')
+        // )
         try {
-          const listener = (event: MessageEvent) => {
-            const data = JSON.parse(event.data);
-            console.log("listener data", data);
-          };
-          console.log("listener initialized");
-          ws.addEventListener("message", listener);
-          console.log("listner added to the web socket");
-        } catch (error) {
-          console.log("error", error);
-        }
-
-        await queryFulfilled;
-        console.log("query fulfilled");
-        ws.close();
-        console.log("web socket connection closed");
+          const { data } = await queryFulfilled;
+          // gptApi.util.updateQueryData('', id, (draft) => {
+          //   Object.assign(draft, data)
+          // })
+          dispatch(setMessages([{ content: data }]));
+        } catch (error) {}
       },
     }),
   }),
