@@ -7,6 +7,7 @@ import {
   prop,
 } from "@typegoose/typegoose";
 import bcrypt from "bcryptjs";
+import { getNowToUnixTimestamp } from "../utils/date";
 
 @index({ email: 1 })
 @pre<User>("save", async function () {
@@ -28,7 +29,7 @@ export class User {
   @prop()
   name: string;
 
-  @prop({ unique: true, required: true })
+  @prop({ unique: true, required: true, set: (v) => v.toLowerCase() })
   email: string;
 
   @prop({ required: true, minlength: 8, maxLength: 32, select: false })
@@ -37,6 +38,12 @@ export class User {
   @prop({ type: [String], default: ["user"] })
   roles: string[];
 
+  @prop()
+  lastLoggedIn: number;
+
+  async setLastLoggedIn() {
+    return getNowToUnixTimestamp();
+  }
   // Instance method to check if passwords match
   async comparePasswords(hashedPassword: string, candidatePassword: string) {
     return await bcrypt.compare(candidatePassword, hashedPassword);

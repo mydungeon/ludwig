@@ -16,6 +16,24 @@ const router = express.Router();
  *     - Chat GPT Threads
  *     summary: Create a thread
  *     description: Create a thread
+ *     requestBody:
+ *      content:
+ *        application/json:
+ *          schema:
+ *           type: object
+ *           properties:
+ *             messages:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   role:
+ *                     type: string
+ *                   content:
+ *                     type: string
+ *          encoding:
+ *            payload:
+ *              contentType: application/json
  *     responses:
  *      200:
  *        description: Returns completion object.
@@ -47,7 +65,13 @@ router.get("threads/:thread_id", getThread);
  *     tags:
  *     - Chat GPT Threads
  *     summary: Update a thread
- *     description: Update a thread
+ *     parameters:
+ *      - in: path
+ *        name: thread_id
+ *        schema:
+ *          type: string
+ *        required: true
+ *     description: Update a thread by passing a thread_id
  *     responses:
  *       200:
  *         description: Returns the updated thread
@@ -62,6 +86,12 @@ router.post("threads/:thread_id", updateThread);
  *     - Chat GPT Threads
  *     summary: Delete a thread
  *     description: Delete a thread
+ *     parameters:
+ *      - in: path
+ *        name: thread_id
+ *        schema:
+ *          type: string
+ *        required: true
  *     responses:
  *      200:
  *        description: Returns deletion status.

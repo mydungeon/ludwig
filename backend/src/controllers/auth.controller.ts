@@ -6,6 +6,7 @@ import {
   findUser,
   findUserById,
   signToken,
+  updateUser,
 } from "../services/user.service";
 import AppError from "../utils/appError";
 import redisClient from "../utils/connectRedis";
@@ -83,7 +84,6 @@ export const loginHandler = async (
     ) {
       return next(new AppError("Invalid email or password", 401));
     }
-
     // Create the Access and refresh Tokens
     const { access_token, refresh_token } = await signToken(user);
     // Send Access Token in Cookie
@@ -93,7 +93,10 @@ export const loginHandler = async (
       ...accessTokenCookieOptions,
       httpOnly: false,
     });
-
+    const id = user._id.toString();
+    // Set last logged in time
+    const lastLoggedIn = await user.setLastLoggedIn();
+    await updateUser(id, { lastLoggedIn }, next);
     // Send Access Token
     res.status(200).json({
       status: "success",
