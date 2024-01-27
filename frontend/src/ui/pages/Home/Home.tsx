@@ -6,7 +6,7 @@ import "./Home.styles.scss";
 
 export default function HomePage() {
   useEffect(() => {
-    ludwigAscii();
+    ludwigAscii(`Good ol' Ludwig Von...`);
   }, []);
   return (
     <BrandedFooterPage classNames="home">

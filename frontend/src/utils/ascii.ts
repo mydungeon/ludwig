@@ -1,5 +1,5 @@
 
-export function ludwigAscii() {
+export function ludwigAscii(oneLiner:string) {
   console.log(`            .;.                                                   ;$.           \n
            :##$                                                  ;##$.          \n
          .$####S                                                :#####,         \n
@@ -36,10 +36,10 @@ export function ludwigAscii() {
                          .:;SS$$################$$SS;;.                         \n
                                   ..,;$##$;:..                                  \n
                                        ..                                       \n
-                                       Good ol' Ludwig Von...`);
+                                       ${oneLiner}`);
 }
 
-export function droogAiAscii() {
+export function droogAiAscii(oneLiner:string) {
   console.log(`                               ,:;;SS$$$$$$SS;:,.                               \n
                             ,;SS;;;SS$###########$;.                            \n
                           .S$;;;;;S#################:                           \n
@@ -78,6 +78,6 @@ export function droogAiAscii() {
                      ,:S$###########$$$$$$$###########$S;,                      \n
                          .,:;S$$###############$$S;:,.                          \n
                                  ...,,,,,,,...                                  \n
-                                 Oh my little droogie...`);
+                                 ${oneLiner}`);
 }
 

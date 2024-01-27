@@ -13,7 +13,7 @@ export default function DroogAiPage() {
   const user = useAppSelector((state) => state.userState.user);
 
   useEffect(() => {
-    droogAiAscii();
+    droogAiAscii(`Oh my little droogie...`);
   }, []);
 
   return (
