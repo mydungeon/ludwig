@@ -1,6 +1,7 @@
 @import "src/sass/themes/variables";
 .breadcrumbs {
     display: flex;
+    margin-left: $rem1;
 }
 
 .breadcrumb {

@@ -10,7 +10,7 @@ const router = express.Router();
 
 /**
  * @openapi
- * /api/gpt/msg/threads/:thread_id/messages:
+ * /api/gpt/messages/threads/:thread_id/messages:
  *  post:
  *     tags:
  *     - Chat GPT Messages
@@ -42,16 +42,58 @@ const router = express.Router();
  *     responses:
  *      200:
  *        description: Accepts a list of messages from the user and returns a chat completion object.
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              properties:
+ *                id:
+ *                  type: string
+ *                  description: The id for the message.
+ *                object:
+ *                  type: string
+ *                  description: thread.message.
+ *                created_at:
+ *                  type: number
+ *                  description: The time of creation.
+ *                thread_id:
+ *                  type: string
+ *                  description: The id of the message thread.
+ *                role:
+ *                  type: string
+ *                  description: The role of the creator of the message.
+ *                content:
+ *                  type: array
+ *                  items:
+ *                    type: object
+ *                    properties:
+ *                      type:
+ *                        type: string
+ *                      text:
+ *                        type: object
+ *                        properties:
+ *                          value:
+ *                            type: string
+ *                          annotations:
+ *                            type: array
+ *                file_ids:
+ *                  type: array
+ *                assistant_id:
+ *                  type: string
+ *                run_id:
+ *                  type: string
+ *                metadata:
+ *                  type: object
  *      401:
  *        description: Not Found
  *      500:
  *        description: Server Error
  */
-router.post("messages/:thread_id/messages", createMessage);
+router.post("threads/:thread_id/messages", createMessage);
 
 /**
  * @openapi
- * /api/gpt/msg/threads/:thread_id/messages:
+ * /api/gpt/messages/threads/:thread_id/messages:
  *   get:
  *     tags:
  *     - Chat GPT Messages
@@ -66,12 +108,33 @@ router.post("messages/:thread_id/messages", createMessage);
  *     responses:
  *       200:
  *         description: Returns messages based on thread_id
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 object:
+ *                   type: string
+ *                   description: The type of object.
+ *                 list:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: string
+ *                       object:
+ *                         type: string
+ *                       created_at:
+ *                         type: number
+ *                       message_id:
+ *                         type: string
  */
-router.get("messages/:thread_id/messages", listMessages);
+router.get("threads/:thread_id/messages", listMessages);
 
 /**
  * @openapi
- * /api/gpt/msg/threads/:thread_id/messages/:message_id:
+ * /api/gpt/messages/threads/:thread_id/messages/:message_id:
  *   get:
  *     tags:
  *     - Chat GPT Messages
@@ -92,11 +155,11 @@ router.get("messages/:thread_id/messages", listMessages);
  *       200:
  *         description: Returns a message based on thread_id
  */
-router.get("messages/:thread_id/messages/:message_id", getMessage);
+router.get("threads/:thread_id/messages/:message_id", getMessage);
 
 /**
  * @openapi
- * /api/gpt/msg/threads/:thread_id/messages/:message_id:
+ * /api/gpt/messages/threads/:thread_id/messages/:message_id:
  *  post:
  *     tags:
  *     - Chat GPT Messages
@@ -131,6 +194,6 @@ router.get("messages/:thread_id/messages/:message_id", getMessage);
  *      500:
  *        description: Server Error
  */
-router.post("messages/:thread_id/messages/:message_id", updateMessage);
+router.post("threads/:thread_id/messages/:message_id", updateMessage);
 
 export default router;

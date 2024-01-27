@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import { ChatFooterPage } from "src/ui/features/Pages";
 import { useAppSelector } from "src/redux/store";
 import { ChatMessages, ChatPlaceholder } from "src/ui/components";
-import { MESSAGES } from "src/testing/data/chat";
 import "./DroogAi.styles.scss";
-
 export default function DroogAiPage() {
-  const [messages, setMessages] = useState([]);
+  const messages = useSelector((state: any) => {
+    const { gptState } = state;
+    return gptState.messages;
+  });
   const user = useAppSelector((state) => state.userState.user);
-
   return (
     <>
       {messages.length === 0 ? (

@@ -11,11 +11,7 @@ export default function Sidebar({ children }: SidebarProps) {
   }
 
   return (
-    <div
-      className={toggle ? "sidebar show" : "sidebar"}
-      data-testid="sidebar"
-      onClick={handleClick}
-    >
+    <div className={toggle ? "sidebar show" : "sidebar"} data-testid="sidebar">
       {toggle ? children : null}
       <SidebarToggleIcon callback={handleClick} toggle={toggle} />
     </div>

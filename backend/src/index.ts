@@ -38,9 +38,9 @@ app.use(
 
 // Routes
 app.use("/api/auth", authRouter);
-app.use("/api/gpt/compl", gptCompletionsRouter);
-app.use("/api/gpt/thrd", gptThreadsRouter);
-app.use("/api/gpt/msg", gptMessagesRouter);
+app.use("/api/gpt/completions", gptCompletionsRouter);
+app.use("/api/gpt/threads", gptThreadsRouter);
+app.use("/api/gpt/messages", gptMessagesRouter);
 app.use("/api/health", healthRouter);
 app.use("/api/seed", seedRouter);
 app.use("/api/users", userRouter);

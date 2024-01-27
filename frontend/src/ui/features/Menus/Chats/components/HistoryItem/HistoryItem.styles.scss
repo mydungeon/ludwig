@@ -1,0 +1,35 @@
+@import "src/sass/themes/variables";
+
+li.historyItem {
+    list-style-type: none;
+    padding: $px5;
+}
+
+li.historyItem > div {
+    align-items: center;
+    background-color: $grey;
+    border-radius: $px6;
+    color: $white;
+    cursor: pointer;
+    display: flex;
+    font-size: $rem75pct;
+    list-style-type: none;
+    padding: $px5;
+}
+
+li.historyItem > div:hover {
+    background-color: $darkGrey;
+}
+
+li.historyItem > div > div {
+    padding: 0 $px5;
+}
+
+li.historyItem > div > div:nth-child(1) {
+    display: block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}

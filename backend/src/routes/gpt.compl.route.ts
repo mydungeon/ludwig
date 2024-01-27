@@ -14,14 +14,18 @@ const router = express.Router();
  *      required: true
  *      content:
  *        application/json:
- *           schema:
+ *          schema:
  *            type: object
  *            required:
  *              - content
+ *              - role
  *            properties:
  *              content:
  *                type: string
  *                default: Tell me how the weather will be tomorrow, in 50 words or less.
+ *              role:
+ *                type: string
+ *                default: user
  *     responses:
  *      200:
  *        description: Accepts a list of messages from the user and returns a chat completion object.
@@ -30,6 +34,6 @@ const router = express.Router();
  *      500:
  *        description: Server Error
  */
-router.post("/completions", createCompletions);
+router.post("/", createCompletions);
 
 export default router;

@@ -1,8 +1,15 @@
 export interface IMessage {
   content: string;
+  role: string;
+}
+
+export interface IMessageHistory {
+  index: number;
+  messages: IMessage[];
 }
 export interface IGptState {
-  messages: IMessage[] | [];
+  messages: IMessage[];
+  history: IMessageHistory[];
 }
 export interface IUser {
   name: string;

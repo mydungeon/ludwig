@@ -7,36 +7,19 @@
     padding: 0;
 }
 
-.chatsMenu > ul > li {
-    list-style-type: none;
-    padding: $px5;
-}
-
-.chatsMenu > ul > li > div {
-    align-items: center;
-    background-color: $grey;
-    border-radius: $px6;
-    color: $white;
-    cursor: pointer;
+.button.addNewChat {
     display: flex;
-    font-size: $rem75pct;
-    list-style-type: none;
-    padding: $px5;
+    width: $pct100;
 }
 
-.chatsMenu>ul>li>div:hover {
-    background-color: $darkGrey;
+.button.addNewChat span:nth-child(1) {
+    margin-right: $px10;
 }
 
-.chatsMenu > ul > li > div > div {
-    padding: 0 $px5;
-}
-
-.chatsMenu > ul > li > div > div:nth-child(1) {
-    display: block;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: auto;
-    align-self: auto;
-    order: 0;
+.wrapper.chatHistory {
+    background-color: $blackAlpha20pct;
+    border-radius: $px6;
+    margin: $rem1 0;
+    padding: $rem1 $rem2;
+    text-align: center;
 }

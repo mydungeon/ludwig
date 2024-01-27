@@ -4,6 +4,7 @@ import "./Button.styles.scss";
 
 export default function Button({
   buttonText,
+  children,
   classNames,
   onClick,
 }: ButtonProps) {
@@ -17,7 +18,8 @@ export default function Button({
       data-testid={`button`}
       onClick={onClickHandler}
     >
-      {buttonText}
+      {children && <span>{children}</span>}
+      <span>{buttonText}</span>
     </button>
   );
 }

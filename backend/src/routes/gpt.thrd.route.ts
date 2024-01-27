@@ -10,7 +10,7 @@ const router = express.Router();
 
 /**
  * @openapi
- * /api/gpt/thrd/threads:
+ * /api/gpt/threads:
  *  post:
  *     tags:
  *     - Chat GPT Threads
@@ -42,11 +42,11 @@ const router = express.Router();
  *      500:
  *        description: Server Error
  */
-router.post("threads", createThread);
+router.post("/", createThread);
 
 /**
  * @openapi
- * /api/gpt/thrd/threads/:thread_id:
+ * /api/gpt/threads/:thread_id:
  *   get:
  *     tags:
  *     - Chat GPT Threads
@@ -56,11 +56,11 @@ router.post("threads", createThread);
  *       200:
  *         description: Returns a thread
  */
-router.get("threads/:thread_id", getThread);
+router.get(":thread_id", getThread);
 
 /**
  * @openapi
- * /api/gpt/thrd/threads/:thread_id:
+ * /api/gpt/threads/:thread_id:
  *   post:
  *     tags:
  *     - Chat GPT Threads
@@ -76,11 +76,11 @@ router.get("threads/:thread_id", getThread);
  *       200:
  *         description: Returns the updated thread
  */
-router.post("threads/:thread_id", updateThread);
+router.post(":thread_id", updateThread);
 
 /**
  * @openapi
- * /api/gpt/thrd/threads/:thread_id:
+ * /api/gpt/threads/:thread_id:
  *  delete:
  *     tags:
  *     - Chat GPT Threads
@@ -100,6 +100,6 @@ router.post("threads/:thread_id", updateThread);
  *      500:
  *        description: Server Error
  */
-router.delete("threads/:thread_id/messages/:message_id", deleteThread);
+router.delete(":thread_id/messages/:message_id", deleteThread);
 
 export default router;

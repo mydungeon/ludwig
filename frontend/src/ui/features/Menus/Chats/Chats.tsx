@@ -1,27 +1,42 @@
 import React from "react";
-import ChatsProps from "./Chats.types";
-import { Ellipse, Icon } from "src/ui/components";
+import { ChatMenu, ChatsProps } from "./Chats.types";
+import { Button, Icon, Wrapper } from "src/ui/components";
+import { HistoryItem } from "./components";
 import "./Chats.styles.scss";
-import { faEllipsis, faInbox } from "@fortawesome/free-solid-svg-icons";
-import { ArchiveIcon, MoreIcon } from "../../Icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
 
 export default function ChatsMenu({ chats }: ChatsProps) {
+  const history = useSelector((state: any) => {
+    const { gptState } = state;
+    return gptState.history;
+  });
+  function clickHandler() {
+    console.log("add new chat");
+  }
   return (
     <div className="chatsMenu" data-testid="chatsMenu">
-      <h3>Previous Chats</h3>
-      <ul>
-        {chats.map((chat, index) => (
-          <li key={index}>
-            <div>
-              <div>
-                <Ellipse text={chat} length={25} />
-              </div>
-              <MoreIcon />
-              <ArchiveIcon />
-            </div>
-          </li>
-        ))}
-      </ul>
+      <Button
+        buttonText="Add New Chat"
+        classNames="addNewChat"
+        onClick={clickHandler}
+      >
+        <Icon icon={faPlus} />
+      </Button>
+      {history.length > 0 ? (
+        <>
+          <h3>{ChatMenu.TITLE}</h3>
+          <ul>
+            {history.map((chat: any, index: number) => (
+              <HistoryItem key={index} title={chat} />
+            ))}
+          </ul>
+        </>
+      ) : (
+        <Wrapper classNames="chatHistory">
+          <div>{`No Chats`}</div>
+        </Wrapper>
+      )}
     </div>
   );
 }
