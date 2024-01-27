@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { droogAiAscii } from "src/utils/ascii";
 import { ChatFooterPage } from "src/ui/features/Pages";
 import { useAppSelector } from "src/redux/store";
 import { ChatMessages, ChatPlaceholder } from "src/ui/components";
@@ -10,6 +11,11 @@ export default function DroogAiPage() {
     return gptState.messages;
   });
   const user = useAppSelector((state) => state.userState.user);
+
+  useEffect(() => {
+    droogAiAscii();
+  }, []);
+
   return (
     <>
       {messages.length === 0 ? (
