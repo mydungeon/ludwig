@@ -16,14 +16,26 @@ body {
     @include themify('color', 'blackAndWhite')
 }
 
+a.siteLink.button,
 button {
     @include themify('background', 'blackAndLightGrey');
     @include themify('border-color', 'blackAndWhite');
     @include themify('color', 'whiteAndBlack');
 }
 
+a.siteLink.button:hover,
+button.register:hover,
 button:hover {
-    @include themify('background', 'grey');
+    @include themify('background', 'lighterAndDarkerGrey');
+    @include themify('color', 'blackAndWhite');
+}
+
+a.siteLink.link {
+    @include themify('color', 'blackAndWhite');
+}
+
+a.siteLink.link:hover {
+    @include themify('color', 'darkAndLightGrey');
 }
 
 .footer {
@@ -90,10 +102,6 @@ button:hover {
 
 .sidebar:hover {
     @include themify('background-color', 'sideBarHoverBg');
-}
-
-a.siteLink.link {
-    @include themify('color', 'blackAndWhite');
 }
 
 .siteMenu.show,.siteMenuItem>a,

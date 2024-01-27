@@ -5,19 +5,14 @@ a.siteLink {
 }
 
 a.siteLink.button {
-    background-color: $black;
-    border: $px1 solid $black;
     border-radius: $rem50pct;
-    color: $white;
     display: inline-block;
     margin-left: $rem85pct;
     padding: $rem1;
 }
 
 a.siteLink.button:hover {
-    background-color: $grey;
     border: $px1 solid $black;
-    color: $black;
 }
 
 a.siteLink.link {
