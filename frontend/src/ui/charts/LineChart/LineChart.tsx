@@ -1,7 +1,7 @@
-import React from "react";
-import { useEffect, useMemo, useRef } from "react";
-import { DataPoint, LineChartProps } from "./LineChart.types";
+import React, { useEffect, useMemo, useRef } from "react";
 import * as d3 from "d3";
+import { DataPoint, LineChartProps } from "./LineChart.types";
+import "./LineChart.styles.scss";
 
 // ARTICLE: https://www.react-graph-gallery.com/line-chart
 
@@ -64,9 +64,9 @@ export default function LineChart({ data, height, width }: LineChartProps) {
           transform={`translate(${[MARGIN.left, MARGIN.top].join(",")})`}
         >
           <path
+            className="lineChartStroke"
             d={linePath}
             opacity={1}
-            stroke="#9a6fb0"
             fill="none"
             strokeWidth={2}
           />
