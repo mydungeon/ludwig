@@ -5,6 +5,7 @@ a.siteLink {
 }
 
 a.siteLink.button {
+    border: $px1 solid $black;
     border-radius: $rem50pct;
     display: inline-block;
     margin-left: $rem85pct;
