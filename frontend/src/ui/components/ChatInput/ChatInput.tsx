@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
-import { ChatInputProps, TEXT_AREA } from "./ChatInput.types";
+import { TEXT_AREA } from "./ChatInput.types";
 import useChatInput from "src/hooks/useChatInput";
 import useTextAreaAutoSize from "src/hooks/useTextAreaAutoSize";
 import { SendIcon } from "src/ui/features/Icons";
 import "./ChatInput.styles.scss";
 
-export default function ChatInput({ children }: ChatInputProps) {
+export default function ChatInput() {
   const { handleChange, handleKeyDown, handleSubmit, value } = useChatInput();
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   useTextAreaAutoSize(textAreaRef.current, value);

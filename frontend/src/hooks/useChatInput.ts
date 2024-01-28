@@ -12,7 +12,8 @@ export default function useChatInput() {
   const [value, setValue] = useState("");
 
   const dispatch = useDispatch();
-  const [createCompletions] = useCreateCompletionsMutation();
+  const [createCompletions, { isLoading, isSuccess }] =
+    useCreateCompletionsMutation();
 
   function handleChange(e: any) {
     setValue(e.target.value);
@@ -44,6 +45,8 @@ export default function useChatInput() {
     handleChange,
     handleKeyDown,
     handleSubmit,
+    isLoading,
+    isSuccess,
     value,
   };
 }
