@@ -34,7 +34,7 @@ function App() {
     <AppContext.Provider value={contextValue}>
       <AlertModal message="Test message" title="Test title" />
       <ToastContainer />
-      <PreLoader show={showPreloader} />
+      <PreLoader />
       <AuthMiddleware>
         <SiteRoutes />
       </AuthMiddleware>

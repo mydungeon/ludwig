@@ -1,12 +1,13 @@
-import React from "react";
-import PreLoaderProps from "./PreLoader.types";
+import React, { useContext } from "react";
+import { AppContextType, AppContext } from "src/context/App";
 import { Wrapper } from "src/ui/components";
 import { Backdrop } from "src/ui/components";
 import Spinner from "./components/Spinner";
 
-export default function PreLoader({ show }: PreLoaderProps) {
+export default function PreLoader() {
+  const { showPreloader } = useContext<AppContextType>(AppContext);
   return (
-    <Backdrop show={show}>
+    <Backdrop show={showPreloader}>
       <Wrapper classNames="preloader">
         <Spinner />
       </Wrapper>
