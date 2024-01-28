@@ -7,18 +7,12 @@ li.historyItem {
 
 li.historyItem > div {
     align-items: center;
-    background-color: $grey;
     border-radius: $px6;
-    color: $white;
     cursor: pointer;
     display: flex;
     font-size: $rem75pct;
     list-style-type: none;
     padding: $px5;
-}
-
-li.historyItem > div:hover {
-    background-color: $darkGrey;
 }
 
 li.historyItem > div > div {

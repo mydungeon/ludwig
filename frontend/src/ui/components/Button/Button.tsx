@@ -6,6 +6,7 @@ export default function Button({
   buttonText,
   children,
   classNames,
+  disabled,
   onClick,
 }: ButtonProps) {
   const onClickHandler = async () => {
@@ -16,6 +17,7 @@ export default function Button({
     <button
       className={`button ${classNames}`}
       data-testid={`button`}
+      disabled={disabled}
       onClick={onClickHandler}
     >
       {children && <span>{children}</span>}

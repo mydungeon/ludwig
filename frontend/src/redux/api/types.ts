@@ -4,7 +4,7 @@ export interface IMessage {
 }
 
 export interface IMessageHistory {
-  index: number;
+  title: string;
   messages: IMessage[];
 }
 export interface IGptState {

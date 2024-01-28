@@ -5,6 +5,7 @@ import { ChatFooterPage } from "src/ui/features/Pages";
 import { useAppSelector } from "src/redux/store";
 import { ChatMessages, ChatPlaceholder } from "src/ui/components";
 import "./DroogAi.styles.scss";
+
 export default function DroogAiPage() {
   const messages = useSelector((state: any) => {
     const { gptState } = state;

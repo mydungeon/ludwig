@@ -16,9 +16,13 @@ export const gptSlice = createSlice({
     setMessaageHistory: (state, action: PayloadAction<IMessageHistory>) => {
       state.history.unshift(action.payload);
     },
+    clearMessages: (state) => {
+      state.messages = [];
+    },
   },
 });
 
-export const { setMessages } = gptSlice.actions;
+export const { setMessages, setMessaageHistory, clearMessages } =
+  gptSlice.actions;
 
 export default gptSlice.reducer;

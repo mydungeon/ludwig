@@ -3,6 +3,6 @@ export interface ChatsProps {
   children?: JSX.Element[] | JSX.Element;
 }
 
-export enum ChatMenu {
+export enum ChatHistoryMenu {
   TITLE = "Previous Chats",
 }

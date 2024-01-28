@@ -30,6 +30,14 @@ button:hover {
     @include themify('color', 'blackAndWhite');
 }
 
+.wrapper.chatHistory,
+button.button:disabled,
+button:disabled {
+    @include themify('border-color', 'lightAndDarkestGrey');
+    @include themify('background', 'lightAndDarkestGrey');
+    @include themify('color', 'blackAndWhite');
+}
+
 a.siteLink.link {
     @include themify('color', 'blackAndWhite');
 }
@@ -39,7 +47,7 @@ a.siteLink.link:hover {
 }
 
 .footer {
-    @include themify('background-color', 'whiteAndAlmostBlack');
+    @include themify('background-color', 'whiteAndDarkestGrey');
 }
 
 .footer,
@@ -84,7 +92,7 @@ a.siteLink.link:hover {
 }
 
 .sidebar {
-    @include themify('background-color', 'lightAndDarkestGrey');
+    @include themify('background-color', 'lighterGreyAndAlmostBlack');
 }
 
 .sidebar h2,
@@ -116,7 +124,7 @@ a.siteLink.link:hover {
 }
 
 .siteToolbar {
-    @include themify('background', 'lightestGreyAndAlmostBlack');
+    @include themify('background', 'whiteAndDarkestGrey');
     @include themify('color', 'blackAndWhite');
 }
 
@@ -173,4 +181,14 @@ a.siteLink.link:hover {
 
 .tip.left {
     @include themifyPseudo('before','border-left-color', 'blackAndLightGrey');
+}
+
+li.historyItem > div {
+    @include themify("background-color", "blackAndLightGrey");
+    @include themify("color", "lightestGreyAndBlack");
+}
+
+li.historyItem>div:hover {
+    @include themify("background-color", "lightGreyAndAlmostBlack");
+    @include themify("color", "blackAndGrey");
 }
