@@ -10,10 +10,8 @@ export default function useChatInput() {
     return gptState.messages;
   });
   const [value, setValue] = useState("");
-
   const dispatch = useDispatch();
-  const [createCompletions, { isLoading, isSuccess }] =
-    useCreateCompletionsMutation();
+  const [createCompletions] = useCreateCompletionsMutation();
 
   function handleChange(e: any) {
     setValue(e.target.value);
@@ -45,8 +43,6 @@ export default function useChatInput() {
     handleChange,
     handleKeyDown,
     handleSubmit,
-    isLoading,
-    isSuccess,
     value,
   };
 }
