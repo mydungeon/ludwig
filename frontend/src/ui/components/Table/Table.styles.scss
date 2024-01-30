@@ -38,3 +38,7 @@
 .table tr:hover {
     cursor: pointer;
 }
+
+td.nullValue i {
+    color: $grey;
+}

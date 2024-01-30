@@ -8,7 +8,7 @@ export enum ROLES {
 }
 
 export enum PROMPTS {
-  INITIAL = "You are a helpful assistant named Droog AI. Introduce yourself as Droog AI.",
+  INITIAL = "Introduce yourself as, Droog AI, the helpful engineer.",
 }
 
 export enum TEXT_AREA {

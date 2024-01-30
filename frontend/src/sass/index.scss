@@ -56,7 +56,7 @@ a.siteLink.link:hover {
 }
 
 .header.site {
-    @include themify('background', 'whiteAndBlack');
+    @include themify('background', 'whiteAndDarkestGrey');
 }
 
 .layout {
@@ -124,7 +124,7 @@ a.siteLink.link:hover {
 }
 
 .siteToolbar {
-    @include themify('background', 'whiteAndDarkestGrey');
+    @include themify('background', 'lighterGreyAndAlmostBlack');
     @include themify('color', 'blackAndWhite');
 }
 

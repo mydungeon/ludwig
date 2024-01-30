@@ -9,6 +9,7 @@ import { SubmitButton } from "src/ui/features/Buttons";
 import { useAppSelector } from "src/redux/store";
 import { SiteLink } from "src/ui/components";
 import { validationSchema } from "./Profile.schema";
+import "./Profile.styles.scss";
 
 export default function EditProfileForm() {
   const defaultValues = useAppSelector((state) => state.userState.user);
@@ -21,7 +22,7 @@ export default function EditProfileForm() {
   useRedirect(isRedirectSuccess, Redirect.PROFILE);
 
   return defaultValues ? (
-    <Wrapper dataTestId="editProfileForm">
+    <Wrapper classNames="editProfile" dataTestId="editProfileForm">
       <div>Edit Profile</div>
       <Form
         classNames="updateUser"

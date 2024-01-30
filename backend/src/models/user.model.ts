@@ -38,7 +38,7 @@ export class User {
   @prop({ type: [String], default: ["user"] })
   roles: string[];
 
-  @prop()
+  @prop({ default: null })
   lastLoggedIn: number;
 
   async setLastLoggedIn() {

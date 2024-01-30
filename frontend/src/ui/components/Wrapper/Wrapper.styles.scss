@@ -3,7 +3,6 @@
 .page .wrapper {
     border-radius: $rem1;
     display: inline-block;
-    padding: $rem4;
     margin: $zeroAuto;
 }
 
@@ -12,6 +11,11 @@
 .page .wrapper.register {
     border-radius: $rem1;
     box-shadow: $mediumShadow;
+}
+
+.page .wrapper.login,
+.page .wrapper.register {
+    padding: $rem4;
 }
 
 .backdrop .wrapper.preloader {

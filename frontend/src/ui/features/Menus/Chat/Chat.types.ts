@@ -4,5 +4,6 @@ export interface ChatsProps {
 }
 
 export enum ChatHistoryMenu {
+  NEW_CHAT = "New Chat",
   TITLE = "Previous Chats",
 }

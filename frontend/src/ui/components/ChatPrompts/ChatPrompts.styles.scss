@@ -1,0 +1,27 @@
+@import "src/sass/themes/variables";
+
+.prompts {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.prompts>div {
+    flex: 1;
+    width: 100%;
+}
+
+@media (width <=768px) {
+    .prompts {
+        flex-direction: column;
+        margin: auto;
+    }
+}
+
+@media (width >=768px) {
+    .prompts {
+        margin: 0 auto;
+        width: $pct50;
+    }
+}

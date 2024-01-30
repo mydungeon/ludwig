@@ -11,7 +11,9 @@ export default function TableRow({ ...props }: any) {
         return (
           <tr key={i}>
             {Object.values(datum).map((value: any, iii, array) => {
-              return maxCellTextLength && value.length > maxCellTextLength ? (
+              return value &&
+                maxCellTextLength &&
+                value.length > maxCellTextLength ? (
                 <td key={`${value}-${iii}`}>
                   <Tooltip
                     message={value}
@@ -21,8 +23,12 @@ export default function TableRow({ ...props }: any) {
                     <Ellipse length={maxCellTextLength} text={value} />
                   </Tooltip>
                 </td>
-              ) : (
+              ) : value !== null ? (
                 <td key={`${value}-${iii}`}>{value}</td>
+              ) : (
+                <td className="nullValue" key={`${value}-${iii}`}>
+                  <i>null</i>
+                </td>
               );
             })}
           </tr>

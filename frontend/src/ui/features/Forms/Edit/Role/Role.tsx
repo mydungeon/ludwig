@@ -9,6 +9,7 @@ import { SiteLink } from "src/ui/components";
 import { SubmitButton } from "src/ui/features/Buttons";
 import { toggleOption } from "src/ui/components/MultiSelect/MultiSelect.utils";
 import { MULTI_SELECT_OPTIONS } from "./Role.constants";
+import "./Role.styles.scss";
 
 export default function EditRoleForm() {
   const userRoles = useAppSelector((state) => state.userState.user?.roles);
@@ -26,7 +27,7 @@ export default function EditRoleForm() {
   }
 
   return (
-    <Wrapper dataTestId="editRoleForm">
+    <Wrapper classNames="editRole" dataTestId="editRoleForm">
       <div>Edit Role</div>
       <form className="role" data-testid="role" onSubmit={handleSubmit}>
         <MultiSelect

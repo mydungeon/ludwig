@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import {
   clearMessages,
   setMessaageHistory,
@@ -32,12 +32,12 @@ export default function ChatMenu() {
   return (
     <div className="chatMenu" data-testid="chatsMenu">
       <Button
-        buttonText="Add New Chat"
+        buttonText={ChatHistoryMenu.NEW_CHAT}
         classNames="addNewChat"
         onClick={clickHandler}
         disabled={messages.length === 0}
       >
-        <Icon icon={faPlus} />
+        <Icon icon={faPenToSquare} />
       </Button>
       {history.length > 0 ? (
         <>
@@ -50,7 +50,7 @@ export default function ChatMenu() {
         </>
       ) : (
         <Wrapper classNames="chatHistory">
-          <div>{`No Chats`}</div>
+          <div>{`No Chat History`}</div>
         </Wrapper>
       )}
     </div>

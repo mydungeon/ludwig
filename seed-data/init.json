@@ -7,6 +7,7 @@
     "roles": ["user", "admin", "god"],
     "createdAt": "2024-01-05T04:20:23.183Z",
     "updatedAt": "2024-01-05T04:20:23.183Z",
+    "lastLoggedIn": null,
     "__v": 0
   },
   {
@@ -17,6 +18,7 @@
     "roles": ["user", "admin"],
     "createdAt": "2024-01-05T04:20:23.183Z",
     "updatedAt": "2024-01-05T04:20:23.183Z",
+    "lastLoggedIn": null,
     "__v": 1
   },
   {
@@ -27,6 +29,7 @@
     "roles": ["user"],
     "createdAt": "2024-01-05T04:20:23.183Z",
     "updatedAt": "2024-01-05T04:20:23.183Z",
+    "lastLoggedIn": null,
     "__v": 2
   }
 ]

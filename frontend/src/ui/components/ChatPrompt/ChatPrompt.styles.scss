@@ -1,0 +1,25 @@
+@import "src/sass/themes/variables";
+
+.prompt {
+    display: flex;
+    width: $pct100;
+}
+
+.prompt>div {
+    background: $lighterGrey;
+    border-radius: $px6;
+    margin: $rem1;
+    padding: $rem1;
+    width: $pct100;
+    white-space: nowrap;
+}
+
+.prompt:nth-child(1) > div {
+    margin-bottom: 0;
+}
+
+@media (width <=768px) {
+    .prompt>div {
+        margin-bottom: 0;
+    }
+}

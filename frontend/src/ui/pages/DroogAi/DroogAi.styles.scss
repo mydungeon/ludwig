@@ -10,7 +10,18 @@
     display: flex;
     flex-direction: column;
     flex: auto;
-    justify-content: center;
-    padding-bottom: 0;
+    justify-content: flex-end;
 }
 
+@media (width <=768px) {
+
+    .page.noMessages {
+        flex: unset;
+    }
+}
+
+@media (width >=768px) {
+    .page.noMessages {
+        padding-bottom: 0;
+    }
+}

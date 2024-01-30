@@ -8,6 +8,8 @@ import ChatInput from "./ChatInput";
 import ChatMessage from "./ChatMessage";
 import ChatMessages from "./ChatMessages";
 import ChatPlaceholder from "./ChatPlaceholder";
+import ChatPrompt from "./ChatPrompt";
+import ChatPrompts from "./ChatPrompts";
 import Ellipse from "./Ellipse";
 import ErrorMessage from "./ErrorMessage";
 import Footer from "./Footer";
@@ -45,6 +47,8 @@ export {
   ChatMessage,
   ChatMessages,
   ChatPlaceholder,
+  ChatPrompt,
+  ChatPrompts,
   Ellipse,
   ErrorMessage,
   Footer,

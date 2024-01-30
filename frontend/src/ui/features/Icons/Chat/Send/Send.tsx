@@ -16,7 +16,7 @@ export default function SendIcon({ callback }: IconsProps) {
         classNames="sendIcon"
         icon={faArrowUp}
         handleClick={callback}
-        size="2x"
+        size="lg"
       />
     </Tooltip>
   );
