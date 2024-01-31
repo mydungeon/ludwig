@@ -11,6 +11,7 @@ import {
 import AppError from "../utils/appError";
 import redisClient from "../utils/connectRedis";
 import { signJwt, verifyJwt } from "../utils/jwt";
+import { getNowToUnixTimestamp } from "../utils/date";
 
 // Exclude this fields from the response
 export const excludedFields = ["password"];
@@ -48,6 +49,8 @@ export const registerHandler = async (
       email: req.body.email,
       name: req.body.name,
       password: req.body.password,
+      createdAt: getNowToUnixTimestamp(),
+      updatedAt: getNowToUnixTimestamp(),
     });
 
     res.status(201).json({
@@ -95,8 +98,7 @@ export const loginHandler = async (
     });
     const id = user._id.toString();
     // Set last logged in time
-    const lastLoggedIn = await user.setLastLoggedIn();
-    await updateUser(id, { lastLoggedIn }, next);
+    await updateUser(id, { lastLoggedIn: getNowToUnixTimestamp() }, next);
     // Send Access Token
     res.status(200).json({
       status: "success",

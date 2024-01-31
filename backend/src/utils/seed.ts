@@ -11,15 +11,17 @@ export async function userSeed() {
       const password = faker.internet.password(
         "$2a$12$l9BppooJFvIg1vlBQExKNOu7f"
       );
-      const createdAt = faker.date.past({ years: 2 });
+      const fakeDate = Math.floor(
+        Date.parse(faker.date.past({ years: 2 }).toDateString()) / 1000
+      );
 
       let user = {
         email,
         name,
         password,
         roles: ["user"],
-        createdAt,
-        updatedAt: createdAt,
+        createdAt: fakeDate,
+        updatedAt: fakeDate,
         __v: 4 + i++,
       };
 

@@ -60,6 +60,7 @@ export const updateUserRoles = async (
   try {
     const filter = { _id: id };
     const update = input;
+    console.log("update", update);
     const updated = await userModel.findOneAndUpdate(filter, update, {
       new: true,
     });

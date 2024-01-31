@@ -1,5 +1,4 @@
 import {
-  DocumentType,
   getModelForClass,
   index,
   modelOptions,
@@ -7,7 +6,6 @@ import {
   prop,
 } from "@typegoose/typegoose";
 import bcrypt from "bcryptjs";
-import { getNowToUnixTimestamp } from "../utils/date";
 
 @index({ email: 1 })
 @pre<User>("save", async function () {
@@ -20,7 +18,7 @@ import { getNowToUnixTimestamp } from "../utils/date";
 @modelOptions({
   schemaOptions: {
     // Add createdAt and updatedAt fields
-    timestamps: true,
+    timestamps: false,
   },
 })
 
@@ -39,11 +37,14 @@ export class User {
   roles: string[];
 
   @prop({ default: null })
-  lastLoggedIn: number;
+  lastLoggedIn: EpochTimeStamp;
 
-  async setLastLoggedIn() {
-    return getNowToUnixTimestamp();
-  }
+  @prop({ default: null })
+  createdAt: EpochTimeStamp;
+
+  @prop({ default: null })
+  updatedAt: EpochTimeStamp;
+
   // Instance method to check if passwords match
   async comparePasswords(hashedPassword: string, candidatePassword: string) {
     return await bcrypt.compare(candidatePassword, hashedPassword);

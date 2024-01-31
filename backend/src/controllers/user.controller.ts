@@ -5,6 +5,7 @@ import {
   updateUserRoles,
 } from "../services/user.service";
 import { UpdateUserInput } from "../schema/user.schema";
+import { getNowToUnixTimestamp } from "../utils/date";
 
 export const getMeHandler = (
   req: Request,
@@ -50,7 +51,11 @@ export const updateMeHandler = async (
 ) => {
   try {
     const id = res.locals.user._id;
-    const user = await updateUser(id, req.body, next);
+    const user = await updateUser(
+      id,
+      { ...req.body, updatedAt: getNowToUnixTimestamp() },
+      next
+    );
     res.status(200).json({
       status: "success",
       data: {
@@ -76,7 +81,11 @@ export const updateMyRolesHandler = async (
 ) => {
   try {
     const id = res.locals.user._id;
-    const roles = await updateUserRoles(id, req.body, next);
+    const roles = await updateUserRoles(
+      id,
+      { ...req.body, updatedAt: getNowToUnixTimestamp() },
+      next
+    );
     res.status(200).json({
       status: "success",
       data: {

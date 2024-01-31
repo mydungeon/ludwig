@@ -5,8 +5,8 @@
     "password": "$2a$12$l9BppooJFvIg1vlBQExKNOu7fBEGRo1/YGUJw/6yMFoIgNtYOMN4e",
 
     "roles": ["user", "admin", "god"],
-    "createdAt": "2024-01-05T04:20:23.183Z",
-    "updatedAt": "2024-01-05T04:20:23.183Z",
+    "createdAt": "1706664702",
+    "updatedAt": "1706664702",
     "lastLoggedIn": null,
     "__v": 0
   },
@@ -16,8 +16,8 @@
     "password": "$2a$12$l9BppooJFvIg1vlBQExKNOu7fBEGRo1/YGUJw/6yMFoIgNtYOMN4e",
 
     "roles": ["user", "admin"],
-    "createdAt": "2024-01-05T04:20:23.183Z",
-    "updatedAt": "2024-01-05T04:20:23.183Z",
+    "createdAt": "1706664702",
+    "updatedAt": "1706664702",
     "lastLoggedIn": null,
     "__v": 1
   },
@@ -27,8 +27,8 @@
     "password": "$2a$12$l9BppooJFvIg1vlBQExKNOu7fBEGRo1/YGUJw/6yMFoIgNtYOMN4e",
 
     "roles": ["user"],
-    "createdAt": "2024-01-05T04:20:23.183Z",
-    "updatedAt": "2024-01-05T04:20:23.183Z",
+    "createdAt": "1706664702",
+    "updatedAt": "1706664702",
     "lastLoggedIn": null,
     "__v": 2
   }
