@@ -25,13 +25,3 @@
     margin: $rem1;
     text-align: center;
 }
-
-.siteMenuItem {
-    border-bottom-style: solid;
-    border-bottom-width: $px1;
-    padding: $rem85pct;
-}
-
-.siteMenuItem:last-child {
-    border-bottom: none;
-}

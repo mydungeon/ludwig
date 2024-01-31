@@ -1,40 +1,16 @@
 import React, { useContext, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { AppContext, AppContextType } from "src/context/App";
-import { SiteMenuCloseIcon } from "../../Icons";
+import { SiteMenuCloseIcon } from "src/ui/features/Icons";
 import { Backdrop } from "src/ui/components";
+import SiteMenuItem from "./components";
 import { SITE_MENU_LINKS } from "./Site.constants";
-import { useAuth } from "src/hooks";
 import "./Site.styles.scss";
 
 function SiteHeaderMenu({ handleClick }: { handleClick: () => void }) {
   return (
     <div className="siteMenuHeader" data-testid="siteHeaderMenu">
       <SiteMenuCloseIcon callback={handleClick} />
-    </div>
-  );
-}
-
-function SiteMenuItem({
-  to,
-  href,
-  name,
-  roles,
-}: {
-  to?: string;
-  href?: string;
-  name: string;
-  roles: string;
-}) {
-  const { isAuthorized } = useAuth(roles);
-  if (!isAuthorized) return null;
-  return to ? (
-    <div className="siteMenuItem" key={to}>
-      <Link to={to}>{name}</Link>
-    </div>
-  ) : (
-    <div className="siteMenuItem" key={href}>
-      <a href={href}>{name}</a>
     </div>
   );
 }
