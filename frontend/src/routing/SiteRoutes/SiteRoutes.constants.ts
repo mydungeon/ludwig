@@ -127,7 +127,7 @@ export const ROUTING = [
       {
         key: "parent",
         authorize: Authorize,
-        roles: UserRoles.USER,
+        roles: UserRoles.GOD,
         routes: [
           {
             key: "droogAi",
