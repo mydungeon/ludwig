@@ -1,21 +1,4 @@
-@import "src/sass/themes/variables";
-
 .menu.profile > .sub {
     display: flex;
     flex-direction: column;
-}
-
-.menu.profile > .sub > div {
-    margin-top: $rem85pct;
-    margin-left: $rem50pct;
-    white-space: nowrap;
-}
-
-.menu.profile>.sub>div:hover,
-.menu.profile>.sub>div:hover > a {
-    color: $darkGrey;
-}
-
-.menu.profile > .sub > div > a {
-    margin-left: $rem50pct;
 }

@@ -1,40 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {
-  faCircleUser,
-  faPen,
-  faShield,
-  faUsers,
-  faChartLine,
-} from "@fortawesome/free-solid-svg-icons";
-import { Icon } from "src/ui/components";
+import { PROFILE_MENU, PROFILE_MENU_TITLE } from "./Profile.constants";
+import ProfileMenuItem from "./components";
 import "./Profile.styles.scss";
 
 export default function ProfileSideMenu() {
   return (
     <div className="menu profile" data-testid="profile">
-      <h2>My Links</h2>
+      <h2>{PROFILE_MENU_TITLE}</h2>
       <div className="sub">
-        <div>
-          <Icon icon={faCircleUser} />
-          <Link to="profile">Profile</Link>
-        </div>
-        <div>
-          <Icon icon={faPen} />
-          <Link to="profile/edit">Edit Profile</Link>
-        </div>
-        <div>
-          <Icon icon={faShield} />
-          <Link to="profile/role/edit">Edit Role</Link>
-        </div>
-        <div>
-          <Icon icon={faUsers} />
-          <Link to="users">Users</Link>
-        </div>
-        <div>
-          <Icon icon={faChartLine} />
-          <Link to="metrics">Metrics</Link>
-        </div>
+        {PROFILE_MENU.map(({ icon, roles, text, to }, index) => (
+          <ProfileMenuItem icon={icon} roles={roles} text={text} to={to} />
+        ))}
       </div>
     </div>
   );

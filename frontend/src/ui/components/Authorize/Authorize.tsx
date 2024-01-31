@@ -1,26 +1,11 @@
 import React from "react";
-import { useCookies } from "react-cookie";
-import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { userApi } from "src/redux/api/user.api";
+import { Navigate, Outlet } from "react-router-dom";
 import usePreloader from "src/hooks/usePreloader";
+import useAuth from "src/hooks/useAuth";
 
 export default function Authorize({ allowedRoles }: { allowedRoles: string }) {
-  const location = useLocation();
-  const [cookies] = useCookies(["logged_in"]);
-  const { logged_in } = cookies;
-  const { isLoading } = userApi.endpoints.getMe.useQuery(null, {
-    skip: false,
-    refetchOnMountOrArgChange: true,
-  });
-  const user = userApi.endpoints.getMe.useQueryState(null, {
-    selectFromResult: ({ data }) => data,
-  });
-  const { roles } = user || {};
-  const isLoggedInUser = logged_in && user;
-  const isAllowed = roles && roles.includes(allowedRoles);
-  const isAuthorized = isLoggedInUser && isAllowed;
-  const isUnauthorized = isLoggedInUser && !isAllowed;
-  const isLoggedOut = !logged_in;
+  const { isLoading, isAuthorized, isLoggedOut, isUnauthorized, location } =
+    useAuth(allowedRoles);
   usePreloader(isLoading);
 
   if (isAuthorized && !isLoggedOut) {

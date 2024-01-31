@@ -1,5 +1,5 @@
 import React from "react";
-import useTable from "src/hooks/useTable";
+import { useTable } from "src/hooks";
 import SortableTableProps from "./Sortable.types";
 import { Pager, Table, TableToolbar } from "src/ui/components";
 import "./Sortable.styles.scss";
