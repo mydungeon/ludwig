@@ -9,7 +9,13 @@ export default function ProfileSideMenu() {
       <h2>{PROFILE_MENU_TITLE}</h2>
       <div className="sub">
         {PROFILE_MENU.map(({ icon, roles, text, to }, index) => (
-          <ProfileMenuItem icon={icon} roles={roles} text={text} to={to} />
+          <ProfileMenuItem
+            key={index}
+            icon={icon}
+            roles={roles}
+            text={text}
+            to={to}
+          />
         ))}
       </div>
     </div>

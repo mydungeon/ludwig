@@ -1,17 +1,22 @@
 export const HOME_CAROUSEL_SLIDES = [
   {
-    alt: "image for test 1",
-    src: "/assets/banners/home/banner1.svg",
+    alt: "Monkey around with code",
+    src: "/assets/banners/home/banner4.svg",
     to: "/",
   },
   {
-    alt: "image for test 2",
-    src: "/assets/banners/home/banner2.svg",
+    alt: "Ludwig brand",
+    src: "/assets/banners/home/banner5.svg",
     to: "/",
   },
   {
-    alt: "image for test 3",
-    src: "/assets/banners/home/banner3.svg",
+    alt: "Droog brand",
+    src: "/assets/banners/home/banner6.svg",
+    to: "/",
+  },
+  {
+    alt: "Created by Jonny Dungeons",
+    src: "/assets/banners/home/banner7.svg",
     to: "/",
   },
 ];

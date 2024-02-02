@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SiteMenuItemProps from "./SiteMenuItem.types";
-import { useAuth } from "src/hooks";
+// import { useAuth } from "src/hooks";
 import "./SiteMenuItem.styles.scss";
 
 export default function SiteMenuItem({
@@ -10,8 +10,8 @@ export default function SiteMenuItem({
   name,
   roles,
 }: SiteMenuItemProps) {
-  const { isAuthorized } = useAuth(roles);
-  if (!isAuthorized) return null;
+  // const { isAuthorized } = useAuth(roles);
+  // if (!isAuthorized) return null;
   return to ? (
     <div className="siteMenuItem" key={to}>
       <Link to={to}>{name}</Link>

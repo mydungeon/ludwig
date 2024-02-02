@@ -33,8 +33,14 @@ export default function SiteMenu() {
       <div className={className} data-testid="siteMenu">
         <SiteHeaderMenu handleClick={handleHideMenu} />
         <div className="siteMenuBody">
-          {SITE_MENU_LINKS.map(({ name, href, roles, to }) => (
-            <SiteMenuItem href={href} name={name} roles={roles} to={to} />
+          {SITE_MENU_LINKS.map(({ name, href, roles, to }, index) => (
+            <SiteMenuItem
+              key={index}
+              href={href}
+              name={name}
+              roles={roles}
+              to={to}
+            />
           ))}
         </div>
       </div>

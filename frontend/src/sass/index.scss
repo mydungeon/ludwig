@@ -156,6 +156,7 @@ a.siteLink.link:hover {
     @include themify('background-color', 'lightGreyAndAlmostBlack');
 }
 
+.prompt > div,
 .backdrop .wrapper.preloader,
 .page .wrapper {
     @include themify('background-color', 'lighterGreyAndAlmostBlack');

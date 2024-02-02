@@ -144,6 +144,11 @@ export const ROUTING = [
     element: HeaderlessLayout,
     routes: [
       {
+        key: "home",
+        index: true,
+        element: HomePage,
+      },
+      {
         key: "login",
         path: "login",
         element: LoginPage,
