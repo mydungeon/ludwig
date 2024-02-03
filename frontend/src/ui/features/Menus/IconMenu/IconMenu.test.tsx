@@ -2,12 +2,12 @@ import React from "react";
 import { render, screen } from "src/testing/Testing.utils";
 import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
-import Profile from "./Profile";
+import IconMenu from "./IconMenu";
 
-test("loads and displays Profile component", async () => {
+test("loads and displays IconMenu component", async () => {
   render(
     <MemoryRouter>
-      <Profile />
+      <IconMenu menuItems={[]} role="user" title="Test Menu" />
     </MemoryRouter>
   );
   expect(screen.getByTestId("profile")).toBeTruthy();

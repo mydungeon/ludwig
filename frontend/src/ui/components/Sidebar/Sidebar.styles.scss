@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: $rem1;
+    min-width: $px40;
     z-index: 2;
 }
 
@@ -15,13 +15,12 @@
 }
 
 .sidebar.show {
-    justify-content: space-between;
+    justify-content: flex-start;
     white-space: nowrap;
 }
 
 .sidebar.show > div:first-child {
     cursor: unset;
-    flex: auto;
 }
 
 .sidebar.show > div:hover {
@@ -30,5 +29,15 @@
 
 .sidebar > div:last-child {
     align-self: flex-end;
-    margin-bottom: $px10;
+    bottom: $px20;
+    position: absolute;
+    margin-right: $px10;
+}
+
+.sidebar > .menu > h3 {
+    margin-bottom: 0;
+}
+
+.sidebar>.menu {
+    margin: $rem1;
 }

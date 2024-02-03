@@ -1,6 +1,14 @@
+import IconMenu from "./IconMenu";
 import ChatMenu from "./Chat";
 import LoggedInMenu from "./LoggedIn";
 import LoggedOutMenu from "./LoggedOut";
-import ProfileSideMenu from "./Profile";
 import SiteMenu from "./Site";
-export { ChatMenu, LoggedInMenu, LoggedOutMenu, ProfileSideMenu, SiteMenu };
+import { SIDE_MENUS } from "./IconMenu/IconMenu.constants";
+export {
+  ChatMenu,
+  IconMenu,
+  LoggedInMenu,
+  LoggedOutMenu,
+  SiteMenu,
+  SIDE_MENUS,
+};

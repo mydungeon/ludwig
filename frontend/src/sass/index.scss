@@ -95,16 +95,16 @@ a.siteLink.link:hover {
     @include themify('background-color', 'lighterGreyAndAlmostBlack');
 }
 
-.sidebar h2,
+.sidebar h3,
 .sidebarToggle > span > svg,
-.sidebar > .menu.profile > .sub > div,
-.sidebar > .menu.profile > .sub > div > a {
+.sidebar > .menu.profile > .iconMenu > div,
+.sidebar > .menu.profile > .iconMenu > div > a {
     @include themify('color', 'blackAndLightGrey');
 }
 
 .sidebarToggle>span>svg:hover,
-.sidebar>.menu.profile>.sub>div:hover,
-.sidebar>.menu.profile>.sub>div>a:hover {
+.sidebar>.menu.profile>.iconMenu>div:hover,
+.sidebar>.menu.profile>.iconMenu>div>a:hover {
     @include themify('color', 'darkestAndLightestGrey');
 }
 

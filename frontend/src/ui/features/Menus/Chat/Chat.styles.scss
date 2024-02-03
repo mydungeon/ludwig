@@ -1,5 +1,9 @@
 @import "src/sass/themes/variables";
 
+.chatMenu {
+    margin: $rem1;
+}
+
 .chatMenu > ul {
     display: flex;
     flex-direction: column;

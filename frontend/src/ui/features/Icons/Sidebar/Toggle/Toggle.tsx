@@ -12,7 +12,7 @@ export default function SidebarToggleIcon({ callback, toggle }: IconsProps) {
     <div className="sidebarToggle">
       <Tooltip
         message={toggle ? `close` : `open`}
-        direction={TooltipDirection.TOP}
+        direction={TooltipDirection.TOP_LEFT}
       >
         <Icon icon={icon} handleClick={callback} />
       </Tooltip>

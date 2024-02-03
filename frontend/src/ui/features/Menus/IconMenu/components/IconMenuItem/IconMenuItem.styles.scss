@@ -1,15 +1,15 @@
 @import "src/sass/themes/variables";
-.menu.profile>.sub>div {
+.iconMenuItem {
     margin-top: $rem85pct;
     margin-left: $rem50pct;
     white-space: nowrap;
 }
 
-.menu.profile>.sub>div:hover,
-.menu.profile>.sub>div:hover>a {
+.iconMenuItem:hover,
+.iconMenuItem:hover>a {
     color: $darkGrey;
 }
 
-.menu.profile>.sub>div>a {
+.iconMenuItem>a {
     margin-left: $rem50pct;
 }
