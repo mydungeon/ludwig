@@ -5,7 +5,21 @@ import {
   faUsers,
   faChartLine,
 } from "@fortawesome/free-solid-svg-icons";
-import { UserRoles } from "../../User/User.types";
+import { UserRoles } from "src/ui/features/User/User.types";
+export const ADMIN_MENU = [
+  {
+    icon: faUsers,
+    text: "Users",
+    roles: UserRoles.ADMIN,
+    to: "users",
+  },
+  {
+    icon: faChartLine,
+    text: "Metrics",
+    roles: UserRoles.ADMIN,
+    to: "metrics",
+  },
+];
 export const PROFILE_MENU = [
   {
     icon: faCircleUser,
@@ -25,18 +39,4 @@ export const PROFILE_MENU = [
     to: "profile/role/edit",
     roles: UserRoles.USER,
   },
-  {
-    icon: faUsers,
-    text: "Users",
-    roles: UserRoles.ADMIN,
-    to: "users",
-  },
-  {
-    icon: faChartLine,
-    text: "Metrics",
-    roles: UserRoles.ADMIN,
-    to: "metrics",
-  },
 ];
-
-export const PROFILE_MENU_TITLE = "My Links";

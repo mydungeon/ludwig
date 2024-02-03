@@ -1,20 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProfileMenuItemProps from "./ProfileMenuItem.types";
+import IconMenuItemProps from "./IconMenuItem.types";
 import { Icon } from "src/ui/components";
-import "./ProfileMenuItem.styles.scss";
+import "./IconMenuItem.styles.scss";
 import { useAuth } from "src/hooks";
 
-export default function ProfileMenuItem({
+export default function IconMenuItem({
   icon,
   text,
   to,
   roles,
-}: ProfileMenuItemProps) {
+}: IconMenuItemProps) {
   const { isAuthorized } = useAuth(roles);
 
   return isAuthorized ? (
-    <div className="profileMenuItem" data-testid="profileMenuItem">
+    <div className="iconMenuItem" data-testid="iconMenuItem">
       <Icon icon={icon} />
       <Link to={to}>{text}</Link>
     </div>
