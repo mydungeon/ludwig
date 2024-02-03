@@ -1,2 +1,2 @@
-import Register from "./Register";
-export default Register;
+import RegisterForm from "./Register";
+export default RegisterForm;

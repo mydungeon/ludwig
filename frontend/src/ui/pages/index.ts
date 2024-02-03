@@ -1,4 +1,5 @@
 import AdminPage from "./Admin";
+import ChangePasswordPage from "./ChangePassword";
 import CreditsPage from "./Credits";
 import DroogAiPage from "./DroogAi";
 import { EditProfilePage } from "./Edit";
@@ -15,6 +16,7 @@ import UsersPage from "./Users";
 
 export {
   AdminPage,
+  ChangePasswordPage,
   CreditsPage,
   DroogAiPage,
   EditProfilePage,

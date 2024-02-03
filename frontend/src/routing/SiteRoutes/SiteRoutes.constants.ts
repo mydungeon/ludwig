@@ -6,6 +6,7 @@ import {
 } from "src/ui/features/Layouts";
 import { Authorize } from "src/ui/components";
 import { AdminPage } from "src/ui/pages";
+import { ChangePasswordPage } from "src/ui/pages";
 import { CreditsPage } from "src/ui/pages";
 import { DroogAiPage } from "src/ui/pages";
 import { EditProfilePage } from "src/ui/pages";
@@ -60,9 +61,9 @@ export const ROUTING = [
             element: EditProfilePage,
           },
           {
-            key: "profile/role/edit",
-            path: "profile/role/edit",
-            element: EditRolePage,
+            key: "profile/change-password",
+            path: "profile/change-password",
+            element: ChangePasswordPage,
           },
         ],
       },
@@ -76,6 +77,18 @@ export const ROUTING = [
             path: "admin",
             element: AdminPage,
           },
+          {
+            key: "profile/role/edit",
+            path: "profile/role/edit",
+            element: EditRolePage,
+          },
+        ],
+      },
+      {
+        key: "parent",
+        authorize: Authorize,
+        roles: UserRoles.GOD,
+        routes: [
           {
             key: "users",
             path: "users",

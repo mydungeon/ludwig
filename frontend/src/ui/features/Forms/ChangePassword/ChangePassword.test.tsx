@@ -2,13 +2,13 @@ import React from "react";
 import { render, screen } from "src/testing/Testing.utils";
 import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
-import IconMenu from "./IconMenu";
+import ChangePasswordForm from "./ChangePassword";
 
-test("loads and displays IconMenu component", async () => {
+test("loads and displays ChangePasswordForm component", async () => {
   render(
     <MemoryRouter>
-      <IconMenu menuItems={[]} role="user" title="Test Menu" />
+      <ChangePasswordForm />
     </MemoryRouter>
   );
-  expect(screen.getByTestId("profile")).toBeTruthy();
+  expect(screen.getByTestId("wrapper-changePasswordForm")).toBeTruthy();
 });

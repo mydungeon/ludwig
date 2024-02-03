@@ -2,15 +2,19 @@ import React from "react";
 import ProfileMenuItem from "./components";
 import "./IconMenu.styles.scss";
 import IconMenuItemProps from "./components/IconMenuItem/IconMenuItem.types";
+import { useAuth } from "src/hooks";
 
 export default function IconMenu({
-  title,
   menuItems,
+  role,
+  title,
 }: {
-  title: string;
   menuItems: IconMenuItemProps[];
+  role: string;
+  title: string;
 }) {
-  return (
+  const { isAuthorized } = useAuth(role);
+  return isAuthorized ? (
     <div className="menu profile" data-testid="profile">
       <h3>{title}</h3>
       <div className="iconMenu">
@@ -25,5 +29,5 @@ export default function IconMenu({
         ))}
       </div>
     </div>
-  );
+  ) : null;
 }
