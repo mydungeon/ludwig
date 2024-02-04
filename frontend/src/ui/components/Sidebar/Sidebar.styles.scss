@@ -10,10 +10,6 @@
     z-index: 2;
 }
 
-.sidebar:hover {
-    cursor: pointer;
-}
-
 .sidebar.show {
     justify-content: flex-start;
     min-width: auto;

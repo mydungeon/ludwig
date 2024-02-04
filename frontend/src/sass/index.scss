@@ -110,10 +110,6 @@ a.siteLink.link:hover {
     @include themify('color', 'darkestAndLightestGrey');
 }
 
-.sidebar:hover {
-    @include themify('background-color', 'sideBarHoverBg');
-}
-
 .siteMenu.show,.siteMenuItem>a,
 .siteMenuItem>a:visited,
 .siteMenuItem>a:hover {
