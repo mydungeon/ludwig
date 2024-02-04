@@ -1,6 +1,10 @@
 import config from "config";
 import { CookieOptions, NextFunction, Request, Response } from "express";
-import { CreateUserInput, LoginUserInput } from "../schema/user.schema";
+import {
+  ChangePasswordInput,
+  CreateUserInput,
+  LoginUserInput,
+} from "../schema/user.schema";
 import {
   createUser,
   findUser,
@@ -79,6 +83,9 @@ export const loginHandler = async (
   try {
     // Get the user from the collection
     const user = await findUser({ email: req.body.email });
+
+    console.log("req.body.password", req.body.password);
+    console.log("user", user);
 
     // Check if user exist and password is correct
     if (
@@ -189,6 +196,52 @@ export const logoutHandler = async (
       .status(200)
       .json({ status: "success", message: "You have successfully logged out" });
   } catch (err: any) {
+    next(err);
+  }
+};
+
+export const changePasswordHandler = async (
+  req: Request<{}, {}, ChangePasswordInput>,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const id = res.locals.user._id;
+    const email = res.locals.user.email;
+    const user = await findUser({ email });
+    if (
+      user &&
+      (await user.comparePasswords(user.password, req.body.currentPassword))
+    ) {
+      const updated = await updateUser(
+        id,
+        { password: req.body.password, updatedAt: getNowToUnixTimestamp() },
+        next
+      );
+      res.status(201).json({
+        status: "success",
+        data: {
+          updated,
+        },
+        message: "You have successfully updated your password",
+      });
+    } else {
+      res.status(304).json({
+        status: "Not Modified",
+        data: {
+          user,
+        },
+        message: "You have not modified your password",
+      });
+    }
+  } catch (err: any) {
+    console.log("err", err);
+    if (err.code === 11000) {
+      return res.status(409).json({
+        status: "fail",
+        message: "Update failed",
+      });
+    }
     next(err);
   }
 };

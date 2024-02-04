@@ -15,13 +15,17 @@ import bcrypt from "bcryptjs";
   // Hash password with costFactor of 12
   this.password = await bcrypt.hash(this.password, 12);
 })
+@pre<any>("findOneAndUpdate", async function (next) {
+  if (!this._update.password) next();
+  this._update.password = await bcrypt.hash(this._update.password, 12);
+  next();
+})
 @modelOptions({
   schemaOptions: {
     // Add createdAt and updatedAt fields
     timestamps: false,
   },
 })
-
 // Export the User class to be used as TypeScript type
 export class User {
   @prop()

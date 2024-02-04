@@ -1,5 +1,6 @@
 import express from "express";
 import {
+  changePasswordHandler,
   loginHandler,
   logoutHandler,
   refreshAccessTokenHandler,
@@ -8,7 +9,11 @@ import {
 import { deserializeUser } from "../middleware/deserializeUser";
 import { requireUser } from "../middleware/requireUser";
 import { validate } from "../middleware/validate";
-import { createUserSchema, loginUserSchema } from "../schema/user.schema";
+import {
+  changePasswordSchema,
+  createUserSchema,
+  loginUserSchema,
+} from "../schema/user.schema";
 
 const router = express.Router();
 
@@ -53,7 +58,6 @@ const router = express.Router();
  *      500:
  *        description: Server Error
  */
-
 router.post("/register", validate(createUserSchema), registerHandler);
 
 /**
@@ -88,6 +92,51 @@ router.post("/register", validate(createUserSchema), registerHandler);
  *        description: Server Error
  */
 router.post("/login", validate(loginUserSchema), loginHandler);
+
+/**
+ * @openapi
+ *  /api/auth/changePassword:
+ *  put:
+ *     tags:
+ *     - User Api
+ *     summary: Change password for a logged in user
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *           schema:
+ *            type: object
+ *            required:
+ *              - currentPassword
+ *              - password
+ *              - passwordConfirm
+ *            properties:
+ *              currentPassword:
+ *                type: string
+ *                default: password123
+ *              password:
+ *                type: string
+ *                default: newPassword123
+ *              passwordConfirm:
+ *                type: string
+ *                default: newPassword123
+ *     responses:
+ *      204:
+ *        description: Updated
+ *      409:
+ *        description: Conflict
+ *      404:
+ *        description: Not Found
+ *      500:
+ *        description: Server Error
+ */
+router.post(
+  "/changePassword",
+  deserializeUser,
+  requireUser,
+  validate(changePasswordSchema),
+  changePasswordHandler
+);
 
 // Refresh access toke route
 router.get("/refresh", refreshAccessTokenHandler);

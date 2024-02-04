@@ -1,6 +1,7 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { LoginPayloadType } from "src/ui/features/Forms/Login/Login.schema";
 import { RegisterPayloadType } from "src/ui/features/Forms/Register/Register.schema";
+import { ChangePasswordPayloadType } from "src/ui/features/Forms/ChangePassword/ChangePassword.schema";
 import customFetchBase from "./customFetchBase";
 import { IUser } from "./types";
 import { userApi } from "./user.api";
@@ -38,6 +39,25 @@ export const authApi = createApi({
         } catch (error) {}
       },
     }),
+    changePassword: builder.mutation<
+      { access_token: string; status: string },
+      ChangePasswordPayloadType
+    >({
+      query(data) {
+        return {
+          credentials: "include",
+          url: "auth/changePassword",
+          method: "POST",
+          body: data,
+        };
+      },
+      async onQueryStarted(args, { dispatch, queryFulfilled }) {
+        try {
+          await queryFulfilled;
+          await dispatch(authApi.endpoints.logoutUser.initiate());
+        } catch (error) {}
+      },
+    }),
     logoutUser: builder.mutation<void, void>({
       query() {
         return {
@@ -50,6 +70,7 @@ export const authApi = createApi({
 });
 
 export const {
+  useChangePasswordMutation,
   useLoginUserMutation,
   useRegisterUserMutation,
   useLogoutUserMutation,

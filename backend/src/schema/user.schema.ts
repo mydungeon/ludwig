@@ -43,6 +43,19 @@ export const loginUserSchema = object({
   }),
 });
 
+export const changePasswordSchema = object({
+  body: object({
+    currentPassword: string({
+      required_error: "Current password is required",
+    }).min(8, "Current password is invalid"),
+    password: string({ required_error: "New password is required" }).min(
+      8,
+      "New password is invalid"
+    ),
+  }),
+});
+
 export type CreateUserInput = TypeOf<typeof createUserSchema>["body"];
 export type UpdateUserInput = TypeOf<typeof updateUserSchema>["body"];
 export type LoginUserInput = TypeOf<typeof loginUserSchema>["body"];
+export type ChangePasswordInput = TypeOf<typeof changePasswordSchema>["body"];

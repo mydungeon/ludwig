@@ -20,12 +20,17 @@ const options: ToastOptions = {
 export const alertLoggerMiddleware: Middleware =
   (api: MiddlewareAPI) => (next) => (action) => {
     if (isRejectedWithValue(action)) {
-      console.log("toast error action", action);
+      if (action.payload.status === 304) {
+        toast.error(`toast error: Update failed`, options);
+        return next(action);
+      }
       toast.error(`toast error: ${action.payload.data.message}`, options);
+      return next(action);
     }
     if (isFulfilled(action)) {
       if (action.payload.message) {
         toast.success(`toast success: ${action.payload.message}`, options);
+        return next(action);
       }
     }
     return next(action);
