@@ -10,4 +10,5 @@ export const USER_TABLE_COLUMNS = [
   { name: "createdAt", sort: true },
   { name: "updatedAt", sort: true },
   { name: "lastLoggedIn", sort: true },
+  { name: "rating", sort: true, filter: true },
 ];

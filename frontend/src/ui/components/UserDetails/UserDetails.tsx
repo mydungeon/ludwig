@@ -9,10 +9,12 @@ export default function UserDetails() {
       <div>
         <div>Username:</div>
         <div>Email:</div>
+        {(user?.rating === 0 || user?.rating) && <div>Rating:</div>}
       </div>
       <div>
         <div>{user?.name}</div>
         <div>{user?.email}</div>
+        {(user?.rating === 0 || user?.rating) && <div>{user?.rating}</div>}
       </div>
     </div>
   );

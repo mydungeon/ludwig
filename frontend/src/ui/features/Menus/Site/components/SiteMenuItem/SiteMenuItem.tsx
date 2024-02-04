@@ -18,7 +18,9 @@ export default function SiteMenuItem({
     </div>
   ) : (
     <div className="siteMenuItem" key={href}>
-      <a href={href}>{name}</a>
+      <a href={href} rel="noreferrer" target="_blank">
+        {name}
+      </a>
     </div>
   );
 }

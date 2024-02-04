@@ -54,6 +54,7 @@ export const userApi = createApi({
     }),
     updateRating: builder.mutation<IUser, RatingPayloadType>({
       query(data) {
+        console.log("data", data);
         return {
           credentials: "include",
           url: "users/me/rating",
