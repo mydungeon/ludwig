@@ -1,28 +1,11 @@
-import React, { useState } from "react";
-import { Icon } from "src/ui/components";
+import React from "react";
 import { BrandedFooterPage } from "src/ui/features/Pages";
-import { SliderInput } from "src/ui/components";
-import { EMOJI_HASH } from "./Rating.constants";
-import "./Rating.styles.scss";
+import { RatingForm } from "src/ui/features/Forms";
 
 export default function RatingPage() {
-  const [value, setValue] = useState(100);
-  const handleSetValue = (e: any) => setValue(e.target.value);
-  const icon = EMOJI_HASH[value];
-
   return (
-    <BrandedFooterPage classNames="rating" pageTitle="Rate Ludwig">
-      <SliderInput
-        classNames={`slider-${value}`}
-        handleSetValue={handleSetValue}
-        step={10}
-        min={0}
-        max={100}
-        value={value}
-      >
-        <Icon icon={icon} size="2xl" />
-        <h3>{`${value} %`}</h3>
-      </SliderInput>
+    <BrandedFooterPage pageTitle="Rate Ludwig">
+      <RatingForm />
     </BrandedFooterPage>
   );
 }

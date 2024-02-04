@@ -12,10 +12,11 @@ export default function Button({
   const onClickHandler = async () => {
     onClick();
   };
-
+  let className = "button";
+  className = classNames ? `${className} ${classNames}` : className;
   return (
     <button
-      className={`button ${classNames}`}
+      className={className}
       data-testid={`button`}
       disabled={disabled}
       onClick={onClickHandler}

@@ -4,6 +4,7 @@ import customFetchBase from "./customFetchBase";
 import { IUser } from "./types";
 import { UpdatePayloadType } from "src/ui/features/Forms/Edit/Profile/Profile.schema";
 import { UpdateRolePayloadType } from "src/ui/features/Forms/Edit/Role/Role.schema";
+import { RatingPayloadType } from "src/ui/features/Forms/Rating/Rating.schema";
 
 export const userApi = createApi({
   reducerPath: "userApi",
@@ -51,6 +52,19 @@ export const userApi = createApi({
       },
       invalidatesTags: (result, error, { roles }) => [{ type: "User", roles }],
     }),
+    updateRating: builder.mutation<IUser, RatingPayloadType>({
+      query(data) {
+        return {
+          credentials: "include",
+          url: "users/me/rating",
+          method: "PUT",
+          body: data,
+        };
+      },
+      invalidatesTags: (result, error, { rating }) => [
+        { type: "User", rating },
+      ],
+    }),
     getUsers: builder.query<IUser[], void>({
       query() {
         return {
@@ -74,9 +88,10 @@ export const userApi = createApi({
 
 export const {
   useGetMeQuery,
+  useGetUsersQuery,
   useLazyGetMeQuery,
+  useLazyGetUsersQuery,
   useUpdateMeMutation,
   useUpdateMyRolesMutation,
-  useGetUsersQuery,
-  useLazyGetUsersQuery,
+  useUpdateRatingMutation,
 } = userApi;

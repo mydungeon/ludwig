@@ -1,0 +1,11 @@
+@import "src/sass/themes/variables";
+
+.wrapper.ratingForm {
+    padding: $rem1;
+    min-width: $px350;
+    width: auto;
+}
+
+.button.rating {
+    margin: $rem1;
+}

@@ -12,13 +12,14 @@ export interface IGptState {
   history: IMessageHistory[];
 }
 export interface IUser {
-  name: string;
-  email: string;
-  roles: string[];
+  __v: number;
   _id: string;
   createdAt: Date;
+  email: string;
+  name: string;
+  rating: number;
+  roles: string[];
   updatedAt: Date;
-  __v: number;
 }
 export interface IUserState {
   user: IUser | null;
