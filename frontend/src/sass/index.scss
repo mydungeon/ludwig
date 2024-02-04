@@ -1,10 +1,6 @@
 @import "app";
 @import "themes/themify";
 
-.input {
-    @include themify("background", red);
-}
-
 .avatar {
     @include themify('background-color', 'darkAndLightGrey');
     @include themify('border-color', 'blackAndWhite');
@@ -21,6 +17,12 @@ button {
     @include themify('background', 'blackAndLightGrey');
     @include themify('border-color', 'blackAndWhite');
     @include themify('color', 'whiteAndBlack');
+}
+
+input {
+    @include themify('border-color', 'blackAndWhite');
+    @include themify('background', 'whiteAndDarkestGrey');
+    @include themify('color', 'blackAndWhite');
 }
 
 a.siteLink.button:hover,

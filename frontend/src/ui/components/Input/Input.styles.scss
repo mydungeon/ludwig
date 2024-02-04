@@ -2,7 +2,8 @@
 .input {
     padding: $rem50pct;
     border-radius: $rem25pct;
-    border: $px1 solid $black;
+    border-style: solid;
+    border-width: $px1;
     margin-top: $rem1;
     padding: $rem85pct;
 }
