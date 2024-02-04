@@ -1,6 +1,6 @@
 @import 'themes';
 
-// ARTICLE: https: //david-x.medium.com/light-mode-dark-mode-dynamic-theming-through-scss-mixin-c86e57a4de49
+// ARTICLE: https://david-x.medium.com/light-mode-dark-mode-dynamic-theming-through-scss-mixin-c86e57a4de49
 
 @mixin themify($property, $key, $themes: $themes) {
 
@@ -16,13 +16,13 @@
     }
 }
 
-@mixin themifyPseudo($element, $property, $key, $themes: $themes) {
+@mixin themifyPseudo($pseudoClass, $property, $key, $themes: $themes) {
 
     // Iterate over the themes
     @each $theme, $colors in $themes {
         // Create a selector
         &.#{$theme}-theme,
-        .#{$theme}-theme &:#{$element}, &::#{$element} {
+        .#{$theme}-theme &:#{$pseudoClass}, &::#{$pseudoClass} {
             // Output the declaration
             #{$property}: map-get($colors, $key);
         }

@@ -1,14 +1,14 @@
 @import "app";
 @import "themes/themify";
 
+.input {
+    @include themify("background", red);
+}
+
 .avatar {
     @include themify('background-color', 'darkAndLightGrey');
     @include themify('border-color', 'blackAndWhite');
     @include themify('color', 'whiteAndBlack');
-}
-
-body {
-    @include themify('background', 'body-bg')
 }
 
 .breadcrumb > a,
