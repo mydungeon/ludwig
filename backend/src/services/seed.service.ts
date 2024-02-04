@@ -6,6 +6,7 @@ export const seedBulkUsers = async (input: any) => {
     const bulkUsers = await userModel.bulkWrite(input, { ordered: false });
     return bulkUsers;
   } catch (err: any) {
+    console.log("bulkUser operation error", err);
     return err;
   }
 };

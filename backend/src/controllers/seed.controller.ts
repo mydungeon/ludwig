@@ -8,7 +8,8 @@ export const seedDataHandler = async (
   next: NextFunction
 ) => {
   try {
-    const seed = await userSeed();
+    const { seedCount } = req.params;
+    const seed = await userSeed(Number(seedCount));
     const bulkOperation = await seedBulkUsers(seed);
     if (bulkOperation) {
       const { insertedCount } = bulkOperation;

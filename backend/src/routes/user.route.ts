@@ -4,12 +4,17 @@ import {
   getMeHandler,
   updateMeHandler,
   updateMyRolesHandler,
+  updateRatingHandler,
 } from "../controllers/user.controller";
 import { deserializeUser } from "../middleware/deserializeUser";
 import { requireUser } from "../middleware/requireUser";
 import { restrictTo } from "../middleware/restrictTo";
 import { validate } from "../middleware/validate";
-import { updateUserRolesSchema, updateUserSchema } from "../schema/user.schema";
+import {
+  updateRatingSchema,
+  updateUserRolesSchema,
+  updateUserSchema,
+} from "../schema/user.schema";
 
 const router = express.Router();
 
@@ -103,5 +108,34 @@ router.put("/me", validate(updateUserSchema), updateMeHandler);
  *        description: Server Error
  */
 router.put("/me/roles", validate(updateUserRolesSchema), updateMyRolesHandler);
+
+/**
+ * @openapi
+ * '/api/users/me/rating':
+ *  put:
+ *     tags:
+ *     - User Api
+ *     summary: Update the current logged in user's rating
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *           schema:
+ *            type: object
+ *            properties:
+ *              rating:
+ *                type: number
+ *                default: 100
+ *     responses:
+ *      200:
+ *        description: Updated
+ *      409:
+ *        description: Conflict
+ *      404:
+ *        description: Not Found
+ *      500:
+ *        description: Server Error
+ */
+router.put("/me/rating", validate(updateRatingSchema), updateRatingHandler);
 
 export default router;

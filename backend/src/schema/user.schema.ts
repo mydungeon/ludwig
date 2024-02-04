@@ -1,4 +1,4 @@
-import { array, object, string, TypeOf } from "zod";
+import { array, number, object, string, TypeOf } from "zod";
 
 export const createUserSchema = object({
   body: object({
@@ -31,6 +31,12 @@ export const updateUserRolesSchema = object({
   }),
 });
 
+export const updateRatingSchema = object({
+  body: object({
+    rating: number({ required_error: "Rating is required" }),
+  }),
+});
+
 export const loginUserSchema = object({
   body: object({
     email: string({ required_error: "Email is required" }).email(
@@ -59,3 +65,4 @@ export type CreateUserInput = TypeOf<typeof createUserSchema>["body"];
 export type UpdateUserInput = TypeOf<typeof updateUserSchema>["body"];
 export type LoginUserInput = TypeOf<typeof loginUserSchema>["body"];
 export type ChangePasswordInput = TypeOf<typeof changePasswordSchema>["body"];
+export type UpdateRatingInput = TypeOf<typeof updateRatingSchema>["body"];

@@ -4,7 +4,7 @@ import {
   updateUser,
   updateUserRoles,
 } from "../services/user.service";
-import { UpdateUserInput } from "../schema/user.schema";
+import { UpdateRatingInput, UpdateUserInput } from "../schema/user.schema";
 import { getNowToUnixTimestamp } from "../utils/date";
 
 export const getMeHandler = (
@@ -81,7 +81,7 @@ export const updateMyRolesHandler = async (
 ) => {
   try {
     const id = res.locals.user._id;
-    const roles = await updateUserRoles(
+    const roles = await updateUser(
       id,
       { ...req.body, updatedAt: getNowToUnixTimestamp() },
       next
@@ -92,6 +92,36 @@ export const updateMyRolesHandler = async (
         roles,
       },
       message: "You have successfully updated your roles",
+    });
+  } catch (err: any) {
+    if (err.code === 11000) {
+      return res.status(409).json({
+        status: "fail",
+        message: "Update failed",
+      });
+    }
+    next(err);
+  }
+};
+
+export const updateRatingHandler = async (
+  req: Request<{}, {}, UpdateRatingInput>,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const id = res.locals.user._id;
+    const roles = await updateUser(
+      id,
+      { ...req.body, updatedAt: getNowToUnixTimestamp() },
+      next
+    );
+    res.status(200).json({
+      status: "success",
+      data: {
+        roles,
+      },
+      message: "You have successfully updated your rating",
     });
   } catch (err: any) {
     if (err.code === 11000) {

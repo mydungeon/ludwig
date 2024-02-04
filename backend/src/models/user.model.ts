@@ -40,7 +40,7 @@ export class User {
   @prop({ type: [String], default: ["user"] })
   roles: string[];
 
-  @prop()
+  @prop({ default: 0 })
   rating: number;
 
   @prop({ default: null })
