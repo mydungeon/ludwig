@@ -6,7 +6,7 @@ import { store } from "src/redux/store";
 import SiteRouter from "src/routing/SiteRouter";
 import App from "./App";
 import "react-toastify/dist/ReactToastify.css";
-import "src/sass/index.scss";
+import "src/sass/_theme.scss";
 
 // ARTICLE: https://codevoweb.com/node-typescript-mongodb-jwt-authentication/
 
