@@ -7,6 +7,12 @@
     @include themify('color', 'whiteAndBlack');
 }
 
+.badge {
+    @include themify('background-color', 'darkAndLightGrey');
+    @include themify('border-color', 'blackAndWhite');
+    @include themify('color', 'whiteAndBlack');
+}
+
 .breadcrumb > a,
 .breadcrumb {
     @include themify('color', 'blackAndWhite')

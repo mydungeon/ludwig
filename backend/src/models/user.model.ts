@@ -40,6 +40,9 @@ export class User {
   @prop({ type: [String], default: ["user"] })
   roles: string[];
 
+  @prop()
+  myRating: number;
+
   @prop({ default: null })
   lastLoggedIn: EpochTimeStamp;
 

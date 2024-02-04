@@ -1,6 +1,7 @@
 import Authorize from "./Authorize";
 import Avatar from "./Avatar";
 import Backdrop from "./Backdrop";
+import Badge from "./Badge";
 import Breadcrumbs from "./Breadcrumbs";
 import Button from "./Button";
 import Carousel from "./Carousel";
@@ -42,6 +43,7 @@ export {
   Authorize,
   Avatar,
   Backdrop,
+  Badge,
   Breadcrumbs,
   Button,
   Carousel,

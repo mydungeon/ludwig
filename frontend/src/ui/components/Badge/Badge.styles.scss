@@ -1,0 +1,12 @@
+@import 'src/sass/themes/variables';
+
+.badge {
+    border-style: solid;
+    border-width: $px1;
+    border-radius: $rem1;
+    box-shadow: $smallShadow;
+    display: inline-block;
+    font-size: $rem85pct;
+    padding: $px5 $px10;
+    margin: $px4;
+}
