@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { Icon } from "src/ui/components";
 import { BrandedFooterPage } from "src/ui/features/Pages";
 import { SliderInput } from "src/ui/components";
-import { EMOJI_HASH } from "./Feedback.constants";
-import "./Feedback.styles.scss";
+import { EMOJI_HASH } from "./Rating.constants";
+import "./Rating.styles.scss";
 
-export default function FeedbackPage() {
+export default function RatingPage() {
   const [value, setValue] = useState(100);
   const handleSetValue = (e: any) => setValue(e.target.value);
   const icon = EMOJI_HASH[value];
 
   return (
-    <BrandedFooterPage classNames="feedback" pageTitle="Rate Ludwig">
+    <BrandedFooterPage classNames="rating" pageTitle="Rate Ludwig">
       <SliderInput
         classNames={`slider-${value}`}
         handleSetValue={handleSetValue}

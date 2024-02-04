@@ -41,7 +41,7 @@ export class User {
   roles: string[];
 
   @prop()
-  myRating: number;
+  rating: number;
 
   @prop({ default: null })
   lastLoggedIn: EpochTimeStamp;

@@ -11,7 +11,7 @@ import { CreditsPage } from "src/ui/pages";
 import { DroogAiPage } from "src/ui/pages";
 import { EditProfilePage } from "src/ui/pages";
 import { EditRolePage } from "src/ui/pages";
-import { FeedbackPage } from "src/ui/pages";
+import { RatingPage } from "src/ui/pages";
 import { HomePage } from "src/ui/pages";
 import { LoginPage } from "src/ui/pages";
 import { MetricsPage } from "src/ui/pages";
@@ -124,9 +124,9 @@ export const ROUTING = [
         roles: UserRoles.USER,
         routes: [
           {
-            key: "feedback",
-            path: "feedback",
-            element: FeedbackPage,
+            key: "rating",
+            path: "rating",
+            element: RatingPage,
           },
         ],
       },

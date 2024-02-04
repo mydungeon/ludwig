@@ -22,8 +22,8 @@ export const SITE_MENU_LINKS = [
     roles: UserRoles.ADMIN,
   },
   {
-    name: "Feedback",
-    to: "feedback",
+    name: "Rating",
+    to: "rating",
     roles: UserRoles.USER,
   },
 ];
