@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { TEXT_AREA } from "./ChatInput.types";
-import useChatInput from "src/hooks/useChatInput";
+import { useChatInput } from "src/hooks";
 import { useTextAreaAutoSize } from "src/hooks";
 import { SendIcon } from "src/ui/features/Icons";
 import "./ChatInput.styles.scss";

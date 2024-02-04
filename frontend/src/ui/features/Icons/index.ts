@@ -17,6 +17,7 @@ import { SendIcon } from "./Chat";
 import SidebarToggleIcon from "./Sidebar";
 import SiteMenuCloseIcon from "./Site";
 import TableHeaderSortIcon from "./Table";
+import TogglePasswordIcon from "./Inputs";
 import ThemeToggleIcon from "./Theme";
 
 export {
@@ -37,5 +38,6 @@ export {
   SidebarToggleIcon,
   SiteMenuCloseIcon,
   TableHeaderSortIcon,
+  TogglePasswordIcon,
   ThemeToggleIcon,
 };

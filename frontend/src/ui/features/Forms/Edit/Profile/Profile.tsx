@@ -1,13 +1,9 @@
 import React from "react";
+import { useAppSelector } from "src/redux/store";
 import { Redirect, usePreloader, useRedirect } from "src/hooks";
 import { useUpdateMeMutation } from "src/redux/api/user.api";
-import { Wrapper } from "src/ui/components";
-import { Form } from "src/ui/components";
-import { Input } from "src/ui/components";
-import { FormFooter } from "src/ui/components/Form/components";
+import { Form, FormFooter, Input, SiteLink, Wrapper } from "src/ui/components";
 import { SubmitButton } from "src/ui/features/Buttons";
-import { useAppSelector } from "src/redux/store";
-import { SiteLink } from "src/ui/components";
 import { validationSchema } from "./Profile.schema";
 import "./Profile.styles.scss";
 

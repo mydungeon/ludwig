@@ -2,12 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useUpdateMyRolesMutation } from "src/redux/api/user.api";
 import { useAppSelector } from "src/redux/store";
 import { Redirect } from "src/hooks";
-import { MultiSelect } from "src/ui/components";
-import { Wrapper } from "src/ui/components";
-import { FormFooter } from "src/ui/components/Form/components";
-import { SiteLink } from "src/ui/components";
-import { SubmitButton } from "src/ui/features/Buttons";
+import { FormFooter, MultiSelect, SiteLink, Wrapper } from "src/ui/components";
 import { toggleOption } from "src/ui/components/MultiSelect/MultiSelect.utils";
+import { SubmitButton } from "src/ui/features/Buttons";
 import { MULTI_SELECT_OPTIONS } from "./Role.constants";
 import "./Role.styles.scss";
 

@@ -1,17 +1,21 @@
 import React from "react";
-import { Redirect, useRedirect } from "src/hooks";
+import { useToggle, Redirect, useRedirect } from "src/hooks";
 import { useLoginUserMutation } from "src/redux/api/auth.api";
-import { Wrapper } from "src/ui/components";
-import { Form } from "src/ui/components";
-import { Input } from "src/ui/components";
-import { FormFooter } from "src/ui/components/Form/components";
-import { SiteLink } from "src/ui/components";
+import {
+  Form,
+  FormFooter,
+  FORM_NAMES,
+  Input,
+  SiteLink,
+  Wrapper,
+} from "src/ui/components";
 import { SubmitButton } from "src/ui/features/Buttons";
-import { FORM_NAMES } from "src/ui/components/Form/Form.constants";
+import { TogglePasswordIcon } from "src/ui/features/Icons";
 import { defaultValues, validationSchema } from "./Login.schema";
 
 export default function LoginForm() {
   const [loginUser, { isSuccess }] = useLoginUserMutation();
+  const { handleSetToggle, toggle } = useToggle(true);
   const onSubmit = (data: any) => loginUser(data);
 
   useRedirect(isSuccess, Redirect.PROFILE);
@@ -29,7 +33,8 @@ export default function LoginForm() {
         validation={validationSchema}
       >
         <Input name="email" inputType="email" />
-        <Input name="password" inputType="password" />
+        <Input name="password" inputType={toggle ? "password" : "text"} />
+        <TogglePasswordIcon callback={handleSetToggle} toggle={toggle} />
         <FormFooter classNames="form">
           <div>
             <SiteLink

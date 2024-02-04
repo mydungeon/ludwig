@@ -14,6 +14,8 @@ import Ellipse from "./Ellipse";
 import ErrorMessage from "./ErrorMessage";
 import Footer from "./Footer";
 import Form from "./Form";
+import { FormFooter } from "./Form/components";
+import { FORM_NAMES } from "./Form/Form.constants";
 import Header from "./Header";
 import Icon from "./Icon";
 import Input from "./Input";
@@ -53,6 +55,8 @@ export {
   ErrorMessage,
   Footer,
   Form,
+  FormFooter,
+  FORM_NAMES,
   Header,
   Icon,
   Input,

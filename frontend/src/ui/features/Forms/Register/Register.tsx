@@ -1,24 +1,22 @@
 import React from "react";
-import { Redirect, usePreloader, useRedirect } from "src/hooks";
+import { Redirect, usePreloader, useRedirect, useToggle } from "src/hooks";
 import { useRegisterUserMutation } from "src/redux/api/auth.api";
-import { Wrapper } from "src/ui/components";
-import { Form } from "src/ui/components";
-import { Input } from "src/ui/components";
-import { FormFooter } from "src/ui/components/Form/components";
-import { SiteLink } from "src/ui/components";
-import { SubmitButton } from "src/ui/features/Buttons";
+import { Form, FormFooter, Input, SiteLink, Wrapper } from "src/ui/components";
 import { FORM_NAMES } from "src/ui/components/Form/Form.constants";
+import { SubmitButton } from "src/ui/features/Buttons";
 import { defaultValues, validationSchema } from "./Register.schema";
+import { TogglePasswordIcon } from "../../Icons";
 
 export default function RegisterForm() {
   const [registerUser, { isLoading, isSuccess }] = useRegisterUserMutation();
+  const { handleSetToggle, toggle } = useToggle(true);
+  const togglePasswordType = toggle ? "password" : "text";
   const isPreloaderSuccess = isLoading && !isSuccess;
   const isRedirectSuccess = !isLoading && isSuccess;
   const onSubmit = (data: any) => registerUser(data);
 
   usePreloader(isPreloaderSuccess);
   useRedirect(isRedirectSuccess, Redirect.LOGIN);
-
   return (
     <Wrapper
       classNames="register"
@@ -34,8 +32,9 @@ export default function RegisterForm() {
       >
         <Input name="name" inputType="text" />
         <Input name="email" inputType="email" />
-        <Input name="password" inputType="password" />
-        <Input name="passwordConfirm" inputType="password" />
+        <Input name="password" inputType={togglePasswordType} />
+        <TogglePasswordIcon callback={handleSetToggle} toggle={toggle} />
+        <Input name="passwordConfirm" inputType={togglePasswordType} />
         <FormFooter classNames="form">
           <div>
             <SiteLink classNames="link" linkText="Login" destination="/login" />
