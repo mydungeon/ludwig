@@ -15,9 +15,7 @@ export default function ChangePasswordForm() {
   const isPreloaderSuccess = isLoading && !isSuccess;
   const isRedirectSuccess = !isLoading && isSuccess;
   const onSubmit = (data: any) => changePasword(data);
-  console.log("usePreloader");
   usePreloader(isPreloaderSuccess);
-  console.log("usePreloader");
   useRedirect(isRedirectSuccess, Redirect.LOGIN);
 
   return (
