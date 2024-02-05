@@ -7,6 +7,7 @@ export default function Input({
   formState,
   inputType,
   name,
+  placeholder,
   register,
   ...rest
 }: InputProps) {
@@ -14,7 +15,7 @@ export default function Input({
     <>
       <input
         className="input"
-        placeholder={name}
+        placeholder={placeholder ? placeholder : name}
         type={inputType}
         {...register(name)}
         {...rest}
