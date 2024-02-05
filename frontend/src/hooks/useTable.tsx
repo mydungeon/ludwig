@@ -9,6 +9,7 @@ export default function useTable(data: IUser[], pageSize: number) {
   const [filterTerm, setFilterTerm] = useState("");
   const [filterWarning, setFilterWarning] = useState(false);
   const [sortKey, setSortKey] = useState<string>("");
+  const [sortType, setSortType] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("");
   const [resultCount, setResultCount] = useState(0);
   const [toggleFilterDropdown, setToggleFilterDropdown] = useState(false);
@@ -51,8 +52,9 @@ export default function useTable(data: IUser[], pageSize: number) {
     setFilterTerm(e.target.value);
   }
 
-  function handleSorting(sortKey: string) {
+  function handleSorting(sortKey: string, type: string) {
     setSortKey(sortKey);
+    setSortType(type);
     sortOrder === "" || sortOrder === "desc"
       ? setSortOrder("asc")
       : setSortOrder("desc");
@@ -75,11 +77,24 @@ export default function useTable(data: IUser[], pageSize: number) {
   useEffect(() => {
     function sortData(data: IUser[]) {
       return [...data].sort((a: any, b: any) => {
-        if (sortOrder === "asc") {
-          return a[sortKey].localeCompare(b[sortKey]);
-        }
-        if (sortOrder === "desc") {
-          return b[sortKey].localeCompare(a[sortKey]);
+        if (sortType === "string") {
+          if (sortOrder === "asc") {
+            return a[sortKey].localeCompare(b[sortKey]);
+          }
+          if (sortOrder === "desc") {
+            return b[sortKey].localeCompare(a[sortKey]);
+          } else {
+            return 0;
+          }
+        } else if (sortType === "number") {
+          if (sortOrder === "asc") {
+            return a[sortKey] - b[sortKey];
+          }
+          if (sortOrder === "desc") {
+            return b[sortKey] - a[sortKey];
+          } else {
+            return 0;
+          }
         } else {
           return 0;
         }

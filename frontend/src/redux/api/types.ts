@@ -20,6 +20,7 @@ export interface IUser {
   rating: number;
   roles: string[];
   updatedAt: Date;
+  lastLoggedIn: Date;
 }
 export interface IUserState {
   user: IUser | null;

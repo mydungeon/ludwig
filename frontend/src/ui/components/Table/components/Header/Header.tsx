@@ -8,10 +8,17 @@ export default function TableHeader({ ...props }) {
     <thead className="tableHeader" key="thead">
       <tr key="header">
         {columns.map(
-          ({ name, sort }: { name: string; sort?: boolean }, index: number) => (
+          (
+            {
+              name,
+              sort,
+              type,
+            }: { name: string; sort?: boolean; type: string },
+            index: number
+          ) => (
             <th
               className={sort ? "sort" : ""}
-              onClick={() => handleSetSortField(name)}
+              onClick={() => handleSetSortField(name, type)}
               key={`${name}-${index}`}
             >
               <span>{name}</span>

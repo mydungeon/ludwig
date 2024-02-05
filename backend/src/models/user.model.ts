@@ -27,6 +27,7 @@ import bcrypt from "bcryptjs";
   },
 })
 // Export the User class to be used as TypeScript type
+// The ordering of each property needs to be in the same order as the table column order component
 export class User {
   @prop()
   name: string;
@@ -40,17 +41,17 @@ export class User {
   @prop({ type: [String], default: ["user"] })
   roles: string[];
 
-  @prop({ default: 0 })
-  rating: number;
-
-  @prop({ default: null })
-  lastLoggedIn: EpochTimeStamp;
-
   @prop({ default: null })
   createdAt: EpochTimeStamp;
 
   @prop({ default: null })
   updatedAt: EpochTimeStamp;
+
+  @prop({ default: null })
+  lastLoggedIn: EpochTimeStamp;
+
+  @prop({ default: 0 })
+  rating: number;
 
   // Instance method to check if passwords match
   async comparePasswords(hashedPassword: string, candidatePassword: string) {
