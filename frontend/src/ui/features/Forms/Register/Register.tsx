@@ -30,11 +30,19 @@ export default function RegisterForm() {
         onSubmit={onSubmit}
         validation={validationSchema}
       >
-        <Input name="name" inputType="text" />
-        <Input name="email" inputType="email" />
-        <Input name="password" inputType={togglePasswordType} />
+        <Input name="name" placeholder="User Name" inputType="text" />
+        <Input name="email" placeholder="Email Address" inputType="email" />
+        <Input
+          name="password"
+          placeholder="Password"
+          inputType={togglePasswordType}
+        />
         <TogglePasswordIcon callback={handleSetToggle} toggle={toggle} />
-        <Input name="passwordConfirm" inputType={togglePasswordType} />
+        <Input
+          name="passwordConfirm"
+          placeholder="Confirm Password"
+          inputType={togglePasswordType}
+        />
         <FormFooter classNames="form">
           <div>
             <SiteLink classNames="link" linkText="Login" destination="/login" />

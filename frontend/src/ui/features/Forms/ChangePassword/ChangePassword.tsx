@@ -26,10 +26,22 @@ export default function ChangePasswordForm() {
         onSubmit={onSubmit}
         validation={validationSchema}
       >
-        <Input name="currentPassword" inputType={togglePasswordType} />
+        <Input
+          name="currentPassword"
+          placeholder="Current Password"
+          inputType={togglePasswordType}
+        />
         <TogglePasswordIcon callback={handleSetToggle} toggle={toggle} />
-        <Input name="password" inputType={togglePasswordType} />
-        <Input name="passwordConfirm" inputType={togglePasswordType} />
+        <Input
+          name="password"
+          placeholder="New Password"
+          inputType={togglePasswordType}
+        />
+        <Input
+          name="passwordConfirm"
+          placeholder="Confirm New Password"
+          inputType={togglePasswordType}
+        />
         <FormFooter classNames="form">
           <div>
             <SiteLink

@@ -32,8 +32,12 @@ export default function LoginForm() {
         onSubmit={onSubmit}
         validation={validationSchema}
       >
-        <Input name="email" inputType="email" />
-        <Input name="password" inputType={toggle ? "password" : "text"} />
+        <Input name="email" placeholder="Email Address" inputType="email" />
+        <Input
+          name="password"
+          placeholder="Password"
+          inputType={toggle ? "password" : "text"}
+        />
         <TogglePasswordIcon callback={handleSetToggle} toggle={toggle} />
         <FormFooter classNames="form">
           <div>
