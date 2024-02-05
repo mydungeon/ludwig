@@ -1,0 +1,5 @@
+@import "src/sass/themes/variables";
+.page.metrics {
+    height: calc($vh100 - $px105 - $rem2);
+    overflow-y: scroll;
+}
