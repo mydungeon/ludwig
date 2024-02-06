@@ -24,3 +24,15 @@ button.button:disabled,
 button:disabled {
     pointer-events: none;
 }
+
+button.small {
+    margin: $px3;
+    padding: $px5 $px10;
+}
+
+button.small.selected {
+    color: $black;
+    background-color: $lighterGrey;
+    border-color: $black;
+    cursor: unset;
+}

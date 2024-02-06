@@ -54,11 +54,13 @@ export default function Histogram({ width, height, data }: HistogramProps) {
     if (x0 === undefined || x1 === undefined) {
       return null;
     }
+    const width = xScale(x1) - xScale(x0) - BUCKET_PADDING;
     return (
       <Rectangle
         key={i}
         x={xScale(x0) + BUCKET_PADDING / 2}
-        width={xScale(x1) - xScale(x0) - BUCKET_PADDING}
+        //TODO: Follow up with the site author. Temporarily put a ternary to protect against negative values.
+        width={width >= 0 ? width : 0}
         y={yScale(bucket.length)}
         height={boundsHeight - yScale(bucket.length)}
       />
