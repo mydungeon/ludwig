@@ -83,10 +83,6 @@ export const loginHandler = async (
   try {
     // Get the user from the collection
     const user = await findUser({ email: req.body.email });
-
-    console.log("req.body.password", req.body.password);
-    console.log("user", user);
-
     // Check if user exist and password is correct
     if (
       !user ||
