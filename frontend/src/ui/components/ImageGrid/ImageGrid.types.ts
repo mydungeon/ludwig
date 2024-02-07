@@ -1,3 +1,9 @@
 export default interface ImageGridProps {
-  children?: JSX.Element[] | JSX.Element;
+  images: Image[][];
+}
+
+interface Image {
+  alt: string;
+  fileName: string;
+  to: string;
 }

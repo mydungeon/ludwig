@@ -19,6 +19,7 @@ import { FormFooter } from "./Form/components";
 import { FORM_NAMES } from "./Form/Form.constants";
 import Header from "./Header";
 import Icon from "./Icon";
+import ImageGrid from "./ImageGrid";
 import Input from "./Input";
 import Layout from "./Layout";
 import Logo from "./Logo";
@@ -37,6 +38,7 @@ import Tooltip from "./Tooltip";
 import UserDetails from "./UserDetails";
 import UserPfp from "./UserPfp";
 import UserProfile from "./UserProfile";
+import { VENDOR_IMAGES } from "./ImageGrid/ImageGrid.constants";
 import Wrapper from "./Wrapper";
 
 export {
@@ -61,6 +63,7 @@ export {
   FORM_NAMES,
   Header,
   Icon,
+  ImageGrid,
   Input,
   Layout,
   Logo,
@@ -79,5 +82,6 @@ export {
   UserDetails,
   UserPfp,
   UserProfile,
+  VENDOR_IMAGES,
   Wrapper,
 };
