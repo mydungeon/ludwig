@@ -5,7 +5,7 @@ import "./ChangePassword.styles.scss";
 
 export default function ChangePasswordPage() {
   return (
-    <Page classNames="changePassword">
+    <Page classNames="changePassword" pageTitle="Change Password">
       <ChangePasswordForm />
     </Page>
   );

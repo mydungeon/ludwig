@@ -19,7 +19,6 @@ export default function ChangePasswordForm() {
 
   return (
     <Wrapper classNames="changePassword" dataTestId="changePasswordForm">
-      <div>Change Password</div>
       <Form
         classNames="updateUser"
         defaultValues={defaultValues}

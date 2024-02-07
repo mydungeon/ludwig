@@ -5,7 +5,7 @@ import "./Role.styles.scss";
 
 export default function EditRolePage() {
   return (
-    <Page>
+    <Page pageTitle="Edit Role">
       <EditRoleForm />
     </Page>
   );

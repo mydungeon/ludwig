@@ -25,7 +25,6 @@ export default function EditRoleForm() {
 
   return (
     <Wrapper classNames="editRole" dataTestId="editRoleForm">
-      <div>Edit Role</div>
       <form className="role" data-testid="role" onSubmit={handleSubmit}>
         <MultiSelect
           options={MULTI_SELECT_OPTIONS}

@@ -19,7 +19,6 @@ export default function EditProfileForm() {
 
   return defaultValues ? (
     <Wrapper classNames="editProfile" dataTestId="editProfileForm">
-      <div>Edit Profile</div>
       <Form
         classNames="updateUser"
         defaultValues={defaultValues}
