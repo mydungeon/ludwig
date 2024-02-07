@@ -104,7 +104,7 @@ export default function useTable(data: IUser[], pageSize: number) {
       setFiltered(sortData(filtered));
     }
     setResultCount(filtered.length);
-  }, [filtered, sortKey, sortOrder]);
+  }, [filtered, sortKey, sortOrder, sortType]);
 
   return {
     currentPage,
