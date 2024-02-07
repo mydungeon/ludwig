@@ -23,6 +23,11 @@ export const VENDOR_IMAGES = [
       fileName: "storybook.svg",
       to: "https://storybook.js.org",
     },
+    {
+      alt: "ES Lint",
+      fileName: "eslint.svg",
+      to: "https://eslint.org/",
+    },
   ],
   [
     { alt: "Open AI", fileName: "openai.svg", to: "https://openai.com/" },

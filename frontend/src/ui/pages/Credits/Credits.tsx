@@ -4,7 +4,7 @@ import { ImageGrid, VENDOR_IMAGES } from "src/ui/components";
 
 export default function CreditsPage() {
   return (
-    <BrandedFooterPage classNames="credits" pageTitle="The Technology">
+    <BrandedFooterPage classNames="credits" pageTitle="The Tech">
       <ImageGrid images={VENDOR_IMAGES} />
     </BrandedFooterPage>
   );
