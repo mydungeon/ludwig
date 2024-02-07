@@ -7,19 +7,18 @@ import AlertModal from "src/ui/features/Modals/Alert";
 import { PreLoader } from "src/ui/components";
 import AuthMiddleware from "src/middleWare/AuthMiddleware";
 import SiteRoutes from "src/routing/SiteRoutes";
+import UseAlert from "src/hooks/useAlert";
 
 function App() {
+  const { alertIcon, alertMessage, alertTitle, showAlert } = UseAlert();
   const [showPreloader, setShowPreloader] = useState(false);
   const [showSiteMenu, setShowSiteMenu] = useState(false);
-
   const handleShowPreloader = useCallback((isLoading: boolean) => {
     setShowPreloader(isLoading);
   }, []);
-
   const handleShowSiteMenu = useCallback((show: boolean) => {
     setShowSiteMenu(show);
   }, []);
-
   const contextValue = useMemo(
     () => ({
       showPreloader,
@@ -29,10 +28,16 @@ function App() {
     }),
     [showPreloader, showSiteMenu, handleShowPreloader, handleShowSiteMenu]
   );
-
+  console.log("showAlert", showAlert);
   return (
     <AppContext.Provider value={contextValue}>
-      <AlertModal message="Test message" title="Test title" />
+      <AlertModal
+        alertIcon={alertIcon}
+        alertMessage={alertMessage}
+        alertTitle={alertTitle}
+        showAlert={showAlert}
+        size="xl"
+      />
       <ToastContainer />
       <PreLoader />
       <AuthMiddleware>
