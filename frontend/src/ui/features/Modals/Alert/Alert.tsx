@@ -1,21 +1,33 @@
-import React, { useState } from "react";
-import AlertModalProps from "./Alert.types";
+import React, { useEffect, useState } from "react";
+import { AlertModalProps } from "./Alert.types";
 import { Modal } from "src/ui/components";
 
-export default function AlertModal({ message, title }: AlertModalProps) {
-  const [show, setShow] = useState(false);
+export default function AlertModal({
+  alertIcon,
+  alertMessage,
+  alertTitle,
+  showAlert,
+  size,
+}: AlertModalProps) {
+  const [show, setShow] = useState(showAlert);
+
+  useEffect(() => {
+    setShow(showAlert);
+  }, [showAlert]);
 
   function handleClick() {
-    setShow(!show);
+    setShow(false);
   }
 
   return show ? (
     <Modal classNames="alertModal" data-testid="alertModal">
-      <Modal.Header handleClick={handleClick}>
-        <h3>{title}</h3>
+      <Modal.Header handleClick={handleClick} icon={alertIcon} size={size}>
+        <>
+          <h3>{alertTitle}</h3>
+        </>
       </Modal.Header>
       <Modal.Body>
-        <div>{message}</div>
+        <div>{alertMessage}</div>
       </Modal.Body>
       <Modal.Footer></Modal.Footer>
     </Modal>

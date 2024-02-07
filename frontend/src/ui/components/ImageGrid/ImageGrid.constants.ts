@@ -1,4 +1,4 @@
-export const VENDORS = [
+export const VENDOR_IMAGES = [
   [
     { alt: "Github", fileName: "github.svg", to: "https://github.com/" },
     {
@@ -18,6 +18,16 @@ export const VENDORS = [
     },
     { alt: "Javascript", fileName: "javascript.svg", to: "https://js.org/" },
     { alt: "Babel", fileName: "babel.svg", to: "https://babeljs.io/" },
+    {
+      alt: "Storybook",
+      fileName: "storybook.svg",
+      to: "https://storybook.js.org",
+    },
+    {
+      alt: "ES Lint",
+      fileName: "eslint.svg",
+      to: "https://eslint.org/",
+    },
   ],
   [
     { alt: "Open AI", fileName: "openai.svg", to: "https://openai.com/" },
@@ -30,6 +40,11 @@ export const VENDORS = [
       to: "https://www.mongodb.com/",
     },
     { alt: "Redis", fileName: "redis.svg", to: "https://redis.com/" },
+    {
+      alt: "D3",
+      fileName: "d3.svg",
+      to: "https://d3js.org/",
+    },
   ],
   [
     { alt: "Node JS", fileName: "node-js.svg", to: "https://nodejs.org/en" },
@@ -46,6 +61,11 @@ export const VENDORS = [
       to: "https://redux-toolkit.js.org/",
     },
     { alt: "Swagger", fileName: "swagger.svg", to: "https://swagger.io/" },
+    {
+      alt: "React Spring",
+      fileName: "react-spring.png",
+      to: "https://github.com/pmndrs/react-spring",
+    },
   ],
   [
     { alt: "Faker JS", fileName: "fakerjs.svg", to: "https://fakerjs.dev/" },
@@ -66,6 +86,11 @@ export const VENDORS = [
       alt: "Font Awesome",
       fileName: "fontawesome.svg",
       to: "https://fontawesome.com/",
+    },
+    {
+      alt: "Stack Overflow",
+      fileName: "stackoverflow.svg",
+      to: "https://stackoverflow.com/",
     },
   ],
 ];

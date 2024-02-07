@@ -16,8 +16,17 @@ function Modal({ children, classNames }: ModalProps) {
   );
 }
 
-Modal.Header = function ({ children, handleClick }: ModalHeaderProps) {
-  return <ModalHeader handleClick={handleClick}>{children}</ModalHeader>;
+Modal.Header = function ({
+  children,
+  handleClick,
+  icon,
+  size,
+}: ModalHeaderProps) {
+  return (
+    <ModalHeader handleClick={handleClick} icon={icon} size={size}>
+      {children}
+    </ModalHeader>
+  );
 };
 
 Modal.Body = function ({ children }: ModalBodyProps) {

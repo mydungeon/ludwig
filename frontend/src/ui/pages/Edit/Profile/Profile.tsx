@@ -5,7 +5,7 @@ import "./Profile.styles.scss";
 
 export default function EditProfilePage() {
   return (
-    <Page classNames="editProfile">
+    <Page classNames="editProfile" pageTitle="Edit Profile">
       <EditProfileForm />
     </Page>
   );

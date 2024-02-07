@@ -4,7 +4,17 @@
     padding: $rem10pct;
 }
 
-.modalHeader h3 {
+.leftSide {
+    align-items: center;
+    display: flex;
+    flex-direction: row;   
+}
+
+.leftSide > span {
+    padding: $px5;
+}
+
+.modalHeader > .leftSize > span > h3 {
     margin-left: $rem85pct;
 }
 

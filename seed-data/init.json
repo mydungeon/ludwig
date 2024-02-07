@@ -3,33 +3,33 @@
     "name": "god",
     "email": "god@m3t4c0r73x.com",
     "password": "$2a$12$l9BppooJFvIg1vlBQExKNOu7fBEGRo1/YGUJw/6yMFoIgNtYOMN4e",
-    "rating": 90,
     "roles": ["user", "admin", "god"],
     "createdAt": 1706664702,
     "updatedAt": 1706664702,
     "lastLoggedIn": 1706664702,
+    "rating": 90,
     "__v": 0
   },
   {
     "name": "admin",
     "email": "admin@m3t4c0r73x.com",
     "password": "$2a$12$l9BppooJFvIg1vlBQExKNOu7fBEGRo1/YGUJw/6yMFoIgNtYOMN4e",
-    "rating": 100,
     "roles": ["user", "admin"],
     "createdAt": 1706664702,
     "updatedAt": 1706664702,
     "lastLoggedIn": 1706664702,
+    "rating": 100,
     "__v": 1
   },
   {
     "name": "user",
     "email": "user@m3t4c0r73x.com",
     "password": "$2a$12$l9BppooJFvIg1vlBQExKNOu7fBEGRo1/YGUJw/6yMFoIgNtYOMN4e",
-    "rating": 0,
     "roles": ["user"],
     "createdAt": 1706664702,
     "updatedAt": 1706664702,
     "lastLoggedIn": 1706664702,
+    "rating": 0,
     "__v": 2
   }
 ]

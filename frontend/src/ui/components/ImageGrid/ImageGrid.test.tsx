@@ -4,6 +4,6 @@ import "@testing-library/jest-dom";
 import ImageGrid from "./ImageGrid";
 
 test("loads and displays ImageGrid component", async () => {
-  render(<ImageGrid />);
+  render(<ImageGrid images={[]} />);
   expect(screen.getByTestId("imagegrid")).toBeTruthy();
 });

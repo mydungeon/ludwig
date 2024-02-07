@@ -1,12 +1,11 @@
 import React from "react";
 import ImageGridProps from "./ImageGrid.types";
-import { VENDORS } from "./ImageGrid.constants";
 import "./ImageGrid.styles.scss";
 
-export default function ImageGrid({ children }: ImageGridProps) {
+export default function ImageGrid({ images }: ImageGridProps) {
   return (
     <div className="row" data-testid="imagegrid">
-      {VENDORS.map((group, i) => {
+      {images.map((group, i) => {
         return (
           <div className="column" key={i}>
             {group.map(({ alt, fileName, to }, ii) => (
