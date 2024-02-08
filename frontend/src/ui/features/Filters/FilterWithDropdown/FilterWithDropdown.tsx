@@ -13,16 +13,13 @@ export default function FilterWithDropdown({
   toggle,
 }: FilterWithDropdownProps) {
   return (
-    <div className="filterWrapper">
-      <div className="filterWithDropdown" data-testid="filterwithdropdown">
-        <FilterInput filterTerm={filterTerm} onChange={onChange} />
-        <FilterDropdown
-          columns={columns}
-          handleToggle={handleToggle}
-          onClick={onClick}
-          toggle={toggle}
-        />
-      </div>
+    <div className="filterWithDropdown" data-testid="filterwithdropdown">
+      <FilterInput
+        filterTerm={filterTerm}
+        handleToggle={handleToggle}
+        onChange={onChange}
+      />
+      <FilterDropdown columns={columns} onClick={onClick} toggle={toggle} />
     </div>
   );
 }

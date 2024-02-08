@@ -1,9 +1,5 @@
 @import "src/sass/themes/variables";
 
-.filterWrapper {
-    margin-bottom: $rem50pct;
-}
-
 .filterCritera {
     font-size: $rem75pct;
     font-style: italic;
@@ -18,48 +14,9 @@
 
 .filterWithDropdown {
     position: relative;
-}
-
-.filterInput {
-    position: relative;
-}
-
-.filterDropdown {
-    margin: $rem85pct;
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.filterDropdown > ul {
-    background: $white;
-    border-color: $grey;
-    border-style: solid;
-    border-radius: $rem25pct;
-    border-width: $px1;
-    box-shadow: $smallShadow;
-    padding: 0;
-    position: absolute;
-    right: -14px;
-    text-align: left;
-    top: 16px;
-    z-index: 2;
-}
-
-.filterDropdown > ul > li {
-    border-bottom-color: $grey;
-    border-bottom-style: solid;
-    border-bottom-width: $px1;
-    cursor: pointer;
-    font-size: $rem85pct;
-    font-weight: normal;
-    margin: 0;
-    padding: $rem50pct $rem85pct;
-    list-style-type: none;
-}
-
-.filterDropdown > ul > li:last-child {
-    border: none;
 }
 
 .filterWarning {

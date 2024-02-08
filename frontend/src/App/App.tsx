@@ -28,7 +28,6 @@ function App() {
     }),
     [showPreloader, showSiteMenu, handleShowPreloader, handleShowSiteMenu]
   );
-  console.log("showAlert", showAlert);
   return (
     <AppContext.Provider value={contextValue}>
       <AlertModal

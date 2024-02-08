@@ -7,7 +7,6 @@ test("loads and displays FilterDropdown component", async () => {
   render(
     <FilterDropdown
       columns={[]}
-      handleToggle={() => {}}
       onClick={(filterTerm) => console.log(filterTerm)}
       toggle={false}
     />

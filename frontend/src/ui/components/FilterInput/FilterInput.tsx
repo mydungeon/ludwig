@@ -1,9 +1,11 @@
 import React from "react";
 import FilterInputProps from "./FilterInput.types";
+import { FilterInputDropdownArrowIcon } from "src/ui/features/Icons";
 import "./FilterInput.styles.scss";
 
 export default function FilterInput({
   filterTerm,
+  handleToggle,
   onChange,
 }: FilterInputProps) {
   return (
@@ -15,6 +17,9 @@ export default function FilterInput({
         type="text"
         value={filterTerm}
       />
+      <div className="filterInputDropdownArrowIcon">
+        <FilterInputDropdownArrowIcon callback={handleToggle} />
+      </div>
     </div>
   );
 }

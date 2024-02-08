@@ -2,11 +2,17 @@
 
 .filterInput {
     align-items: flex-end;
-    display: flex;
     justify-content: flex-end;
+    position: relative;
 }
 
 .input.filter {
     border-color: $black;
     margin-top: 0;
+}
+
+.filterInputDropdownArrowIcon {
+    position: absolute;
+    left: 144px;
+    top: 12px;
 }
