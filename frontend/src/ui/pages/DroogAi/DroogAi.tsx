@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import { droogAiAscii } from "src/utils/ascii";
 import { ChatFooterPage } from "src/ui/features/Pages";
 import { useAppSelector } from "src/redux/store";
-import { ChatMessages } from "src/ui/components";
 import DroogAiChatPlaceholder from "src/ui/features/Placeholders";
+import { Gpt } from "src/ui/components";
 import "./DroogAi.styles.scss";
 
 export default function DroogAiPage() {
@@ -26,7 +26,7 @@ export default function DroogAiPage() {
         </ChatFooterPage>
       ) : (
         <ChatFooterPage classNames="droogAi">
-          <ChatMessages messages={messages} userName={user?.name} />
+          <Gpt.ChatMessages messages={messages} userName={user?.name} />
         </ChatFooterPage>
       )}
     </>

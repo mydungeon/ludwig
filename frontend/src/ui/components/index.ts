@@ -5,18 +5,13 @@ import Badge from "./Badge";
 import Breadcrumbs from "./Breadcrumbs";
 import Button from "./Button";
 import Carousel from "./Carousel";
-import ChatInput from "./ChatInput";
-import ChatMessage from "./ChatMessage";
-import ChatMessages from "./ChatMessages";
-import ChatPlaceholder from "./ChatPlaceholder";
-import ChatPrompt from "./ChatPrompt";
-import ChatPrompts from "./ChatPrompts";
 import Ellipse from "./Ellipse";
 import ErrorMessage from "./ErrorMessage";
 import Footer from "./Footer";
 import Form from "./Form";
 import { FormFooter } from "./Form/components";
 import { FORM_NAMES } from "./Form/Form.constants";
+import { Gpt } from "./Gpt";
 import Header from "./Header";
 import Icon from "./Icon";
 import ImageGrid from "./ImageGrid";
@@ -49,18 +44,13 @@ export {
   Breadcrumbs,
   Button,
   Carousel,
-  ChatInput,
-  ChatMessage,
-  ChatMessages,
-  ChatPlaceholder,
-  ChatPrompt,
-  ChatPrompts,
   Ellipse,
   ErrorMessage,
   Footer,
   Form,
   FormFooter,
   FORM_NAMES,
+  Gpt,
   Header,
   Icon,
   ImageGrid,

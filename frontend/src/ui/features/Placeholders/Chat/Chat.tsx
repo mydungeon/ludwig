@@ -1,5 +1,5 @@
 import React from "react";
-import { ChatPlaceholder, ChatPrompts } from "src/ui/components";
+import { Gpt } from "src/ui/components";
 import { TypewriterTextEffect } from "src/ui/features/TextEffects";
 import { TYPEWRITER_ANIMATION } from "src/ui/features/TextEffects/Typewriter/Typewriter.constants";
 import "./Chat.styles.scss";
@@ -8,7 +8,7 @@ import { BOTTOM_LINE, TOP_LINE } from "./Chat.constants";
 export default function DroogAiChatPlaceholder() {
   return (
     <>
-      <ChatPlaceholder>
+      <Gpt.ChatPlaceholder>
         <div className="droogMessage">
           <TypewriterTextEffect>
             <h2
@@ -36,8 +36,8 @@ export default function DroogAiChatPlaceholder() {
             </h2>
           </TypewriterTextEffect>
         </div>
-      </ChatPlaceholder>
-      <ChatPrompts />
+      </Gpt.ChatPlaceholder>
+      <Gpt.ChatPrompts />
     </>
   );
 }

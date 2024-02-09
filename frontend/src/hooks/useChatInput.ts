@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useCreateCompletionsMutation } from "src/redux/api/gpt.api";
 import { setMessages } from "src/redux/features/gpt.slice";
-import { PROMPTS, ROLES } from "src/ui/components/ChatInput/ChatInput.types";
+import { Gpt } from "src/ui/components";
 
 export default function useChatInput() {
   let messages = useSelector((state: any) => {
@@ -18,11 +18,11 @@ export default function useChatInput() {
   }
 
   function handleSubmit() {
-    const message = { content: value, role: ROLES.USER };
+    const message = { content: value, role: Gpt.ROLES.USER };
     if (messages.length > 0) {
       messages = [...messages, message];
     } else {
-      const initial = { content: PROMPTS.INITIAL, role: ROLES.SYSTEM };
+      const initial = { content: Gpt.PROMPTS.INITIAL, role: Gpt.ROLES.SYSTEM };
       messages = [initial, message];
     }
     dispatch(setMessages(message));

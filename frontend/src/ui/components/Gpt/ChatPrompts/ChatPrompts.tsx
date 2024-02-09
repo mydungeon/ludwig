@@ -1,5 +1,5 @@
 import React from "react";
-import { ChatPrompt } from "src/ui/components";
+import { Gpt } from "src/ui/components";
 import { PROMPTS } from "./ChatPrompts.constants";
 import "./ChatPrompts.styles.scss";
 
@@ -9,7 +9,7 @@ export default function ChatPrompts() {
       {PROMPTS.map((column, i) => (
         <div key={i}>
           {column.map((prompt, ii) => (
-            <ChatPrompt key={`${i}-${ii}`} prompt={prompt} />
+            <Gpt.ChatPrompt key={`${i}-${ii}`} prompt={prompt} />
           ))}
         </div>
       ))}

@@ -1,7 +1,7 @@
 import React from "react";
 import ChatSenderProps from "./ChatSender.types";
+import { Avatar } from "src/ui/components";
 import "./ChatSender.styles.scss";
-import Avatar from "../Avatar";
 
 export default function ChatSender({ isUser, userName }: ChatSenderProps) {
   const who = isUser ? "You" : "Droog AI";
