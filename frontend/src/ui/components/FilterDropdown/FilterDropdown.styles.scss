@@ -1,11 +1,7 @@
 @import "src/sass/themes/variables";
 
 .filterDropdown {
-    background: $white;
-    border-color: $grey;
-    border-style: solid;
     border-radius: $rem25pct;
-    border-width: $px1;
     box-shadow: $smallShadow;
     text-align: left;
     z-index: 2;
@@ -17,10 +13,12 @@
 }
 
 .filterDropdown>ul>li {
-    border-bottom-color: $grey;
-    border-bottom-style: solid;
-    border-bottom-width: $px1;
-    color: $black;
+    border-left-style: solid;
+    border-left-width: $px1;
+    border-right-style: solid;
+    border-right-width: $px1;
+    border-top-width: $px1;
+    border-top-style: solid;
     cursor: pointer;
     font-size: $rem85pct;
     font-weight: normal;
@@ -29,6 +27,16 @@
     list-style-type: none;
 }
 
+.filterDropdown>ul>li:first-child {
+    border-top-style: solid;
+    border-top-width: $px1;
+    border-top-right-radius: $rem25pct;
+    border-top-left-radius: $rem25pct;
+}
+
 .filterDropdown>ul>li:last-child {
-    border: none;
+    border-bottom-style: solid;
+    border-bottom-width: $px1;
+    border-bottom-right-radius: $rem25pct;
+    border-bottom-left-radius: $rem25pct;
 }

@@ -1,11 +1,16 @@
+@import "src/sass/themes/variables";
+
 .tableToolbar {
     align-items: center;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .filterWrapper {
-    position: relative;
-    right: 56px;
-    top: -37px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: -$px20;
 }

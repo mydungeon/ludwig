@@ -25,6 +25,8 @@ button {
     @include themify('color', 'whiteAndBlack');
 }
 
+.filterDropdown>ul>li,
+.filterDropdown>ul>li:first-child,
 .input {
     @include themify('border-color', 'blackAndWhite');
     @include themify('background', 'whiteAndDarkestGrey');
