@@ -1,6 +1,9 @@
+@import "src/sass/themes/variables";
+
 .footer.chat {
     align-items: center;
     display: flex;
+    height: $px90;
     text-align: center;
 }
 

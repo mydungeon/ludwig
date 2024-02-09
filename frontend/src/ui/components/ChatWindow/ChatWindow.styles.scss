@@ -1,0 +1,26 @@
+@import "src/sass/themes/variables";
+
+.chatWindow {
+    bottom: $px40;
+    box-shadow: $mediumShadow;
+    display: flex;
+    flex-direction: column;
+    height: $px350;
+    position: absolute;
+    right: 0;
+    width: $px350;
+    z-index: 1;
+}
+
+.chatHeader {
+    background: red;
+}
+
+.chatBody {
+    background: green;
+    flex: auto;
+}
+
+.chatFooter {
+    background: yellow;
+}
