@@ -1,26 +1,125 @@
 @import "src/sass/themes/variables";
 
-.chatWindow {
+.chatWindow.open {
+    background-color: $white;
+    border-radius: $px6;
     bottom: $px40;
     box-shadow: $mediumShadow;
     display: flex;
     flex-direction: column;
-    height: $px350;
+    height: $px400;
+    margin: $rem1;
     position: absolute;
     right: 0;
     width: $px350;
     z-index: 1;
 }
 
-.chatHeader {
-    background: red;
+.chatWindow.min {
+    border-radius: $px6;
+    bottom: $px40;
+    box-shadow: $mediumShadow;
+    margin: $rem1;
+    position: absolute;
+    right: 0;
+    width: auto;
+    z-index: 1;
+}
+
+.chatWindow.close {
+    display: none;
+}
+
+.chatWindow.max {
+    border-radius: 0;
+    bottom: 0;
+    height: $vh100;
+    margin: 0;
+    z-index: 3;
 }
 
 .chatBody {
-    background: green;
+    padding: $rem1;
+}
+
+.chatHeader {
+    background-color: $almostBlack;
+    border-bottom-color: $grey;
+    border-bottom-style: solid;
+    border-bottom-width: $px1;
+    border-top-right-radius: $px6;
+    border-top-left-radius: $px6;
+    display: flex;
+    flex-direction: row;
+    padding: $rem1;
+}
+
+.chatWindow.max > .chatHeader {
+    border-radius: 0;
+}
+
+.closeChat {
+    color: $red;
+}
+
+.minChat {
+    margin-left: $px3;
+    color: $yellow;
+}
+
+.maxChat {
+    margin-left: $px3;
+    color: $green;
+}
+
+.chatHeaderLeft {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.chatHeaderRight,
+.chatBody,
+.chatFooterLeft {
     flex: auto;
 }
 
+.chatHeaderRight {
+    color: $white;
+    text-align: right;
+}
+
 .chatFooter {
-    background: yellow;
+    border-top-color: $grey;
+    border-top-style: solid;
+    border-top-width: $px1;
+    display: flex;
+    flex-direction: row;
+}
+
+.chatFooterRight {
+    background-color: $darkerGrey;
+    border-bottom-right-radius: $px6;
+    color: $white;
+    padding: $rem1;
+}
+
+.chatWindow.min .chatFooter {
+    border: none;
+}
+
+.chatWindow.min .chatFooterRight {
+    background-color: $almostBlack;
+    border-radius: $px6;
+}
+
+.chatWindow.max .chatFooterRight {
+    border-radius: 0;
+}
+
+.input.chat {
+    border: none;
+    margin: 0;
+    resize: none;
+    width: -webkit-fill-available;
 }

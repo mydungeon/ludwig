@@ -20,7 +20,7 @@ export default function HeaderSidebarLayout({ children }: HeaderSidebarProps) {
           <Outlet />
         </div>
       </Layout>
-      {/* <ChatWindow /> */}
+      <ChatWindow />
     </div>
   );
 }
