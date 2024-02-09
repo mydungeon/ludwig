@@ -138,6 +138,10 @@ a.siteLink.link:hover {
     @include themify('color', 'blackAndWhite');
 }
 
+thead {
+    @include themify('color', 'whiteAndLightestGrey');
+}
+
 .table td,
 .table th {
     @include themify('border-color', 'greyAndDarkGrey');
