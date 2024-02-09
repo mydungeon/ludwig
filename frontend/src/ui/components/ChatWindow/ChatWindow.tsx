@@ -10,6 +10,7 @@ import {
   faMessage,
   faReply,
 } from "@fortawesome/free-solid-svg-icons";
+import { ChatMessages } from "src/ui/components";
 import "./ChatWindow.styles.scss";
 
 export default function ChatWindow({ children }: ChatWindowProps) {
@@ -63,7 +64,9 @@ export default function ChatWindow({ children }: ChatWindowProps) {
         </div>
         <div className="chatHeaderRight">Jonny Dungeons</div>
       </div>
-      <div className="chatBody">Body</div>
+      <div className="chatBody">
+        <ChatMessages />
+      </div>
       <div className="chatFooter">
         <div className="chatFooterLeft">
           <textarea

@@ -1,0 +1,22 @@
+@import "src/sass/themes/variables";
+
+.chatMessages {
+    padding: 0;
+}
+
+.chatMessage {
+    border-radius: $px6;
+    color: $white;
+    margin: $px5;
+    padding: $rem1;
+}
+
+.chatMessage.sender {
+    background-color: $malibu;
+    margin-left: $rem2;
+}
+
+.chatMessage.recipient {
+    background-color: $lightGrey;
+    margin-right: $rem2;
+}

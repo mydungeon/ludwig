@@ -5,6 +5,7 @@ import Badge from "./Badge";
 import Breadcrumbs from "./Breadcrumbs";
 import Button from "./Button";
 import Carousel from "./Carousel";
+import ChatMessages from "./ChatMessages";
 import ChatWindow from "./ChatWindow";
 import Ellipse from "./Ellipse";
 import ErrorMessage from "./ErrorMessage";
@@ -45,6 +46,7 @@ export {
   Breadcrumbs,
   Button,
   Carousel,
+  ChatMessages,
   ChatWindow,
   Ellipse,
   ErrorMessage,

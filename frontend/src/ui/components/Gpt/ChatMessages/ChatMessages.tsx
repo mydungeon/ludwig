@@ -8,7 +8,7 @@ export default function ChatMessages({
   userName,
 }: ChatMessagesProps) {
   return (
-    <div className="chatMessages" data-testid="chatMessages">
+    <div className="chatGptMessages" data-testid="chatGptMessages">
       {messages.map(({ content, role }, index) => (
         <Gpt.ChatMessage key={index} message={content}>
           <Gpt.ChatSender isUser={role === "user"} userName={userName} />

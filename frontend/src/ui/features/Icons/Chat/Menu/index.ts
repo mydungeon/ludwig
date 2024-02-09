@@ -1,2 +1,2 @@
 import MenuIcon from "./Menu";
-export { MenuIcon };
+export default MenuIcon;

@@ -1,6 +1,6 @@
 @import "src/sass/themes/variables";
 
-.chatMessages {
+.chatGptMessages {
     display: flex;
     flex-direction: column-reverse;
     overflow-y: scroll;
@@ -11,6 +11,6 @@
     scrollbar-width: none;
 }
 
-.chatMessages::-webkit-scrollbar {
+.chatGptMessages::-webkit-scrollbar {
     display: none;
 }

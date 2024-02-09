@@ -1,5 +1,5 @@
-import { ArchiveIcon } from "./Chat";
-import { FileUploadIcon } from "./Chat";
+import { ArchiveIcon } from "./Gpt";
+import { FileUploadIcon } from "./Gpt";
 import {
   FilterInputClearIcon,
   FilterInputDropdownArrowIcon,
@@ -8,12 +8,12 @@ import FooterIcons from "./Footer";
 import { LeftCarouselArrowIcon } from "./CarouselArrows";
 import MenuIcon from "./Menu";
 import ModalCloseIcon from "./Modal";
-import { MoreIcon } from "./Chat";
+import { MoreIcon } from "./Gpt";
 import MultiSelectDownArrowIcon from "./MultiSelect";
 import PagerLeftArrowIcon from "./Pager";
 import PagerRightArrowIcon from "./Pager";
 import { RightCarouselArrowIcon } from "./CarouselArrows";
-import { SendIcon } from "./Chat";
+import { SendIcon } from "./Gpt";
 import SidebarToggleIcon from "./Sidebar";
 import SiteMenuCloseIcon from "./Site";
 import TableHeaderSortIcon from "./Table";

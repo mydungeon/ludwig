@@ -39,7 +39,8 @@
 }
 
 .chatBody {
-    padding: $rem1;
+    overflow: scroll;
+    padding: $px5;
 }
 
 .chatHeader {
