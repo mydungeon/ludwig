@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import classnames from "classnames";
 import ChatWindowProps from "./ChatWindow.types";
 import { ChatMessages } from "src/ui/components";
-import "./ChatWindow.styles.scss";
 import {
   CloseChatIcon,
   MaximizeChatIcon,
@@ -10,6 +9,7 @@ import {
   OpenChatIcon,
   SendChatIcon,
 } from "src/ui/features/Icons";
+import "./ChatWindow.styles.scss";
 
 function ChatHeader({
   onClose,
@@ -47,6 +47,18 @@ function ChatFooter() {
   );
 }
 
+function MinimizedChat({ onMinimize }: { onMinimize: () => void }) {
+  return (
+    <div className="chatWindow min">
+      <div className="chatFooter">
+        <div className="chatFooterRight">
+          <OpenChatIcon callback={onMinimize} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ChatWindow({ children }: ChatWindowProps) {
   const [closeChat, setCloseChat] = useState(false);
   const [minChat, setMinChat] = useState(true);
@@ -72,12 +84,6 @@ export default function ChatWindow({ children }: ChatWindowProps) {
       <ChatFooter />
     </div>
   ) : (
-    <div className="chatWindow min">
-      <div className="chatFooter">
-        <div className="chatFooterRight">
-          <OpenChatIcon callback={() => setMinChat(false)} />
-        </div>
-      </div>
-    </div>
+    <MinimizedChat onMinimize={() => setMinChat(false)} />
   );
 }
