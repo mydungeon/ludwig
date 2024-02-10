@@ -1,17 +1,51 @@
 import React, { useState } from "react";
 import classnames from "classnames";
 import ChatWindowProps from "./ChatWindow.types";
-import Icon from "src/ui/components/Icon";
-import {
-  faCircleChevronDown,
-  faCircleChevronUp,
-  faCircleMinus,
-  faCircleXmark,
-  faMessage,
-  faReply,
-} from "@fortawesome/free-solid-svg-icons";
 import { ChatMessages } from "src/ui/components";
 import "./ChatWindow.styles.scss";
+import {
+  CloseChatIcon,
+  MaximizeChatIcon,
+  MinimizeChatIcon,
+  OpenChatIcon,
+  SendChatIcon,
+} from "src/ui/features/Icons";
+
+function ChatHeader({
+  onClose,
+  onMinimize,
+  onMaximize,
+  maxChat,
+}: {
+  onClose: () => void;
+  onMinimize: () => void;
+  onMaximize: () => void;
+  maxChat: boolean;
+}) {
+  return (
+    <div className="chatHeader">
+      <div className="chatHeaderLeft">
+        <CloseChatIcon callback={onClose} />
+        <MinimizeChatIcon callback={onMinimize} />
+        <MaximizeChatIcon callback={onMaximize} toggle={maxChat} />
+      </div>
+      <div className="chatHeaderRight">Jonny Dungeons</div>
+    </div>
+  );
+}
+
+function ChatFooter() {
+  return (
+    <div className="chatFooter">
+      <div className="chatFooterLeft">
+        <textarea className="input chat" name="chat" placeholder="Message..." />
+      </div>
+      <div className="chatFooterRight">
+        <SendChatIcon callback={() => console.log("send a chat")} />
+      </div>
+    </div>
+  );
+}
 
 export default function ChatWindow({ children }: ChatWindowProps) {
   const [closeChat, setCloseChat] = useState(false);
@@ -26,69 +60,22 @@ export default function ChatWindow({ children }: ChatWindowProps) {
       })}
       data-testid="chatWindow"
     >
-      <div className="chatHeader">
-        <div className="chatHeaderLeft">
-          <div>
-            <Icon
-              classNames="closeChat"
-              handleClick={() => setCloseChat(true)}
-              icon={faCircleXmark}
-              size="xl"
-            />
-          </div>
-          <div>
-            <Icon
-              classNames="minChat"
-              handleClick={() => setMinChat(true)}
-              icon={faCircleMinus}
-              size="xl"
-            />
-          </div>
-          <div>
-            {maxChat ? (
-              <Icon
-                classNames="maxChat"
-                handleClick={() => setMaxChat(false)}
-                icon={faCircleChevronDown}
-                size="xl"
-              />
-            ) : (
-              <Icon
-                classNames="maxChat"
-                handleClick={() => setMaxChat(true)}
-                icon={faCircleChevronUp}
-                size="xl"
-              />
-            )}
-          </div>
-        </div>
-        <div className="chatHeaderRight">Jonny Dungeons</div>
-      </div>
+      <ChatHeader
+        onClose={() => setCloseChat(true)}
+        onMinimize={() => setMinChat(true)}
+        onMaximize={() => setMaxChat(!maxChat)}
+        maxChat={maxChat}
+      />
       <div className="chatBody">
         <ChatMessages />
       </div>
-      <div className="chatFooter">
-        <div className="chatFooterLeft">
-          <textarea
-            className="input chat"
-            name="chat"
-            placeholder="Message..."
-          />
-        </div>
-        <div className="chatFooterRight">
-          <Icon icon={faReply} size="xl" />
-        </div>
-      </div>
+      <ChatFooter />
     </div>
   ) : (
     <div className="chatWindow min">
       <div className="chatFooter">
         <div className="chatFooterRight">
-          <Icon
-            icon={faMessage}
-            handleClick={() => setMinChat(false)}
-            size="xl"
-          />
+          <OpenChatIcon callback={() => setMinChat(false)} />
         </div>
       </div>
     </div>

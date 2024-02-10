@@ -1,19 +1,24 @@
-import { ArchiveIcon } from "./Gpt";
-import { FileUploadIcon } from "./Gpt";
+import {
+  CloseChatIcon,
+  MaximizeChatIcon,
+  MinimizeChatIcon,
+  OpenChatIcon,
+  SendChatIcon,
+} from "./Chat";
+import { ArchiveIcon, FileUploadIcon, MoreIcon, SendIcon } from "./Gpt";
 import {
   FilterInputClearIcon,
   FilterInputDropdownArrowIcon,
 } from "./FilterInput";
+import {
+  LeftCarouselArrowIcon,
+  RightCarouselArrowIcon,
+} from "./CarouselArrows";
+import { PagerLeftArrowIcon, PagerRightArrowIcon } from "./Pager";
 import FooterIcons from "./Footer";
-import { LeftCarouselArrowIcon } from "./CarouselArrows";
 import MenuIcon from "./Menu";
 import ModalCloseIcon from "./Modal";
-import { MoreIcon } from "./Gpt";
 import MultiSelectDownArrowIcon from "./MultiSelect";
-import PagerLeftArrowIcon from "./Pager";
-import PagerRightArrowIcon from "./Pager";
-import { RightCarouselArrowIcon } from "./CarouselArrows";
-import { SendIcon } from "./Gpt";
 import SidebarToggleIcon from "./Sidebar";
 import SiteMenuCloseIcon from "./Site";
 import TableHeaderSortIcon from "./Table";
@@ -22,19 +27,24 @@ import ThemeToggleIcon from "./Theme";
 
 export {
   ArchiveIcon,
+  CloseChatIcon,
   FileUploadIcon,
   FilterInputClearIcon,
   FilterInputDropdownArrowIcon,
   FooterIcons,
   LeftCarouselArrowIcon,
+  MaximizeChatIcon,
   MenuIcon,
+  MinimizeChatIcon,
   ModalCloseIcon,
   MoreIcon,
   MultiSelectDownArrowIcon,
+  OpenChatIcon,
   PagerLeftArrowIcon,
   PagerRightArrowIcon,
   RightCarouselArrowIcon,
   SendIcon,
+  SendChatIcon,
   SidebarToggleIcon,
   SiteMenuCloseIcon,
   TableHeaderSortIcon,

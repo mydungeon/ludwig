@@ -33,6 +33,10 @@ button {
     @include themify('color', 'blackAndWhite');
 }
 
+.input.chat {
+    background: white;
+}
+
 a.siteLink.button:hover,
 button.register:hover,
 button:hover {
@@ -173,25 +177,25 @@ thead {
 }
 
 .tip {
-    @include themify('background', 'blackAndLightGrey');
-    @include themify('color', 'whiteAndBlack');
+    @include themify('background', 'lighterAndDarkerGrey');
+    @include themify('color', 'blackAndWhite');
 }
 
 .tip.topLeft,
 .tip.top {
-        @include themifyPseudo('before', 'border-top-color', 'blackAndLightGrey');
+        @include themifyPseudo('before', 'border-top-color', 'lighterAndDarkerGrey');
 }
 
 .tip.right {
-    @include themifyPseudo('before','border-right-color', 'blackAndLightGrey');
+    @include themifyPseudo('before','border-right-color', 'lighterAndDarkerGrey');
 }
 
 .tip.bottom {
-    @include themifyPseudo('before','border-bottom-color', 'blackAndLightGrey');
+    @include themifyPseudo('before','border-bottom-color', 'lighterAndDarkerGrey');
 }
 
 .tip.left {
-    @include themifyPseudo('before','border-left-color', 'blackAndLightGrey');
+    @include themifyPseudo('before','border-left-color', 'lighterAndDarkerGrey');
 }
 
 li.historyItem > div {

@@ -1,2 +1,3 @@
+import PagerLeftArrowIcon from "./LeftArrow";
 import PagerRightArrowIcon from "./RightArrow";
-export default PagerRightArrowIcon;
+export { PagerLeftArrowIcon, PagerRightArrowIcon };
