@@ -1,5 +1,5 @@
 import React from "react";
-import { faCode, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faRocket } from "@fortawesome/free-solid-svg-icons";
 import { Icon, Tooltip } from "src/ui/components";
 import { TooltipDirection } from "src/ui/components/Tooltip/Tooltip.types";
 import { Link } from "react-router-dom";
@@ -9,9 +9,12 @@ export default function FooterIcons() {
   return (
     <div className="footerIcons">
       <div>
-        <Tooltip direction={TooltipDirection.TOP} message="I wuz made with luv">
-          <Link to="/credits">
-            <Icon icon={faHeart} />
+        <Tooltip
+          direction={TooltipDirection.TOP}
+          message="Made with the latest tech"
+        >
+          <Link to="/tech">
+            <Icon icon={faRocket} />
           </Link>
         </Tooltip>
       </div>

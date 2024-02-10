@@ -28,6 +28,11 @@ export const VENDOR_IMAGES = [
       fileName: "eslint.svg",
       to: "https://eslint.org/",
     },
+    {
+      alt: "WebSockets",
+      fileName: "websockets.svg",
+      to: "https://github.com/websockets",
+    },
   ],
   [
     { alt: "Open AI", fileName: "openai.svg", to: "https://openai.com/" },

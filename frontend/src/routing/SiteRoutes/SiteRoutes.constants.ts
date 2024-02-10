@@ -7,7 +7,6 @@ import {
 import { Authorize } from "src/ui/components";
 import { AdminPage } from "src/ui/pages";
 import { ChangePasswordPage } from "src/ui/pages";
-import { CreditsPage } from "src/ui/pages";
 import { DroogAiPage } from "src/ui/pages";
 import { EditProfilePage } from "src/ui/pages";
 import { EditRolePage } from "src/ui/pages";
@@ -18,6 +17,7 @@ import { MetricsPage } from "src/ui/pages";
 import { NotFoundPage } from "src/ui/pages";
 import { ProfilePage } from "src/ui/pages";
 import { RegisterPage } from "src/ui/pages";
+import { TechPage } from "src/ui/pages";
 import { UnauthorizedPage } from "src/ui/pages";
 import { UsersPage } from "src/ui/pages";
 import { UserRoles } from "src/ui/features/User/User.types";
@@ -34,9 +34,9 @@ export const ROUTING = [
         element: HomePage,
       },
       {
-        key: "credits",
-        path: "credits",
-        element: CreditsPage,
+        key: "tech",
+        path: "tech",
+        element: TechPage,
       },
     ],
   },
