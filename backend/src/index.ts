@@ -5,6 +5,7 @@ import morgan from "morgan";
 import config from "config";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import { WebSocket, WebSocketServer } from "ws";
 import connectDB from "./utils/connectDB";
 import authRouter from "./routes/auth.route";
 import gptCompletionsRouter from "./routes/gpt.compl.route";
@@ -35,6 +36,23 @@ app.use(
     origin: ["http://localhost:3000"],
   })
 );
+// ARTICLE: https://medium.com/@vitaliykorzenkoua/working-with-websocket-in-node-js-using-typescript-1aebb8a06bd6
+const wss = new WebSocketServer({ server: app });
+
+wss.on("connection", (ws: WebSocket) => {
+  console.log("New client connected");
+
+  ws.on("message", (message: string) => {
+    console.log(`Received message: ${message}`);
+    wss.clients.forEach((client) => {
+      client.send(`Server received your message: ${message}`);
+    });
+  });
+
+  ws.on("close", () => {
+    console.log("Client disconnected");
+  });
+});
 
 // Routes
 app.use("/api/auth", authRouter);
