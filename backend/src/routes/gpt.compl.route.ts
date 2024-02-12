@@ -8,7 +8,7 @@ const router = express.Router();
  * /api/gpt/completions:
  *  post:
  *     tags:
- *     - Chat GPT
+ *     - Chat GPT Completions
  *     summary: This creates chat gpt completions
  *     requestBody:
  *      required: true

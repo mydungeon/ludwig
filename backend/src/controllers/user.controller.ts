@@ -1,9 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import {
-  findAllUsers,
-  updateUser,
-  updateUserRoles,
-} from "../services/user.service";
+import { findAllUsers, updateUser } from "../services/user.service";
 import { UpdateRatingInput, UpdateUserInput } from "../schema/user.schema";
 import { getNowToUnixTimestamp } from "../utils/date";
 

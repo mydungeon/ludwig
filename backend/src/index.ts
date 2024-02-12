@@ -8,6 +8,7 @@ import cookieParser from "cookie-parser";
 import { WebSocket, WebSocketServer } from "ws";
 import connectDB from "./utils/connectDB";
 import authRouter from "./routes/auth.route";
+import chatRoute from "./routes/chat.route";
 import gptCompletionsRouter from "./routes/gpt.compl.route";
 import gptMessagesRouter from "./routes/gpt.msg.route";
 import gptThreadsRouter from "./routes/gpt.thrd.route";
@@ -56,6 +57,7 @@ wss.on("connection", (ws: WebSocket) => {
 
 // Routes
 app.use("/api/auth", authRouter);
+app.use("/api/chat", chatRoute);
 app.use("/api/gpt/completions", gptCompletionsRouter);
 app.use("/api/gpt/threads", gptThreadsRouter);
 app.use("/api/gpt/messages", gptMessagesRouter);
