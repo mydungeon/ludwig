@@ -4,6 +4,6 @@ import "@testing-library/jest-dom";
 import UserRoles from "./UserRoles";
 
 test("loads and displays UserRoles component", async () => {
-  render(<UserRoles />);
+  render(<UserRoles roles={[]} />);
   expect(screen.getByTestId("userRoles")).toBeTruthy();
 });
