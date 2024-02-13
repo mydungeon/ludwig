@@ -1,14 +1,14 @@
 import React from "react";
 import { useAppSelector } from "src/redux/store";
 import { Redirect, usePreloader, useRedirect } from "src/hooks";
-import { useUpdateMeMutation } from "src/redux/api/user.api";
+import { useUpdateMeMutation } from "src/redux/api/profile.api";
 import { Form, FormFooter, Input, SiteLink, Wrapper } from "src/ui/components";
 import { SubmitButton } from "src/ui/features/Buttons";
 import { validationSchema } from "./Profile.schema";
 import "./Profile.styles.scss";
 
 export default function EditProfileForm() {
-  const defaultValues = useAppSelector((state) => state.userState.user);
+  const defaultValues = useAppSelector((state) => state.profileState.profile);
   const [updateMe, { isLoading, isSuccess }] = useUpdateMeMutation();
   const isPreloaderSuccess = isLoading && !isSuccess;
   const isRedirectSuccess = !isLoading && isSuccess;

@@ -1,20 +1,13 @@
 import express from "express";
 import {
-  getAllUsersHandler,
-  getMeHandler,
-  updateMeHandler,
+  getUserHandler,
   updateMyRolesHandler,
-  updateRatingHandler,
 } from "../controllers/user.controller";
 import { deserializeUser } from "../middleware/deserializeUser";
 import { requireUser } from "../middleware/requireUser";
 import { restrictTo } from "../middleware/restrictTo";
 import { validate } from "../middleware/validate";
-import {
-  updateRatingSchema,
-  updateUserRolesSchema,
-  updateUserSchema,
-} from "../schema/user.schema";
+import { updateUserRolesSchema } from "../schema/user.schema";
 
 const router = express.Router();
 
@@ -22,65 +15,26 @@ router.use(deserializeUser, requireUser);
 
 /**
  * @openapi
- * /api/users:
+ * /api/user/{userId}:
  *   get:
  *     tags:
  *     - User Api
- *     description: Get all users
+ *     description: Get user
+ *     parameters:
+ *      - in: path
+ *        name: userId
+ *        schema:
+ *          type: string
+ *        required: true
  *     responses:
  *       200:
  *         description: Returns a success status, users data and a success message
  */
-router.get("/", restrictTo("admin"), getAllUsersHandler);
+router.get("/:userId", restrictTo("admin"), getUserHandler);
 
 /**
  * @openapi
- * /api/users/me:
- *   get:
- *     tags:
- *     - User Api
- *     description: Get the current logged in user's profile
- *     responses:
- *       200:
- *         description: Returns a success status, user data and a success message
- */
-router.get("/me", getMeHandler);
-
-/**
- * @openapi
- * '/api/users/me':
- *  put:
- *     tags:
- *     - User Api
- *     summary: Update the current logged in user's profile
- *     requestBody:
- *      required: true
- *      content:
- *        application/json:
- *           schema:
- *            type: object
- *            properties:
- *              name:
- *                type: string
- *                default: LudwigVonV2
- *              email:
- *                type: string
- *                default: ludwigvonv2@ludwigvon.com
- *     responses:
- *      200:
- *        description: Updated
- *      409:
- *        description: Conflict
- *      404:
- *        description: Not Found
- *      500:
- *        description: Server Error
- */
-router.put("/me", validate(updateUserSchema), updateMeHandler);
-
-/**
- * @openapi
- * '/api/users/me/roles':
+ * '/api/user/roles':
  *  put:
  *     tags:
  *     - User Api
@@ -107,35 +61,6 @@ router.put("/me", validate(updateUserSchema), updateMeHandler);
  *      500:
  *        description: Server Error
  */
-router.put("/me/roles", validate(updateUserRolesSchema), updateMyRolesHandler);
-
-/**
- * @openapi
- * '/api/users/me/rating':
- *  put:
- *     tags:
- *     - User Api
- *     summary: Update the current logged in user's rating
- *     requestBody:
- *      required: true
- *      content:
- *        application/json:
- *           schema:
- *            type: object
- *            properties:
- *              rating:
- *                type: number
- *                default: 100
- *     responses:
- *      200:
- *        description: Updated
- *      409:
- *        description: Conflict
- *      404:
- *        description: Not Found
- *      500:
- *        description: Server Error
- */
-router.put("/me/rating", validate(updateRatingSchema), updateRatingHandler);
+router.put("/roles", validate(updateUserRolesSchema), updateMyRolesHandler);
 
 export default router;

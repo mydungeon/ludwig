@@ -7,11 +7,12 @@ import {
 } from "../schema/user.schema";
 import {
   createUser,
+  findMe,
   findUser,
   findUserById,
   signToken,
   updateUser,
-} from "../services/user.service";
+} from "../services/users.service";
 import AppError from "../utils/appError";
 import redisClient from "../utils/connectRedis";
 import { signJwt, verifyJwt } from "../utils/jwt";
@@ -82,7 +83,7 @@ export const loginHandler = async (
 ) => {
   try {
     // Get the user from the collection
-    const user = await findUser({ email: req.body.email });
+    const user = await findMe({ email: req.body.email });
     // Check if user exist and password is correct
     if (
       !user ||

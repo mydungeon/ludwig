@@ -22,7 +22,7 @@ const router = express.Router();
  *  /api/auth/register:
  *  post:
  *     tags:
- *     - User Api
+ *     - Auth Api
  *     summary: Register a user
  *     requestBody:
  *      required: true
@@ -65,7 +65,7 @@ router.post("/register", validate(createUserSchema), registerHandler);
  *  /api/auth/login:
  *  post:
  *     tags:
- *     - User Api
+ *     - Auth Api
  *     summary: Login a user
  *     requestBody:
  *      required: true
@@ -98,7 +98,7 @@ router.post("/login", validate(loginUserSchema), loginHandler);
  *  /api/auth/changePassword:
  *  put:
  *     tags:
- *     - User Api
+ *     - Auth Api
  *     summary: Change password for a logged in user
  *     requestBody:
  *      required: true
@@ -146,7 +146,7 @@ router.get("/refresh", refreshAccessTokenHandler);
  * /api/auth/logout:
  *   get:
  *     tags:
- *     - User Api
+ *     - Auth Api
  *     description: Logout a user
  *     responses:
  *       200:

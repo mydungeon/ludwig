@@ -3,6 +3,10 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { authApi } from "./api/auth.api";
 import { userApi } from "./api/user.api";
 import userReducer from "./features/user.slice";
+import { profileApi } from "./api/profile.api";
+import profileReducer from "./features/profile.slice";
+import { usersApi } from "./api/users.api";
+import usersReducer from "./features/users.slice";
 import { alertLoggerMiddleware } from "src/middleWare/AlertMiddleware";
 import uiSlice from "./features/ui.slice";
 import { gptApi } from "./api/gpt.api";
@@ -13,7 +17,11 @@ export const store = configureStore({
     [authApi.reducerPath]: authApi.reducer,
     [gptApi.reducerPath]: gptApi.reducer,
     [userApi.reducerPath]: userApi.reducer,
+    [usersApi.reducerPath]: usersApi.reducer,
+    [profileApi.reducerPath]: profileApi.reducer,
+    usersState: usersReducer,
     userState: userReducer,
+    profileState: profileReducer,
     uiState: uiSlice,
     gptState: gptReducer,
   },
@@ -22,6 +30,8 @@ export const store = configureStore({
     getDefaultMiddleware({}).concat([
       authApi.middleware,
       userApi.middleware,
+      usersApi.middleware,
+      profileApi.middleware,
       gptApi.middleware,
       alertLoggerMiddleware,
     ]),

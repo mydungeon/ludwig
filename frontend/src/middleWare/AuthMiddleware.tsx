@@ -1,6 +1,6 @@
 import React from "react";
 import { useCookies } from "react-cookie";
-import { userApi } from "src/redux/api/user.api";
+import { profileApi } from "src/redux/api/profile.api";
 import usePreloader from "src/hooks/usePreloader";
 
 type IAuthMiddleware = {
@@ -9,7 +9,7 @@ type IAuthMiddleware = {
 
 export default function AuthMiddleware({ children }: IAuthMiddleware) {
   const [cookies] = useCookies(["logged_in"]);
-  const { isLoading } = userApi.endpoints.getMe.useQuery(null, {
+  const { isLoading } = profileApi.endpoints.getMe.useQuery(null, {
     skip: !cookies.logged_in,
   });
 

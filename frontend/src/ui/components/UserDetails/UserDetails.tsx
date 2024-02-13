@@ -3,7 +3,7 @@ import { useAppSelector } from "src/redux/store";
 import "./UserDetails.styles.scss";
 
 export default function UserDetails() {
-  const user = useAppSelector((state) => state.userState.user);
+  const user = useAppSelector((state) => state.profileState.profile);
   return (
     <div className="userDetails" data-testid="userDetails">
       <div>

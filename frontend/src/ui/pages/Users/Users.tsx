@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLazyGetUsersQuery } from "src/redux/api/user.api";
+import { useLazyGetUsersQuery } from "src/redux/api/users.api";
 import { IUser } from "src/redux/api/types";
 import { Page } from "src/ui/components";
 import { SortableTable } from "src/ui/features/Tables";

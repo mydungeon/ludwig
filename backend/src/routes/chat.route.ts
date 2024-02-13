@@ -1,11 +1,14 @@
 import express from "express";
+import { deserializeUser } from "../middleware/deserializeUser";
+import { requireUser } from "../middleware/requireUser";
 import { getMessages, sendMessage } from "../controllers/chat.controller";
 
 const router = express.Router();
+router.use(deserializeUser, requireUser);
 
 /**
  * @openapi
- * /api/chat/{conversationId}/messages/{receiver}:
+ * /api/chat/{chatId}/messages/{receiver}:
  *   get:
  *     tags:
  *     - Chat
@@ -13,7 +16,7 @@ const router = express.Router();
  *     description: Retrieve messages by conversation id;
  *     parameters:
  *      - in: path
- *        name: conversationId
+ *        name: chatId
  *        schema:
  *          type: string
  *        required: true
@@ -26,11 +29,11 @@ const router = express.Router();
  *       200:
  *         description: Gets messages for the chat.
  */
-router.get("/:conversationId/messages/:receiver", getMessages);
+router.get("/:chatId/messages/:receiver", getMessages);
 
 /**
  * @openapi
- * /api/chat/{conversationId}/message/{receiver}:
+ * /api/chat/{chatId}/message/{receiver}:
  *   post:
  *     security:
  *      - bearerAuth: []
@@ -56,7 +59,7 @@ router.get("/:conversationId/messages/:receiver", getMessages);
  *                default: This is a test message from 65bfefaebf758e19515f694c
  *     parameters:
  *      - in: path
- *        name: conversationId
+ *        name: chatId
  *        schema:
  *          type: string
  *        required: true
@@ -69,6 +72,6 @@ router.get("/:conversationId/messages/:receiver", getMessages);
  *       200:
  *         description: Sends the message to the receiver.
  */
-router.post("/:conversationId/message/:receiver", sendMessage);
+router.post("/:chatId/message/:receiver", sendMessage);
 
 export default router;

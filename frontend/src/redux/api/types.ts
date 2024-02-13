@@ -24,5 +24,10 @@ export interface IUser {
 }
 export interface IUserState {
   user: IUser | null;
+}
+export interface IProfileState {
+  profile: IUser | null;
+}
+export interface IUsersState {
   users: IUser[] | [];
 }

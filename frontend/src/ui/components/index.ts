@@ -35,6 +35,7 @@ import Tooltip from "./Tooltip";
 import UserDetails from "./UserDetails";
 import UserPfp from "./UserPfp";
 import UserProfile from "./UserProfile";
+import UserRoles from "./UserRoles";
 import { VENDOR_IMAGES } from "./ImageGrid/ImageGrid.constants";
 import Wrapper from "./Wrapper";
 
@@ -76,6 +77,7 @@ export {
   UserDetails,
   UserPfp,
   UserProfile,
+  UserRoles,
   VENDOR_IMAGES,
   Wrapper,
 };

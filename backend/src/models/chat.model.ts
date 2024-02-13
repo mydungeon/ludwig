@@ -1,5 +1,5 @@
 import { getModelForClass, modelOptions, prop } from "@typegoose/typegoose";
-import { object } from "zod";
+import { ObjectId } from "mongoose";
 
 @modelOptions({
   schemaOptions: {
@@ -7,20 +7,20 @@ import { object } from "zod";
   },
 })
 export class Chat {
-  @prop({ required: true })
-  conversationId: string;
+  @prop({ auto: true })
+  _id: ObjectId;
 
   @prop({ type: [String] })
   members: string[];
 
-  @prop({ ref: "Message" })
-  messages?: Message[];
+  @prop()
+  totalMessages: number;
 
   @prop({ default: null })
-  timestamp: EpochTimeStamp;
+  createdAt: EpochTimeStamp;
 
-  @prop()
-  totalMessage: number;
+  @prop({ default: null })
+  updatedAt: EpochTimeStamp;
 }
 
 @modelOptions({
@@ -29,6 +29,12 @@ export class Chat {
   },
 })
 export class Message {
+  @prop({ auto: true })
+  _id: ObjectId;
+
+  @prop()
+  chatId: ObjectId;
+
   @prop({ required: true })
   sender: string;
 
@@ -36,7 +42,10 @@ export class Message {
   message: string;
 
   @prop({ default: null })
-  timestamp: EpochTimeStamp;
+  createdAt: EpochTimeStamp;
+
+  @prop({ default: null })
+  updatedAt: EpochTimeStamp;
 }
 
 const chatModel = getModelForClass(Chat);

@@ -14,6 +14,8 @@ import gptMessagesRouter from "./routes/gpt.msg.route";
 import gptThreadsRouter from "./routes/gpt.thrd.route";
 import healthRouter from "./routes/health.route";
 import userRouter from "./routes/user.route";
+import usersRouter from "./routes/users.route";
+import profileRouter from "./routes/profile.route";
 import seedRouter from "./routes/seed.route";
 import swaggerDocs from "./utils/swagger";
 
@@ -63,7 +65,9 @@ app.use("/api/gpt/threads", gptThreadsRouter);
 app.use("/api/gpt/messages", gptMessagesRouter);
 app.use("/api/health", healthRouter);
 app.use("/api/seed", seedRouter);
-app.use("/api/users", userRouter);
+app.use("/api/user", userRouter);
+app.use("/api/users", usersRouter);
+app.use("/api/profile", profileRouter);
 app.use("/public", express.static(path.join(__dirname, "public")));
 swaggerDocs(app, 3000);
 

@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { CreateMessageInput } from "../schema/chat.schema";
-import { createMessage } from "../services/chat.service";
+import { createMessage, getChat } from "../services/chat.service";
 import { getNowToUnixTimestamp } from "../utils/date";
 
 export const getMessages = async (
@@ -8,44 +8,45 @@ export const getMessages = async (
   res: Response,
   next: NextFunction
 ) => {
+  const { chatId, receiver } = req.params;
+  const chat = await getChat({ chatId, receiver });
   try {
     res.status(200).json({
       status: "success",
-      message: "I am alive",
+      data: chat,
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log("get chat error", error);
+  }
 };
 
 export const sendMessage = async (
-  req: Request<
-    { conversationId: string; receiver: string },
-    {},
-    CreateMessageInput
-  >,
+  req: Request<{ chatId: string; receiver: string }, {}, CreateMessageInput>,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const { conversationId, receiver } = req.params;
-    const { user_id } = res.locals;
+    const { chatId, receiver } = req.params;
+    const { _id } = res.locals.user;
     const members = [];
     if (receiver) {
       members.push(receiver);
     }
-    if (user_id) {
-      members.push(user_id);
+    if (_id) {
+      members.push(_id.toString());
     }
     console.log("sendMessage");
     await createMessage(
+      receiver,
       {
-        conversationId,
+        chatId,
         members,
         timestamp: getNowToUnixTimestamp(),
       },
       {
-        sender: res.locals.user_id,
+        sender: _id,
         message: req.body.message,
-        timestamp: getNowToUnixTimestamp(),
+        timestamp: Number(getNowToUnixTimestamp()),
       }
     );
     res.status(200).json({

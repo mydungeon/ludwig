@@ -4,7 +4,9 @@ import { useAppSelector } from "src/redux/store";
 import Badge from "../Badge";
 
 export default function UserRoles() {
-  const userRoles = useAppSelector((state) => state.userState.user?.roles);
+  const userRoles = useAppSelector(
+    (state) => state.profileState.profile?.roles
+  );
   return (
     <div className="userRoles" data-testid="userRoles">
       {userRoles?.map((role, index) => (
