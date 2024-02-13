@@ -1,20 +1,8 @@
 import express from "express";
-import {
-  getAllUsersHandler,
-  getMeHandler,
-  updateMeHandler,
-  updateMyRolesHandler,
-  updateRatingHandler,
-} from "../controllers/users.controller";
+import { getAllUsersHandler } from "../controllers/users.controller";
 import { deserializeUser } from "../middleware/deserializeUser";
 import { requireUser } from "../middleware/requireUser";
 import { restrictTo } from "../middleware/restrictTo";
-import { validate } from "../middleware/validate";
-import {
-  updateRatingSchema,
-  updateUserRolesSchema,
-  updateUserSchema,
-} from "../schema/user.schema";
 
 const router = express.Router();
 

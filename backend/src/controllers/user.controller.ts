@@ -1,7 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { findUser, updateUser } from "../services/user.service";
-import { UpdateUserInput } from "../schema/user.schema";
-import { getNowToUnixTimestamp } from "../utils/date";
+import { findUser } from "../services/user.service";
 
 export const getUserHandler = async (
   req: Request,
