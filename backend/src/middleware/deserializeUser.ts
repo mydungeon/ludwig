@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { findUserById } from "../services/users.service";
+import { findUserById } from "../services/profile.service";
 import AppError from "../utils/appError";
 import redisClient from "../utils/connectRedis";
 import { verifyJwt } from "../utils/jwt";

@@ -11,7 +11,7 @@ export const usersApi = createApi({
     getUsers: builder.query<IUser[], void>({
       query() {
         return {
-          url: "users/",
+          url: "users",
           method: "GET",
           credentials: "include",
         };

@@ -14,7 +14,7 @@ export const profileApi = createApi({
     getMe: builder.query<IUser, null>({
       query() {
         return {
-          url: "users/me",
+          url: "profile",
           credentials: "include",
         };
       },
@@ -32,7 +32,7 @@ export const profileApi = createApi({
       query(data) {
         return {
           credentials: "include",
-          url: "users/me",
+          url: "profile",
           method: "PUT",
           body: data,
         };
@@ -45,7 +45,7 @@ export const profileApi = createApi({
       query(data) {
         return {
           credentials: "include",
-          url: "users/me/roles",
+          url: "profile/roles",
           method: "PUT",
           body: data,
         };
@@ -59,7 +59,7 @@ export const profileApi = createApi({
         console.log("data", data);
         return {
           credentials: "include",
-          url: "users/me/rating",
+          url: "profile/rating",
           method: "PUT",
           body: data,
         };

@@ -8,11 +8,10 @@ import {
 import {
   createUser,
   findMe,
-  findUser,
   findUserById,
   signToken,
   updateUser,
-} from "../services/users.service";
+} from "../services/profile.service";
 import AppError from "../utils/appError";
 import redisClient from "../utils/connectRedis";
 import { signJwt, verifyJwt } from "../utils/jwt";
@@ -205,7 +204,7 @@ export const changePasswordHandler = async (
   try {
     const id = res.locals.user._id;
     const email = res.locals.user.email;
-    const user = await findUser({ email });
+    const user = await findMe({ email });
     if (
       user &&
       (await user.comparePasswords(user.password, req.body.currentPassword))

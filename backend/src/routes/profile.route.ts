@@ -3,11 +3,16 @@ import {
   getMeHandler,
   updateMeHandler,
   updateRatingHandler,
-} from "../controllers/users.controller";
+  updateMyRolesHandler,
+} from "../controllers/profile.controller";
 import { deserializeUser } from "../middleware/deserializeUser";
 import { requireUser } from "../middleware/requireUser";
 import { validate } from "../middleware/validate";
-import { updateRatingSchema, updateUserSchema } from "../schema/user.schema";
+import {
+  updateRatingSchema,
+  updateUserSchema,
+  updateUserRolesSchema,
+} from "../schema/user.schema";
 
 const router = express.Router();
 
@@ -57,6 +62,37 @@ router.get("/", getMeHandler);
  *        description: Server Error
  */
 router.put("/", validate(updateUserSchema), updateMeHandler);
+
+/**
+ * @openapi
+ * '/api/profile/roles':
+ *  put:
+ *     tags:
+ *     - Profile Api
+ *     summary: Update the current logged in user's roles
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *           schema:
+ *            type: object
+ *            properties:
+ *              roles:
+ *                type: array
+ *                items:
+ *                  type: string
+ *                  default: user
+ *     responses:
+ *      200:
+ *        description: Updated
+ *      409:
+ *        description: Conflict
+ *      404:
+ *        description: Not Found
+ *      500:
+ *        description: Server Error
+ */
+router.put("/roles", validate(updateUserRolesSchema), updateMyRolesHandler);
 
 /**
  * @openapi

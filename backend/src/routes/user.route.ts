@@ -32,35 +32,4 @@ router.use(deserializeUser, requireUser);
  */
 router.get("/:userId", restrictTo("admin"), getUserHandler);
 
-/**
- * @openapi
- * '/api/user/roles':
- *  put:
- *     tags:
- *     - User Api
- *     summary: Update the current logged in user's roles
- *     requestBody:
- *      required: true
- *      content:
- *        application/json:
- *           schema:
- *            type: object
- *            properties:
- *              roles:
- *                type: array
- *                items:
- *                  type: string
- *                  default: user
- *     responses:
- *      200:
- *        description: Updated
- *      409:
- *        description: Conflict
- *      404:
- *        description: Not Found
- *      500:
- *        description: Server Error
- */
-router.put("/roles", validate(updateUserRolesSchema), updateMyRolesHandler);
-
 export default router;
