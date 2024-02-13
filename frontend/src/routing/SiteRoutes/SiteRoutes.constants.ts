@@ -19,6 +19,7 @@ import { ProfilePage } from "src/ui/pages";
 import { RegisterPage } from "src/ui/pages";
 import { TechPage } from "src/ui/pages";
 import { UnauthorizedPage } from "src/ui/pages";
+import { UserPage } from "src/ui/pages";
 import { UsersPage } from "src/ui/pages";
 import { UserRoles } from "src/ui/features/User/User.types";
 
@@ -127,6 +128,18 @@ export const ROUTING = [
             key: "rating",
             path: "rating",
             element: RatingPage,
+          },
+        ],
+      },
+      {
+        key: "parent",
+        authorize: Authorize,
+        roles: UserRoles.USER,
+        routes: [
+          {
+            key: "user/:userId",
+            path: "user/:userId",
+            element: UserPage,
           },
         ],
       },

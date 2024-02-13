@@ -1,19 +1,35 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
-import { setUser } from "src/redux/features/user.slice";
 import customFetchBase from "./customFetchBase";
 import { IUser } from "./types";
-import { UpdatePayloadType } from "src/ui/features/Forms/Edit/Profile/Profile.schema";
 import { UpdateRolePayloadType } from "src/ui/features/Forms/Edit/Role/Role.schema";
+import { setUser } from "../features/user.slice";
 export const userApi = createApi({
   reducerPath: "userApi",
   baseQuery: customFetchBase,
   tagTypes: ["User"],
   endpoints: (builder) => ({
-    updateMyRoles: builder.mutation<IUser, UpdateRolePayloadType>({
+    getUser: builder.query<IUser, string>({
+      query(userId) {
+        return {
+          credentials: "include",
+          url: `user/${userId}`,
+          method: "GET",
+        };
+      },
+      transformResponse: (result: { data: { user: IUser } }) =>
+        result.data.user,
+      async onQueryStarted(args, { dispatch, queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled;
+          dispatch(setUser(data));
+        } catch (error) {}
+      },
+    }),
+    updateUserRoles: builder.mutation<IUser, UpdateRolePayloadType>({
       query(data) {
         return {
           credentials: "include",
-          url: "users/me/roles",
+          url: "user/roles",
           method: "PUT",
           body: data,
         };
@@ -23,4 +39,8 @@ export const userApi = createApi({
   }),
 });
 
-export const { useUpdateMyRolesMutation } = userApi;
+export const {
+  useGetUserQuery,
+  useLazyGetUserQuery,
+  useUpdateUserRolesMutation,
+} = userApi;

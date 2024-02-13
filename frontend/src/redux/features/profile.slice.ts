@@ -9,6 +9,7 @@ export const profileSlice = createSlice({
   initialState,
   name: "profileSlice",
   reducers: {
+    logout: () => initialState,
     setProfile: (state, action: PayloadAction<IUser>) => {
       state.profile = action.payload;
     },
@@ -17,4 +18,4 @@ export const profileSlice = createSlice({
 
 export default profileSlice.reducer;
 
-export const { setProfile } = profileSlice.actions;
+export const { logout, setProfile } = profileSlice.actions;

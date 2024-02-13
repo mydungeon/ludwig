@@ -11,6 +11,7 @@ import RatingPage from "./Rating";
 import RegisterPage from "./Register";
 import TechPage from "./Tech";
 import UnauthorizedPage from "./Unauthorized";
+import UserPage from "./User";
 import UsersPage from "./Users";
 
 export {
@@ -28,5 +29,6 @@ export {
   RegisterPage,
   TechPage,
   UnauthorizedPage,
+  UserPage,
   UsersPage,
 };
