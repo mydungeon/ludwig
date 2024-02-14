@@ -18,7 +18,7 @@ export const chatApi = createApi({
       },
       providesTags: ["Chat"],
     }),
-    sendMessage: builder.mutation<IChatMessage, any>({
+    addMessage: builder.mutation<IChatMessage, any>({
       query({ chatId, receiver }) {
         return {
           credentials: "include",
@@ -44,5 +44,5 @@ export const chatApi = createApi({
 export const {
   useGetMessagesQuery,
   useLazyGetMessagesQuery,
-  useSendMessageMutation,
+  useAddMessageMutation,
 } = chatApi;

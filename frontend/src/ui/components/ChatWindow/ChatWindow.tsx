@@ -14,6 +14,7 @@ import {
   SendChatIcon,
 } from "src/ui/features/Icons";
 import "./ChatWindow.styles.scss";
+import { useAddMessageMutation } from "src/redux/api/chat.api";
 
 function ChatHeader({
   onClose,
@@ -35,13 +36,26 @@ function ChatHeader({
 }
 
 function ChatFooter() {
+  const [addMessage, { isLoading }] = useAddMessageMutation();
+  const [chatMessage, setChatMessage] = useState("");
+
+  function handleSendMessage() {
+    alert(chatMessage);
+    addMessage({});
+  }
+
   return (
     <div className="chatFooter">
       <div className="chatFooterLeft">
-        <textarea className="input chat" name="chat" placeholder="Message..." />
+        <textarea
+          onChange={(e) => setChatMessage(e.target.value)}
+          className="input chat"
+          name="chat"
+          placeholder="Message..."
+        />
       </div>
       <div className="chatFooterRight">
-        <SendChatIcon callback={() => console.log("send a chat")} />
+        <SendChatIcon callback={handleSendMessage} />
       </div>
     </div>
   );
