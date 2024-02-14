@@ -3,7 +3,7 @@ import { LoginPayloadType } from "src/ui/features/Forms/Login/Login.schema";
 import { RegisterPayloadType } from "src/ui/features/Forms/Register/Register.schema";
 import { ChangePasswordPayloadType } from "src/ui/features/Forms/ChangePassword/ChangePassword.schema";
 import customFetchBase from "./customFetchBase";
-import { IUser } from "./types";
+import { IUser } from "../types";
 import { profileApi } from "./profile.api";
 
 export const authApi = createApi({

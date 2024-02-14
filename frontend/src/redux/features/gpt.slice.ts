@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IGptState, IMessage, IMessageHistory } from "src/redux/api/types";
+import { IGptState, IGptMessage, IGptMessageHistory } from "src/redux/types";
 
 const initialState: IGptState = {
   messages: [],
@@ -10,10 +10,10 @@ export const gptSlice = createSlice({
   initialState,
   name: "gpt",
   reducers: {
-    setMessages: (state, action: PayloadAction<IMessage>) => {
+    setMessages: (state, action: PayloadAction<IGptMessage>) => {
       state.messages.unshift(action.payload);
     },
-    setMessaageHistory: (state, action: PayloadAction<IMessageHistory>) => {
+    setMessaageHistory: (state, action: PayloadAction<IGptMessageHistory>) => {
       state.history.unshift(action.payload);
     },
     clearMessages: (state) => {

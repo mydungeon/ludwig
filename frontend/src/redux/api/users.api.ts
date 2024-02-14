@@ -1,7 +1,7 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { setUsers } from "src/redux/features/users.slice";
 import customFetchBase from "./customFetchBase";
-import { IUser } from "./types";
+import { IUser } from "../types";
 
 export const usersApi = createApi({
   reducerPath: "usersApi",

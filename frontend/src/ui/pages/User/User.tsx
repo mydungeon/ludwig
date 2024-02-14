@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { IUser } from "src/redux/api/types";
+import { IUser } from "src/redux/types";
 import { useLazyGetUserQuery } from "src/redux/api/user.api";
 import { ChatWindow, UserProfile } from "src/ui/components";
 import { BrandedFooterPage } from "src/ui/features/Pages";

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IUser, IProfileState } from "src/redux/api/types";
+import { IUser, IProfileState } from "src/redux/types";
 
 const initialState: IProfileState = {
   profile: null,

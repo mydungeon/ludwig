@@ -1,7 +1,7 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { setProfile } from "src/redux/features/profile.slice";
 import customFetchBase from "./customFetchBase";
-import { IUser } from "./types";
+import { IUser } from "../types";
 import { UpdatePayloadType } from "src/ui/features/Forms/Edit/Profile/Profile.schema";
 import { UpdateRolePayloadType } from "src/ui/features/Forms/Edit/Role/Role.schema";
 import { RatingPayloadType } from "src/ui/features/Forms/Rating/Rating.schema";

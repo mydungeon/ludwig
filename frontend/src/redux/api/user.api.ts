@@ -1,6 +1,6 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import customFetchBase from "./customFetchBase";
-import { IUser } from "./types";
+import { IUser } from "../types";
 import { UpdateRolePayloadType } from "src/ui/features/Forms/Edit/Role/Role.schema";
 import { setUser } from "../features/user.slice";
 export const userApi = createApi({

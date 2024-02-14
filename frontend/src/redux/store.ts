@@ -11,14 +11,18 @@ import { alertLoggerMiddleware } from "src/middleWare/AlertMiddleware";
 import uiSlice from "./features/ui.slice";
 import { gptApi } from "./api/gpt.api";
 import gptReducer from "./features/gpt.slice";
+import { chatApi } from "./api/chat.api";
+import chatReducer from "./features/chat.slice";
 
 export const store = configureStore({
   reducer: {
     [authApi.reducerPath]: authApi.reducer,
+    [chatApi.reducerPath]: chatApi.reducer,
     [gptApi.reducerPath]: gptApi.reducer,
     [userApi.reducerPath]: userApi.reducer,
     [usersApi.reducerPath]: usersApi.reducer,
     [profileApi.reducerPath]: profileApi.reducer,
+    chatState: chatReducer,
     usersState: usersReducer,
     userState: userReducer,
     profileState: profileReducer,
@@ -29,6 +33,7 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({}).concat([
       authApi.middleware,
+      chatApi.middleware,
       userApi.middleware,
       usersApi.middleware,
       profileApi.middleware,
