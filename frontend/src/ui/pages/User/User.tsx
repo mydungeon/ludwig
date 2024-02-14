@@ -21,6 +21,7 @@ export default function UserPage() {
     }
     getUserAsync();
   }, [getUser, isSuccess, userId]);
+
   return (
     <BrandedFooterPage pageTitle="Profile">
       {details ? <UserProfile details={details} /> : <div>Loading...</div>}

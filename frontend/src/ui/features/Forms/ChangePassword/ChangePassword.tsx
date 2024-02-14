@@ -20,7 +20,7 @@ export default function ChangePasswordForm() {
   return (
     <Wrapper classNames="changePassword" dataTestId="changePasswordForm">
       <Form
-        classNames="updateUser"
+        classNames="changePassword"
         defaultValues={defaultValues}
         onSubmit={onSubmit}
         validation={validationSchema}
