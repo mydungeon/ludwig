@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import classnames from "classnames";
-import ChatWindowProps from "./ChatWindow.types";
+import {
+  ChatHeaderProps,
+  ChatWindowProps,
+  ExpandedChatProps,
+} from "./ChatWindow.types";
 import { ChatMessages } from "src/ui/components";
 import {
   CloseChatIcon,
@@ -16,12 +20,8 @@ function ChatHeader({
   onMinimize,
   onMaximize,
   maxChat,
-}: {
-  onClose: () => void;
-  onMinimize: () => void;
-  onMaximize: () => void;
-  maxChat: boolean;
-}) {
+  receiverName,
+}: ChatHeaderProps) {
   return (
     <div className="chatHeader">
       <div className="chatHeaderLeft">
@@ -29,7 +29,7 @@ function ChatHeader({
         <MinimizeChatIcon callback={onMinimize} />
         <MaximizeChatIcon callback={onMaximize} toggle={maxChat} />
       </div>
-      <div className="chatHeaderRight">Jonny Dungeons</div>
+      <div className="chatHeaderRight">{receiverName}</div>
     </div>
   );
 }
@@ -47,43 +47,67 @@ function ChatFooter() {
   );
 }
 
-function MinimizedChat({ onMinimize }: { onMinimize: () => void }) {
+function MinimizedChat({ handleMinimize }: { handleMinimize: () => void }) {
   return (
     <div className="chatWindow min">
       <div className="chatFooter">
         <div className="chatFooterRight">
-          <OpenChatIcon callback={onMinimize} />
+          <OpenChatIcon callback={handleMinimize} />
         </div>
       </div>
     </div>
   );
 }
 
-export default function ChatWindow({ children }: ChatWindowProps) {
-  const [closeChat, setCloseChat] = useState(false);
-  const [minChat, setMinChat] = useState(true);
-  const [maxChat, setMaxChat] = useState(false);
-
-  return !minChat ? (
+function ExpandedChat({
+  isMaximized,
+  isClosed,
+  handleClose,
+  handleMaximize,
+  handleMinimize,
+  receiverId,
+  receiverName,
+}: ExpandedChatProps) {
+  return (
     <div
       className={classnames("chatWindow open", {
-        max: maxChat,
-        close: closeChat,
+        max: isMaximized,
+        close: isClosed,
       })}
       data-testid="chatWindow"
     >
       <ChatHeader
-        onClose={() => setCloseChat(true)}
-        onMinimize={() => setMinChat(true)}
-        onMaximize={() => setMaxChat(!maxChat)}
-        maxChat={maxChat}
+        onClose={handleClose}
+        onMinimize={handleMinimize}
+        onMaximize={handleMaximize}
+        maxChat={isMaximized}
+        receiverName={receiverName}
       />
       <div className="chatBody">
         <ChatMessages />
       </div>
       <ChatFooter />
     </div>
+  );
+}
+
+export default function ChatWindow({ ...details }: ChatWindowProps) {
+  const { receiverId, receiverName } = details;
+  const [isClosed, setIsClosed] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(true);
+  const [isMaximized, setIsMaximized] = useState(false);
+
+  return !isMinimized ? (
+    <ExpandedChat
+      handleClose={() => setIsClosed(true)}
+      handleMinimize={() => setIsMinimized(true)}
+      handleMaximize={() => setIsMaximized(!isMaximized)}
+      isClosed={isClosed}
+      isMaximized={isMaximized}
+      receiverId={receiverId}
+      receiverName={receiverName}
+    />
   ) : (
-    <MinimizedChat onMinimize={() => setMinChat(false)} />
+    <MinimizedChat handleMinimize={() => setIsMinimized(false)} />
   );
 }

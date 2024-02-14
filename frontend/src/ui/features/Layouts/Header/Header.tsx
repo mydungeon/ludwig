@@ -5,7 +5,6 @@ import Layout from "src/ui/components/Layout/Layout";
 import { SiteMenu } from "src/ui/features/Menus";
 import SiteToolbar from "src/ui/features/Toolbars/Site";
 import "./Header.styles.scss";
-import { ChatWindow } from "src/ui/components";
 
 export default function HeaderLayout() {
   return (
@@ -15,7 +14,6 @@ export default function HeaderLayout() {
         <LudwigSiteHeader />
         <SiteToolbar />
         <Outlet />
-        <ChatWindow />
       </Layout>
     </div>
   );
