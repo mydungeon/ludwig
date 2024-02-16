@@ -9,21 +9,31 @@ export const chatApi = createApi({
   tagTypes: ["Chat"],
   endpoints: (builder) => ({
     getMessages: builder.query<any, any>({
-      query({ chatId, receiver }) {
+      query(receiver) {
         return {
           credentials: "include",
-          url: `chat/${chatId}/messages/${receiver}`,
+          url: `chat/messages/${receiver}`,
           method: "GET",
         };
       },
       providesTags: ["Chat"],
+      transformResponse: ({ data }) => data.messages,
+      async onQueryStarted(args, { dispatch, queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled;
+          dispatch(setMessages(data));
+        } catch (error) {
+          console.log("error", error);
+        }
+      },
     }),
     addMessage: builder.mutation<IChatMessage, any>({
-      query({ chatId, receiver }) {
+      query({ data, receiver }) {
         return {
           credentials: "include",
-          url: `chat/${chatId}/message/${receiver}`,
+          url: `chat/message/${receiver}`,
           method: "POST",
+          body: data,
         };
       },
       transformResponse: (response: { data: IChatMessage }, meta, arg) =>

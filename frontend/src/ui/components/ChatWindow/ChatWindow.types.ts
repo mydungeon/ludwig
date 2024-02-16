@@ -15,7 +15,7 @@ export interface ExpandedChatProps {
   isClosed: boolean;
   handleClose: () => void;
   handleMaximize: () => void;
-  handleMinimize: () => void;
+  handleCollapse: () => void;
   receiverId: string;
   receiverName: string;
 }

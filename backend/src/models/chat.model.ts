@@ -36,7 +36,7 @@ export class Message {
   chatId: ObjectId;
 
   @prop({ required: true })
-  sender: string;
+  sender: ObjectId;
 
   @prop({ required: true, minlength: 8, maxLength: 180 })
   message: string;

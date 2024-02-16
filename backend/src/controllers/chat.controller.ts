@@ -1,20 +1,29 @@
 import { NextFunction, Request, Response } from "express";
 import { CreateMessageInput } from "../schema/chat.schema";
-import { createMessage, getChat } from "../services/chat.service";
-import { getNowToUnixTimestamp } from "../utils/date";
+import {
+  createMessage,
+  findMessages,
+  findOrCreateChat,
+} from "../services/chat.service";
 
 export const getMessages = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  const { chatId, receiver } = req.params;
-  const chat = await getChat({ chatId, receiver });
   try {
-    res.status(200).json({
+    const { receiver } = req.params;
+    const sender = res.locals.user._id;
+    const chat = await findOrCreateChat({ members: [sender, receiver] });
+    let messages;
+    if (chat) {
+      messages = await findMessages({ chatId: chat?._id });
+    }
+    const data = {
       status: "success",
-      data: chat,
-    });
+      data: { chat, messages },
+    };
+    res.status(200).json(data);
   } catch (error) {
     console.log("get chat error", error);
   }
@@ -26,32 +35,18 @@ export const sendMessage = async (
   next: NextFunction
 ) => {
   try {
-    const { chatId, receiver } = req.params;
-    const { _id } = res.locals.user;
-    const members = [];
-    if (receiver) {
-      members.push(receiver);
-    }
-    if (_id) {
-      members.push(_id.toString());
-    }
-    console.log("sendMessage");
-    await createMessage(
-      receiver,
+    const { receiver } = req.params;
+    const sender = res.locals.user._id;
+    const message = await createMessage(
+      { members: [sender, receiver] },
       {
-        chatId,
-        members,
-        timestamp: getNowToUnixTimestamp(),
-      },
-      {
-        sender: _id,
+        sender,
         message: req.body.message,
-        timestamp: Number(getNowToUnixTimestamp()),
       }
     );
     res.status(200).json({
       status: "success",
-      message: "Message sent",
+      message,
     });
   } catch (error) {
     console.log("sendMessage error", error);

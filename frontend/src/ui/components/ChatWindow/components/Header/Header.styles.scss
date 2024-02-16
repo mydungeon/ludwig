@@ -1,0 +1,32 @@
+@import "src/sass/themes/variables";
+ 
+.chatHeader {
+    background-color: $almostBlack;
+    border-bottom-color: $grey;
+    border-bottom-style: solid;
+    border-bottom-width: $px1;
+    border-top-right-radius: $px6;
+    border-top-left-radius: $px6;
+    display: flex;
+    flex-direction: row;
+    padding: $rem1;
+}
+
+.chatWindow.max>.chatHeader {
+    border-radius: 0;
+}
+
+.chatHeaderLeft {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.chatHeaderRight {
+    flex: auto;
+}
+
+.chatHeaderRight {
+    color: $white;
+    text-align: right;
+}

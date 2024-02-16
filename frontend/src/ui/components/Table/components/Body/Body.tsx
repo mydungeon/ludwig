@@ -10,7 +10,6 @@ export default function TableRow({ ...props }: any) {
   return (
     <tbody key="tbody">
       {data?.map((datum: any, i: number) => {
-        console.log("datum", datum);
         return (
           <tr key={i}>
             <td>

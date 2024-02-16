@@ -1,8 +1,8 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IChatMessage, IChatState } from "src/redux/types";
-
+import { createSlice } from "@reduxjs/toolkit";
+import { IChatState } from "src/redux/types";
+import { MOCK_CHAT } from "src/testing/data/chat/messages";
 const initialState: IChatState = {
-  chat: null,
+  chat: MOCK_CHAT,
   messages: [],
 };
 
@@ -10,8 +10,8 @@ export const chatSlice = createSlice({
   initialState,
   name: "chat",
   reducers: {
-    setMessages: (state, action: PayloadAction<IChatMessage>) => {
-      state.messages.unshift(action.payload);
+    setMessages: (state, action: any) => {
+      state.messages = action.payload;
     },
   },
 });

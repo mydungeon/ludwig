@@ -8,18 +8,13 @@ router.use(deserializeUser, requireUser);
 
 /**
  * @openapi
- * /api/chat/{chatId}/messages/{receiver}:
+ * /api/chat/messages/{receiver}:
  *   get:
  *     tags:
  *     - Chat
  *     summary: An api for chat;
  *     description: Retrieve messages by conversation id;
  *     parameters:
- *      - in: path
- *        name: chatId
- *        schema:
- *          type: string
- *        required: true
  *      - in: path
  *        name: receiver
  *        schema:
@@ -29,11 +24,11 @@ router.use(deserializeUser, requireUser);
  *       200:
  *         description: Gets messages for the chat.
  */
-router.get("/:chatId/messages/:receiver", getMessages);
+router.get("/messages/:receiver", getMessages);
 
 /**
  * @openapi
- * /api/chat/{chatId}/message/{receiver}:
+ * /api/chat/message/{receiver}:
  *   post:
  *     security:
  *      - bearerAuth: []
@@ -59,11 +54,6 @@ router.get("/:chatId/messages/:receiver", getMessages);
  *                default: This is a test message from 65bfefaebf758e19515f694c
  *     parameters:
  *      - in: path
- *        name: chatId
- *        schema:
- *          type: string
- *        required: true
- *      - in: path
  *        name: receiver
  *        schema:
  *          type: string
@@ -72,6 +62,6 @@ router.get("/:chatId/messages/:receiver", getMessages);
  *       200:
  *         description: Sends the message to the receiver.
  */
-router.post("/:chatId/message/:receiver", sendMessage);
+router.post("/message/:receiver", sendMessage);
 
 export default router;

@@ -1,0 +1,11 @@
+@import "src/sass/themes/variables";
+ 
+.chatBody {
+    overflow: scroll;
+    padding: $px5;
+}
+
+.chatBody,
+.chatFooterLeft {
+    flex: auto;
+}

@@ -1,22 +1,33 @@
 @import "src/sass/themes/variables";
 
 .chatMessages {
+    display: flex;
+    flex-direction: column;
     padding: 0;
 }
 
 .chatMessage {
-    border-radius: $px6;
     color: $white;
-    margin: $px5;
-    padding: $rem1;
+    margin: $px5 $rem1;
 }
 
-.chatMessage.sender {
+.chatMessage.sender > span {
+    align-items: flex-start;
     background-color: $malibu;
+    border-radius: $px6;
+    float: right;
     margin-left: $rem2;
+    padding: $rem1;
+    text-align: right;
 }
 
-.chatMessage.recipient {
-    background-color: $lightGrey;
+.chatMessage.receiver > span {
+    align-self: flex-end;
+    background-color: $grey;
+    border-radius: $px6;
+    float: left;
     margin-right: $rem2;
+    padding: $rem1;
+    width: auto;
+    text-align: left;
 }

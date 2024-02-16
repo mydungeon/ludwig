@@ -1,9 +1,34 @@
-import { Chat, Message, chatModel } from "../models/chat.model";
+import { ObjectId } from "mongoose";
+import { Chat, Message, chatModel, messageModel } from "../models/chat.model";
+import { getNowToUnixTimestamp } from "../utils/date";
 
-export const getChat = async (params: { chatId: string; receiver: string }) => {
+export const findOrCreateChat = async (params: { members: string[] }) => {
   try {
-    const { chatId, receiver } = params;
-    let chat = await chatModel.findOne({ chatId, members: receiver });
+    const { members } = params;
+    let chat = await chatModel.findOneAndUpdate(
+      { members: { $in: members } },
+      { members },
+      {
+        new: true,
+        upsert: true,
+      }
+    );
+    return chat;
+  } catch (error) {
+    console.log("createMessage error", error);
+  }
+};
+
+export const findMessages = async (params: { chatId: ObjectId }) => {
+  try {
+    const { chatId } = params;
+    let chat = await messageModel.find({ chatId }).select("-__v");
+    console.log("============");
+    console.log("============");
+    console.log("============");
+    console.log("chat", chat);
+    console.log("============");
+    console.log("============");
     return chat;
   } catch (error) {
     console.log("createMessage error", error);
@@ -11,31 +36,22 @@ export const getChat = async (params: { chatId: string; receiver: string }) => {
 };
 
 export const createMessage = async (
-  receiver: string,
-  chat: Partial<Chat>,
+  params: { members: string[] },
   message: Partial<Message>
 ) => {
   try {
-    console.log("createMessage");
-    const { chatId } = chat;
-    // const existing = await chatModel.findOne({ chatId, receiver });
-    console.log("=============");
-    console.log("=============");
-    console.log("=============");
+    const { members } = params;
+    console.log("members", members);
+    let chat = await chatModel.findOne({ members });
+    message = {
+      ...message,
+      chatId: chat!._id,
+      createdAt: getNowToUnixTimestamp(),
+      updatedAt: getNowToUnixTimestamp(),
+    };
     console.log("message", message);
-    console.log("=============");
-    console.log("=============");
-    console.log("=============");
-    const update = await chatModel.findOneAndUpdate(
-      { id: "65c98665c434d41e934eb127" },
-      {
-        $push: {
-          messages: message as Message,
-        },
-      }
-    );
-    console.log("updatedChat", update);
-    return update;
+    let created = await messageModel.create(message);
+    return created;
   } catch (error) {
     console.log("createMessage error", error);
   }

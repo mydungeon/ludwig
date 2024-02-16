@@ -38,19 +38,19 @@ export interface IUsersState {
 }
 
 export interface IChat {
-  _id: string;
+  _id: number;
   members: string[];
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: number;
+  updatedAt: number;
 }
 
 export interface IChatMessage {
-  _id: string;
-  chatId: string;
+  _id: number;
+  chatId: number;
   sender: string;
   message: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: number;
+  updatedAt: number;
 }
 
 export interface IChatState {
