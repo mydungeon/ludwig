@@ -5,7 +5,6 @@ import morgan from "morgan";
 import config from "config";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { WebSocket, WebSocketServer } from "ws";
 import connectDB from "./utils/connectDB";
 import authRouter from "./routes/auth.route";
 import chatRoute from "./routes/chat.route";
@@ -18,8 +17,10 @@ import usersRouter from "./routes/users.route";
 import profileRouter from "./routes/profile.route";
 import seedRouter from "./routes/seed.route";
 import swaggerDocs from "./utils/swagger";
+import wss from "./utils/wss";
 
 const app = express();
+const port = config.get<number>("port");
 
 // Middleware
 
@@ -39,23 +40,6 @@ app.use(
     origin: ["http://localhost:3000"],
   })
 );
-// ARTICLE: https://medium.com/@vitaliykorzenkoua/working-with-websocket-in-node-js-using-typescript-1aebb8a06bd6
-const wss = new WebSocketServer({ server: app });
-
-wss.on("connection", (ws: WebSocket) => {
-  console.log("New client connected");
-
-  ws.on("message", (message: string) => {
-    console.log(`Received message: ${message}`);
-    wss.clients.forEach((client) => {
-      client.send(`Server received your message: ${message}`);
-    });
-  });
-
-  ws.on("close", () => {
-    console.log("Client disconnected");
-  });
-});
 
 // Routes
 app.use("/api/auth", authRouter);
@@ -89,9 +73,14 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   });
 });
 
-const port = config.get<number>("port");
-app.listen(port, async () => {
+const server = app.listen(port, async () => {
   console.log(`Server started on port: ${port}`);
   // 👇 call the connectDB function here
   await connectDB();
+});
+
+wss(server);
+
+process.on("message", (message) => {
+  console.log("message");
 });
