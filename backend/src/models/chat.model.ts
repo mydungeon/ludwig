@@ -38,7 +38,7 @@ export class Message {
   @prop({ required: true })
   sender: ObjectId;
 
-  @prop({ required: true, minlength: 8, maxLength: 180 })
+  @prop({ required: true, minlength: 1, maxLength: 180 })
   message: string;
 
   @prop({ default: null })
