@@ -1,7 +1,11 @@
 import express from "express";
 import { deserializeUser } from "../middleware/deserializeUser";
 import { requireUser } from "../middleware/requireUser";
-import { getMessages, sendMessage } from "../controllers/chat.controller";
+import {
+  getMessages,
+  sendMessage,
+  getMessage,
+} from "../controllers/chat.controller";
 
 const router = express.Router();
 router.use(deserializeUser, requireUser);
@@ -25,6 +29,33 @@ router.use(deserializeUser, requireUser);
  *         description: Gets messages for the chat.
  */
 router.get("/messages/:receiver", getMessages);
+
+/**
+ * @openapi
+ * /api/chat/{chatId}/message/{messageId}:
+ *   get:
+ *     security:
+ *      - bearerAuth: []
+ *     tags:
+ *     - Chat
+ *     summary: An api for chat;
+ *     description: This contains the receiver and content of the message;
+ *     parameters:
+ *      - in: path
+ *        name: chatId
+ *        schema:
+ *          type: string
+ *        required: true
+ *      - in: path
+ *        name: messageId
+ *        schema:
+ *          type: string
+ *        required: true
+ *     responses:
+ *       200:
+ *         description: Sends the message to the receiver.
+ */
+router.get("/:chatId/message/:receiver", getMessage);
 
 /**
  * @openapi

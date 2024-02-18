@@ -3,6 +3,7 @@ import { CreateMessageInput } from "../schema/chat.schema";
 import {
   createMessage,
   findMessages,
+  findMessage,
   findOrCreateChat,
 } from "../services/chat.service";
 
@@ -29,6 +30,24 @@ export const getMessages = async (
   }
 };
 
+export const getMessage = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const { chatId, id } = req.params;
+    const message = await findMessage({ chatId, id });
+    const data = {
+      status: "success",
+      data: message,
+    };
+    res.status(200).json(data);
+  } catch (error) {
+    console.log("get chat error", error);
+  }
+};
+
 export const sendMessage = async (
   req: Request<{ chatId: string; receiver: string }, {}, CreateMessageInput>,
   res: Response,
@@ -37,7 +56,7 @@ export const sendMessage = async (
   try {
     const { receiver } = req.params;
     const sender = res.locals.user._id;
-    const message = await createMessage(
+    const created = await createMessage(
       { members: [sender, receiver] },
       {
         sender,
@@ -46,7 +65,7 @@ export const sendMessage = async (
     );
     res.status(200).json({
       status: "success",
-      message,
+      created,
     });
   } catch (error) {
     console.log("sendMessage error", error);

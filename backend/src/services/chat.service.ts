@@ -1,5 +1,5 @@
 import { ObjectId } from "mongoose";
-import { Chat, Message, chatModel, messageModel } from "../models/chat.model";
+import { Message, chatModel, messageModel } from "../models/chat.model";
 import { getNowToUnixTimestamp } from "../utils/date";
 
 export const findOrCreateChat = async (params: { members: string[] }) => {
@@ -23,12 +23,16 @@ export const findMessages = async (params: { chatId: ObjectId }) => {
   try {
     const { chatId } = params;
     let chat = await messageModel.find({ chatId }).select("-__v");
-    console.log("============");
-    console.log("============");
-    console.log("============");
-    console.log("chat", chat);
-    console.log("============");
-    console.log("============");
+    return chat;
+  } catch (error) {
+    console.log("createMessage error", error);
+  }
+};
+
+export const findMessage = async (params: { chatId: string; id: string }) => {
+  try {
+    const { chatId, id: _id } = params;
+    let chat = await messageModel.findOne({ chatId, _id }).select("-__v");
     return chat;
   } catch (error) {
     console.log("createMessage error", error);
@@ -41,7 +45,6 @@ export const createMessage = async (
 ) => {
   try {
     const { members } = params;
-    console.log("members", members);
     let chat = await chatModel.findOne({ members });
     message = {
       ...message,
@@ -49,7 +52,6 @@ export const createMessage = async (
       createdAt: getNowToUnixTimestamp(),
       updatedAt: getNowToUnixTimestamp(),
     };
-    console.log("message", message);
     let created = await messageModel.create(message);
     return created;
   } catch (error) {
