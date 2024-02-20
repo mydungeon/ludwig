@@ -29,6 +29,7 @@ import PreLoader from "./PreLoader";
 import Sidebar from "./Sidebar";
 import SiteLink from "./SiteLink";
 import SliderInput from "./SliderInput";
+import Spacer from "./Spacer";
 import Table from "./Table";
 import TableToolbar from "./TableToolbar";
 import Tooltip from "./Tooltip";
@@ -71,6 +72,7 @@ export {
   Sidebar,
   SiteLink,
   SliderInput,
+  Spacer,
   Table,
   TableToolbar,
   Tooltip,

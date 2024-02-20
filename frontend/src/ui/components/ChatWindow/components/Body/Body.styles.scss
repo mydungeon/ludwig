@@ -1,10 +1,20 @@
 @import "src/sass/themes/variables";
  
+//ARTICLE: https: //code.hnldesign.nl/scrolltobottom/
 .chatBody {
+    display: flex;
+    flex-direction: column-reverse;
     overflow: scroll;
     padding: $px5;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
 }
-
+/* Hide scrollbar for Chrome, Safari and Opera */
+.chatBody::-webkit-scrollbar {
+    display: none;
+}
 .chatBody,
 .chatFooterLeft {
     flex: auto;
