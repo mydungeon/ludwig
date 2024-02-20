@@ -22,14 +22,12 @@ export default function UserPage() {
     getUserAsync();
   }, [getUser, isSuccess, userId]);
 
-  return (
-    <BrandedFooterPage pageTitle="Profile">
+  return details ? (
+    <BrandedFooterPage pageTitle={details.name}>
       <>
-        {details && <UserProfile details={details} />}
-        {details && (
-          <ChatWindow receiverId={details._id} receiverName={details.name} />
-        )}
+        <UserProfile details={details} />
+        <ChatWindow receiverId={details._id} receiverName={details.name} />
       </>
     </BrandedFooterPage>
-  );
+  ) : null;
 }
