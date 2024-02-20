@@ -2,7 +2,15 @@
 
 .sortable {
     display: inline-block;
+    max-width: calc(100vw - $px90);
 }
 .pagerBar {
     padding: 0;
 }
+
+@media (width >= 768px) {
+    .sortable {
+        max-width: calc(100vw - $px250);
+    }
+}
+
