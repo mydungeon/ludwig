@@ -38,6 +38,6 @@ export default function ChatMessages() {
       })}
     </div>
   ) : (
-    <div>No chat messages</div>
+    <div className="noMessages">No chat messages</div>
   );
 }
