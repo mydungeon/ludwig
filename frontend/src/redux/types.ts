@@ -57,3 +57,7 @@ export interface IChatState {
   chat: IChat | null;
   messages: IChatMessage[];
 }
+
+export interface IUiState {
+  theme: string;
+}

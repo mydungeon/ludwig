@@ -6,7 +6,7 @@ import { ThemeToggleIcon } from "src/ui/features/Icons";
 import "./Site.styles.scss";
 
 export default function SiteToolbar() {
-  const theme = useSelector((state: any) => state.uiState);
+  const theme = useSelector((state: any) => state.uiState.theme);
   const dispatch = useDispatch();
   function handleToggleTheme() {
     dispatch(toggleTheme());
