@@ -8,14 +8,17 @@ const initialState: IChatState = {
 
 export const chatSlice = createSlice({
   initialState,
-  name: "chat",
+  name: "chatSlice",
   reducers: {
-    setMessages: (state, action: any) => {
+    loadMessages: (state, action: any) => {
       state.messages = action.payload;
+    },
+    loadMessage: (state, action: any) => {
+      state.messages = [...state.messages, action.payload];
     },
   },
 });
 
-export const { setMessages } = chatSlice.actions;
+export const { loadMessages, loadMessage } = chatSlice.actions;
 
 export default chatSlice.reducer;

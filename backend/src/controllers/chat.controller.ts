@@ -56,7 +56,7 @@ export const sendMessage = async (
   try {
     const { receiver } = req.params;
     const sender = res.locals.user._id;
-    const created = await createMessage(
+    const message = await createMessage(
       { members: [sender, receiver] },
       {
         sender,
@@ -65,7 +65,7 @@ export const sendMessage = async (
     );
     res.status(200).json({
       status: "success",
-      created,
+      data: message,
     });
   } catch (error) {
     console.log("sendMessage error", error);

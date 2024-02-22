@@ -45,7 +45,7 @@ export const createMessage = async (
 ) => {
   try {
     const { members } = params;
-    let chat = await chatModel.findOne({ members });
+    let chat = await chatModel.findOne({ members: { $in: members } });
     message = {
       ...message,
       chatId: chat!._id,

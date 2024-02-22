@@ -17,7 +17,7 @@ import usersRouter from "./routes/users.route";
 import profileRouter from "./routes/profile.route";
 import seedRouter from "./routes/seed.route";
 import swaggerDocs from "./utils/swagger";
-import wss from "./utils/wss";
+import { upgrade } from "./utils/wss";
 
 const app = express();
 const port = config.get<number>("port");
@@ -79,8 +79,8 @@ const server = app.listen(port, async () => {
   await connectDB();
 });
 
-wss(server);
+async function configureWss() {
+  const wss = await upgrade(server);
+}
 
-process.on("message", (message) => {
-  console.log("message");
-});
+configureWss();

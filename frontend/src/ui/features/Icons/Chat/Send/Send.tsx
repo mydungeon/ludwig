@@ -6,7 +6,7 @@ import IconsProps from "src/ui/features/Icons/Icons.types";
 
 export default function SendChatIcon({ callback }: IconsProps) {
   return (
-    <Tooltip message="Send" direction={TooltipDirection.TOP}>
+    <Tooltip message="Send" direction={TooltipDirection.LEFT}>
       <Icon icon={faReply} handleClick={callback} size="xl" />
     </Tooltip>
   );
