@@ -7,7 +7,6 @@ export const getUserHandler = async (
   next: NextFunction
 ) => {
   const { userId } = req.params;
-  console.log("userId", userId);
   try {
     const user = await findUser({ _id: userId });
     res.status(200).json({

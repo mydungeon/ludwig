@@ -26,7 +26,7 @@ export const getMessages = async (
     };
     res.status(200).json(data);
   } catch (error) {
-    console.log("get chat error", error);
+    console.log("error", error);
   }
 };
 
@@ -44,7 +44,7 @@ export const getMessage = async (
     };
     res.status(200).json(data);
   } catch (error) {
-    console.log("get chat error", error);
+    console.log("error", error);
   }
 };
 
