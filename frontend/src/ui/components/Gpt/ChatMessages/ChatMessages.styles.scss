@@ -9,8 +9,13 @@
     width: $pct75;
     padding-top: $px1;
     scrollbar-width: none;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
 .chatGptMessages::-webkit-scrollbar {
     display: none;
 }

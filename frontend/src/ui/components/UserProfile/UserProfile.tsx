@@ -1,14 +1,16 @@
 import React from "react";
-import "./UserProfile.styles.scss";
-import { UserDetails, UserPfp } from "src/ui/components";
-import UserRoles from "../UserRoles";
+import { UserDetails, UserPfp, UserRoles } from "src/ui/components";
 
-export default function UserProfile() {
+export default function UserProfile({
+  details,
+}: {
+  details: { email: string; name: string; rating: number; roles: string[] };
+}) {
   return (
     <div className="userprofile" data-testid="userprofile">
       <UserPfp />
-      <UserRoles />
-      <UserDetails />
+      <UserRoles roles={details.roles} />
+      <UserDetails details={details} />
     </div>
   );
 }

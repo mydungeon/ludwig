@@ -1,0 +1,33 @@
+@import "src/sass/themes/variables";
+ 
+.chatFooterLeft {
+    flex: auto;
+}
+
+.chatFooter {
+    border-top-color: $grey;
+    border-top-style: solid;
+    border-top-width: $px1;
+    display: flex;
+    flex-direction: row;
+}
+
+.chatFooterRight {
+    background-color: $darkerGrey;
+    border-bottom-right-radius: $px6;
+    color: $white;
+    padding: $rem1;
+}
+
+.chatWindow.min .chatFooter {
+    border: none;
+}
+
+.chatWindow.min .chatFooterRight {
+    background-color: $almostBlack;
+    border-radius: $px6;
+}
+
+.chatWindow.max .chatFooterRight {
+    border-radius: 0;
+}

@@ -10,10 +10,21 @@ const swaggerJsdocOptions: swaggerJsdoc.Options = {
       title: "Ludwig REST API",
       version,
     },
+    basePath: "/",
     components: {
-      securitySchemes: {},
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
+      },
     },
-    security: [],
+    security: [
+      {
+        bearerAuth: [],
+      },
+    ],
   },
   apis: ["./src/routes/*.route.ts", "./src/schema/*.schema.ts"],
 };

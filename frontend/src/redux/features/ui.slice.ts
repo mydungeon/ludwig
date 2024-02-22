@@ -1,11 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { IUiState } from "../types";
+
+const initialState: IUiState = {
+  theme: "light-theme",
+};
 
 export const uiSlice = createSlice({
+  initialState,
   name: "ui",
-  initialState: "light-theme",
   reducers: {
-    toggleTheme: (state: string) => {
-      return state === "dark-theme" ? "light-theme" : "dark-theme";
+    toggleTheme: (state) => {
+      state.theme = state.theme === "dark-theme" ? "light-theme" : "dark-theme";
     },
   },
 });

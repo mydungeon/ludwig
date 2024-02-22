@@ -11,6 +11,17 @@
     "__v": 0
   },
   {
+    "name": "devil",
+    "email": "devil@m3t4c0r73x.com",
+    "password": "$2a$12$l9BppooJFvIg1vlBQExKNOu7fBEGRo1/YGUJw/6yMFoIgNtYOMN4e",
+    "roles": ["user", "admin", "god"],
+    "createdAt": 1706664702,
+    "updatedAt": 1706664702,
+    "lastLoggedIn": 1706664702,
+    "rating": 90,
+    "__v": 0
+  },
+  {
     "name": "admin",
     "email": "admin@m3t4c0r73x.com",
     "password": "$2a$12$l9BppooJFvIg1vlBQExKNOu7fBEGRo1/YGUJw/6yMFoIgNtYOMN4e",

@@ -1,13 +1,14 @@
 @import 'src/sass/themes/variables';
+
 .form {
     align-items: stretch;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: auto;
     min-width: $px350;
     max-width: $px500;
 }
+
 .form > input {
     margin: $rem10pct;
     align-items: stretch;
@@ -19,4 +20,8 @@
     min-width: $px350;
     width: $pct50;
     max-width: $px500;
+}
+
+input[name="password"] {
+    position: relative;
 }

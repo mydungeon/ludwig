@@ -17,7 +17,6 @@ export const createCompletions = async (
       messages,
       model: config.get("chatGptModel"),
     });
-    console.log("completion", completion);
     return res.status(200).json({
       status: "success",
       data: completion,
@@ -36,7 +35,6 @@ export const createStreamingCompletions = async (
   const { content } = req.body;
 
   try {
-    // let completion = "";
     const stream = await openai.chat.completions.create({
       messages: [
         {

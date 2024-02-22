@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useUpdateMyRolesMutation } from "src/redux/api/user.api";
+import { useUpdateMyRolesMutation } from "src/redux/api/profile.api";
 import { useAppSelector } from "src/redux/store";
 import { Redirect } from "src/hooks";
 import { FormFooter, MultiSelect, SiteLink, Wrapper } from "src/ui/components";
@@ -9,7 +9,9 @@ import { MULTI_SELECT_OPTIONS } from "./Role.constants";
 import "./Role.styles.scss";
 
 export default function EditRoleForm() {
-  const userRoles = useAppSelector((state) => state.userState.user?.roles);
+  const userRoles = useAppSelector(
+    (state) => state.profileState.profile?.roles
+  );
   const [updateMyRoles] = useUpdateMyRolesMutation();
   const [selected, setSelected] = useState<string[]>([]);
   const handleToggleOption = toggleOption({ callback: setSelected });

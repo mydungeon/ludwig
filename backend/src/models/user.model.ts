@@ -22,7 +22,7 @@ import bcrypt from "bcryptjs";
 })
 @modelOptions({
   schemaOptions: {
-    // Add createdAt and updatedAt fields
+    // Disable createdAt and updatedAt fields
     timestamps: false,
   },
 })

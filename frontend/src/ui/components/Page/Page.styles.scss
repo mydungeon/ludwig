@@ -1,6 +1,17 @@
 @import "src/sass/themes/variables";
 
 .page {
-    padding: $rem1;
+    margin-left: $px10;
+    margin-right: $px10;
+    padding: 0;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
     text-align: center;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.page::-webkit-scrollbar {
+    display: none;
 }

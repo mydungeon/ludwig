@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useAppSelector } from "src/redux/store";
 import { Redirect, usePreloader, useRedirect } from "src/hooks";
-import { useUpdateRatingMutation } from "src/redux/api/user.api";
+import { useUpdateRatingMutation } from "src/redux/api/profile.api";
 import { Button, SliderInput, Wrapper } from "src/ui/components";
 import { Icon } from "src/ui/components";
 import { EMOJI_HASH } from "./Rating.constants";
 import "./Rating.styles.scss";
 
 export default function RatingForm() {
-  const defaultRating = useAppSelector((state) => state.userState.user?.rating);
+  const defaultRating = useAppSelector(
+    (state) => state.profileState.profile?.rating
+  );
   const [rating, setRating] = useState(100);
   const [updateRating, { isLoading, isSuccess }] = useUpdateRatingMutation();
   const handleSetRating = (e: any) => setRating(Number(e.target.value));

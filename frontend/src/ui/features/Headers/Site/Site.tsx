@@ -9,7 +9,7 @@ import SiteHeaderProps from "./Site.types";
 import "./Site.styles.scss";
 
 export default function SiteHeader({ children }: SiteHeaderProps) {
-  const user = useAppSelector((state) => state.userState.user);
+  const user = useAppSelector((state) => state.profileState.profile);
   const { handleShowSiteMenu } = useContext<AppContextType>(AppContext);
 
   function handleShowMenu() {

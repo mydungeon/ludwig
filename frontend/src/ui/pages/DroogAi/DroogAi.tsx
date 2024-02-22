@@ -12,7 +12,7 @@ export default function DroogAiPage() {
     const { gptState } = state;
     return gptState.messages;
   });
-  const user = useAppSelector((state) => state.userState.user);
+  const user = useAppSelector((state) => state.profileState.profile);
 
   useEffect(() => {
     droogAiAscii(`Oh my little droogie...`);

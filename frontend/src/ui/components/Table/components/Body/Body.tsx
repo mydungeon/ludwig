@@ -1,5 +1,7 @@
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import { Ellipse } from "src/ui/components";
+import { Link } from "react-router-dom";
+import { Ellipse, Icon } from "src/ui/components";
 import { Tooltip } from "src/ui/components";
 import { setTooltipDirection } from "src/ui/components/Table/Table.utils";
 
@@ -10,6 +12,11 @@ export default function TableRow({ ...props }: any) {
       {data?.map((datum: any, i: number) => {
         return (
           <tr key={i}>
+            <td>
+              <Link to={`/user/${datum._id}`}>
+                <Icon icon={faUser} />
+              </Link>
+            </td>
             {Object.values(datum).map((value: any, iii, array) => {
               return value &&
                 maxCellTextLength &&

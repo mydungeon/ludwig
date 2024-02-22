@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { IUser } from "src/redux/api/types";
+import { IUser } from "src/redux/types";
 
 export default function useTable(data: IUser[], pageSize: number) {
   const [currentPage, setCurrentPage] = useState(1);

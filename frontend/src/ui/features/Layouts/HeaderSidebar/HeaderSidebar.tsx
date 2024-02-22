@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import HeaderSidebarProps from "./HeaderSidebar.types";
-import { ChatWindow, Layout } from "src/ui/components";
+import { Layout } from "src/ui/components";
 import { LudwigSiteHeader } from "src/ui/features/Headers";
 import { SiteMenu } from "src/ui/features/Menus";
 import SiteToolbar from "src/ui/features/Toolbars/Site";
@@ -19,7 +19,6 @@ export default function HeaderSidebarLayout({ children }: HeaderSidebarProps) {
           <SiteSidebar>{children}</SiteSidebar>
           <Outlet />
         </div>
-        <ChatWindow />
       </Layout>
     </div>
   );
