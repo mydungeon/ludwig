@@ -7,7 +7,7 @@ export default function useChat() {
   const [addMessage] = useAddMessageMutation();
   const [message, setMessage] = useState("");
   function handleSendMessage() {
-    if (message === "") return;
+    if (message.trim() === "") return;
     addMessage({ data: { message }, receiver: userId });
     setMessage("");
   }

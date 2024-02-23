@@ -27,14 +27,12 @@ button {
 
 .filterDropdown>ul>li,
 .filterDropdown>ul>li:first-child,
-.input {
+.input,
+.chatBody,
+.chatFooterLeft {
     @include themify('border-color', 'blackAndWhite');
     @include themify('background', 'whiteAndDarkestGrey');
     @include themify('color', 'blackAndWhite');
-}
-
-.input.chat {
-    background: white;
 }
 
 a.siteLink.button:hover,
