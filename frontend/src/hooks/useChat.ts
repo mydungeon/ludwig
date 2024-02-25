@@ -13,6 +13,7 @@ export default function useChat() {
   }
 
   function handleOnChange(e: any) {
+    //TODO: emit typing event
     setMessage(e.target.value);
   }
 
