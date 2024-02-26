@@ -4,6 +4,6 @@ import "@testing-library/jest-dom";
 import ChatMessages from "./ChatMessages";
 
 test("loads and displays ChatMessages component", async () => {
-  render(<ChatMessages />);
+  render(<ChatMessages isTyping={false} />);
   expect(screen.getByTestId("chatMessages")).toBeTruthy();
 });

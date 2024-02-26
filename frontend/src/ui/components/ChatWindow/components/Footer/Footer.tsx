@@ -1,11 +1,14 @@
 import React from "react";
-import useChat from "src/hooks/useChat";
 import { SendChatIcon } from "src/ui/features/Icons";
-import "./Footer.styles.scss";
 import ChatInput from "../ChatInput";
+import ChatWindowFooterProps from "./Footer.types";
+import "./Footer.styles.scss";
 
-export default function ChatWindowFooter() {
-  const { handleOnChange, handleSendMessage, message } = useChat();
+export default function ChatWindowFooter({
+  handleOnChange,
+  handleSendMessage,
+  message,
+}: ChatWindowFooterProps) {
   return (
     <div className="chatFooter">
       <div className="chatFooterLeft">

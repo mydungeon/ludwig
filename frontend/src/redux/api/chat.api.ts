@@ -41,8 +41,10 @@ export const chatApi = createApi({
       async onCacheEntryAdded(arg, { dispatch, cacheDataLoaded }) {
         try {
           await cacheDataLoaded;
-          const ws = createWss(arg);
+          let ws: WebSocket | undefined;
+          ws = await createWss(arg);
           ws.onmessage = (e: any) => {
+            if (e.data.includes("isTyping")) return;
             dispatch(loadMessage(JSON.parse(e.data)));
           };
         } catch (err) {
@@ -63,11 +65,12 @@ export const chatApi = createApi({
         response.data,
       async onQueryStarted(args, { queryFulfilled }) {
         try {
+          let ws: WebSocket | undefined;
           const { data } = await queryFulfilled;
           if (!data) return;
-          const ws = createWss(data._id.toString());
+          ws = await createWss(data._id.toString());
           ws.onopen = (e: any) => {
-            ws.send(JSON.stringify(data));
+            ws!.send(JSON.stringify(data));
           };
         } catch (error) {
           console.log("error", error);

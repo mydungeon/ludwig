@@ -33,7 +33,6 @@ export async function upgrade(server: Server) {
 
 wss.on("connection", async function connection(ws: UserWebSocket, req) {
   ws.on("message", function message(data) {
-    console.log(wss.clients.size);
     wss.clients.forEach(function each(client) {
       if (client !== ws && client.readyState === ws.OPEN) {
         client.send(`${data}`);
