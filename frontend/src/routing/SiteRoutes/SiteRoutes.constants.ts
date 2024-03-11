@@ -5,22 +5,25 @@ import {
   ProfileLayout,
 } from "src/ui/features/Layouts";
 import { Authorize } from "src/ui/components";
-import { AdminPage } from "src/ui/pages";
-import { ChangePasswordPage } from "src/ui/pages";
-import { DroogAiPage } from "src/ui/pages";
-import { EditProfilePage } from "src/ui/pages";
-import { EditRolePage } from "src/ui/pages";
-import { RatingPage } from "src/ui/pages";
-import { HomePage } from "src/ui/pages";
-import { LoginPage } from "src/ui/pages";
-import { MetricsPage } from "src/ui/pages";
-import { NotFoundPage } from "src/ui/pages";
-import { ProfilePage } from "src/ui/pages";
-import { RegisterPage } from "src/ui/pages";
-import { TechPage } from "src/ui/pages";
-import { UnauthorizedPage } from "src/ui/pages";
-import { UserPage } from "src/ui/pages";
-import { UsersPage } from "src/ui/pages";
+import {
+  AdminPage,
+  ChangePasswordPage,
+  ChatPage,
+  DroogAiPage,
+  EditProfilePage,
+  EditRolePage,
+  HomePage,
+  LoginPage,
+  MetricsPage,
+  NotFoundPage,
+  ProfilePage,
+  RegisterPage,
+  RatingPage,
+  TechPage,
+  UnauthorizedPage,
+  UserPage,
+  UsersPage,
+} from "src/ui/pages";
 import { UserRoles } from "src/ui/features/User/User.types";
 
 export const ROUTING = [
@@ -159,6 +162,18 @@ export const ROUTING = [
             key: "droogAi",
             path: "droogAi",
             element: DroogAiPage,
+          },
+        ],
+      },
+      {
+        key: "parent",
+        authorize: Authorize,
+        roles: UserRoles.GOD,
+        routes: [
+          {
+            key: "chat",
+            path: "chat",
+            element: ChatPage,
           },
         ],
       },

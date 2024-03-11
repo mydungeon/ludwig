@@ -13,14 +13,16 @@ import { userApi } from "./api/user.api";
 import userReducer from "./features/user.slice";
 import { usersApi } from "./api/users.api";
 import usersReducer from "./features/users.slice";
+import apiSlice from "./api/apiSlice";
 
 export const store = configureStore({
   reducer: {
+    [apiSlice.reducerPath]: apiSlice.reducer,
     [authApi.reducerPath]: authApi.reducer,
     [chatApi.reducerPath]: chatApi.reducer,
     [gptApi.reducerPath]: gptApi.reducer,
     [profileApi.reducerPath]: profileApi.reducer,
-    [userApi.reducerPath]: userApi.reducer,
+    // [userApi.reducerPath]: userApi.reducer,
     [usersApi.reducerPath]: usersApi.reducer,
     chatState: chatReducer,
     gptState: gptReducer,
