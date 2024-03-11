@@ -3,7 +3,7 @@ import "./ChatMessages.styles.scss";
 import { useLazyGetMessagesQuery } from "src/redux/api/chat.api";
 import { useSelector } from "react-redux";
 
-export default function ChatMessages() {
+export default function ChatMessages({ isTyping }: { isTyping: boolean }) {
   const { myId, userId, messages } = useSelector(
     ({
       profileState: {
@@ -36,6 +36,11 @@ export default function ChatMessages() {
           </div>
         );
       })}
+      {isTyping && (
+        <div className="chatMessage receiver">
+          <span>...typing</span>
+        </div>
+      )}
     </div>
   ) : (
     <div className="noMessages">No chat messages</div>

@@ -2,6 +2,7 @@ import { createApi } from "@reduxjs/toolkit/query/react";
 import customFetchBase from "./customFetchBase";
 import { loadMessages, loadMessage } from "../features/chat.slice";
 import { IChatMessage } from "../types";
+import { createWss } from "src/utils/wss";
 
 export const chatApi = createApi({
   reducerPath: "chatApi",
@@ -37,21 +38,18 @@ export const chatApi = createApi({
           console.log("error", error);
         }
       },
-      async onCacheEntryAdded(
-        arg,
-        { dispatch, updateCachedData, cacheDataLoaded, cacheEntryRemoved }
-      ) {
-        const ws = new WebSocket("ws://localhost:8000/websockets");
+      async onCacheEntryAdded(arg, { dispatch, cacheDataLoaded }) {
         try {
           await cacheDataLoaded;
+          let ws: WebSocket | undefined;
+          ws = await createWss(arg);
           ws.onmessage = (e: any) => {
+            if (e.data.includes("isTyping")) return;
             dispatch(loadMessage(JSON.parse(e.data)));
           };
         } catch (err) {
           console.log("error", err);
         }
-        await cacheEntryRemoved;
-        ws.close();
       },
     }),
     addMessage: builder.mutation<IChatMessage, any>({
@@ -65,14 +63,14 @@ export const chatApi = createApi({
       },
       transformResponse: (response: { data: IChatMessage }, meta, arg) =>
         response.data,
-      async onQueryStarted(args, { dispatch, queryFulfilled }) {
+      async onQueryStarted(args, { queryFulfilled }) {
         try {
+          let ws: WebSocket | undefined;
           const { data } = await queryFulfilled;
-          const ws = new WebSocket(
-            `ws://localhost:8000/websockets?chatId=${data.chatId}`
-          );
+          if (!data) return;
+          ws = await createWss(data._id.toString());
           ws.onopen = (e: any) => {
-            ws.send(JSON.stringify(data));
+            ws!.send(JSON.stringify(data));
           };
         } catch (error) {
           console.log("error", error);

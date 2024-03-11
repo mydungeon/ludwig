@@ -20,6 +20,7 @@
     "mongoose": "^8.0.3",
     "openai": "^4.24.7",
     "redis": "^4.0.6",
+    "socket.io": "^4.7.4",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",
     "ts-node-dev": "^1.1.8",

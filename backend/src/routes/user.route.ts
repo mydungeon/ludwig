@@ -1,5 +1,12 @@
 import express from "express";
-import { getUserHandler } from "../controllers/user.controller";
+import {
+  getUserHandler,
+  getUserInviteList,
+  getUserRooms,
+  userAcceptInvite,
+  userIgnoreInvite,
+  userSearch,
+} from "../controllers/user.controller";
 import { deserializeUser } from "../middleware/deserializeUser";
 import { requireUser } from "../middleware/requireUser";
 import { restrictTo } from "../middleware/restrictTo";
@@ -26,5 +33,10 @@ router.use(deserializeUser, requireUser);
  *         description: Returns a success status, users data and a success message
  */
 router.get("/:userId", restrictTo("admin"), getUserHandler);
+router.get("/invited-list", getUserInviteList);
+router.get("/rooms", getUserRooms);
+router.post("/accept-invite", userAcceptInvite);
+router.post("/ignore-invite", userIgnoreInvite);
+router.post("/search", userSearch);
 
 export default router;

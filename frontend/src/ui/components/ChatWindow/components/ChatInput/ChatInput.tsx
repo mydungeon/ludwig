@@ -1,6 +1,6 @@
 import React from "react";
-import "./ChatInput.styles.scss";
 import ChatInputProps from "./ChatInput.types";
+import "./ChatInput.styles.scss";
 
 export default function ChatInput({ handleOnChange, message }: ChatInputProps) {
   return (

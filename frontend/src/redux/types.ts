@@ -23,7 +23,55 @@ export interface IUser {
   roles: string[];
   updatedAt: Date;
   lastLoggedIn: Date;
+  rooms: IRoom[];
+  inviteList: TUserInviteList[];
+  selectedRoomID: null | string;
+  directoryIsOpen: Boolean;
+  userName: string | null;
+  userID: string | null;
+  isCreateRoomModalShow: Boolean;
+  messages: IMessage[];
 }
+
+export type TRoomUser = {
+  userId: string;
+  role: "1769" | "2561" | "7610";
+  userName: string;
+};
+
+export type TRoomInviteList = {
+  _id: string;
+  name: string;
+};
+
+export type TRoomSearchUser = {
+  _id: string;
+  userName: string;
+};
+export interface IMessage {
+  _id: string;
+  message: string;
+  senderID: string;
+  senderName: string;
+  roomID: string;
+  createdAt: Date;
+  updateAt: Date;
+}
+
+export type TRoomBlackList = TRoomInviteList;
+export interface IRoom {
+  blackList: TRoomBlackList[];
+  inviteList: TRoomInviteList[];
+  name: string;
+  _id: string;
+  users: TRoomUser[];
+  messages: IMessage[];
+}
+
+export type TUserInviteList = {
+  _id: string;
+  name: string;
+};
 
 export interface IUserState {
   user: IUser | null;

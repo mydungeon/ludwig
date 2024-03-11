@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IChatState } from "src/redux/types";
-import { MOCK_CHAT } from "src/testing/data/chat/messages";
 const initialState: IChatState = {
-  chat: MOCK_CHAT,
+  chat: null,
   messages: [],
 };
 

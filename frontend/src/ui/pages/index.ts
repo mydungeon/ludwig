@@ -1,5 +1,6 @@
 import AdminPage from "./Admin";
 import ChangePasswordPage from "./ChangePassword";
+import ChatPage from "./Chat";
 import DroogAiPage from "./DroogAi";
 import { EditProfilePage, EditRolePage } from "./Edit";
 import HomePage from "./Home";
@@ -17,6 +18,7 @@ import UsersPage from "./Users";
 export {
   AdminPage,
   ChangePasswordPage,
+  ChatPage,
   DroogAiPage,
   EditProfilePage,
   EditRolePage,
